@@ -6,6 +6,7 @@ class Product with _$Product {
     required String name,
     String? description,
     required String imageUrl,
+    required int quantity,
     String? brand,
     List<List<String>>? specs,
     required String? category,

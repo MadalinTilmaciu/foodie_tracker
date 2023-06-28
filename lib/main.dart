@@ -18,6 +18,7 @@ import 'src/presentations/containers/index.dart';
 import 'src/presentations/create_user_page.dart';
 import 'src/presentations/home_page.dart';
 import 'src/presentations/login_page.dart';
+import 'src/presentations/settings_page.dart';
 import 'src/reducer/reducer.dart';
 
 Future<void> main() async {
@@ -77,6 +78,7 @@ class MyApp extends StatelessWidget {
           },
           '/login': (BuildContext context) => const LoginPage(),
           '/createUser': (BuildContext context) => const CreateUserPage(),
+          '/settings': (BuildContext context) => const SettingsPage(),
         },
       ),
     );
