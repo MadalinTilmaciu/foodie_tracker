@@ -529,6 +529,7 @@ mixin _$Product {
   String? get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
+  String? get package => throw _privateConstructorUsedError;
   String? get brand => throw _privateConstructorUsedError;
   List<List<String>>? get specs => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
@@ -547,6 +548,7 @@ abstract class $ProductCopyWith<$Res> {
       String? description,
       String imageUrl,
       int quantity,
+      String? package,
       String? brand,
       List<List<String>>? specs,
       String? category});
@@ -568,6 +570,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyW
     Object? description = freezed,
     Object? imageUrl = null,
     Object? quantity = null,
+    Object? package = freezed,
     Object? brand = freezed,
     Object? specs = freezed,
     Object? category = freezed,
@@ -589,6 +592,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyW
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      package: freezed == package
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String?,
       brand: freezed == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
@@ -615,6 +622,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String? description,
       String imageUrl,
       int quantity,
+      String? package,
       String? brand,
       List<List<String>>? specs,
       String? category});
@@ -632,6 +640,7 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Prod
     Object? description = freezed,
     Object? imageUrl = null,
     Object? quantity = null,
+    Object? package = freezed,
     Object? brand = freezed,
     Object? specs = freezed,
     Object? category = freezed,
@@ -653,6 +662,10 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Prod
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      package: freezed == package
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String?,
       brand: freezed == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
@@ -677,6 +690,7 @@ class _$_Product implements _Product {
       this.description,
       required this.imageUrl,
       required this.quantity,
+      this.package,
       this.brand,
       final List<List<String>>? specs,
       required this.category})
@@ -692,6 +706,8 @@ class _$_Product implements _Product {
   final String imageUrl;
   @override
   final int quantity;
+  @override
+  final String? package;
   @override
   final String? brand;
   final List<List<String>>? _specs;
@@ -709,7 +725,7 @@ class _$_Product implements _Product {
 
   @override
   String toString() {
-    return 'Product(name: $name, description: $description, imageUrl: $imageUrl, quantity: $quantity, brand: $brand, specs: $specs, category: $category)';
+    return 'Product(name: $name, description: $description, imageUrl: $imageUrl, quantity: $quantity, package: $package, brand: $brand, specs: $specs, category: $category)';
   }
 
   @override
@@ -721,6 +737,7 @@ class _$_Product implements _Product {
             (identical(other.description, description) || other.description == description) &&
             (identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl) &&
             (identical(other.quantity, quantity) || other.quantity == quantity) &&
+            (identical(other.package, package) || other.package == package) &&
             (identical(other.brand, brand) || other.brand == brand) &&
             const DeepCollectionEquality().equals(other._specs, _specs) &&
             (identical(other.category, category) || other.category == category));
@@ -728,8 +745,8 @@ class _$_Product implements _Product {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, description, imageUrl, quantity, brand, const DeepCollectionEquality().hash(_specs), category);
+  int get hashCode => Object.hash(runtimeType, name, description, imageUrl, quantity, package, brand,
+      const DeepCollectionEquality().hash(_specs), category);
 
   @JsonKey(ignore: true)
   @override
@@ -750,6 +767,7 @@ abstract class _Product implements Product {
       final String? description,
       required final String imageUrl,
       required final int quantity,
+      final String? package,
       final String? brand,
       final List<List<String>>? specs,
       required final String? category}) = _$_Product;
@@ -764,6 +782,8 @@ abstract class _Product implements Product {
   String get imageUrl;
   @override
   int get quantity;
+  @override
+  String? get package;
   @override
   String? get brand;
   @override

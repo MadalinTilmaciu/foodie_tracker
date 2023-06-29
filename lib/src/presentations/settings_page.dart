@@ -1,4 +1,5 @@
 import 'package:bilions_ui/bilions_ui.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -51,10 +52,12 @@ class _SettingsPageState extends State<SettingsPage> {
                                     },
                                   );
                                 },
-                                child: CircleAvatar(
-                                  radius: 35,
-                                  backgroundImage: NetworkImage(
-                                    user.pictureUrl!,
+                                child: ClipOval(
+                                  child: CachedNetworkImage(
+                                    imageUrl: user.pictureUrl!,
+                                    fit: BoxFit.cover,
+                                    width: 70,
+                                    height: 70,
                                   ),
                                 ),
                               )
