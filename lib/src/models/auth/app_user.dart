@@ -6,7 +6,7 @@ class AppUser with _$AppUser {
     required String uid,
     required String email,
     required String displayName,
-    String? profileUrl,
+    String? pictureUrl,
   }) = _AppUser;
 
   factory AppUser.fromJson(Map<String, dynamic> json) => _$AppUserFromJson(Map<String, dynamic>.from(json));

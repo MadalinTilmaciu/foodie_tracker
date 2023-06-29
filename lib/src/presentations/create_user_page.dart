@@ -75,7 +75,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
                   Text(
                     'Get Started',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),

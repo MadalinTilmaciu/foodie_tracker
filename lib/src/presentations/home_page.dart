@@ -64,8 +64,6 @@ class HomePage extends StatelessWidget {
       controller: controller,
       screens: buildScreens(),
       items: navBarsItems(),
-      resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,

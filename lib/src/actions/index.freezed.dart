@@ -15,61 +15,62 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CheckUser {
+mixin _$InitializeApp {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function(AppUser? user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function(AppUser? user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function(AppUser? user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CheckUserStart value) $default, {
-    required TResult Function(CheckUserSuccessful value) successful,
-    required TResult Function(CheckUserError value) error,
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitializeAppStart value) start,
+    required TResult Function(InitializeAppSuccessful value) successful,
+    required TResult Function(InitializeAppError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CheckUserStart value)? $default, {
-    TResult? Function(CheckUserSuccessful value)? successful,
-    TResult? Function(CheckUserError value)? error,
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitializeAppStart value)? start,
+    TResult? Function(InitializeAppSuccessful value)? successful,
+    TResult? Function(InitializeAppError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CheckUserStart value)? $default, {
-    TResult Function(CheckUserSuccessful value)? successful,
-    TResult Function(CheckUserError value)? error,
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitializeAppStart value)? start,
+    TResult Function(InitializeAppSuccessful value)? successful,
+    TResult Function(InitializeAppError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CheckUserCopyWith<$Res> {
-  factory $CheckUserCopyWith(CheckUser value, $Res Function(CheckUser) then) = _$CheckUserCopyWithImpl<$Res, CheckUser>;
+abstract class $InitializeAppCopyWith<$Res> {
+  factory $InitializeAppCopyWith(InitializeApp value, $Res Function(InitializeApp) then) =
+      _$InitializeAppCopyWithImpl<$Res, InitializeApp>;
 }
 
 /// @nodoc
-class _$CheckUserCopyWithImpl<$Res, $Val extends CheckUser> implements $CheckUserCopyWith<$Res> {
-  _$CheckUserCopyWithImpl(this._value, this._then);
+class _$InitializeAppCopyWithImpl<$Res, $Val extends InitializeApp> implements $InitializeAppCopyWith<$Res> {
+  _$InitializeAppCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -78,30 +79,31 @@ class _$CheckUserCopyWithImpl<$Res, $Val extends CheckUser> implements $CheckUse
 }
 
 /// @nodoc
-abstract class _$$CheckUserStartCopyWith<$Res> {
-  factory _$$CheckUserStartCopyWith(_$CheckUserStart value, $Res Function(_$CheckUserStart) then) =
-      __$$CheckUserStartCopyWithImpl<$Res>;
+abstract class _$$InitializeAppStartCopyWith<$Res> {
+  factory _$$InitializeAppStartCopyWith(_$InitializeAppStart value, $Res Function(_$InitializeAppStart) then) =
+      __$$InitializeAppStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CheckUserStartCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<$Res, _$CheckUserStart>
-    implements _$$CheckUserStartCopyWith<$Res> {
-  __$$CheckUserStartCopyWithImpl(_$CheckUserStart _value, $Res Function(_$CheckUserStart) _then) : super(_value, _then);
+class __$$InitializeAppStartCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppStart>
+    implements _$$InitializeAppStartCopyWith<$Res> {
+  __$$InitializeAppStartCopyWithImpl(_$InitializeAppStart _value, $Res Function(_$InitializeAppStart) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CheckUserStart implements CheckUserStart {
-  const _$CheckUserStart();
+class _$InitializeAppStart implements InitializeAppStart {
+  const _$InitializeAppStart();
 
   @override
   String toString() {
-    return 'CheckUser()';
+    return 'InitializeApp.start()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CheckUserStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitializeAppStart);
   }
 
   @override
@@ -109,81 +111,82 @@ class _$CheckUserStart implements CheckUserStart {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function(AppUser? user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default();
+    return start();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function(AppUser? user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call();
+    return start?.call();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function(AppUser? user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default();
+    if (start != null) {
+      return start();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CheckUserStart value) $default, {
-    required TResult Function(CheckUserSuccessful value) successful,
-    required TResult Function(CheckUserError value) error,
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitializeAppStart value) start,
+    required TResult Function(InitializeAppSuccessful value) successful,
+    required TResult Function(InitializeAppError value) error,
   }) {
-    return $default(this);
+    return start(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CheckUserStart value)? $default, {
-    TResult? Function(CheckUserSuccessful value)? successful,
-    TResult? Function(CheckUserError value)? error,
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitializeAppStart value)? start,
+    TResult? Function(InitializeAppSuccessful value)? successful,
+    TResult? Function(InitializeAppError value)? error,
   }) {
-    return $default?.call(this);
+    return start?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CheckUserStart value)? $default, {
-    TResult Function(CheckUserSuccessful value)? successful,
-    TResult Function(CheckUserError value)? error,
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitializeAppStart value)? start,
+    TResult Function(InitializeAppSuccessful value)? successful,
+    TResult Function(InitializeAppError value)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(this);
+    if (start != null) {
+      return start(this);
     }
     return orElse();
   }
 }
 
-abstract class CheckUserStart implements CheckUser {
-  const factory CheckUserStart() = _$CheckUserStart;
+abstract class InitializeAppStart implements InitializeApp {
+  const factory InitializeAppStart() = _$InitializeAppStart;
 }
 
 /// @nodoc
-abstract class _$$CheckUserSuccessfulCopyWith<$Res> {
-  factory _$$CheckUserSuccessfulCopyWith(_$CheckUserSuccessful value, $Res Function(_$CheckUserSuccessful) then) =
-      __$$CheckUserSuccessfulCopyWithImpl<$Res>;
+abstract class _$$InitializeAppSuccessfulCopyWith<$Res> {
+  factory _$$InitializeAppSuccessfulCopyWith(
+          _$InitializeAppSuccessful value, $Res Function(_$InitializeAppSuccessful) then) =
+      __$$InitializeAppSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser? user});
 
@@ -191,9 +194,10 @@ abstract class _$$CheckUserSuccessfulCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CheckUserSuccessfulCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<$Res, _$CheckUserSuccessful>
-    implements _$$CheckUserSuccessfulCopyWith<$Res> {
-  __$$CheckUserSuccessfulCopyWithImpl(_$CheckUserSuccessful _value, $Res Function(_$CheckUserSuccessful) _then)
+class __$$InitializeAppSuccessfulCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppSuccessful>
+    implements _$$InitializeAppSuccessfulCopyWith<$Res> {
+  __$$InitializeAppSuccessfulCopyWithImpl(
+      _$InitializeAppSuccessful _value, $Res Function(_$InitializeAppSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -201,7 +205,7 @@ class __$$CheckUserSuccessfulCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_$CheckUserSuccessful(
+    return _then(_$InitializeAppSuccessful(
       freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -224,22 +228,22 @@ class __$$CheckUserSuccessfulCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<
 
 /// @nodoc
 
-class _$CheckUserSuccessful implements CheckUserSuccessful {
-  const _$CheckUserSuccessful(this.user);
+class _$InitializeAppSuccessful implements InitializeAppSuccessful {
+  const _$InitializeAppSuccessful(this.user);
 
   @override
   final AppUser? user;
 
   @override
   String toString() {
-    return 'CheckUser.successful(user: $user)';
+    return 'InitializeApp.successful(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckUserSuccessful &&
+            other is _$InitializeAppSuccessful &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -249,13 +253,13 @@ class _$CheckUserSuccessful implements CheckUserSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckUserSuccessfulCopyWith<_$CheckUserSuccessful> get copyWith =>
-      __$$CheckUserSuccessfulCopyWithImpl<_$CheckUserSuccessful>(this, _$identity);
+  _$$InitializeAppSuccessfulCopyWith<_$InitializeAppSuccessful> get copyWith =>
+      __$$InitializeAppSuccessfulCopyWithImpl<_$InitializeAppSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function(AppUser? user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -264,8 +268,8 @@ class _$CheckUserSuccessful implements CheckUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function(AppUser? user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -274,8 +278,8 @@ class _$CheckUserSuccessful implements CheckUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function(AppUser? user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -288,30 +292,30 @@ class _$CheckUserSuccessful implements CheckUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CheckUserStart value) $default, {
-    required TResult Function(CheckUserSuccessful value) successful,
-    required TResult Function(CheckUserError value) error,
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitializeAppStart value) start,
+    required TResult Function(InitializeAppSuccessful value) successful,
+    required TResult Function(InitializeAppError value) error,
   }) {
     return successful(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CheckUserStart value)? $default, {
-    TResult? Function(CheckUserSuccessful value)? successful,
-    TResult? Function(CheckUserError value)? error,
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitializeAppStart value)? start,
+    TResult? Function(InitializeAppSuccessful value)? successful,
+    TResult? Function(InitializeAppError value)? error,
   }) {
     return successful?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CheckUserStart value)? $default, {
-    TResult Function(CheckUserSuccessful value)? successful,
-    TResult Function(CheckUserError value)? error,
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitializeAppStart value)? start,
+    TResult Function(InitializeAppSuccessful value)? successful,
+    TResult Function(InitializeAppError value)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -321,26 +325,27 @@ class _$CheckUserSuccessful implements CheckUserSuccessful {
   }
 }
 
-abstract class CheckUserSuccessful implements CheckUser, UserAction {
-  const factory CheckUserSuccessful(final AppUser? user) = _$CheckUserSuccessful;
+abstract class InitializeAppSuccessful implements InitializeApp {
+  const factory InitializeAppSuccessful(final AppUser? user) = _$InitializeAppSuccessful;
 
   AppUser? get user;
   @JsonKey(ignore: true)
-  _$$CheckUserSuccessfulCopyWith<_$CheckUserSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$InitializeAppSuccessfulCopyWith<_$InitializeAppSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CheckUserErrorCopyWith<$Res> {
-  factory _$$CheckUserErrorCopyWith(_$CheckUserError value, $Res Function(_$CheckUserError) then) =
-      __$$CheckUserErrorCopyWithImpl<$Res>;
+abstract class _$$InitializeAppErrorCopyWith<$Res> {
+  factory _$$InitializeAppErrorCopyWith(_$InitializeAppError value, $Res Function(_$InitializeAppError) then) =
+      __$$InitializeAppErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$CheckUserErrorCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<$Res, _$CheckUserError>
-    implements _$$CheckUserErrorCopyWith<$Res> {
-  __$$CheckUserErrorCopyWithImpl(_$CheckUserError _value, $Res Function(_$CheckUserError) _then) : super(_value, _then);
+class __$$InitializeAppErrorCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppError>
+    implements _$$InitializeAppErrorCopyWith<$Res> {
+  __$$InitializeAppErrorCopyWithImpl(_$InitializeAppError _value, $Res Function(_$InitializeAppError) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -348,7 +353,7 @@ class __$$CheckUserErrorCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<$Res,
     Object? error = null,
     Object? stackTrace = null,
   }) {
-    return _then(_$CheckUserError(
+    return _then(_$InitializeAppError(
       null == error ? _value.error : error,
       null == stackTrace
           ? _value.stackTrace
@@ -360,8 +365,8 @@ class __$$CheckUserErrorCopyWithImpl<$Res> extends _$CheckUserCopyWithImpl<$Res,
 
 /// @nodoc
 
-class _$CheckUserError implements CheckUserError {
-  const _$CheckUserError(this.error, this.stackTrace);
+class _$InitializeAppError implements InitializeAppError {
+  const _$InitializeAppError(this.error, this.stackTrace);
 
   @override
   final Object error;
@@ -370,14 +375,14 @@ class _$CheckUserError implements CheckUserError {
 
   @override
   String toString() {
-    return 'CheckUser.error(error: $error, stackTrace: $stackTrace)';
+    return 'InitializeApp.error(error: $error, stackTrace: $stackTrace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckUserError &&
+            other is _$InitializeAppError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
@@ -388,13 +393,13 @@ class _$CheckUserError implements CheckUserError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckUserErrorCopyWith<_$CheckUserError> get copyWith =>
-      __$$CheckUserErrorCopyWithImpl<_$CheckUserError>(this, _$identity);
+  _$$InitializeAppErrorCopyWith<_$InitializeAppError> get copyWith =>
+      __$$InitializeAppErrorCopyWithImpl<_$InitializeAppError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function(AppUser? user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -403,8 +408,8 @@ class _$CheckUserError implements CheckUserError {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function(AppUser? user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -413,8 +418,8 @@ class _$CheckUserError implements CheckUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function(AppUser? user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -427,30 +432,30 @@ class _$CheckUserError implements CheckUserError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CheckUserStart value) $default, {
-    required TResult Function(CheckUserSuccessful value) successful,
-    required TResult Function(CheckUserError value) error,
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitializeAppStart value) start,
+    required TResult Function(InitializeAppSuccessful value) successful,
+    required TResult Function(InitializeAppError value) error,
   }) {
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CheckUserStart value)? $default, {
-    TResult? Function(CheckUserSuccessful value)? successful,
-    TResult? Function(CheckUserError value)? error,
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitializeAppStart value)? start,
+    TResult? Function(InitializeAppSuccessful value)? successful,
+    TResult? Function(InitializeAppError value)? error,
   }) {
     return error?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CheckUserStart value)? $default, {
-    TResult Function(CheckUserSuccessful value)? successful,
-    TResult Function(CheckUserError value)? error,
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitializeAppStart value)? start,
+    TResult Function(InitializeAppSuccessful value)? successful,
+    TResult Function(InitializeAppError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -460,57 +465,57 @@ class _$CheckUserError implements CheckUserError {
   }
 }
 
-abstract class CheckUserError implements CheckUser {
-  const factory CheckUserError(final Object error, final StackTrace stackTrace) = _$CheckUserError;
+abstract class InitializeAppError implements InitializeApp {
+  const factory InitializeAppError(final Object error, final StackTrace stackTrace) = _$InitializeAppError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$CheckUserErrorCopyWith<_$CheckUserError> get copyWith => throw _privateConstructorUsedError;
+  _$$InitializeAppErrorCopyWith<_$InitializeAppError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$CreateUser {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CreateUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateUserStart value) start,
     required TResult Function(CreateUserSuccessful value) successful,
     required TResult Function(CreateUserError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CreateUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateUserStart value)? start,
     TResult? Function(CreateUserSuccessful value)? successful,
     TResult? Function(CreateUserError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CreateUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateUserStart value)? start,
     TResult Function(CreateUserSuccessful value)? successful,
     TResult Function(CreateUserError value)? error,
     required TResult orElse(),
@@ -614,7 +619,7 @@ class _$CreateUserStart implements CreateUserStart {
 
   @override
   String toString() {
-    return 'CreateUser(email: $email, password: $password, result: $result, pendingId: $pendingId)';
+    return 'CreateUser.start(email: $email, password: $password, result: $result, pendingId: $pendingId)';
   }
 
   @override
@@ -639,68 +644,68 @@ class _$CreateUserStart implements CreateUserStart {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return $default(email, password, result, pendingId);
+    return start(email, password, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return $default?.call(email, password, result, pendingId);
+    return start?.call(email, password, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(email, password, result, pendingId);
+    if (start != null) {
+      return start(email, password, result, pendingId);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CreateUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateUserStart value) start,
     required TResult Function(CreateUserSuccessful value) successful,
     required TResult Function(CreateUserError value) error,
   }) {
-    return $default(this);
+    return start(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CreateUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateUserStart value)? start,
     TResult? Function(CreateUserSuccessful value)? successful,
     TResult? Function(CreateUserError value)? error,
   }) {
-    return $default?.call(this);
+    return start?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CreateUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateUserStart value)? start,
     TResult Function(CreateUserSuccessful value)? successful,
     TResult Function(CreateUserError value)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(this);
+    if (start != null) {
+      return start(this);
     }
     return orElse();
   }
@@ -729,9 +734,7 @@ abstract class _$$CreateUserSuccessfulCopyWith<$Res> implements $CreateUserCopyW
       __$$CreateUserSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser user, String pendingId});
-
-  $AppUserCopyWith<$Res> get user;
+  $Res call({String pendingId});
 }
 
 /// @nodoc
@@ -743,44 +746,29 @@ class __$$CreateUserSuccessfulCopyWithImpl<$Res> extends _$CreateUserCopyWithImp
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
     Object? pendingId = null,
   }) {
     return _then(_$CreateUserSuccessful(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AppUserCopyWith<$Res> get user {
-    return $AppUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$CreateUserSuccessful implements CreateUserSuccessful {
-  const _$CreateUserSuccessful(this.user, {this.pendingId = _kCreateUserPendingId});
+  const _$CreateUserSuccessful({this.pendingId = _kCreateUserPendingId});
 
-  @override
-  final AppUser user;
   @override
   @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'CreateUser.successful(user: $user, pendingId: $pendingId)';
+    return 'CreateUser.successful(pendingId: $pendingId)';
   }
 
   @override
@@ -788,12 +776,11 @@ class _$CreateUserSuccessful implements CreateUserSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateUserSuccessful &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, pendingId);
+  int get hashCode => Object.hash(runtimeType, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -803,42 +790,42 @@ class _$CreateUserSuccessful implements CreateUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return successful(user, pendingId);
+    return successful(pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return successful?.call(user, pendingId);
+    return successful?.call(pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(user, pendingId);
+      return successful(pendingId);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CreateUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateUserStart value) start,
     required TResult Function(CreateUserSuccessful value) successful,
     required TResult Function(CreateUserError value) error,
   }) {
@@ -847,8 +834,8 @@ class _$CreateUserSuccessful implements CreateUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CreateUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateUserStart value)? start,
     TResult? Function(CreateUserSuccessful value)? successful,
     TResult? Function(CreateUserError value)? error,
   }) {
@@ -857,8 +844,8 @@ class _$CreateUserSuccessful implements CreateUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CreateUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateUserStart value)? start,
     TResult Function(CreateUserSuccessful value)? successful,
     TResult Function(CreateUserError value)? error,
     required TResult orElse(),
@@ -870,10 +857,9 @@ class _$CreateUserSuccessful implements CreateUserSuccessful {
   }
 }
 
-abstract class CreateUserSuccessful implements CreateUser, StopAction, UserAction {
-  const factory CreateUserSuccessful(final AppUser user, {final String pendingId}) = _$CreateUserSuccessful;
+abstract class CreateUserSuccessful implements CreateUser, StopAction {
+  const factory CreateUserSuccessful({final String pendingId}) = _$CreateUserSuccessful;
 
-  AppUser get user;
   @override
   String get pendingId;
   @override
@@ -956,9 +942,9 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
@@ -966,9 +952,9 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
@@ -976,9 +962,9 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
@@ -990,8 +976,8 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(CreateUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateUserStart value) start,
     required TResult Function(CreateUserSuccessful value) successful,
     required TResult Function(CreateUserError value) error,
   }) {
@@ -1000,8 +986,8 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(CreateUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateUserStart value)? start,
     TResult? Function(CreateUserSuccessful value)? successful,
     TResult? Function(CreateUserError value)? error,
   }) {
@@ -1010,8 +996,8 @@ class _$CreateUserError implements CreateUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(CreateUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateUserStart value)? start,
     TResult Function(CreateUserSuccessful value)? successful,
     TResult Function(CreateUserError value)? error,
     required TResult orElse(),
@@ -1040,44 +1026,44 @@ abstract class CreateUserError implements CreateUser, StopAction {
 mixin _$LoginUser {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LoginUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginUserStart value) start,
     required TResult Function(LoginUserSuccessful value) successful,
     required TResult Function(LoginUserError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LoginUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginUserStart value)? start,
     TResult? Function(LoginUserSuccessful value)? successful,
     TResult? Function(LoginUserError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LoginUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginUserStart value)? start,
     TResult Function(LoginUserSuccessful value)? successful,
     TResult Function(LoginUserError value)? error,
     required TResult orElse(),
@@ -1179,7 +1165,7 @@ class _$LoginUserStart implements LoginUserStart {
 
   @override
   String toString() {
-    return 'LoginUser(email: $email, password: $password, result: $result, pendingId: $pendingId)';
+    return 'LoginUser.start(email: $email, password: $password, result: $result, pendingId: $pendingId)';
   }
 
   @override
@@ -1204,68 +1190,68 @@ class _$LoginUserStart implements LoginUserStart {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return $default(email, password, result, pendingId);
+    return start(email, password, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return $default?.call(email, password, result, pendingId);
+    return start?.call(email, password, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(email, password, result, pendingId);
+    if (start != null) {
+      return start(email, password, result, pendingId);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LoginUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginUserStart value) start,
     required TResult Function(LoginUserSuccessful value) successful,
     required TResult Function(LoginUserError value) error,
   }) {
-    return $default(this);
+    return start(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LoginUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginUserStart value)? start,
     TResult? Function(LoginUserSuccessful value)? successful,
     TResult? Function(LoginUserError value)? error,
   }) {
-    return $default?.call(this);
+    return start?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LoginUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginUserStart value)? start,
     TResult Function(LoginUserSuccessful value)? successful,
     TResult Function(LoginUserError value)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(this);
+    if (start != null) {
+      return start(this);
     }
     return orElse();
   }
@@ -1294,9 +1280,7 @@ abstract class _$$LoginUserSuccessfulCopyWith<$Res> implements $LoginUserCopyWit
       __$$LoginUserSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser user, String pendingId});
-
-  $AppUserCopyWith<$Res> get user;
+  $Res call({String pendingId});
 }
 
 /// @nodoc
@@ -1308,44 +1292,29 @@ class __$$LoginUserSuccessfulCopyWithImpl<$Res> extends _$LoginUserCopyWithImpl<
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
     Object? pendingId = null,
   }) {
     return _then(_$LoginUserSuccessful(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AppUserCopyWith<$Res> get user {
-    return $AppUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$LoginUserSuccessful implements LoginUserSuccessful {
-  const _$LoginUserSuccessful(this.user, {this.pendingId = _kLoginUserPendingId});
+  const _$LoginUserSuccessful({this.pendingId = _kLoginUserPendingId});
 
-  @override
-  final AppUser user;
   @override
   @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'LoginUser.successful(user: $user, pendingId: $pendingId)';
+    return 'LoginUser.successful(pendingId: $pendingId)';
   }
 
   @override
@@ -1353,12 +1322,11 @@ class _$LoginUserSuccessful implements LoginUserSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginUserSuccessful &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, pendingId);
+  int get hashCode => Object.hash(runtimeType, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1368,42 +1336,42 @@ class _$LoginUserSuccessful implements LoginUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return successful(user, pendingId);
+    return successful(pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return successful?.call(user, pendingId);
+    return successful?.call(pendingId);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(user, pendingId);
+      return successful(pendingId);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LoginUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginUserStart value) start,
     required TResult Function(LoginUserSuccessful value) successful,
     required TResult Function(LoginUserError value) error,
   }) {
@@ -1412,8 +1380,8 @@ class _$LoginUserSuccessful implements LoginUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LoginUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginUserStart value)? start,
     TResult? Function(LoginUserSuccessful value)? successful,
     TResult? Function(LoginUserError value)? error,
   }) {
@@ -1422,8 +1390,8 @@ class _$LoginUserSuccessful implements LoginUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LoginUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginUserStart value)? start,
     TResult Function(LoginUserSuccessful value)? successful,
     TResult Function(LoginUserError value)? error,
     required TResult orElse(),
@@ -1435,10 +1403,9 @@ class _$LoginUserSuccessful implements LoginUserSuccessful {
   }
 }
 
-abstract class LoginUserSuccessful implements LoginUser, StopAction, UserAction {
-  const factory LoginUserSuccessful(final AppUser user, {final String pendingId}) = _$LoginUserSuccessful;
+abstract class LoginUserSuccessful implements LoginUser, StopAction {
+  const factory LoginUserSuccessful({final String pendingId}) = _$LoginUserSuccessful;
 
-  AppUser get user;
   @override
   String get pendingId;
   @override
@@ -1520,9 +1487,9 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId) $default, {
-    required TResult Function(AppUser user, String pendingId) successful,
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
@@ -1530,9 +1497,9 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult? Function(AppUser user, String pendingId)? successful,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
@@ -1540,9 +1507,9 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result, String pendingId)? $default, {
-    TResult Function(AppUser user, String pendingId)? successful,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
@@ -1554,8 +1521,8 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LoginUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginUserStart value) start,
     required TResult Function(LoginUserSuccessful value) successful,
     required TResult Function(LoginUserError value) error,
   }) {
@@ -1564,8 +1531,8 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LoginUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginUserStart value)? start,
     TResult? Function(LoginUserSuccessful value)? successful,
     TResult? Function(LoginUserError value)? error,
   }) {
@@ -1574,8 +1541,8 @@ class _$LoginUserError implements LoginUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LoginUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginUserStart value)? start,
     TResult Function(LoginUserSuccessful value)? successful,
     TResult Function(LoginUserError value)? error,
     required TResult orElse(),
@@ -1603,44 +1570,44 @@ abstract class LoginUserError implements LoginUser, StopAction {
 /// @nodoc
 mixin _$LogoutUser {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LogoutUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutUserStart value) start,
     required TResult Function(LogoutUserSuccessful value) successful,
     required TResult Function(LogoutUserError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LogoutUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutUserStart value)? start,
     TResult? Function(LogoutUserSuccessful value)? successful,
     TResult? Function(LogoutUserError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LogoutUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutUserStart value)? start,
     TResult Function(LogoutUserSuccessful value)? successful,
     TResult Function(LogoutUserError value)? error,
     required TResult orElse(),
@@ -1684,7 +1651,7 @@ class _$LogoutUserStart implements LogoutUserStart {
 
   @override
   String toString() {
-    return 'LogoutUser()';
+    return 'LogoutUser.start()';
   }
 
   @override
@@ -1697,68 +1664,68 @@ class _$LogoutUserStart implements LogoutUserStart {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default();
+    return start();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call();
+    return start?.call();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default();
+    if (start != null) {
+      return start();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LogoutUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutUserStart value) start,
     required TResult Function(LogoutUserSuccessful value) successful,
     required TResult Function(LogoutUserError value) error,
   }) {
-    return $default(this);
+    return start(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LogoutUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutUserStart value)? start,
     TResult? Function(LogoutUserSuccessful value)? successful,
     TResult? Function(LogoutUserError value)? error,
   }) {
-    return $default?.call(this);
+    return start?.call(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LogoutUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutUserStart value)? start,
     TResult Function(LogoutUserSuccessful value)? successful,
     TResult Function(LogoutUserError value)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(this);
+    if (start != null) {
+      return start(this);
     }
     return orElse();
   }
@@ -1801,8 +1768,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -1811,8 +1778,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -1821,8 +1788,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1835,8 +1802,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LogoutUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutUserStart value) start,
     required TResult Function(LogoutUserSuccessful value) successful,
     required TResult Function(LogoutUserError value) error,
   }) {
@@ -1845,8 +1812,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LogoutUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutUserStart value)? start,
     TResult? Function(LogoutUserSuccessful value)? successful,
     TResult? Function(LogoutUserError value)? error,
   }) {
@@ -1855,8 +1822,8 @@ class _$LogoutUserSuccessful implements LogoutUserSuccessful {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LogoutUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutUserStart value)? start,
     TResult Function(LogoutUserSuccessful value)? successful,
     TResult Function(LogoutUserError value)? error,
     required TResult orElse(),
@@ -1937,8 +1904,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -1947,8 +1914,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -1957,8 +1924,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1971,8 +1938,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(LogoutUserStart value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutUserStart value) start,
     required TResult Function(LogoutUserSuccessful value) successful,
     required TResult Function(LogoutUserError value) error,
   }) {
@@ -1981,8 +1948,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(LogoutUserStart value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutUserStart value)? start,
     TResult? Function(LogoutUserSuccessful value)? successful,
     TResult? Function(LogoutUserError value)? error,
   }) {
@@ -1991,8 +1958,8 @@ class _$LogoutUserError implements LogoutUserError {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(LogoutUserStart value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutUserStart value)? start,
     TResult Function(LogoutUserSuccessful value)? successful,
     TResult Function(LogoutUserError value)? error,
     required TResult orElse(),
@@ -2011,6 +1978,535 @@ abstract class LogoutUserError implements LogoutUser {
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
   _$$LogoutUserErrorCopyWith<_$LogoutUserError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$UpdatePictureUrl {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdatePictureUrlStart value) start,
+    required TResult Function(UpdatePictureUrlSuccessful value) successful,
+    required TResult Function(UpdatePictureUrlError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdatePictureUrlStart value)? start,
+    TResult? Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult? Function(UpdatePictureUrlError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdatePictureUrlStart value)? start,
+    TResult Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult Function(UpdatePictureUrlError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdatePictureUrlCopyWith<UpdatePictureUrl> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdatePictureUrlCopyWith<$Res> {
+  factory $UpdatePictureUrlCopyWith(UpdatePictureUrl value, $Res Function(UpdatePictureUrl) then) =
+      _$UpdatePictureUrlCopyWithImpl<$Res, UpdatePictureUrl>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$UpdatePictureUrlCopyWithImpl<$Res, $Val extends UpdatePictureUrl> implements $UpdatePictureUrlCopyWith<$Res> {
+  _$UpdatePictureUrlCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdatePictureUrlStartCopyWith<$Res> implements $UpdatePictureUrlCopyWith<$Res> {
+  factory _$$UpdatePictureUrlStartCopyWith(_$UpdatePictureUrlStart value, $Res Function(_$UpdatePictureUrlStart) then) =
+      __$$UpdatePictureUrlStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String path, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdatePictureUrlStartCopyWithImpl<$Res> extends _$UpdatePictureUrlCopyWithImpl<$Res, _$UpdatePictureUrlStart>
+    implements _$$UpdatePictureUrlStartCopyWith<$Res> {
+  __$$UpdatePictureUrlStartCopyWithImpl(_$UpdatePictureUrlStart _value, $Res Function(_$UpdatePictureUrlStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdatePictureUrlStart(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePictureUrlStart implements UpdatePictureUrlStart {
+  const _$UpdatePictureUrlStart({required this.path, this.pendingId = _kCreateUserPendingId});
+
+  @override
+  final String path;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdatePictureUrl.start(path: $path, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePictureUrlStart &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePictureUrlStartCopyWith<_$UpdatePictureUrlStart> get copyWith =>
+      __$$UpdatePictureUrlStartCopyWithImpl<_$UpdatePictureUrlStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(path, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(path, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(path, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdatePictureUrlStart value) start,
+    required TResult Function(UpdatePictureUrlSuccessful value) successful,
+    required TResult Function(UpdatePictureUrlError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdatePictureUrlStart value)? start,
+    TResult? Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult? Function(UpdatePictureUrlError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdatePictureUrlStart value)? start,
+    TResult Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult Function(UpdatePictureUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePictureUrlStart implements UpdatePictureUrl, StartAction {
+  const factory UpdatePictureUrlStart({required final String path, final String pendingId}) = _$UpdatePictureUrlStart;
+
+  String get path;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdatePictureUrlStartCopyWith<_$UpdatePictureUrlStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdatePictureUrlSuccessfulCopyWith<$Res> implements $UpdatePictureUrlCopyWith<$Res> {
+  factory _$$UpdatePictureUrlSuccessfulCopyWith(
+          _$UpdatePictureUrlSuccessful value, $Res Function(_$UpdatePictureUrlSuccessful) then) =
+      __$$UpdatePictureUrlSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$UpdatePictureUrlSuccessfulCopyWithImpl<$Res>
+    extends _$UpdatePictureUrlCopyWithImpl<$Res, _$UpdatePictureUrlSuccessful>
+    implements _$$UpdatePictureUrlSuccessfulCopyWith<$Res> {
+  __$$UpdatePictureUrlSuccessfulCopyWithImpl(
+      _$UpdatePictureUrlSuccessful _value, $Res Function(_$UpdatePictureUrlSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdatePictureUrlSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePictureUrlSuccessful implements UpdatePictureUrlSuccessful {
+  const _$UpdatePictureUrlSuccessful({this.pendingId = _kCreateUserPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdatePictureUrl.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePictureUrlSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePictureUrlSuccessfulCopyWith<_$UpdatePictureUrlSuccessful> get copyWith =>
+      __$$UpdatePictureUrlSuccessfulCopyWithImpl<_$UpdatePictureUrlSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdatePictureUrlStart value) start,
+    required TResult Function(UpdatePictureUrlSuccessful value) successful,
+    required TResult Function(UpdatePictureUrlError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdatePictureUrlStart value)? start,
+    TResult? Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult? Function(UpdatePictureUrlError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdatePictureUrlStart value)? start,
+    TResult Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult Function(UpdatePictureUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePictureUrlSuccessful implements UpdatePictureUrl, StopAction {
+  const factory UpdatePictureUrlSuccessful({final String pendingId}) = _$UpdatePictureUrlSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdatePictureUrlSuccessfulCopyWith<_$UpdatePictureUrlSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdatePictureUrlErrorCopyWith<$Res> implements $UpdatePictureUrlCopyWith<$Res> {
+  factory _$$UpdatePictureUrlErrorCopyWith(_$UpdatePictureUrlError value, $Res Function(_$UpdatePictureUrlError) then) =
+      __$$UpdatePictureUrlErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdatePictureUrlErrorCopyWithImpl<$Res> extends _$UpdatePictureUrlCopyWithImpl<$Res, _$UpdatePictureUrlError>
+    implements _$$UpdatePictureUrlErrorCopyWith<$Res> {
+  __$$UpdatePictureUrlErrorCopyWithImpl(_$UpdatePictureUrlError _value, $Res Function(_$UpdatePictureUrlError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdatePictureUrlError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePictureUrlError implements UpdatePictureUrlError {
+  const _$UpdatePictureUrlError(this.error, this.stackTrace, {this.pendingId = _kCreateUserPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdatePictureUrl.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePictureUrlError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePictureUrlErrorCopyWith<_$UpdatePictureUrlError> get copyWith =>
+      __$$UpdatePictureUrlErrorCopyWithImpl<_$UpdatePictureUrlError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdatePictureUrlStart value) start,
+    required TResult Function(UpdatePictureUrlSuccessful value) successful,
+    required TResult Function(UpdatePictureUrlError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdatePictureUrlStart value)? start,
+    TResult? Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult? Function(UpdatePictureUrlError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdatePictureUrlStart value)? start,
+    TResult Function(UpdatePictureUrlSuccessful value)? successful,
+    TResult Function(UpdatePictureUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePictureUrlError implements UpdatePictureUrl, StopAction {
+  const factory UpdatePictureUrlError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$UpdatePictureUrlError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdatePictureUrlErrorCopyWith<_$UpdatePictureUrlError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

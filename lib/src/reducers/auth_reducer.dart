@@ -5,10 +5,10 @@ import '../models/index.dart';
 
 Reducer<AuthState> authReducer = combineReducers(
   <Reducer<AuthState>>[
-    TypedReducer<AuthState, UserAction>(_userAction).call,
+    TypedReducer<AuthState, InitializeAppSuccessful>(_intializeAppSuccessful).call,
   ],
 );
 
-AuthState _userAction(AuthState state, UserAction action) {
+AuthState _intializeAppSuccessful(AuthState state, InitializeAppSuccessful action) {
   return state.copyWith(user: action.user);
 }

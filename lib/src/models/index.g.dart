@@ -25,14 +25,14 @@ _$_AppUser _$$_AppUserFromJson(Map<String, dynamic> json) => _$_AppUser(
       uid: json['uid'] as String,
       email: json['email'] as String,
       displayName: json['displayName'] as String,
-      profileUrl: json['profileUrl'] as String?,
+      pictureUrl: json['pictureUrl'] as String?,
     );
 
 Map<String, dynamic> _$$_AppUserToJson(_$_AppUser instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'displayName': instance.displayName,
-      'profileUrl': instance.profileUrl,
+      'pictureUrl': instance.pictureUrl,
     };
 
 _$_AuthState _$$_AuthStateFromJson(Map<String, dynamic> json) => _$_AuthState(

@@ -5,7 +5,7 @@ const String _kCreateUserPendingId = 'CreateUser';
 @freezed
 class CreateUser with _$CreateUser {
   @Implements<StartAction>()
-  const factory CreateUser({
+  const factory CreateUser.start({
     required String email,
     required String password,
     required ActionResult result,
@@ -13,9 +13,7 @@ class CreateUser with _$CreateUser {
   }) = CreateUserStart;
 
   @Implements<StopAction>()
-  @Implements<UserAction>()
-  const factory CreateUser.successful(
-    AppUser user, {
+  const factory CreateUser.successful({
     @Default(_kCreateUserPendingId) String pendingId,
   }) = CreateUserSuccessful;
 

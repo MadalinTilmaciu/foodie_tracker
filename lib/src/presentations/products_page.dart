@@ -11,7 +11,7 @@ class ProductsPage extends StatelessWidget {
           child: Text(
             'Products page',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),

@@ -5,7 +5,7 @@ const String _kLoginUserPendingId = 'LoginUser';
 @freezed
 class LoginUser with _$LoginUser {
   @Implements<StartAction>()
-  const factory LoginUser({
+  const factory LoginUser.start({
     required String email,
     required String password,
     required ActionResult result,
@@ -13,9 +13,7 @@ class LoginUser with _$LoginUser {
   }) = LoginUserStart;
 
   @Implements<StopAction>()
-  @Implements<UserAction>()
-  const factory LoginUser.successful(
-    AppUser user, {
+  const factory LoginUser.successful({
     @Default(_kLoginUserPendingId) String pendingId,
   }) = LoginUserSuccessful;
 

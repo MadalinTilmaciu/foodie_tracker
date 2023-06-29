@@ -11,7 +11,7 @@ class RecipesPage extends StatelessWidget {
           child: Text(
             'Recipes page',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),

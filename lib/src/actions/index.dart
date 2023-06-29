@@ -4,18 +4,15 @@ import '../models/index.dart';
 
 part 'index.freezed.dart';
 
-part 'auth/check_user.dart';
+part 'auth/initialize_app.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
+part 'auth/update_picture_url.dart';
 
 part 'products/list_category.dart';
 part 'products/list_products.dart';
 part 'products/set_category.dart';
-
-abstract class UserAction {
-  AppUser? get user;
-}
 
 abstract class PendingActions {
   String get pendingId;

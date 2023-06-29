@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     'Hello there,',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     'Welcome back',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),

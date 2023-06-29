@@ -11,7 +11,7 @@ class MessagesPage extends StatelessWidget {
           child: Text(
             'Messages page',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),

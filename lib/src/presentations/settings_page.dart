@@ -1,6 +1,7 @@
+import 'package:bilions_ui/bilions_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:redux/redux.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 import '../actions/index.dart';
@@ -15,28 +16,12 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final ImagePicker _picker = ImagePicker();
-
-  Future<void> _pickImage() async {
-    try {
-      // ignore: unused_local_variable
-      final XFile? pickedFile = await _picker.pickImage(
-        source: ImageSource.camera,
-        maxWidth: 150,
-        imageQuality: 50,
-      );
-    } catch (e) {
-      setState(() {});
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: UserContainer(builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
-          // appBar: appBar,
           body: SettingsList(
             platform: DevicePlatform.iOS,
             sections: <AbstractSettingsSection>[
@@ -55,15 +40,21 @@ class _SettingsPageState extends State<SettingsPage> {
                             const SizedBox(
                               height: 5,
                             ),
-                            if (user!.profileUrl != null)
+                            if (user!.pictureUrl != null)
                               GestureDetector(
-                                onTap: () {
-                                  _pickImage();
+                                onTap: () async {
+                                  openUploader(
+                                    context,
+                                    onPicked: (FileInfo file) {
+                                      final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                      store.dispatch(UpdatePictureUrlStart(path: file.path));
+                                    },
+                                  );
                                 },
                                 child: CircleAvatar(
                                   radius: 35,
                                   backgroundImage: NetworkImage(
-                                    user.profileUrl.toString(),
+                                    user.pictureUrl!,
                                   ),
                                 ),
                               )
@@ -83,8 +74,14 @@ class _SettingsPageState extends State<SettingsPage> {
                                       255,
                                       1,
                                     ), // Splash color
-                                    onTap: () {
-                                      _pickImage();
+                                    onTap: () async {
+                                      openUploader(
+                                        context,
+                                        onPicked: (FileInfo file) {
+                                          final Store<AppState> store = StoreProvider.of<AppState>(context);
+                                          store.dispatch(UpdatePictureUrlStart(path: file.path));
+                                        },
+                                      );
                                     },
                                     child: const SizedBox(
                                         width: 70,
@@ -106,7 +103,6 @@ class _SettingsPageState extends State<SettingsPage> {
                       user.displayName,
                       style: const TextStyle(
                         fontSize: 20,
-                        color: Colors.white,
                       ),
                     ),
                     trailing: GestureDetector(
