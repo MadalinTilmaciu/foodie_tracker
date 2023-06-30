@@ -5,16 +5,20 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:http/http.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'firebase_options.dart';
 import 'src/actions/index.dart';
 import 'src/data/auth_api.dart';
+import 'src/data/go_upc_api.dart';
 import 'src/data/products_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
+import 'src/epics/go_upc_epics.dart';
 import 'src/epics/products_epics.dart';
 import 'src/models/index.dart';
 import 'src/presentations/containers/index.dart';
@@ -49,7 +53,14 @@ Future<void> main() async {
   final AuthEpics auth = AuthEpics(authApi);
   final ProductApi productsApi = ProductApi(FirebaseFirestore.instance);
   final ProductsEpics products = ProductsEpics(productsApi);
-  final AppEpics epic = AppEpics(auth, products);
+
+  await dotenv.load();
+  final String apiKey = dotenv.env['GOUPC_KEY']!;
+  final Client client = Client();
+  final GoUpcApi goUpcApi = GoUpcApi(client, apiKey);
+  final GoUpcEpics goUpcEpics = GoUpcEpics(goUpcApi);
+
+  final AppEpics epic = AppEpics(auth, products, goUpcEpics);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -83,7 +94,7 @@ class FoodieTracker extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'eCommerceApp',
-        theme: ThemeData.light(),
+        theme: ThemeData.dark(),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
             return UserContainer(
@@ -96,7 +107,6 @@ class FoodieTracker extends StatelessWidget {
               },
             );
           },
-          '/login': (BuildContext context) => const LoginPage(),
           '/createUser': (BuildContext context) => const CreateUserPage(),
           '/settings': (BuildContext context) => const SettingsPage(),
           '/products': (BuildContext context) => const ProductsPage(),

@@ -13,6 +13,7 @@ part 'auth/update_picture_url.dart';
 part 'products/list_category.dart';
 part 'products/list_products.dart';
 part 'products/set_category.dart';
+part 'products/find_go_upc_product.dart';
 
 abstract class PendingActions {
   String get pendingId;

@@ -30,7 +30,7 @@ class AuthEpics implements EpicClass<AppState> {
           .startWith(null)
           .pairwise()
           .expand((List<AppUser?> users) {
-        final bool hasLoggedIn = users.first == null && users.last == null;
+        final bool hasLoggedIn = users.first == null && users.last != null;
 
         return <dynamic>[
           InitializeApp.successful(users.last),

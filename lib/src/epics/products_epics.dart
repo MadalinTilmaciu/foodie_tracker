@@ -31,7 +31,7 @@ class ProductsEpics implements EpicClass<AppState> {
 
             return <dynamic>[
               ListCategory.successful(list),
-              ListProducts.start(list.first.id),
+              ListProducts.start(store.state.auth.user!.uid, list.first.id),
             ];
           },
         ).onErrorReturnWith(
@@ -47,7 +47,7 @@ class ProductsEpics implements EpicClass<AppState> {
     return actions.flatMap(
       (ListProductsStart action) {
         return Stream<void>.value(null)
-            .asyncMap((_) => _api.listProduct(action.categoryId))
+            .asyncMap((_) => _api.listProduct(store.state.auth.user!.uid, action.categoryId))
             .expand((List<Product> products) {
           return <dynamic>[ListProducts.successful(products)];
         }).onErrorReturnWith((Object error, StackTrace stackTrace) => ListProducts.error(error, stackTrace));

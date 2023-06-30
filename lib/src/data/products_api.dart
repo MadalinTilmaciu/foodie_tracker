@@ -15,9 +15,9 @@ class ProductApi {
         .toList();
   }
 
-  Future<List<Product>> listProduct(String categoryId) async {
+  Future<List<Product>> listProduct(String uid, String categoryId) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot =
-        await _firestore.collection('products').where('categoryId', isEqualTo: categoryId).get();
+        await _firestore.collection('/users/$uid/products').where('categoryId', isEqualTo: categoryId).get();
 
     return snapshot.docs
         .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Product.fromJson(doc.data()))

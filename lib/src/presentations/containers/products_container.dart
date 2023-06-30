@@ -1,7 +1,7 @@
 part of 'index.dart';
 
-class ProductContainer extends StatelessWidget {
-  const ProductContainer({
+class ProductsContainer extends StatelessWidget {
+  const ProductsContainer({
     super.key,
     required this.builder,
   });

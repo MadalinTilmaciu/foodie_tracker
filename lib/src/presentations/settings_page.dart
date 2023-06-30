@@ -2,6 +2,7 @@ import 'package:bilions_ui/bilions_ui.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:redux/redux.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -17,13 +18,39 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  Future<String?> showFileUpload(ImageSource source) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: source);
+    if (image == null) {
+      return null;
+    }
+    return image.path;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+
     return SafeArea(
       child: UserContainer(builder: (BuildContext context, AppUser? user) {
         return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.background,
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: const Text(
+              'Settings',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            automaticallyImplyLeading: false,
+            elevation: 0,
+          ),
           body: SettingsList(
+            darkTheme: SettingsThemeData(
+              settingsListBackground: Theme.of(context).scaffoldBackgroundColor,
+            ),
             platform: DevicePlatform.iOS,
             sections: <AbstractSettingsSection>[
               SettingsSection(
@@ -44,17 +71,58 @@ class _SettingsPageState extends State<SettingsPage> {
                             if (user!.pictureUrl != null)
                               GestureDetector(
                                 onTap: () async {
-                                  openUploader(
+                                  menu(
                                     context,
-                                    onPicked: (FileInfo file) {
-                                      final Store<AppState> store = StoreProvider.of<AppState>(context);
-                                      store.dispatch(UpdatePictureUrlStart(path: file.path));
-                                    },
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: MenuList(
+                                        <MenuListItem>[
+                                          MenuListItem(
+                                            Icon(
+                                              Icons.photo_library_rounded,
+                                              color: BilionsTheme.getColor('primary'),
+                                            ),
+                                            title: 'Gallery',
+                                            subTitle: 'Select image from your photo gallery',
+                                            onPressed: () async {
+                                              final String? path = await showFileUpload(ImageSource.gallery);
+                                              if (path != null) {
+                                                store.dispatch(UpdatePictureUrlStart(path: path));
+                                              }
+                                              if (context.mounted) {
+                                                Navigator.pop(context);
+                                              }
+                                            },
+                                          ),
+                                          MenuListItem(
+                                            Icon(
+                                              Icons.camera,
+                                              color: BilionsTheme.getColor('primary'),
+                                            ),
+                                            title: 'Camera',
+                                            subTitle: 'Open camera to take photo',
+                                            onPressed: () async {
+                                              final String? path = await showFileUpload(ImageSource.camera);
+                                              if (path != null) {
+                                                store.dispatch(UpdatePictureUrlStart(path: path));
+                                              }
+                                              if (context.mounted) {
+                                                Navigator.pop(context);
+                                              }
+                                            },
+                                          ),
+                                        ],
+                                        lineColor: Colors.white,
+                                      ),
+                                    ),
+                                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                                   );
                                 },
                                 child: ClipOval(
                                   child: CachedNetworkImage(
                                     imageUrl: user.pictureUrl!,
+                                    placeholder: (BuildContext context, String url) =>
+                                        const CircularProgressIndicator(),
                                     fit: BoxFit.cover,
                                     width: 70,
                                     height: 70,
@@ -237,7 +305,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         StoreProvider.of<AppState>(context).dispatch(
                           const LogoutUserStart(),
                         );
-                        Navigator.pushReplacementNamed(context, '/login');
+                        Navigator.pushReplacementNamed(context, '/');
                       },
                     ),
                     trailing: const SizedBox(),

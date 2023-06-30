@@ -31,12 +31,12 @@ class HomePage extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.food_bank_rounded),
           title: 'Products',
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.doc_append),
           title: 'Recipes',
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(
@@ -44,17 +44,17 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
           title: 'Scan',
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.chat_bubble_2_fill),
           title: 'Messages',
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.settings),
           title: 'Settings',
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          inactiveColorPrimary: Colors.white70,
         ),
       ];
     }
@@ -64,9 +64,10 @@ class HomePage extends StatelessWidget {
       controller: controller,
       screens: buildScreens(),
       items: navBarsItems(),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
+        colorBehindNavBar: Theme.of(context).scaffoldBackgroundColor,
       ),
       itemAnimationProperties: const ItemAnimationProperties(
         // Navigation Bar's items animation properties.

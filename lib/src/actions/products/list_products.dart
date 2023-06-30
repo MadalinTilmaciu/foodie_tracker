@@ -6,6 +6,7 @@ const String _kListProductsPendingId = 'ListProducts';
 class ListProducts with _$ListProducts {
   @Implements<StartAction>()
   const factory ListProducts.start(
+    String uid,
     String categoryId, {
     @Default(_kListProductsPendingId) String pendingId,
   }) = ListProductsStart;
