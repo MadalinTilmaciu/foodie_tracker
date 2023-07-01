@@ -13,14 +13,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PersistentTabController controller;
-    controller = PersistentTabController();
+    final PersistentTabController controller = PersistentTabController();
 
     List<Widget> buildScreens() {
       return <Widget>[
         const ProductsPage(),
         const RecipesPage(),
-        const ScannerPage(),
+        ScannerPage(persistentTabController: controller),
         const MessagesPage(),
         const SettingsPage(),
       ];

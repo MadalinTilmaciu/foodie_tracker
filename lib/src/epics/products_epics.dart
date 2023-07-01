@@ -14,30 +14,54 @@ class ProductsEpics implements EpicClass<AppState> {
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(
       <Epic<AppState>>[
-        TypedEpic<AppState, ListCategoryStart>(_listCategoryStart).call,
+        TypedEpic<AppState, AddCategoryStart>(_addCategoryStart).call,
+        TypedEpic<AppState, AddProductStart>(_addProductStart).call,
+        TypedEpic<AppState, ListCategoriesStart>(_listCategoryStart).call,
         TypedEpic<AppState, ListProductsStart>(_listProductStart).call,
       ],
     )(actions, store);
   }
 
-  Stream<dynamic> _listCategoryStart(Stream<ListCategoryStart> actions, EpicStore<AppState> store) {
+  Stream<dynamic> _addCategoryStart(Stream<AddCategoryStart> actions, EpicStore<AppState> store) {
     return actions.flatMap(
-      (ListCategoryStart action) {
+      (AddCategoryStart action) {
         return Stream<void>.value(null)
-            .asyncMap((_) => _api.listCategory()) //
+            .asyncMap((_) => _api.addCategory(action.title))
+            .mapTo(const AddCategory.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => AddCategory.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _addProductStart(Stream<AddProductStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (AddProductStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.addProduct(action.uid, action.categories, action.goUpcResponse))
+            .mapTo(const AddProduct.successful())
+            .onErrorReturnWith(
+              (Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace),
+            );
+      },
+    );
+  }
+
+  Stream<dynamic> _listCategoryStart(Stream<ListCategoriesStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (ListCategoriesStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.listCategories()) //
             .expand(
           (List<Category> categories) {
             final List<Category> list = categories..sort();
 
             return <dynamic>[
-              ListCategory.successful(list),
+              ListCategories.successful(list),
               ListProducts.start(store.state.auth.user!.uid, list.first.id),
             ];
           },
         ).onErrorReturnWith(
-          (Object error, StackTrace stackTrace) {
-            ListCategory.error(error, stackTrace);
-          },
+          (Object error, StackTrace stackTrace) => ListCategories.error(error, stackTrace),
         );
       },
     );
@@ -47,10 +71,9 @@ class ProductsEpics implements EpicClass<AppState> {
     return actions.flatMap(
       (ListProductsStart action) {
         return Stream<void>.value(null)
-            .asyncMap((_) => _api.listProduct(store.state.auth.user!.uid, action.categoryId))
-            .expand((List<Product> products) {
-          return <dynamic>[ListProducts.successful(products)];
-        }).onErrorReturnWith((Object error, StackTrace stackTrace) => ListProducts.error(error, stackTrace));
+            .asyncMap((_) => _api.listProducts(store.state.auth.user!.uid, action.categoryId))
+            .map((List<FoodieProduct> products) => ListProducts.successful(products))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => ListProducts.error(error, stackTrace));
       },
     );
   }

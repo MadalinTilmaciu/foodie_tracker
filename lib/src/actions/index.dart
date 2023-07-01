@@ -10,7 +10,9 @@ part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
 part 'auth/update_picture_url.dart';
 
-part 'products/list_category.dart';
+part 'products/add_category.dart';
+part 'products/add_product.dart';
+part 'products/list_categories.dart';
 part 'products/list_products.dart';
 part 'products/set_category.dart';
 part 'products/find_go_upc_product.dart';

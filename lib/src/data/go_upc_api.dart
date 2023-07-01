@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
 import '../models/index.dart';
@@ -17,7 +16,6 @@ class GoUpcApi {
     final Response response = await _client.get(uri);
 
     if (response.statusCode == 200) {
-      debugPrint(response.body);
       return GoUpcResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
     }
 

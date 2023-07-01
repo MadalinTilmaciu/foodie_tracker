@@ -531,7 +531,7 @@ mixin _$GoUpcProduct {
   String get imageUrl => throw _privateConstructorUsedError;
   String? get brand => throw _privateConstructorUsedError;
   List<List<String>>? get specs => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
   String? get upc => throw _privateConstructorUsedError;
   int? get ean => throw _privateConstructorUsedError;
 
@@ -552,7 +552,7 @@ abstract class $GoUpcProductCopyWith<$Res> {
       String imageUrl,
       String? brand,
       List<List<String>>? specs,
-      String category,
+      String? category,
       String? upc,
       int? ean});
 }
@@ -575,7 +575,7 @@ class _$GoUpcProductCopyWithImpl<$Res, $Val extends GoUpcProduct> implements $Go
     Object? imageUrl = null,
     Object? brand = freezed,
     Object? specs = freezed,
-    Object? category = null,
+    Object? category = freezed,
     Object? upc = freezed,
     Object? ean = freezed,
   }) {
@@ -604,10 +604,10 @@ class _$GoUpcProductCopyWithImpl<$Res, $Val extends GoUpcProduct> implements $Go
           ? _value.specs
           : specs // ignore: cast_nullable_to_non_nullable
               as List<List<String>>?,
-      category: null == category
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       upc: freezed == upc
           ? _value.upc
           : upc // ignore: cast_nullable_to_non_nullable
@@ -633,7 +633,7 @@ abstract class _$$_GoUpcProductCopyWith<$Res> implements $GoUpcProductCopyWith<$
       String imageUrl,
       String? brand,
       List<List<String>>? specs,
-      String category,
+      String? category,
       String? upc,
       int? ean});
 }
@@ -652,7 +652,7 @@ class __$$_GoUpcProductCopyWithImpl<$Res> extends _$GoUpcProductCopyWithImpl<$Re
     Object? imageUrl = null,
     Object? brand = freezed,
     Object? specs = freezed,
-    Object? category = null,
+    Object? category = freezed,
     Object? upc = freezed,
     Object? ean = freezed,
   }) {
@@ -681,10 +681,10 @@ class __$$_GoUpcProductCopyWithImpl<$Res> extends _$GoUpcProductCopyWithImpl<$Re
           ? _value._specs
           : specs // ignore: cast_nullable_to_non_nullable
               as List<List<String>>?,
-      category: null == category
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       upc: freezed == upc
           ? _value.upc
           : upc // ignore: cast_nullable_to_non_nullable
@@ -735,7 +735,7 @@ class _$_GoUpcProduct implements _GoUpcProduct {
   }
 
   @override
-  final String category;
+  final String? category;
   @override
   final String? upc;
   @override
@@ -789,7 +789,7 @@ abstract class _GoUpcProduct implements GoUpcProduct {
       required final String imageUrl,
       final String? brand,
       final List<List<String>>? specs,
-      required final String category,
+      required final String? category,
       final String? upc,
       final int? ean}) = _$_GoUpcProduct;
 
@@ -808,7 +808,7 @@ abstract class _GoUpcProduct implements GoUpcProduct {
   @override
   List<List<String>>? get specs;
   @override
-  String get category;
+  String? get category;
   @override
   String? get upc;
   @override
@@ -818,29 +818,30 @@ abstract class _GoUpcProduct implements GoUpcProduct {
   _$$_GoUpcProductCopyWith<_$_GoUpcProduct> get copyWith => throw _privateConstructorUsedError;
 }
 
-Product _$ProductFromJson(Map<String, dynamic> json) {
-  return _Product.fromJson(json);
+FoodieProduct _$FoodieProductFromJson(Map<String, dynamic> json) {
+  return _FoodieProduct.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Product {
+mixin _$FoodieProduct {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get categoryId => throw _privateConstructorUsedError;
-  String get quantity => throw _privateConstructorUsedError;
+  String? get quantity => throw _privateConstructorUsedError;
   String? get package => throw _privateConstructorUsedError;
   String? get expirationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
+  $FoodieProductCopyWith<FoodieProduct> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductCopyWith<$Res> {
-  factory $ProductCopyWith(Product value, $Res Function(Product) then) = _$ProductCopyWithImpl<$Res, Product>;
+abstract class $FoodieProductCopyWith<$Res> {
+  factory $FoodieProductCopyWith(FoodieProduct value, $Res Function(FoodieProduct) then) =
+      _$FoodieProductCopyWithImpl<$Res, FoodieProduct>;
   @useResult
   $Res call(
       {String id,
@@ -848,14 +849,14 @@ abstract class $ProductCopyWith<$Res> {
       String? description,
       String imageUrl,
       String categoryId,
-      String quantity,
+      String? quantity,
       String? package,
       String? expirationDate});
 }
 
 /// @nodoc
-class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyWith<$Res> {
-  _$ProductCopyWithImpl(this._value, this._then);
+class _$FoodieProductCopyWithImpl<$Res, $Val extends FoodieProduct> implements $FoodieProductCopyWith<$Res> {
+  _$FoodieProductCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -870,7 +871,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyW
     Object? description = freezed,
     Object? imageUrl = null,
     Object? categoryId = null,
-    Object? quantity = null,
+    Object? quantity = freezed,
     Object? package = freezed,
     Object? expirationDate = freezed,
   }) {
@@ -895,10 +896,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyW
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       package: freezed == package
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
@@ -912,8 +913,9 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyW
 }
 
 /// @nodoc
-abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$_ProductCopyWith(_$_Product value, $Res Function(_$_Product) then) = __$$_ProductCopyWithImpl<$Res>;
+abstract class _$$_FoodieProductCopyWith<$Res> implements $FoodieProductCopyWith<$Res> {
+  factory _$$_FoodieProductCopyWith(_$_FoodieProduct value, $Res Function(_$_FoodieProduct) then) =
+      __$$_FoodieProductCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -922,15 +924,15 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String? description,
       String imageUrl,
       String categoryId,
-      String quantity,
+      String? quantity,
       String? package,
       String? expirationDate});
 }
 
 /// @nodoc
-class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Product>
-    implements _$$_ProductCopyWith<$Res> {
-  __$$_ProductCopyWithImpl(_$_Product _value, $Res Function(_$_Product) _then) : super(_value, _then);
+class __$$_FoodieProductCopyWithImpl<$Res> extends _$FoodieProductCopyWithImpl<$Res, _$_FoodieProduct>
+    implements _$$_FoodieProductCopyWith<$Res> {
+  __$$_FoodieProductCopyWithImpl(_$_FoodieProduct _value, $Res Function(_$_FoodieProduct) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -940,11 +942,11 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Prod
     Object? description = freezed,
     Object? imageUrl = null,
     Object? categoryId = null,
-    Object? quantity = null,
+    Object? quantity = freezed,
     Object? package = freezed,
     Object? expirationDate = freezed,
   }) {
-    return _then(_$_Product(
+    return _then(_$_FoodieProduct(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -965,10 +967,10 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Prod
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       package: freezed == package
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
@@ -983,18 +985,18 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$_Prod
 
 /// @nodoc
 @JsonSerializable()
-class _$_Product implements _Product {
-  _$_Product(
+class _$_FoodieProduct implements _FoodieProduct {
+  _$_FoodieProduct(
       {required this.id,
       required this.name,
       this.description,
       required this.imageUrl,
       required this.categoryId,
       required this.quantity,
-      this.package,
-      this.expirationDate});
+      required this.package,
+      required this.expirationDate});
 
-  factory _$_Product.fromJson(Map<String, dynamic> json) => _$$_ProductFromJson(json);
+  factory _$_FoodieProduct.fromJson(Map<String, dynamic> json) => _$$_FoodieProductFromJson(json);
 
   @override
   final String id;
@@ -1007,7 +1009,7 @@ class _$_Product implements _Product {
   @override
   final String categoryId;
   @override
-  final String quantity;
+  final String? quantity;
   @override
   final String? package;
   @override
@@ -1015,14 +1017,14 @@ class _$_Product implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, name: $name, description: $description, imageUrl: $imageUrl, categoryId: $categoryId, quantity: $quantity, package: $package, expirationDate: $expirationDate)';
+    return 'FoodieProduct(id: $id, name: $name, description: $description, imageUrl: $imageUrl, categoryId: $categoryId, quantity: $quantity, package: $package, expirationDate: $expirationDate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Product &&
+            other is _$_FoodieProduct &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) || other.description == description) &&
@@ -1041,28 +1043,29 @@ class _$_Product implements _Product {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductCopyWith<_$_Product> get copyWith => __$$_ProductCopyWithImpl<_$_Product>(this, _$identity);
+  _$$_FoodieProductCopyWith<_$_FoodieProduct> get copyWith =>
+      __$$_FoodieProductCopyWithImpl<_$_FoodieProduct>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductToJson(
+    return _$$_FoodieProductToJson(
       this,
     );
   }
 }
 
-abstract class _Product implements Product {
-  factory _Product(
+abstract class _FoodieProduct implements FoodieProduct {
+  factory _FoodieProduct(
       {required final String id,
       required final String name,
       final String? description,
       required final String imageUrl,
       required final String categoryId,
-      required final String quantity,
-      final String? package,
-      final String? expirationDate}) = _$_Product;
+      required final String? quantity,
+      required final String? package,
+      required final String? expirationDate}) = _$_FoodieProduct;
 
-  factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
+  factory _FoodieProduct.fromJson(Map<String, dynamic> json) = _$_FoodieProduct.fromJson;
 
   @override
   String get id;
@@ -1075,14 +1078,14 @@ abstract class _Product implements Product {
   @override
   String get categoryId;
   @override
-  String get quantity;
+  String? get quantity;
   @override
   String? get package;
   @override
   String? get expirationDate;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductCopyWith<_$_Product> get copyWith => throw _privateConstructorUsedError;
+  _$$_FoodieProductCopyWith<_$_FoodieProduct> get copyWith => throw _privateConstructorUsedError;
 }
 
 Category _$CategoryFromJson(Map<String, dynamic> json) {
@@ -1234,7 +1237,7 @@ ProductState _$ProductStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductState {
-  List<Product> get products => throw _privateConstructorUsedError;
+  List<FoodieProduct> get products => throw _privateConstructorUsedError;
   List<Category> get categories => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
 
@@ -1248,7 +1251,7 @@ abstract class $ProductStateCopyWith<$Res> {
   factory $ProductStateCopyWith(ProductState value, $Res Function(ProductState) then) =
       _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
-  $Res call({List<Product> products, List<Category> categories, String? selectedCategoryId});
+  $Res call({List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId});
 }
 
 /// @nodoc
@@ -1271,7 +1274,7 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState> implements $Pr
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as List<FoodieProduct>,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -1290,7 +1293,7 @@ abstract class _$$_ProductStateCopyWith<$Res> implements $ProductStateCopyWith<$
       __$$_ProductStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Product> products, List<Category> categories, String? selectedCategoryId});
+  $Res call({List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId});
 }
 
 /// @nodoc
@@ -1309,7 +1312,7 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as List<FoodieProduct>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -1326,7 +1329,7 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
 @JsonSerializable()
 class _$_ProductState implements _ProductState {
   const _$_ProductState(
-      {final List<Product> products = const <Product>[],
+      {final List<FoodieProduct> products = const <FoodieProduct>[],
       final List<Category> categories = const <Category>[],
       this.selectedCategoryId})
       : _products = products,
@@ -1334,10 +1337,10 @@ class _$_ProductState implements _ProductState {
 
   factory _$_ProductState.fromJson(Map<String, dynamic> json) => _$$_ProductStateFromJson(json);
 
-  final List<Product> _products;
+  final List<FoodieProduct> _products;
   @override
   @JsonKey()
-  List<Product> get products {
+  List<FoodieProduct> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -1392,14 +1395,14 @@ class _$_ProductState implements _ProductState {
 
 abstract class _ProductState implements ProductState {
   const factory _ProductState(
-      {final List<Product> products,
+      {final List<FoodieProduct> products,
       final List<Category> categories,
       final String? selectedCategoryId}) = _$_ProductState;
 
   factory _ProductState.fromJson(Map<String, dynamic> json) = _$_ProductState.fromJson;
 
   @override
-  List<Product> get products;
+  List<FoodieProduct> get products;
   @override
   List<Category> get categories;
   @override

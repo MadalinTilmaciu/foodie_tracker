@@ -6,11 +6,11 @@ class ProductsContainer extends StatelessWidget {
     required this.builder,
   });
 
-  final ViewModelBuilder<List<Product>> builder;
+  final ViewModelBuilder<List<FoodieProduct>> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, List<Product>>(
+    return StoreConnector<AppState, List<FoodieProduct>>(
       converter: (Store<AppState> store) => store.state.products.products,
       builder: builder,
     );

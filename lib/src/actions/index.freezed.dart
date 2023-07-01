@@ -2510,7 +2510,1105 @@ abstract class UpdatePictureUrlError implements UpdatePictureUrl, StopAction {
 }
 
 /// @nodoc
-mixin _$ListCategory {
+mixin _$AddCategory {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCategoryStart value) start,
+    required TResult Function(AddCategorySuccessful value) successful,
+    required TResult Function(AddCategoryError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddCategoryStart value)? start,
+    TResult? Function(AddCategorySuccessful value)? successful,
+    TResult? Function(AddCategoryError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCategoryStart value)? start,
+    TResult Function(AddCategorySuccessful value)? successful,
+    TResult Function(AddCategoryError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddCategoryCopyWith<AddCategory> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddCategoryCopyWith<$Res> {
+  factory $AddCategoryCopyWith(AddCategory value, $Res Function(AddCategory) then) =
+      _$AddCategoryCopyWithImpl<$Res, AddCategory>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddCategoryCopyWithImpl<$Res, $Val extends AddCategory> implements $AddCategoryCopyWith<$Res> {
+  _$AddCategoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddCategoryStartCopyWith<$Res> implements $AddCategoryCopyWith<$Res> {
+  factory _$$AddCategoryStartCopyWith(_$AddCategoryStart value, $Res Function(_$AddCategoryStart) then) =
+      __$$AddCategoryStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String title, String pendingId});
+}
+
+/// @nodoc
+class __$$AddCategoryStartCopyWithImpl<$Res> extends _$AddCategoryCopyWithImpl<$Res, _$AddCategoryStart>
+    implements _$$AddCategoryStartCopyWith<$Res> {
+  __$$AddCategoryStartCopyWithImpl(_$AddCategoryStart _value, $Res Function(_$AddCategoryStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddCategoryStart(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddCategoryStart implements AddCategoryStart {
+  const _$AddCategoryStart({required this.title, this.pendingId = _kAddCategoryPendingId});
+
+  @override
+  final String title;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddCategory.start(title: $title, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddCategoryStart &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, title, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddCategoryStartCopyWith<_$AddCategoryStart> get copyWith =>
+      __$$AddCategoryStartCopyWithImpl<_$AddCategoryStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(title, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(title, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(title, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCategoryStart value) start,
+    required TResult Function(AddCategorySuccessful value) successful,
+    required TResult Function(AddCategoryError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddCategoryStart value)? start,
+    TResult? Function(AddCategorySuccessful value)? successful,
+    TResult? Function(AddCategoryError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCategoryStart value)? start,
+    TResult Function(AddCategorySuccessful value)? successful,
+    TResult Function(AddCategoryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCategoryStart implements AddCategory, StartAction {
+  const factory AddCategoryStart({required final String title, final String pendingId}) = _$AddCategoryStart;
+
+  String get title;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddCategoryStartCopyWith<_$AddCategoryStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddCategorySuccessfulCopyWith<$Res> implements $AddCategoryCopyWith<$Res> {
+  factory _$$AddCategorySuccessfulCopyWith(_$AddCategorySuccessful value, $Res Function(_$AddCategorySuccessful) then) =
+      __$$AddCategorySuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AddCategorySuccessfulCopyWithImpl<$Res> extends _$AddCategoryCopyWithImpl<$Res, _$AddCategorySuccessful>
+    implements _$$AddCategorySuccessfulCopyWith<$Res> {
+  __$$AddCategorySuccessfulCopyWithImpl(_$AddCategorySuccessful _value, $Res Function(_$AddCategorySuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddCategorySuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddCategorySuccessful implements AddCategorySuccessful {
+  const _$AddCategorySuccessful([this.pendingId = _kAddCategoryPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddCategory.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddCategorySuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddCategorySuccessfulCopyWith<_$AddCategorySuccessful> get copyWith =>
+      __$$AddCategorySuccessfulCopyWithImpl<_$AddCategorySuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCategoryStart value) start,
+    required TResult Function(AddCategorySuccessful value) successful,
+    required TResult Function(AddCategoryError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddCategoryStart value)? start,
+    TResult? Function(AddCategorySuccessful value)? successful,
+    TResult? Function(AddCategoryError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCategoryStart value)? start,
+    TResult Function(AddCategorySuccessful value)? successful,
+    TResult Function(AddCategoryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCategorySuccessful implements AddCategory, StopAction {
+  const factory AddCategorySuccessful([final String pendingId]) = _$AddCategorySuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddCategorySuccessfulCopyWith<_$AddCategorySuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddCategoryErrorCopyWith<$Res> implements $AddCategoryCopyWith<$Res> {
+  factory _$$AddCategoryErrorCopyWith(_$AddCategoryError value, $Res Function(_$AddCategoryError) then) =
+      __$$AddCategoryErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddCategoryErrorCopyWithImpl<$Res> extends _$AddCategoryCopyWithImpl<$Res, _$AddCategoryError>
+    implements _$$AddCategoryErrorCopyWith<$Res> {
+  __$$AddCategoryErrorCopyWithImpl(_$AddCategoryError _value, $Res Function(_$AddCategoryError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddCategoryError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddCategoryError implements AddCategoryError {
+  const _$AddCategoryError(this.error, this.stackTrace, {this.pendingId = _kAddCategoryPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddCategory.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddCategoryError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddCategoryErrorCopyWith<_$AddCategoryError> get copyWith =>
+      __$$AddCategoryErrorCopyWithImpl<_$AddCategoryError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCategoryStart value) start,
+    required TResult Function(AddCategorySuccessful value) successful,
+    required TResult Function(AddCategoryError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddCategoryStart value)? start,
+    TResult? Function(AddCategorySuccessful value)? successful,
+    TResult? Function(AddCategoryError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCategoryStart value)? start,
+    TResult Function(AddCategorySuccessful value)? successful,
+    TResult Function(AddCategoryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCategoryError implements AddCategory, StopAction {
+  const factory AddCategoryError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AddCategoryError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddCategoryErrorCopyWith<_$AddCategoryError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AddProduct {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddProductStart value) start,
+    required TResult Function(AddProductSuccessful value) successful,
+    required TResult Function(AddProductError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddProductStart value)? start,
+    TResult? Function(AddProductSuccessful value)? successful,
+    TResult? Function(AddProductError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddProductStart value)? start,
+    TResult Function(AddProductSuccessful value)? successful,
+    TResult Function(AddProductError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddProductCopyWith<AddProduct> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddProductCopyWith<$Res> {
+  factory $AddProductCopyWith(AddProduct value, $Res Function(AddProduct) then) =
+      _$AddProductCopyWithImpl<$Res, AddProduct>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddProductCopyWithImpl<$Res, $Val extends AddProduct> implements $AddProductCopyWith<$Res> {
+  _$AddProductCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddProductStartCopyWith<$Res> implements $AddProductCopyWith<$Res> {
+  factory _$$AddProductStartCopyWith(_$AddProductStart value, $Res Function(_$AddProductStart) then) =
+      __$$AddProductStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId});
+
+  $GoUpcResponseCopyWith<$Res> get goUpcResponse;
+}
+
+/// @nodoc
+class __$$AddProductStartCopyWithImpl<$Res> extends _$AddProductCopyWithImpl<$Res, _$AddProductStart>
+    implements _$$AddProductStartCopyWith<$Res> {
+  __$$AddProductStartCopyWithImpl(_$AddProductStart _value, $Res Function(_$AddProductStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? categories = null,
+    Object? goUpcResponse = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddProductStart(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      goUpcResponse: null == goUpcResponse
+          ? _value.goUpcResponse
+          : goUpcResponse // ignore: cast_nullable_to_non_nullable
+              as GoUpcResponse,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GoUpcResponseCopyWith<$Res> get goUpcResponse {
+    return $GoUpcResponseCopyWith<$Res>(_value.goUpcResponse, (value) {
+      return _then(_value.copyWith(goUpcResponse: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddProductStart implements AddProductStart {
+  const _$AddProductStart(
+      {required this.uid,
+      required final List<Category> categories,
+      required this.goUpcResponse,
+      this.pendingId = _kAddProductPendingId})
+      : _categories = categories;
+
+  @override
+  final String uid;
+  final List<Category> _categories;
+  @override
+  List<Category> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
+  @override
+  final GoUpcResponse goUpcResponse;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddProduct.start(uid: $uid, categories: $categories, goUpcResponse: $goUpcResponse, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            const DeepCollectionEquality().equals(other._categories, _categories) &&
+            (identical(other.goUpcResponse, goUpcResponse) || other.goUpcResponse == goUpcResponse) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, uid, const DeepCollectionEquality().hash(_categories), goUpcResponse, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddProductStartCopyWith<_$AddProductStart> get copyWith =>
+      __$$AddProductStartCopyWithImpl<_$AddProductStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, categories, goUpcResponse, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, categories, goUpcResponse, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, categories, goUpcResponse, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddProductStart value) start,
+    required TResult Function(AddProductSuccessful value) successful,
+    required TResult Function(AddProductError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddProductStart value)? start,
+    TResult? Function(AddProductSuccessful value)? successful,
+    TResult? Function(AddProductError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddProductStart value)? start,
+    TResult Function(AddProductSuccessful value)? successful,
+    TResult Function(AddProductError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductStart implements AddProduct, StartAction {
+  const factory AddProductStart(
+      {required final String uid,
+      required final List<Category> categories,
+      required final GoUpcResponse goUpcResponse,
+      final String pendingId}) = _$AddProductStart;
+
+  String get uid;
+  List<Category> get categories;
+  GoUpcResponse get goUpcResponse;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddProductStartCopyWith<_$AddProductStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddProductSuccessfulCopyWith<$Res> implements $AddProductCopyWith<$Res> {
+  factory _$$AddProductSuccessfulCopyWith(_$AddProductSuccessful value, $Res Function(_$AddProductSuccessful) then) =
+      __$$AddProductSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AddProductSuccessfulCopyWithImpl<$Res> extends _$AddProductCopyWithImpl<$Res, _$AddProductSuccessful>
+    implements _$$AddProductSuccessfulCopyWith<$Res> {
+  __$$AddProductSuccessfulCopyWithImpl(_$AddProductSuccessful _value, $Res Function(_$AddProductSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddProductSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddProductSuccessful implements AddProductSuccessful {
+  const _$AddProductSuccessful([this.pendingId = _kAddProductPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddProduct.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddProductSuccessfulCopyWith<_$AddProductSuccessful> get copyWith =>
+      __$$AddProductSuccessfulCopyWithImpl<_$AddProductSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddProductStart value) start,
+    required TResult Function(AddProductSuccessful value) successful,
+    required TResult Function(AddProductError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddProductStart value)? start,
+    TResult? Function(AddProductSuccessful value)? successful,
+    TResult? Function(AddProductError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddProductStart value)? start,
+    TResult Function(AddProductSuccessful value)? successful,
+    TResult Function(AddProductError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductSuccessful implements AddProduct, StopAction {
+  const factory AddProductSuccessful([final String pendingId]) = _$AddProductSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddProductSuccessfulCopyWith<_$AddProductSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddProductErrorCopyWith<$Res> implements $AddProductCopyWith<$Res> {
+  factory _$$AddProductErrorCopyWith(_$AddProductError value, $Res Function(_$AddProductError) then) =
+      __$$AddProductErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddProductErrorCopyWithImpl<$Res> extends _$AddProductCopyWithImpl<$Res, _$AddProductError>
+    implements _$$AddProductErrorCopyWith<$Res> {
+  __$$AddProductErrorCopyWithImpl(_$AddProductError _value, $Res Function(_$AddProductError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddProductError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddProductError implements AddProductError {
+  const _$AddProductError(this.error, this.stackTrace, {this.pendingId = _kAddProductPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddProduct.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddProductErrorCopyWith<_$AddProductError> get copyWith =>
+      __$$AddProductErrorCopyWithImpl<_$AddProductError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Category> categories, GoUpcResponse goUpcResponse, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddProductStart value) start,
+    required TResult Function(AddProductSuccessful value) successful,
+    required TResult Function(AddProductError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddProductStart value)? start,
+    TResult? Function(AddProductSuccessful value)? successful,
+    TResult? Function(AddProductError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddProductStart value)? start,
+    TResult Function(AddProductSuccessful value)? successful,
+    TResult Function(AddProductError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductError implements AddProduct, StopAction {
+  const factory AddProductError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AddProductError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddProductErrorCopyWith<_$AddProductError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ListCategories {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -2536,42 +3634,42 @@ mixin _$ListCategory {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ListCategoryStart value) start,
-    required TResult Function(ListCategorySuccessful value) successful,
-    required TResult Function(ListCategoryError value) error,
+    required TResult Function(ListCategoriesStart value) start,
+    required TResult Function(ListCategoriesSuccessful value) successful,
+    required TResult Function(ListCategoriesError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ListCategoryStart value)? start,
-    TResult? Function(ListCategorySuccessful value)? successful,
-    TResult? Function(ListCategoryError value)? error,
+    TResult? Function(ListCategoriesStart value)? start,
+    TResult? Function(ListCategoriesSuccessful value)? successful,
+    TResult? Function(ListCategoriesError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ListCategoryStart value)? start,
-    TResult Function(ListCategorySuccessful value)? successful,
-    TResult Function(ListCategoryError value)? error,
+    TResult Function(ListCategoriesStart value)? start,
+    TResult Function(ListCategoriesSuccessful value)? successful,
+    TResult Function(ListCategoriesError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ListCategoryCopyWith<ListCategory> get copyWith => throw _privateConstructorUsedError;
+  $ListCategoriesCopyWith<ListCategories> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListCategoryCopyWith<$Res> {
-  factory $ListCategoryCopyWith(ListCategory value, $Res Function(ListCategory) then) =
-      _$ListCategoryCopyWithImpl<$Res, ListCategory>;
+abstract class $ListCategoriesCopyWith<$Res> {
+  factory $ListCategoriesCopyWith(ListCategories value, $Res Function(ListCategories) then) =
+      _$ListCategoriesCopyWithImpl<$Res, ListCategories>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$ListCategoryCopyWithImpl<$Res, $Val extends ListCategory> implements $ListCategoryCopyWith<$Res> {
-  _$ListCategoryCopyWithImpl(this._value, this._then);
+class _$ListCategoriesCopyWithImpl<$Res, $Val extends ListCategories> implements $ListCategoriesCopyWith<$Res> {
+  _$ListCategoriesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -2593,18 +3691,18 @@ class _$ListCategoryCopyWithImpl<$Res, $Val extends ListCategory> implements $Li
 }
 
 /// @nodoc
-abstract class _$$ListCategoryStartCopyWith<$Res> implements $ListCategoryCopyWith<$Res> {
-  factory _$$ListCategoryStartCopyWith(_$ListCategoryStart value, $Res Function(_$ListCategoryStart) then) =
-      __$$ListCategoryStartCopyWithImpl<$Res>;
+abstract class _$$ListCategoriesStartCopyWith<$Res> implements $ListCategoriesCopyWith<$Res> {
+  factory _$$ListCategoriesStartCopyWith(_$ListCategoriesStart value, $Res Function(_$ListCategoriesStart) then) =
+      __$$ListCategoriesStartCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class __$$ListCategoryStartCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl<$Res, _$ListCategoryStart>
-    implements _$$ListCategoryStartCopyWith<$Res> {
-  __$$ListCategoryStartCopyWithImpl(_$ListCategoryStart _value, $Res Function(_$ListCategoryStart) _then)
+class __$$ListCategoriesStartCopyWithImpl<$Res> extends _$ListCategoriesCopyWithImpl<$Res, _$ListCategoriesStart>
+    implements _$$ListCategoriesStartCopyWith<$Res> {
+  __$$ListCategoriesStartCopyWithImpl(_$ListCategoriesStart _value, $Res Function(_$ListCategoriesStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2612,7 +3710,7 @@ class __$$ListCategoryStartCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl
   $Res call({
     Object? pendingId = null,
   }) {
-    return _then(_$ListCategoryStart(
+    return _then(_$ListCategoriesStart(
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -2623,8 +3721,8 @@ class __$$ListCategoryStartCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl
 
 /// @nodoc
 
-class _$ListCategoryStart implements ListCategoryStart {
-  const _$ListCategoryStart({this.pendingId = _kListCategoryPendingId});
+class _$ListCategoriesStart implements ListCategoriesStart {
+  const _$ListCategoriesStart({this.pendingId = _kListCategoriesPendingId});
 
   @override
   @JsonKey()
@@ -2632,14 +3730,14 @@ class _$ListCategoryStart implements ListCategoryStart {
 
   @override
   String toString() {
-    return 'ListCategory.start(pendingId: $pendingId)';
+    return 'ListCategories.start(pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListCategoryStart &&
+            other is _$ListCategoriesStart &&
             (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
@@ -2649,8 +3747,8 @@ class _$ListCategoryStart implements ListCategoryStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListCategoryStartCopyWith<_$ListCategoryStart> get copyWith =>
-      __$$ListCategoryStartCopyWithImpl<_$ListCategoryStart>(this, _$identity);
+  _$$ListCategoriesStartCopyWith<_$ListCategoriesStart> get copyWith =>
+      __$$ListCategoriesStartCopyWithImpl<_$ListCategoriesStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2689,9 +3787,9 @@ class _$ListCategoryStart implements ListCategoryStart {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ListCategoryStart value) start,
-    required TResult Function(ListCategorySuccessful value) successful,
-    required TResult Function(ListCategoryError value) error,
+    required TResult Function(ListCategoriesStart value) start,
+    required TResult Function(ListCategoriesSuccessful value) successful,
+    required TResult Function(ListCategoriesError value) error,
   }) {
     return start(this);
   }
@@ -2699,9 +3797,9 @@ class _$ListCategoryStart implements ListCategoryStart {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ListCategoryStart value)? start,
-    TResult? Function(ListCategorySuccessful value)? successful,
-    TResult? Function(ListCategoryError value)? error,
+    TResult? Function(ListCategoriesStart value)? start,
+    TResult? Function(ListCategoriesSuccessful value)? successful,
+    TResult? Function(ListCategoriesError value)? error,
   }) {
     return start?.call(this);
   }
@@ -2709,9 +3807,9 @@ class _$ListCategoryStart implements ListCategoryStart {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ListCategoryStart value)? start,
-    TResult Function(ListCategorySuccessful value)? successful,
-    TResult Function(ListCategoryError value)? error,
+    TResult Function(ListCategoriesStart value)? start,
+    TResult Function(ListCategoriesSuccessful value)? successful,
+    TResult Function(ListCategoriesError value)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -2721,30 +3819,32 @@ class _$ListCategoryStart implements ListCategoryStart {
   }
 }
 
-abstract class ListCategoryStart implements ListCategory, StartAction {
-  const factory ListCategoryStart({final String pendingId}) = _$ListCategoryStart;
+abstract class ListCategoriesStart implements ListCategories, StartAction {
+  const factory ListCategoriesStart({final String pendingId}) = _$ListCategoriesStart;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ListCategoryStartCopyWith<_$ListCategoryStart> get copyWith => throw _privateConstructorUsedError;
+  _$$ListCategoriesStartCopyWith<_$ListCategoriesStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ListCategorySuccessfulCopyWith<$Res> implements $ListCategoryCopyWith<$Res> {
-  factory _$$ListCategorySuccessfulCopyWith(
-          _$ListCategorySuccessful value, $Res Function(_$ListCategorySuccessful) then) =
-      __$$ListCategorySuccessfulCopyWithImpl<$Res>;
+abstract class _$$ListCategoriesSuccessfulCopyWith<$Res> implements $ListCategoriesCopyWith<$Res> {
+  factory _$$ListCategoriesSuccessfulCopyWith(
+          _$ListCategoriesSuccessful value, $Res Function(_$ListCategoriesSuccessful) then) =
+      __$$ListCategoriesSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Category> categories, String pendingId});
 }
 
 /// @nodoc
-class __$$ListCategorySuccessfulCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl<$Res, _$ListCategorySuccessful>
-    implements _$$ListCategorySuccessfulCopyWith<$Res> {
-  __$$ListCategorySuccessfulCopyWithImpl(_$ListCategorySuccessful _value, $Res Function(_$ListCategorySuccessful) _then)
+class __$$ListCategoriesSuccessfulCopyWithImpl<$Res>
+    extends _$ListCategoriesCopyWithImpl<$Res, _$ListCategoriesSuccessful>
+    implements _$$ListCategoriesSuccessfulCopyWith<$Res> {
+  __$$ListCategoriesSuccessfulCopyWithImpl(
+      _$ListCategoriesSuccessful _value, $Res Function(_$ListCategoriesSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2753,7 +3853,7 @@ class __$$ListCategorySuccessfulCopyWithImpl<$Res> extends _$ListCategoryCopyWit
     Object? categories = null,
     Object? pendingId = null,
   }) {
-    return _then(_$ListCategorySuccessful(
+    return _then(_$ListCategoriesSuccessful(
       null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -2768,8 +3868,8 @@ class __$$ListCategorySuccessfulCopyWithImpl<$Res> extends _$ListCategoryCopyWit
 
 /// @nodoc
 
-class _$ListCategorySuccessful implements ListCategorySuccessful {
-  const _$ListCategorySuccessful(final List<Category> categories, [this.pendingId = _kListCategoryPendingId])
+class _$ListCategoriesSuccessful implements ListCategoriesSuccessful {
+  const _$ListCategoriesSuccessful(final List<Category> categories, [this.pendingId = _kListCategoriesPendingId])
       : _categories = categories;
 
   final List<Category> _categories;
@@ -2786,14 +3886,14 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
 
   @override
   String toString() {
-    return 'ListCategory.successful(categories: $categories, pendingId: $pendingId)';
+    return 'ListCategories.successful(categories: $categories, pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListCategorySuccessful &&
+            other is _$ListCategoriesSuccessful &&
             const DeepCollectionEquality().equals(other._categories, _categories) &&
             (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
@@ -2804,8 +3904,8 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListCategorySuccessfulCopyWith<_$ListCategorySuccessful> get copyWith =>
-      __$$ListCategorySuccessfulCopyWithImpl<_$ListCategorySuccessful>(this, _$identity);
+  _$$ListCategoriesSuccessfulCopyWith<_$ListCategoriesSuccessful> get copyWith =>
+      __$$ListCategoriesSuccessfulCopyWithImpl<_$ListCategoriesSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2844,9 +3944,9 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ListCategoryStart value) start,
-    required TResult Function(ListCategorySuccessful value) successful,
-    required TResult Function(ListCategoryError value) error,
+    required TResult Function(ListCategoriesStart value) start,
+    required TResult Function(ListCategoriesSuccessful value) successful,
+    required TResult Function(ListCategoriesError value) error,
   }) {
     return successful(this);
   }
@@ -2854,9 +3954,9 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ListCategoryStart value)? start,
-    TResult? Function(ListCategorySuccessful value)? successful,
-    TResult? Function(ListCategoryError value)? error,
+    TResult? Function(ListCategoriesStart value)? start,
+    TResult? Function(ListCategoriesSuccessful value)? successful,
+    TResult? Function(ListCategoriesError value)? error,
   }) {
     return successful?.call(this);
   }
@@ -2864,9 +3964,9 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ListCategoryStart value)? start,
-    TResult Function(ListCategorySuccessful value)? successful,
-    TResult Function(ListCategoryError value)? error,
+    TResult Function(ListCategoriesStart value)? start,
+    TResult Function(ListCategoriesSuccessful value)? successful,
+    TResult Function(ListCategoriesError value)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -2876,31 +3976,31 @@ class _$ListCategorySuccessful implements ListCategorySuccessful {
   }
 }
 
-abstract class ListCategorySuccessful implements ListCategory, StopAction {
-  const factory ListCategorySuccessful(final List<Category> categories, [final String pendingId]) =
-      _$ListCategorySuccessful;
+abstract class ListCategoriesSuccessful implements ListCategories, StopAction {
+  const factory ListCategoriesSuccessful(final List<Category> categories, [final String pendingId]) =
+      _$ListCategoriesSuccessful;
 
   List<Category> get categories;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ListCategorySuccessfulCopyWith<_$ListCategorySuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$ListCategoriesSuccessfulCopyWith<_$ListCategoriesSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ListCategoryErrorCopyWith<$Res> implements $ListCategoryCopyWith<$Res> {
-  factory _$$ListCategoryErrorCopyWith(_$ListCategoryError value, $Res Function(_$ListCategoryError) then) =
-      __$$ListCategoryErrorCopyWithImpl<$Res>;
+abstract class _$$ListCategoriesErrorCopyWith<$Res> implements $ListCategoriesCopyWith<$Res> {
+  factory _$$ListCategoriesErrorCopyWith(_$ListCategoriesError value, $Res Function(_$ListCategoriesError) then) =
+      __$$ListCategoriesErrorCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class __$$ListCategoryErrorCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl<$Res, _$ListCategoryError>
-    implements _$$ListCategoryErrorCopyWith<$Res> {
-  __$$ListCategoryErrorCopyWithImpl(_$ListCategoryError _value, $Res Function(_$ListCategoryError) _then)
+class __$$ListCategoriesErrorCopyWithImpl<$Res> extends _$ListCategoriesCopyWithImpl<$Res, _$ListCategoriesError>
+    implements _$$ListCategoriesErrorCopyWith<$Res> {
+  __$$ListCategoriesErrorCopyWithImpl(_$ListCategoriesError _value, $Res Function(_$ListCategoriesError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2910,7 +4010,7 @@ class __$$ListCategoryErrorCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl
     Object? stackTrace = null,
     Object? pendingId = null,
   }) {
-    return _then(_$ListCategoryError(
+    return _then(_$ListCategoriesError(
       null == error ? _value.error : error,
       null == stackTrace
           ? _value.stackTrace
@@ -2926,8 +4026,8 @@ class __$$ListCategoryErrorCopyWithImpl<$Res> extends _$ListCategoryCopyWithImpl
 
 /// @nodoc
 
-class _$ListCategoryError implements ListCategoryError {
-  const _$ListCategoryError(this.error, this.stackTrace, {this.pendingId = _kListCategoryPendingId});
+class _$ListCategoriesError implements ListCategoriesError {
+  const _$ListCategoriesError(this.error, this.stackTrace, {this.pendingId = _kListCategoriesPendingId});
 
   @override
   final Object error;
@@ -2939,14 +4039,14 @@ class _$ListCategoryError implements ListCategoryError {
 
   @override
   String toString() {
-    return 'ListCategory.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+    return 'ListCategories.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListCategoryError &&
+            other is _$ListCategoriesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
             (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
@@ -2958,8 +4058,8 @@ class _$ListCategoryError implements ListCategoryError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListCategoryErrorCopyWith<_$ListCategoryError> get copyWith =>
-      __$$ListCategoryErrorCopyWithImpl<_$ListCategoryError>(this, _$identity);
+  _$$ListCategoriesErrorCopyWith<_$ListCategoriesError> get copyWith =>
+      __$$ListCategoriesErrorCopyWithImpl<_$ListCategoriesError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2998,9 +4098,9 @@ class _$ListCategoryError implements ListCategoryError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ListCategoryStart value) start,
-    required TResult Function(ListCategorySuccessful value) successful,
-    required TResult Function(ListCategoryError value) error,
+    required TResult Function(ListCategoriesStart value) start,
+    required TResult Function(ListCategoriesSuccessful value) successful,
+    required TResult Function(ListCategoriesError value) error,
   }) {
     return error(this);
   }
@@ -3008,9 +4108,9 @@ class _$ListCategoryError implements ListCategoryError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ListCategoryStart value)? start,
-    TResult? Function(ListCategorySuccessful value)? successful,
-    TResult? Function(ListCategoryError value)? error,
+    TResult? Function(ListCategoriesStart value)? start,
+    TResult? Function(ListCategoriesSuccessful value)? successful,
+    TResult? Function(ListCategoriesError value)? error,
   }) {
     return error?.call(this);
   }
@@ -3018,9 +4118,9 @@ class _$ListCategoryError implements ListCategoryError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ListCategoryStart value)? start,
-    TResult Function(ListCategorySuccessful value)? successful,
-    TResult Function(ListCategoryError value)? error,
+    TResult Function(ListCategoriesStart value)? start,
+    TResult Function(ListCategoriesSuccessful value)? successful,
+    TResult Function(ListCategoriesError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -3030,9 +4130,9 @@ class _$ListCategoryError implements ListCategoryError {
   }
 }
 
-abstract class ListCategoryError implements ListCategory, StopAction {
-  const factory ListCategoryError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
-      _$ListCategoryError;
+abstract class ListCategoriesError implements ListCategories, StopAction {
+  const factory ListCategoriesError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListCategoriesError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -3040,7 +4140,7 @@ abstract class ListCategoryError implements ListCategory, StopAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ListCategoryErrorCopyWith<_$ListCategoryError> get copyWith => throw _privateConstructorUsedError;
+  _$$ListCategoriesErrorCopyWith<_$ListCategoriesError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3049,21 +4149,21 @@ mixin _$ListProducts {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid, String categoryId, String pendingId) start,
-    required TResult Function(List<Product> products, String pendingId) successful,
+    required TResult Function(List<FoodieProduct> products, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid, String categoryId, String pendingId)? start,
-    TResult? Function(List<Product> products, String pendingId)? successful,
+    TResult? Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid, String categoryId, String pendingId)? start,
-    TResult Function(List<Product> products, String pendingId)? successful,
+    TResult Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
@@ -3206,7 +4306,7 @@ class _$ListProductsStart implements ListProductsStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid, String categoryId, String pendingId) start,
-    required TResult Function(List<Product> products, String pendingId) successful,
+    required TResult Function(List<FoodieProduct> products, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(uid, categoryId, pendingId);
@@ -3216,7 +4316,7 @@ class _$ListProductsStart implements ListProductsStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid, String categoryId, String pendingId)? start,
-    TResult? Function(List<Product> products, String pendingId)? successful,
+    TResult? Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(uid, categoryId, pendingId);
@@ -3226,7 +4326,7 @@ class _$ListProductsStart implements ListProductsStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid, String categoryId, String pendingId)? start,
-    TResult Function(List<Product> products, String pendingId)? successful,
+    TResult Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
@@ -3291,7 +4391,7 @@ abstract class _$$ListProductsSuccessfulCopyWith<$Res> implements $ListProductsC
       __$$ListProductsSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Product> products, String pendingId});
+  $Res call({List<FoodieProduct> products, String pendingId});
 }
 
 /// @nodoc
@@ -3310,7 +4410,7 @@ class __$$ListProductsSuccessfulCopyWithImpl<$Res> extends _$ListProductsCopyWit
       null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as List<FoodieProduct>,
       null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -3322,12 +4422,12 @@ class __$$ListProductsSuccessfulCopyWithImpl<$Res> extends _$ListProductsCopyWit
 /// @nodoc
 
 class _$ListProductsSuccessful implements ListProductsSuccessful {
-  const _$ListProductsSuccessful(final List<Product> products, [this.pendingId = _kListProductsPendingId])
+  const _$ListProductsSuccessful(final List<FoodieProduct> products, [this.pendingId = _kListProductsPendingId])
       : _products = products;
 
-  final List<Product> _products;
+  final List<FoodieProduct> _products;
   @override
-  List<Product> get products {
+  List<FoodieProduct> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -3364,7 +4464,7 @@ class _$ListProductsSuccessful implements ListProductsSuccessful {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid, String categoryId, String pendingId) start,
-    required TResult Function(List<Product> products, String pendingId) successful,
+    required TResult Function(List<FoodieProduct> products, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(products, pendingId);
@@ -3374,7 +4474,7 @@ class _$ListProductsSuccessful implements ListProductsSuccessful {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid, String categoryId, String pendingId)? start,
-    TResult? Function(List<Product> products, String pendingId)? successful,
+    TResult? Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(products, pendingId);
@@ -3384,7 +4484,7 @@ class _$ListProductsSuccessful implements ListProductsSuccessful {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid, String categoryId, String pendingId)? start,
-    TResult Function(List<Product> products, String pendingId)? successful,
+    TResult Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
@@ -3430,10 +4530,10 @@ class _$ListProductsSuccessful implements ListProductsSuccessful {
 }
 
 abstract class ListProductsSuccessful implements ListProducts, StopAction {
-  const factory ListProductsSuccessful(final List<Product> products, [final String pendingId]) =
+  const factory ListProductsSuccessful(final List<FoodieProduct> products, [final String pendingId]) =
       _$ListProductsSuccessful;
 
-  List<Product> get products;
+  List<FoodieProduct> get products;
   @override
   String get pendingId;
   @override
@@ -3518,7 +4618,7 @@ class _$ListProductsError implements ListProductsError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid, String categoryId, String pendingId) start,
-    required TResult Function(List<Product> products, String pendingId) successful,
+    required TResult Function(List<FoodieProduct> products, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
@@ -3528,7 +4628,7 @@ class _$ListProductsError implements ListProductsError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid, String categoryId, String pendingId)? start,
-    TResult? Function(List<Product> products, String pendingId)? successful,
+    TResult? Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
@@ -3538,7 +4638,7 @@ class _$ListProductsError implements ListProductsError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid, String categoryId, String pendingId)? start,
-    TResult Function(List<Product> products, String pendingId)? successful,
+    TResult Function(List<FoodieProduct> products, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {

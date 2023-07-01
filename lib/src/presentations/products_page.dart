@@ -80,7 +80,7 @@ class ProductsPage extends StatelessWidget {
                     PendingContainer(
                       builder: (BuildContext context, Set<String> pending) {
                         return ProductsContainer(
-                          builder: (BuildContext context, List<Product> products) {
+                          builder: (BuildContext context, List<FoodieProduct> products) {
                             if (products.isEmpty) {
                               return const Center(
                                 child: Text(
@@ -135,9 +135,12 @@ class ProductsPage extends StatelessWidget {
                                                 child: Container(
                                                   width: double.infinity,
                                                   height: 32,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(12.0),
-                                                    gradient: const LinearGradient(
+                                                  decoration: const BoxDecoration(
+                                                    borderRadius: BorderRadius.only(
+                                                      bottomLeft: Radius.circular(12),
+                                                      bottomRight: Radius.circular(12),
+                                                    ),
+                                                    gradient: LinearGradient(
                                                       begin: AlignmentDirectional.bottomCenter,
                                                       end: AlignmentDirectional.topCenter,
                                                       colors: <Color>[

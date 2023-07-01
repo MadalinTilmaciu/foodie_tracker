@@ -9,7 +9,7 @@ class GoUpcProduct with _$GoUpcProduct {
     required String imageUrl,
     String? brand,
     List<List<String>>? specs,
-    required String category,
+    required String? category,
     String? upc,
     int? ean,
   }) = _GoUpcProduct;

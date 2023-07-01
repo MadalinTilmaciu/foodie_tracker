@@ -52,7 +52,7 @@ _$_GoUpcProduct _$$_GoUpcProductFromJson(Map<String, dynamic> json) => _$_GoUpcP
       specs: (json['specs'] as List<dynamic>?)
           ?.map((dynamic e) => (e as List<dynamic>).map((dynamic e) => e as String).toList())
           .toList(),
-      category: json['category'] as String,
+      category: json['category'] as String?,
       upc: json['upc'] as String?,
       ean: json['ean'] as int?,
     );
@@ -69,18 +69,18 @@ Map<String, dynamic> _$$_GoUpcProductToJson(_$_GoUpcProduct instance) => <String
       'ean': instance.ean,
     };
 
-_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
+_$_FoodieProduct _$$_FoodieProductFromJson(Map<String, dynamic> json) => _$_FoodieProduct(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
       imageUrl: json['imageUrl'] as String,
       categoryId: json['categoryId'] as String,
-      quantity: json['quantity'] as String,
+      quantity: json['quantity'] as String?,
       package: json['package'] as String?,
       expirationDate: json['expirationDate'] as String?,
     );
 
-Map<String, dynamic> _$$_ProductToJson(_$_Product instance) => <String, dynamic>{
+Map<String, dynamic> _$$_FoodieProductToJson(_$_FoodieProduct instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
@@ -103,9 +103,9 @@ Map<String, dynamic> _$$_CategoryToJson(_$_Category instance) => <String, dynami
 
 _$_ProductState _$$_ProductStateFromJson(Map<String, dynamic> json) => _$_ProductState(
       products: (json['products'] as List<dynamic>?)
-              ?.map((dynamic e) => Product.fromJson(e as Map<String, dynamic>))
+              ?.map((dynamic e) => FoodieProduct.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <Product>[],
+          const <FoodieProduct>[],
       categories: (json['categories'] as List<dynamic>?)
               ?.map((dynamic e) => Category.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -114,7 +114,7 @@ _$_ProductState _$$_ProductStateFromJson(Map<String, dynamic> json) => _$_Produc
     );
 
 Map<String, dynamic> _$$_ProductStateToJson(_$_ProductState instance) => <String, dynamic>{
-      'products': instance.products.map((Product e) => e.toJson()).toList(),
+      'products': instance.products.map((FoodieProduct e) => e.toJson()).toList(),
       'categories': instance.categories.map((Category e) => e.toJson()).toList(),
       'selectedCategoryId': instance.selectedCategoryId,
     };

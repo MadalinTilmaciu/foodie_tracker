@@ -13,7 +13,7 @@ class ListProducts with _$ListProducts {
 
   @Implements<StopAction>()
   const factory ListProducts.successful(
-    List<Product> products, [
+    List<FoodieProduct> products, [
     @Default(_kListProductsPendingId) String pendingId,
   ]) = ListProductsSuccessful;
 

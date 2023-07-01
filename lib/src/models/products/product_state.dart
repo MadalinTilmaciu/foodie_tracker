@@ -3,7 +3,7 @@ part of '../index.dart';
 @freezed
 class ProductState with _$ProductState {
   const factory ProductState({
-    @Default(<Product>[]) List<Product> products,
+    @Default(<FoodieProduct>[]) List<FoodieProduct> products,
     @Default(<Category>[]) List<Category> categories,
     String? selectedCategoryId,
   }) = _ProductState;
