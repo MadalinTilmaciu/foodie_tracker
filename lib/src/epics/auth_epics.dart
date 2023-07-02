@@ -34,7 +34,7 @@ class AuthEpics implements EpicClass<AppState> {
 
         return <dynamic>[
           InitializeApp.successful(users.last),
-          if (hasLoggedIn) ...<dynamic>[const ListCategories.start()]
+          if (hasLoggedIn) ...<dynamic>[const ListCategories.start(null)]
         ];
       }).onErrorReturnWith((Object error, StackTrace stackTrace) => InitializeApp.error(error, stackTrace));
     });

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -23,18 +21,8 @@ class ScannerPage extends StatefulWidget {
 class _ScannerPageState extends State<ScannerPage> {
   Barcode? result;
   QRViewController? controller;
+  String? lastScanned;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'Barcode');
-
-  // In order to get hot reload to work we need to pause the camera if the platform
-  // is android, or resume the camera if the platform is iOS.
-  @override
-  void reassemble() {
-    super.reassemble();
-    if (Platform.isAndroid) {
-      controller!.pauseCamera();
-    }
-    controller!.resumeCamera();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -145,12 +133,12 @@ class _ScannerPageState extends State<ScannerPage> {
       },
     );
     controller.scannedDataStream.listen(
-      (Barcode scanData) async {
-        if (scanData.code!.length == 13) {
+      (Barcode scanData) {
+        if (scanData.code!.length == 13 && scanData.code != lastScanned) {
           StoreProvider.of<AppState>(context).dispatch(
             FindGoUpcProduct.start(barcode: scanData.code!),
           );
-          await controller.pauseCamera();
+          lastScanned = scanData.code;
           widget.persistentTabController.jumpToTab(0);
         }
       },
@@ -163,11 +151,5 @@ class _ScannerPageState extends State<ScannerPage> {
         const SnackBar(content: Text('No permission')),
       );
     }
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
   }
 }

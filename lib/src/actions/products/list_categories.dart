@@ -5,7 +5,8 @@ const String _kListCategoriesPendingId = 'ListCategories';
 @freezed
 class ListCategories with _$ListCategories {
   @Implements<StartAction>()
-  const factory ListCategories.start({
+  const factory ListCategories.start(
+    GoUpcResponse? goUpcResponse, {
     @Default(_kListCategoriesPendingId) String pendingId,
   }) = ListCategoriesStart;
 

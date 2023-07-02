@@ -40,6 +40,12 @@ class GoUpcEpics implements EpicClass<AppState> {
               if (indexValue == -1)
                 AddCategory.start(
                   goUpcResponse: goUpcResponse,
+                )
+              else
+                AddProduct.start(
+                  uid: store.state.auth.user!.uid,
+                  categories: store.state.products.categories,
+                  goUpcResponse: goUpcResponse,
                 ),
             ];
           },

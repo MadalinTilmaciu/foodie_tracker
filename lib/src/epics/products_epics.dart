@@ -31,7 +31,7 @@ class ProductsEpics implements EpicClass<AppState> {
           (_) {
             return <dynamic>[
               const AddCategory.successful(),
-              const ListCategories.start(),
+              ListCategories.start(action.goUpcResponse),
             ];
           },
         ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace));
@@ -48,6 +48,7 @@ class ProductsEpics implements EpicClass<AppState> {
           (_) {
             return <dynamic>[
               const AddProduct.successful(),
+              ListProducts.start(store.state.auth.user!.uid, action.categories.first.id),
             ];
           },
         ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace));
@@ -66,6 +67,12 @@ class ProductsEpics implements EpicClass<AppState> {
 
             return <dynamic>[
               ListCategories.successful(list),
+              if (action.goUpcResponse != null)
+                AddProduct.start(
+                  uid: store.state.auth.user!.uid,
+                  categories: list,
+                  goUpcResponse: action.goUpcResponse!,
+                ),
               ListProducts.start(store.state.auth.user!.uid, list.first.id),
             ];
           },
