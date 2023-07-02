@@ -28,6 +28,7 @@ dependencies:
   openfoodfacts: ^2.6.0
   path_provider: ^2.0.11
   persistent_bottom_nav_bar: ^5.0.2
+  pretty_qr_code: ^2.0.2
   qr_code_scanner: ^1.0.1
   redux_epics: ^0.15.1 
   redux: ^5.0.0 

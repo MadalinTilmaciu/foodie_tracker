@@ -1240,6 +1240,7 @@ mixin _$ProductState {
   List<FoodieProduct> get products => throw _privateConstructorUsedError;
   List<Category> get categories => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
+  String? get selectedProductId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1251,7 +1252,8 @@ abstract class $ProductStateCopyWith<$Res> {
   factory $ProductStateCopyWith(ProductState value, $Res Function(ProductState) then) =
       _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
-  $Res call({List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId});
+  $Res call(
+      {List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId, String? selectedProductId});
 }
 
 /// @nodoc
@@ -1269,6 +1271,7 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState> implements $Pr
     Object? products = null,
     Object? categories = null,
     Object? selectedCategoryId = freezed,
+    Object? selectedProductId = freezed,
   }) {
     return _then(_value.copyWith(
       products: null == products
@@ -1283,6 +1286,10 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState> implements $Pr
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      selectedProductId: freezed == selectedProductId
+          ? _value.selectedProductId
+          : selectedProductId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -1293,7 +1300,8 @@ abstract class _$$_ProductStateCopyWith<$Res> implements $ProductStateCopyWith<$
       __$$_ProductStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId});
+  $Res call(
+      {List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId, String? selectedProductId});
 }
 
 /// @nodoc
@@ -1307,6 +1315,7 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
     Object? products = null,
     Object? categories = null,
     Object? selectedCategoryId = freezed,
+    Object? selectedProductId = freezed,
   }) {
     return _then(_$_ProductState(
       products: null == products
@@ -1321,6 +1330,10 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      selectedProductId: freezed == selectedProductId
+          ? _value.selectedProductId
+          : selectedProductId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1331,7 +1344,8 @@ class _$_ProductState implements _ProductState {
   const _$_ProductState(
       {final List<FoodieProduct> products = const <FoodieProduct>[],
       final List<Category> categories = const <Category>[],
-      this.selectedCategoryId})
+      this.selectedCategoryId,
+      this.selectedProductId})
       : _products = products,
         _categories = categories;
 
@@ -1357,10 +1371,12 @@ class _$_ProductState implements _ProductState {
 
   @override
   final String? selectedCategoryId;
+  @override
+  final String? selectedProductId;
 
   @override
   String toString() {
-    return 'ProductState(products: $products, categories: $categories, selectedCategoryId: $selectedCategoryId)';
+    return 'ProductState(products: $products, categories: $categories, selectedCategoryId: $selectedCategoryId, selectedProductId: $selectedProductId)';
   }
 
   @override
@@ -1371,13 +1387,14 @@ class _$_ProductState implements _ProductState {
             const DeepCollectionEquality().equals(other._products, _products) &&
             const DeepCollectionEquality().equals(other._categories, _categories) &&
             (identical(other.selectedCategoryId, selectedCategoryId) ||
-                other.selectedCategoryId == selectedCategoryId));
+                other.selectedCategoryId == selectedCategoryId) &&
+            (identical(other.selectedProductId, selectedProductId) || other.selectedProductId == selectedProductId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_products),
-      const DeepCollectionEquality().hash(_categories), selectedCategoryId);
+      const DeepCollectionEquality().hash(_categories), selectedCategoryId, selectedProductId);
 
   @JsonKey(ignore: true)
   @override
@@ -1397,7 +1414,8 @@ abstract class _ProductState implements ProductState {
   const factory _ProductState(
       {final List<FoodieProduct> products,
       final List<Category> categories,
-      final String? selectedCategoryId}) = _$_ProductState;
+      final String? selectedCategoryId,
+      final String? selectedProductId}) = _$_ProductState;
 
   factory _ProductState.fromJson(Map<String, dynamic> json) = _$_ProductState.fromJson;
 
@@ -1407,6 +1425,8 @@ abstract class _ProductState implements ProductState {
   List<Category> get categories;
   @override
   String? get selectedCategoryId;
+  @override
+  String? get selectedProductId;
   @override
   @JsonKey(ignore: true)
   _$$_ProductStateCopyWith<_$_ProductState> get copyWith => throw _privateConstructorUsedError;

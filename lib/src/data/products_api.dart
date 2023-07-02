@@ -54,7 +54,7 @@ class ProductApi {
       imageUrl: goUpcResponse.product.imageUrl,
       categoryId: categories.firstWhere((Category e) => e.title == goUpcResponse.product.category).id,
       quantity: result.status == ProductResultV3.statusSuccess ? result.product?.quantity : 'n/a',
-      package: hasPackage == true ? result.product?.packagings!.first.material.toString() : 'n/a',
+      package: hasPackage == true ? result.product?.packagings!.first.material!.lcName.toString() : 'n/a',
       expirationDate: 'n/a',
     );
 

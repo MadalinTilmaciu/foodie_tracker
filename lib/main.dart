@@ -25,10 +25,6 @@ import 'src/presentations/containers/index.dart';
 import 'src/presentations/create_user_page.dart';
 import 'src/presentations/home_page.dart';
 import 'src/presentations/login_page.dart';
-import 'src/presentations/messages_page.dart';
-import 'src/presentations/products_page.dart';
-import 'src/presentations/recipes_page.dart';
-import 'src/presentations/settings_page.dart';
 import 'src/reducers/reducer.dart';
 
 Future<void> main() async {
@@ -108,10 +104,6 @@ class FoodieTracker extends StatelessWidget {
             );
           },
           '/createUser': (BuildContext context) => const CreateUserPage(),
-          '/settings': (BuildContext context) => const SettingsPage(),
-          '/products': (BuildContext context) => const ProductsPage(),
-          '/recipes': (BuildContext context) => const RecipesPage(),
-          '/messages': (BuildContext context) => const MessagesPage(),
         },
       ),
     );

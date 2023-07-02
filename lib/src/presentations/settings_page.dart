@@ -9,6 +9,7 @@ import 'package:settings_ui/settings_ui.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'user_qr_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -181,7 +182,14 @@ class _SettingsPageState extends State<SettingsPage> {
                         image: AssetImage('assets/icons/icons8-qr-code-48.png'),
                         height: 30,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => const UserQRScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],

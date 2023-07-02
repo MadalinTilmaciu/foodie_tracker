@@ -5,6 +5,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'product_details_page.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
@@ -121,7 +122,17 @@ class ProductsPage extends StatelessWidget {
                                             fit: StackFit.expand,
                                             children: <Widget>[
                                               GestureDetector(
-                                                onTap: () {},
+                                                onTap: () {
+                                                  StoreProvider.of<AppState>(context).dispatch(
+                                                    SetProduct.start(products[index].id),
+                                                  );
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute<dynamic>(
+                                                      builder: (BuildContext context) => const ProductDetailsPage(),
+                                                    ),
+                                                  );
+                                                },
                                                 child: ClipRRect(
                                                   borderRadius: BorderRadius.circular(12.0),
                                                   child: CachedNetworkImage(

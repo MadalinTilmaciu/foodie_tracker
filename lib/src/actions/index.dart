@@ -15,6 +15,7 @@ part 'products/add_product.dart';
 part 'products/list_categories.dart';
 part 'products/list_products.dart';
 part 'products/set_category.dart';
+part 'products/set_product.dart';
 part 'products/find_go_upc_product.dart';
 
 abstract class PendingActions {

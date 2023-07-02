@@ -111,12 +111,14 @@ _$_ProductState _$$_ProductStateFromJson(Map<String, dynamic> json) => _$_Produc
               .toList() ??
           const <Category>[],
       selectedCategoryId: json['selectedCategoryId'] as String?,
+      selectedProductId: json['selectedProductId'] as String?,
     );
 
 Map<String, dynamic> _$$_ProductStateToJson(_$_ProductState instance) => <String, dynamic>{
       'products': instance.products.map((FoodieProduct e) => e.toJson()).toList(),
       'categories': instance.categories.map((Category e) => e.toJson()).toList(),
       'selectedCategoryId': instance.selectedCategoryId,
+      'selectedProductId': instance.selectedProductId,
     };
 
 _$_GoUpcResponse _$$_GoUpcResponseFromJson(Map<String, dynamic> json) => _$_GoUpcResponse(

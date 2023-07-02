@@ -8,6 +8,7 @@ Reducer<ProductState> productsReducer = combineReducers(
     TypedReducer<ProductState, ListCategoriesSuccessful>(_listCategorySuccessful).call,
     TypedReducer<ProductState, SetCategory>(_setCategory).call,
     TypedReducer<ProductState, ListProductsSuccessful>(_listProductsSuccessful).call,
+    TypedReducer<ProductState, SetProduct>(_setProduct).call,
   ],
 );
 
@@ -21,4 +22,8 @@ ProductState _setCategory(ProductState state, SetCategory action) {
 
 ProductState _listProductsSuccessful(ProductState state, ListProductsSuccessful action) {
   return state.copyWith(products: action.products);
+}
+
+ProductState _setProduct(ProductState state, SetProduct action) {
+  return state.copyWith(selectedProductId: action.productId);
 }
