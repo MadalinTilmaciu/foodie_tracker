@@ -134,7 +134,7 @@ class ProductsPage extends StatelessWidget {
                                                 alignment: AlignmentDirectional.bottomCenter,
                                                 child: Container(
                                                   width: double.infinity,
-                                                  height: 32,
+                                                  height: 44,
                                                   decoration: const BoxDecoration(
                                                     borderRadius: BorderRadius.only(
                                                       bottomLeft: Radius.circular(12),

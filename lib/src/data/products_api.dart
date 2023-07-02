@@ -27,7 +27,10 @@ class ProductApi {
   }
 
   Future<void> addCategory(String title) async {
-    final Category category = Category(id: UniqueKey().toString(), title: title);
+    final Category category = Category(
+      id: UniqueKey().toString(),
+      title: title,
+    );
 
     await _firestore.collection('categories').add(category.toJson());
   }
@@ -40,13 +43,13 @@ class ProductApi {
       version: ProductQueryVersion.v3,
     );
     final ProductResultV3 result = await OpenFoodAPIClient.getProductV3(configuration);
+    // final bool? hasPackage = result.product?.packagings?.isNotEmpty;
 
     final FoodieProduct foodieProduct = FoodieProduct(
       id: goUpcResponse.code,
       name: goUpcResponse.product.name,
       imageUrl: goUpcResponse.product.imageUrl,
-      // categoryId: categories.firstWhere((Category e) => e.title == goUpcResponse.product.category).id,
-      categoryId: '2X19inbdxSacEIq056bx',
+      categoryId: categories.firstWhere((Category e) => e.title == goUpcResponse.product.category).id,
       quantity: result.status == ProductResultV3.statusSuccess ? result.product?.quantity : 'n/a',
       package: 'n/a',
       expirationDate: 'n/a',

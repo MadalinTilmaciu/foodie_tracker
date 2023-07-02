@@ -6,7 +6,7 @@ const String _kAddCategoryPendingId = 'AddCategory';
 class AddCategory with _$AddCategory {
   @Implements<StartAction>()
   const factory AddCategory.start({
-    required String title,
+    required GoUpcResponse goUpcResponse,
     @Default(_kAddCategoryPendingId) String pendingId,
   }) = AddCategoryStart;
 

@@ -26,9 +26,15 @@ class ProductsEpics implements EpicClass<AppState> {
     return actions.flatMap(
       (AddCategoryStart action) {
         return Stream<void>.value(null)
-            .asyncMap((_) => _api.addCategory(action.title))
-            .mapTo(const AddCategory.successful())
-            .onErrorReturnWith((Object error, StackTrace stackTrace) => AddCategory.error(error, stackTrace));
+            .asyncMap((_) => _api.addCategory(action.goUpcResponse.product.category!))
+            .expand(
+          (_) {
+            return <dynamic>[
+              const AddCategory.successful(),
+              const ListCategories.start(),
+            ];
+          },
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace));
       },
     );
   }
@@ -38,10 +44,13 @@ class ProductsEpics implements EpicClass<AppState> {
       (AddProductStart action) {
         return Stream<void>.value(null)
             .asyncMap((_) => _api.addProduct(action.uid, action.categories, action.goUpcResponse))
-            .mapTo(const AddProduct.successful())
-            .onErrorReturnWith(
-              (Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace),
-            );
+            .expand(
+          (_) {
+            return <dynamic>[
+              const AddProduct.successful(),
+            ];
+          },
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace));
       },
     );
   }
@@ -60,9 +69,7 @@ class ProductsEpics implements EpicClass<AppState> {
               ListProducts.start(store.state.auth.user!.uid, list.first.id),
             ];
           },
-        ).onErrorReturnWith(
-          (Object error, StackTrace stackTrace) => ListCategories.error(error, stackTrace),
-        );
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => ListCategories.error(error, stackTrace));
       },
     );
   }
