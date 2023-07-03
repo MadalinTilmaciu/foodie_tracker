@@ -9,6 +9,7 @@ part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
 part 'auth/update_picture_url.dart';
+part 'auth/update_display_name.dart';
 
 part 'products/add_category.dart';
 part 'products/add_product.dart';

@@ -22,7 +22,7 @@ class _UserQRScreenState extends State<UserQRScreen> {
         'QR Code',
         style: TextStyle(
           color: Colors.white,
-          fontSize: 28,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -80,11 +80,12 @@ class _UserQRScreenState extends State<UserQRScreen> {
                                   children: <Widget>[
                                     const SizedBox(height: 24),
                                     Text(
-                                      'test ${user!.displayName}',
+                                      user!.displayName,
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
+                                        fontSize: 16,
                                       ),
                                     ),
                                     const Text(
@@ -110,7 +111,7 @@ class _UserQRScreenState extends State<UserQRScreen> {
                         ),
                       ),
                     ),
-                    if (user.pictureUrl != '')
+                    if (user.pictureUrl != null)
                       Positioned(
                         child: ClipOval(
                           child: CachedNetworkImage(
@@ -125,18 +126,19 @@ class _UserQRScreenState extends State<UserQRScreen> {
                       SizedBox(
                         child: ClipOval(
                           child: Material(
-                            color: const Color.fromRGBO(162, 162, 155, 0.5),
+                            color: Colors.grey,
                             child: InkWell(
-                              splashColor: const Color.fromRGBO(50, 203, 255, 1),
-                              onTap: () => <void>{},
+                              splashColor: Theme.of(context).colorScheme.primary,
+                              onTap: () {},
                               child: const SizedBox(
-                                  width: 50,
-                                  height: 50,
-                                  child: Icon(
-                                    Icons.person_outline_rounded,
-                                    color: Colors.black,
-                                    size: 40,
-                                  )),
+                                width: 50,
+                                height: 50,
+                                child: Icon(
+                                  Icons.person_outline_rounded,
+                                  color: Colors.black,
+                                  size: 40,
+                                ),
+                              ),
                             ),
                           ),
                         ),

@@ -6,6 +6,7 @@ const String _kCreateUserPendingId = 'CreateUser';
 class CreateUser with _$CreateUser {
   @Implements<StartAction>()
   const factory CreateUser.start({
+    required String name,
     required String email,
     required String password,
     required ActionResult result,

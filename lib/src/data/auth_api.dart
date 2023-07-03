@@ -28,11 +28,15 @@ class AuthApi {
     ).distinct();
   }
 
-  Future<void> createUser({required String email, required String password}) async {
+  Future<void> createUser({required String name, required String email, required String password}) async {
     await _auth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+
+    if (_auth.currentUser != null) {
+      await _auth.currentUser?.updateDisplayName(name);
+    }
   }
 
   Future<void> loginUser({required String email, required String password}) async {
@@ -56,5 +60,11 @@ class AuthApi {
 
     final String url = await ref.getDownloadURL();
     _auth.currentUser!.updatePhotoURL(url);
+  }
+
+  Future<void> updateDisplayName({
+    required String name,
+  }) async {
+    await _auth.currentUser?.updateDisplayName(name);
   }
 }

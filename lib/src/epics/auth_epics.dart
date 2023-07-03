@@ -19,6 +19,7 @@ class AuthEpics implements EpicClass<AppState> {
         TypedEpic<AppState, LoginUserStart>(_loginUserStart).call,
         TypedEpic<AppState, LogoutUserStart>(_logoutUserStart).call,
         TypedEpic<AppState, UpdatePictureUrlStart>(_updatePictureUrlStart).call,
+        TypedEpic<AppState, UpdateDisplayNameStart>(_updateDisplayNameStart).call,
       ],
     )(actions, store);
   }
@@ -44,7 +45,13 @@ class AuthEpics implements EpicClass<AppState> {
     return actions.flatMap(
       (CreateUserStart action) {
         return Stream<void>.value(null)
-            .asyncMap((_) => _api.createUser(email: action.email, password: action.password))
+            .asyncMap(
+              (_) => _api.createUser(
+                name: action.name,
+                email: action.email,
+                password: action.password,
+              ),
+            )
             .mapTo(const CreateUser.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
             .doOnData(action.result);
@@ -82,6 +89,17 @@ class AuthEpics implements EpicClass<AppState> {
             .asyncMap((_) => _api.updatePictureUrl(uid: store.state.auth.user!.uid, path: action.path))
             .mapTo(const UpdatePictureUrl.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdatePictureUrl.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _updateDisplayNameStart(Stream<UpdateDisplayNameStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (UpdateDisplayNameStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.updateDisplayName(name: action.name))
+            .mapTo(const UpdateDisplayName.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateDisplayName.error(error, stackTrace));
       },
     );
   }

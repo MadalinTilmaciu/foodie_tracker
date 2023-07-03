@@ -6,6 +6,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'login_page.dart';
 
 class CreateUserPage extends StatefulWidget {
   const CreateUserPage({super.key});
@@ -15,6 +16,7 @@ class CreateUserPage extends StatefulWidget {
 }
 
 class _CreateUserPageState extends State<CreateUserPage> {
+  final TextEditingController _name = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _passwordConfirm = TextEditingController();
@@ -22,6 +24,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
   final FancyPasswordController _passwordConfirmFancy = FancyPasswordController();
 
   void _onNext() {
+    final String name = _name.text;
     final String email = _email.text;
     final String password = _password.text;
     final String passwordConfirm = _passwordConfirm.text;
@@ -37,7 +40,8 @@ class _CreateUserPageState extends State<CreateUserPage> {
     }
 
     StoreProvider.of<AppState>(context).dispatch(
-      CreateUserStart(
+      CreateUser.start(
+        name: name,
         email: email,
         password: password,
         result: _onResult,
@@ -90,6 +94,16 @@ class _CreateUserPageState extends State<CreateUserPage> {
                 child: Column(
                   children: <Widget>[
                     TextField(
+                      controller: _name,
+                      decoration: const InputDecoration(
+                        hintText: 'USERNAME',
+                      ),
+                      keyboardType: TextInputType.name,
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    TextField(
                       controller: _email,
                       decoration: const InputDecoration(
                         hintText: 'EMAIL',
@@ -104,6 +118,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
                       decoration: const InputDecoration(
                         hintText: 'PASSWORD',
                       ),
+                      keyboardType: TextInputType.visiblePassword,
                       passwordController: _passwordFancy,
                       validationRules: <ValidationRule>{
                         DigitValidationRule(),
@@ -164,6 +179,8 @@ class _CreateUserPageState extends State<CreateUserPage> {
                       decoration: const InputDecoration(
                         hintText: 'CONFIRM PASSWORD',
                       ),
+                      hasStrengthIndicator: false,
+                      keyboardType: TextInputType.visiblePassword,
                     ),
                   ],
                 ),
@@ -227,9 +244,11 @@ class _CreateUserPageState extends State<CreateUserPage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(
+                      Navigator.pushReplacement(
                         context,
-                        '/login',
+                        MaterialPageRoute<dynamic>(
+                          builder: (BuildContext context) => const LoginPage(),
+                        ),
                       );
                     },
                   ),
