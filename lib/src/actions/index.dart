@@ -8,8 +8,9 @@ part 'auth/initialize_app.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
-part 'auth/update_picture_url.dart';
-part 'auth/update_display_name.dart';
+
+part 'user_profile/update_picture_url.dart';
+part 'user_profile/update_display_name.dart';
 
 part 'products/add_category.dart';
 part 'products/add_product.dart';
@@ -19,6 +20,7 @@ part 'products/set_category.dart';
 part 'products/set_product.dart';
 part 'products/find_go_upc_product.dart';
 part 'products/delete_product.dart';
+part 'products/update_product.dart';
 
 abstract class PendingActions {
   String get pendingId;

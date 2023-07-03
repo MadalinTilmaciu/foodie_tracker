@@ -155,7 +155,7 @@ class ProductDetailsPage extends StatelessWidget {
                                 MaterialButton(
                                   height: 50,
                                   onPressed: () {},
-                                  color: Colors.blue,
+                                  color: Colors.blue[700],
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                                   child: const Text(
