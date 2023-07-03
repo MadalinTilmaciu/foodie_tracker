@@ -18,6 +18,7 @@ part 'products/list_products.dart';
 part 'products/set_category.dart';
 part 'products/set_product.dart';
 part 'products/find_go_upc_product.dart';
+part 'products/delete_product.dart';
 
 abstract class PendingActions {
   String get pendingId;

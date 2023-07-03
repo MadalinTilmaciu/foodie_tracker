@@ -18,6 +18,7 @@ class ProductsEpics implements EpicClass<AppState> {
         TypedEpic<AppState, AddProductStart>(_addProductStart).call,
         TypedEpic<AppState, ListCategoriesStart>(_listCategoryStart).call,
         TypedEpic<AppState, ListProductsStart>(_listProductStart).call,
+        TypedEpic<AppState, DeleteProductStart>(_deleteProductStart).call,
       ],
     )(actions, store);
   }
@@ -88,6 +89,19 @@ class ProductsEpics implements EpicClass<AppState> {
             .asyncMap((_) => _api.listProducts(store.state.auth.user!.uid, action.categoryId))
             .map((List<FoodieProduct> products) => ListProducts.successful(products))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => ListProducts.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _deleteProductStart(Stream<DeleteProductStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (DeleteProductStart action) {
+        return Stream<void>.value(null).asyncMap((_) => _api.deleteProduct(action.uid, action.productId)).expand((_) {
+          return <dynamic>[
+            const DeleteProduct.successful(),
+            ListProducts.start(action.uid, action.categoryId),
+          ];
+        }).onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteProduct.error(error, stackTrace));
       },
     );
   }

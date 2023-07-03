@@ -60,4 +60,12 @@ class ProductApi {
 
     await _firestore.collection('users/$uid/products').add(foodieProduct.toJson());
   }
+
+  Future<void> deleteProduct(String uid, String productId) async {
+    await _firestore
+        .collection('users/$uid/products')
+        .where('id', isEqualTo: productId)
+        .get()
+        .then((QuerySnapshot<Map<String, dynamic>> product) => product.docs[0].reference.delete());
+  }
 }

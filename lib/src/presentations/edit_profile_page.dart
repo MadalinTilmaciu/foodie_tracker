@@ -196,8 +196,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     child: TextField(
                       controller: _name,
                       keyboardType: TextInputType.name,
-                      onChanged: (_) {
-                        if (_name.text != '') {
+                      onTapOutside: (_) {
+                        if (_name.text.isNotEmpty && _name.text != user.displayName) {
                           store.dispatch(UpdateDisplayName.start(name: _name.text));
                         }
                       },
