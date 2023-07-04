@@ -14,6 +14,8 @@ part 'products/product_category.dart';
 part 'products/product_state.dart';
 part 'products/go_upc_response.dart';
 
-part 'recipes/recipe_category.dart';
+part 'recipes/meal_response.dart';
+part 'recipes/meal.dart';
+part 'recipes/meal_category.dart';
 part 'recipes/recipe.dart';
-part 'recipes/recipe_state.dart';
+part 'recipes/meal_state.dart';

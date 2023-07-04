@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
+import 'meals_page.dart';
 import 'messages_page.dart';
 import 'products_page.dart';
-import 'recipes_page.dart';
 import 'scanner_page.dart';
 import 'settings_page.dart';
 
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     List<Widget> buildScreens() {
       return <Widget>[
         const ProductsPage(),
-        const RecipesPage(),
+        const MealsPage(),
         ScannerPage(persistentTabController: controller),
         const MessagesPage(),
         const SettingsPage(),
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.doc_append),
-          title: 'Recipes',
+          title: 'Meals',
           inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(

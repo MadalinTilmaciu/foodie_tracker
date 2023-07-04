@@ -5,7 +5,7 @@ class AppState with _$AppState {
   const factory AppState({
     @Default(AuthState()) AuthState auth,
     @Default(ProductState()) ProductState products,
-    @Default(RecipeState()) RecipeState recipes,
+    @Default(MealState()) MealState meals,
     @Default(<String>{}) Set<String> pendingActions,
   }) = _AppState;
 

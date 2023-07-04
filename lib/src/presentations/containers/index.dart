@@ -10,5 +10,5 @@ part 'product_category_container.dart';
 part 'products_container.dart';
 part 'selected_product_category_container.dart';
 part 'selected_product_container.dart';
-part 'recipe_category_container.dart';
-part 'selected_recipe_category_container.dart';
+part 'meal_category_container.dart';
+part 'selected_meal_category_container.dart';

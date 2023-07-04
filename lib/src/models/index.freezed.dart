@@ -22,7 +22,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   AuthState get auth => throw _privateConstructorUsedError;
   ProductState get products => throw _privateConstructorUsedError;
-  RecipeState get recipes => throw _privateConstructorUsedError;
+  MealState get meals => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,11 +34,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AuthState auth, ProductState products, RecipeState recipes, Set<String> pendingActions});
+  $Res call({AuthState auth, ProductState products, MealState meals, Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
   $ProductStateCopyWith<$Res> get products;
-  $RecipeStateCopyWith<$Res> get recipes;
+  $MealStateCopyWith<$Res> get meals;
 }
 
 /// @nodoc
@@ -55,7 +55,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
   $Res call({
     Object? auth = null,
     Object? products = null,
-    Object? recipes = null,
+    Object? meals = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -67,10 +67,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductState,
-      recipes: null == recipes
-          ? _value.recipes
-          : recipes // ignore: cast_nullable_to_non_nullable
-              as RecipeState,
+      meals: null == meals
+          ? _value.meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as MealState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -96,9 +96,9 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
 
   @override
   @pragma('vm:prefer-inline')
-  $RecipeStateCopyWith<$Res> get recipes {
-    return $RecipeStateCopyWith<$Res>(_value.recipes, (value) {
-      return _then(_value.copyWith(recipes: value) as $Val);
+  $MealStateCopyWith<$Res> get meals {
+    return $MealStateCopyWith<$Res>(_value.meals, (value) {
+      return _then(_value.copyWith(meals: value) as $Val);
     });
   }
 }
@@ -108,14 +108,14 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$_AppStateCopyWith(_$_AppState value, $Res Function(_$_AppState) then) = __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AuthState auth, ProductState products, RecipeState recipes, Set<String> pendingActions});
+  $Res call({AuthState auth, ProductState products, MealState meals, Set<String> pendingActions});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
   @override
   $ProductStateCopyWith<$Res> get products;
   @override
-  $RecipeStateCopyWith<$Res> get recipes;
+  $MealStateCopyWith<$Res> get meals;
 }
 
 /// @nodoc
@@ -128,7 +128,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
   $Res call({
     Object? auth = null,
     Object? products = null,
-    Object? recipes = null,
+    Object? meals = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -140,10 +140,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductState,
-      recipes: null == recipes
-          ? _value.recipes
-          : recipes // ignore: cast_nullable_to_non_nullable
-              as RecipeState,
+      meals: null == meals
+          ? _value.meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as MealState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -158,7 +158,7 @@ class _$_AppState implements _AppState {
   const _$_AppState(
       {this.auth = const AuthState(),
       this.products = const ProductState(),
-      this.recipes = const RecipeState(),
+      this.meals = const MealState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -172,7 +172,7 @@ class _$_AppState implements _AppState {
   final ProductState products;
   @override
   @JsonKey()
-  final RecipeState recipes;
+  final MealState meals;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -184,7 +184,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, recipes: $recipes, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, meals: $meals, pendingActions: $pendingActions)';
   }
 
   @override
@@ -194,14 +194,14 @@ class _$_AppState implements _AppState {
             other is _$_AppState &&
             (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.products, products) || other.products == products) &&
-            (identical(other.recipes, recipes) || other.recipes == recipes) &&
+            (identical(other.meals, meals) || other.meals == meals) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, auth, products, recipes, const DeepCollectionEquality().hash(_pendingActions));
+      Object.hash(runtimeType, auth, products, meals, const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +220,7 @@ abstract class _AppState implements AppState {
   const factory _AppState(
       {final AuthState auth,
       final ProductState products,
-      final RecipeState recipes,
+      final MealState meals,
       final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
@@ -230,7 +230,7 @@ abstract class _AppState implements AppState {
   @override
   ProductState get products;
   @override
-  RecipeState get recipes;
+  MealState get meals;
   @override
   Set<String> get pendingActions;
   @override
@@ -1682,31 +1682,335 @@ abstract class _GoUpcResponse implements GoUpcResponse {
   _$$_GoUpcResponseCopyWith<_$_GoUpcResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
-RecipeCategory _$RecipeCategoryFromJson(Map<String, dynamic> json) {
-  return _RecipeCategory.fromJson(json);
+MealResponse _$MealResponseFromJson(Map<String, dynamic> json) {
+  return _MealResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RecipeCategory {
+mixin _$MealResponse {
+  List<Meal> get meals => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MealResponseCopyWith<MealResponse> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MealResponseCopyWith<$Res> {
+  factory $MealResponseCopyWith(MealResponse value, $Res Function(MealResponse) then) =
+      _$MealResponseCopyWithImpl<$Res, MealResponse>;
+  @useResult
+  $Res call({List<Meal> meals});
+}
+
+/// @nodoc
+class _$MealResponseCopyWithImpl<$Res, $Val extends MealResponse> implements $MealResponseCopyWith<$Res> {
+  _$MealResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? meals = null,
+  }) {
+    return _then(_value.copyWith(
+      meals: null == meals
+          ? _value.meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as List<Meal>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MealResponseCopyWith<$Res> implements $MealResponseCopyWith<$Res> {
+  factory _$$_MealResponseCopyWith(_$_MealResponse value, $Res Function(_$_MealResponse) then) =
+      __$$_MealResponseCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Meal> meals});
+}
+
+/// @nodoc
+class __$$_MealResponseCopyWithImpl<$Res> extends _$MealResponseCopyWithImpl<$Res, _$_MealResponse>
+    implements _$$_MealResponseCopyWith<$Res> {
+  __$$_MealResponseCopyWithImpl(_$_MealResponse _value, $Res Function(_$_MealResponse) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? meals = null,
+  }) {
+    return _then(_$_MealResponse(
+      meals: null == meals
+          ? _value._meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as List<Meal>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MealResponse implements _MealResponse {
+  _$_MealResponse({required final List<Meal> meals}) : _meals = meals;
+
+  factory _$_MealResponse.fromJson(Map<String, dynamic> json) => _$$_MealResponseFromJson(json);
+
+  final List<Meal> _meals;
+  @override
+  List<Meal> get meals {
+    if (_meals is EqualUnmodifiableListView) return _meals;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_meals);
+  }
+
+  @override
+  String toString() {
+    return 'MealResponse(meals: $meals)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MealResponse &&
+            const DeepCollectionEquality().equals(other._meals, _meals));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_meals));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MealResponseCopyWith<_$_MealResponse> get copyWith =>
+      __$$_MealResponseCopyWithImpl<_$_MealResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MealResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MealResponse implements MealResponse {
+  factory _MealResponse({required final List<Meal> meals}) = _$_MealResponse;
+
+  factory _MealResponse.fromJson(Map<String, dynamic> json) = _$_MealResponse.fromJson;
+
+  @override
+  List<Meal> get meals;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MealResponseCopyWith<_$_MealResponse> get copyWith => throw _privateConstructorUsedError;
+}
+
+Meal _$MealFromJson(Map<String, dynamic> json) {
+  return _Meal.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Meal {
+  @JsonKey(name: 'strMeal')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMealThumb')
+  String get pictureUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'idMeal')
+  String get id => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MealCopyWith<Meal> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MealCopyWith<$Res> {
+  factory $MealCopyWith(Meal value, $Res Function(Meal) then) = _$MealCopyWithImpl<$Res, Meal>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'strMeal') String name,
+      @JsonKey(name: 'strMealThumb') String pictureUrl,
+      @JsonKey(name: 'idMeal') String id});
+}
+
+/// @nodoc
+class _$MealCopyWithImpl<$Res, $Val extends Meal> implements $MealCopyWith<$Res> {
+  _$MealCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pictureUrl = null,
+    Object? id = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pictureUrl: null == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MealCopyWith<$Res> implements $MealCopyWith<$Res> {
+  factory _$$_MealCopyWith(_$_Meal value, $Res Function(_$_Meal) then) = __$$_MealCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'strMeal') String name,
+      @JsonKey(name: 'strMealThumb') String pictureUrl,
+      @JsonKey(name: 'idMeal') String id});
+}
+
+/// @nodoc
+class __$$_MealCopyWithImpl<$Res> extends _$MealCopyWithImpl<$Res, _$_Meal> implements _$$_MealCopyWith<$Res> {
+  __$$_MealCopyWithImpl(_$_Meal _value, $Res Function(_$_Meal) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pictureUrl = null,
+    Object? id = null,
+  }) {
+    return _then(_$_Meal(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pictureUrl: null == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Meal implements _Meal {
+  _$_Meal(
+      {@JsonKey(name: 'strMeal') required this.name,
+      @JsonKey(name: 'strMealThumb') required this.pictureUrl,
+      @JsonKey(name: 'idMeal') required this.id});
+
+  factory _$_Meal.fromJson(Map<String, dynamic> json) => _$$_MealFromJson(json);
+
+  @override
+  @JsonKey(name: 'strMeal')
+  final String name;
+  @override
+  @JsonKey(name: 'strMealThumb')
+  final String pictureUrl;
+  @override
+  @JsonKey(name: 'idMeal')
+  final String id;
+
+  @override
+  String toString() {
+    return 'Meal(name: $name, pictureUrl: $pictureUrl, id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Meal &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, pictureUrl, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MealCopyWith<_$_Meal> get copyWith => __$$_MealCopyWithImpl<_$_Meal>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MealToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Meal implements Meal {
+  factory _Meal(
+      {@JsonKey(name: 'strMeal') required final String name,
+      @JsonKey(name: 'strMealThumb') required final String pictureUrl,
+      @JsonKey(name: 'idMeal') required final String id}) = _$_Meal;
+
+  factory _Meal.fromJson(Map<String, dynamic> json) = _$_Meal.fromJson;
+
+  @override
+  @JsonKey(name: 'strMeal')
+  String get name;
+  @override
+  @JsonKey(name: 'strMealThumb')
+  String get pictureUrl;
+  @override
+  @JsonKey(name: 'idMeal')
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MealCopyWith<_$_Meal> get copyWith => throw _privateConstructorUsedError;
+}
+
+MealCategory _$MealCategoryFromJson(Map<String, dynamic> json) {
+  return _MealCategory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MealCategory {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RecipeCategoryCopyWith<RecipeCategory> get copyWith => throw _privateConstructorUsedError;
+  $MealCategoryCopyWith<MealCategory> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RecipeCategoryCopyWith<$Res> {
-  factory $RecipeCategoryCopyWith(RecipeCategory value, $Res Function(RecipeCategory) then) =
-      _$RecipeCategoryCopyWithImpl<$Res, RecipeCategory>;
+abstract class $MealCategoryCopyWith<$Res> {
+  factory $MealCategoryCopyWith(MealCategory value, $Res Function(MealCategory) then) =
+      _$MealCategoryCopyWithImpl<$Res, MealCategory>;
   @useResult
   $Res call({String id, String title});
 }
 
 /// @nodoc
-class _$RecipeCategoryCopyWithImpl<$Res, $Val extends RecipeCategory> implements $RecipeCategoryCopyWith<$Res> {
-  _$RecipeCategoryCopyWithImpl(this._value, this._then);
+class _$MealCategoryCopyWithImpl<$Res, $Val extends MealCategory> implements $MealCategoryCopyWith<$Res> {
+  _$MealCategoryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1733,19 +2037,18 @@ class _$RecipeCategoryCopyWithImpl<$Res, $Val extends RecipeCategory> implements
 }
 
 /// @nodoc
-abstract class _$$_RecipeCategoryCopyWith<$Res> implements $RecipeCategoryCopyWith<$Res> {
-  factory _$$_RecipeCategoryCopyWith(_$_RecipeCategory value, $Res Function(_$_RecipeCategory) then) =
-      __$$_RecipeCategoryCopyWithImpl<$Res>;
+abstract class _$$_MealCategoryCopyWith<$Res> implements $MealCategoryCopyWith<$Res> {
+  factory _$$_MealCategoryCopyWith(_$_MealCategory value, $Res Function(_$_MealCategory) then) =
+      __$$_MealCategoryCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String title});
 }
 
 /// @nodoc
-class __$$_RecipeCategoryCopyWithImpl<$Res> extends _$RecipeCategoryCopyWithImpl<$Res, _$_RecipeCategory>
-    implements _$$_RecipeCategoryCopyWith<$Res> {
-  __$$_RecipeCategoryCopyWithImpl(_$_RecipeCategory _value, $Res Function(_$_RecipeCategory) _then)
-      : super(_value, _then);
+class __$$_MealCategoryCopyWithImpl<$Res> extends _$MealCategoryCopyWithImpl<$Res, _$_MealCategory>
+    implements _$$_MealCategoryCopyWith<$Res> {
+  __$$_MealCategoryCopyWithImpl(_$_MealCategory _value, $Res Function(_$_MealCategory) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1753,7 +2056,7 @@ class __$$_RecipeCategoryCopyWithImpl<$Res> extends _$RecipeCategoryCopyWithImpl
     Object? id = null,
     Object? title = null,
   }) {
-    return _then(_$_RecipeCategory(
+    return _then(_$_MealCategory(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1768,10 +2071,10 @@ class __$$_RecipeCategoryCopyWithImpl<$Res> extends _$RecipeCategoryCopyWithImpl
 
 /// @nodoc
 @JsonSerializable()
-class _$_RecipeCategory implements _RecipeCategory {
-  const _$_RecipeCategory({required this.id, required this.title});
+class _$_MealCategory implements _MealCategory {
+  const _$_MealCategory({required this.id, required this.title});
 
-  factory _$_RecipeCategory.fromJson(Map<String, dynamic> json) => _$$_RecipeCategoryFromJson(json);
+  factory _$_MealCategory.fromJson(Map<String, dynamic> json) => _$$_MealCategoryFromJson(json);
 
   @override
   final String id;
@@ -1780,11 +2083,11 @@ class _$_RecipeCategory implements _RecipeCategory {
 
   @override
   String toString() {
-    return 'RecipeCategory(id: $id, title: $title)';
+    return 'MealCategory(id: $id, title: $title)';
   }
 
   @override
-  int compareTo(RecipeCategory other) {
+  int compareTo(MealCategory other) {
     return title.compareTo(other.title);
   }
 
@@ -1792,7 +2095,7 @@ class _$_RecipeCategory implements _RecipeCategory {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RecipeCategory &&
+            other is _$_MealCategory &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title));
   }
@@ -1804,21 +2107,21 @@ class _$_RecipeCategory implements _RecipeCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RecipeCategoryCopyWith<_$_RecipeCategory> get copyWith =>
-      __$$_RecipeCategoryCopyWithImpl<_$_RecipeCategory>(this, _$identity);
+  _$$_MealCategoryCopyWith<_$_MealCategory> get copyWith =>
+      __$$_MealCategoryCopyWithImpl<_$_MealCategory>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecipeCategoryToJson(
+    return _$$_MealCategoryToJson(
       this,
     );
   }
 }
 
-abstract class _RecipeCategory implements RecipeCategory {
-  const factory _RecipeCategory({required final String id, required final String title}) = _$_RecipeCategory;
+abstract class _MealCategory implements MealCategory {
+  const factory _MealCategory({required final String id, required final String title}) = _$_MealCategory;
 
-  factory _RecipeCategory.fromJson(Map<String, dynamic> json) = _$_RecipeCategory.fromJson;
+  factory _MealCategory.fromJson(Map<String, dynamic> json) = _$_MealCategory.fromJson;
 
   @override
   String get id;
@@ -1826,7 +2129,7 @@ abstract class _RecipeCategory implements RecipeCategory {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_RecipeCategoryCopyWith<_$_RecipeCategory> get copyWith => throw _privateConstructorUsedError;
+  _$$_MealCategoryCopyWith<_$_MealCategory> get copyWith => throw _privateConstructorUsedError;
 }
 
 Recipe _$RecipeFromJson(Map<String, dynamic> json) {
@@ -3209,34 +3512,32 @@ abstract class _Recipe implements Recipe {
   _$$_RecipeCopyWith<_$_Recipe> get copyWith => throw _privateConstructorUsedError;
 }
 
-RecipeState _$RecipeStateFromJson(Map<String, dynamic> json) {
-  return _RecipeState.fromJson(json);
+MealState _$MealStateFromJson(Map<String, dynamic> json) {
+  return _MealState.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RecipeState {
-  List<Recipe> get recipes => throw _privateConstructorUsedError;
-  List<RecipeCategory> get categories => throw _privateConstructorUsedError;
+mixin _$MealState {
+  List<Meal> get meals => throw _privateConstructorUsedError;
+  List<MealCategory> get categories => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
   String? get selectedRecipeId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RecipeStateCopyWith<RecipeState> get copyWith => throw _privateConstructorUsedError;
+  $MealStateCopyWith<MealState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RecipeStateCopyWith<$Res> {
-  factory $RecipeStateCopyWith(RecipeState value, $Res Function(RecipeState) then) =
-      _$RecipeStateCopyWithImpl<$Res, RecipeState>;
+abstract class $MealStateCopyWith<$Res> {
+  factory $MealStateCopyWith(MealState value, $Res Function(MealState) then) = _$MealStateCopyWithImpl<$Res, MealState>;
   @useResult
-  $Res call(
-      {List<Recipe> recipes, List<RecipeCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+  $Res call({List<Meal> meals, List<MealCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
 }
 
 /// @nodoc
-class _$RecipeStateCopyWithImpl<$Res, $Val extends RecipeState> implements $RecipeStateCopyWith<$Res> {
-  _$RecipeStateCopyWithImpl(this._value, this._then);
+class _$MealStateCopyWithImpl<$Res, $Val extends MealState> implements $MealStateCopyWith<$Res> {
+  _$MealStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -3246,20 +3547,20 @@ class _$RecipeStateCopyWithImpl<$Res, $Val extends RecipeState> implements $Reci
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recipes = null,
+    Object? meals = null,
     Object? categories = null,
     Object? selectedCategoryId = freezed,
     Object? selectedRecipeId = freezed,
   }) {
     return _then(_value.copyWith(
-      recipes: null == recipes
-          ? _value.recipes
-          : recipes // ignore: cast_nullable_to_non_nullable
-              as List<Recipe>,
+      meals: null == meals
+          ? _value.meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as List<Meal>,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<RecipeCategory>,
+              as List<MealCategory>,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
@@ -3273,37 +3574,36 @@ class _$RecipeStateCopyWithImpl<$Res, $Val extends RecipeState> implements $Reci
 }
 
 /// @nodoc
-abstract class _$$_RecipeStateCopyWith<$Res> implements $RecipeStateCopyWith<$Res> {
-  factory _$$_RecipeStateCopyWith(_$_RecipeState value, $Res Function(_$_RecipeState) then) =
-      __$$_RecipeStateCopyWithImpl<$Res>;
+abstract class _$$_MealStateCopyWith<$Res> implements $MealStateCopyWith<$Res> {
+  factory _$$_MealStateCopyWith(_$_MealState value, $Res Function(_$_MealState) then) =
+      __$$_MealStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<Recipe> recipes, List<RecipeCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+  $Res call({List<Meal> meals, List<MealCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
 }
 
 /// @nodoc
-class __$$_RecipeStateCopyWithImpl<$Res> extends _$RecipeStateCopyWithImpl<$Res, _$_RecipeState>
-    implements _$$_RecipeStateCopyWith<$Res> {
-  __$$_RecipeStateCopyWithImpl(_$_RecipeState _value, $Res Function(_$_RecipeState) _then) : super(_value, _then);
+class __$$_MealStateCopyWithImpl<$Res> extends _$MealStateCopyWithImpl<$Res, _$_MealState>
+    implements _$$_MealStateCopyWith<$Res> {
+  __$$_MealStateCopyWithImpl(_$_MealState _value, $Res Function(_$_MealState) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recipes = null,
+    Object? meals = null,
     Object? categories = null,
     Object? selectedCategoryId = freezed,
     Object? selectedRecipeId = freezed,
   }) {
-    return _then(_$_RecipeState(
-      recipes: null == recipes
-          ? _value._recipes
-          : recipes // ignore: cast_nullable_to_non_nullable
-              as List<Recipe>,
+    return _then(_$_MealState(
+      meals: null == meals
+          ? _value._meals
+          : meals // ignore: cast_nullable_to_non_nullable
+              as List<Meal>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<RecipeCategory>,
+              as List<MealCategory>,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
@@ -3318,30 +3618,30 @@ class __$$_RecipeStateCopyWithImpl<$Res> extends _$RecipeStateCopyWithImpl<$Res,
 
 /// @nodoc
 @JsonSerializable()
-class _$_RecipeState implements _RecipeState {
-  const _$_RecipeState(
-      {final List<Recipe> recipes = const <Recipe>[],
-      final List<RecipeCategory> categories = const <RecipeCategory>[],
+class _$_MealState implements _MealState {
+  const _$_MealState(
+      {final List<Meal> meals = const <Meal>[],
+      final List<MealCategory> categories = const <MealCategory>[],
       this.selectedCategoryId,
       this.selectedRecipeId})
-      : _recipes = recipes,
+      : _meals = meals,
         _categories = categories;
 
-  factory _$_RecipeState.fromJson(Map<String, dynamic> json) => _$$_RecipeStateFromJson(json);
+  factory _$_MealState.fromJson(Map<String, dynamic> json) => _$$_MealStateFromJson(json);
 
-  final List<Recipe> _recipes;
+  final List<Meal> _meals;
   @override
   @JsonKey()
-  List<Recipe> get recipes {
-    if (_recipes is EqualUnmodifiableListView) return _recipes;
+  List<Meal> get meals {
+    if (_meals is EqualUnmodifiableListView) return _meals;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_recipes);
+    return EqualUnmodifiableListView(_meals);
   }
 
-  final List<RecipeCategory> _categories;
+  final List<MealCategory> _categories;
   @override
   @JsonKey()
-  List<RecipeCategory> get categories {
+  List<MealCategory> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
@@ -3354,15 +3654,15 @@ class _$_RecipeState implements _RecipeState {
 
   @override
   String toString() {
-    return 'RecipeState(recipes: $recipes, categories: $categories, selectedCategoryId: $selectedCategoryId, selectedRecipeId: $selectedRecipeId)';
+    return 'MealState(meals: $meals, categories: $categories, selectedCategoryId: $selectedCategoryId, selectedRecipeId: $selectedRecipeId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RecipeState &&
-            const DeepCollectionEquality().equals(other._recipes, _recipes) &&
+            other is _$_MealState &&
+            const DeepCollectionEquality().equals(other._meals, _meals) &&
             const DeepCollectionEquality().equals(other._categories, _categories) &&
             (identical(other.selectedCategoryId, selectedCategoryId) ||
                 other.selectedCategoryId == selectedCategoryId) &&
@@ -3371,41 +3671,40 @@ class _$_RecipeState implements _RecipeState {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_recipes),
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_meals),
       const DeepCollectionEquality().hash(_categories), selectedCategoryId, selectedRecipeId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RecipeStateCopyWith<_$_RecipeState> get copyWith =>
-      __$$_RecipeStateCopyWithImpl<_$_RecipeState>(this, _$identity);
+  _$$_MealStateCopyWith<_$_MealState> get copyWith => __$$_MealStateCopyWithImpl<_$_MealState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecipeStateToJson(
+    return _$$_MealStateToJson(
       this,
     );
   }
 }
 
-abstract class _RecipeState implements RecipeState {
-  const factory _RecipeState(
-      {final List<Recipe> recipes,
-      final List<RecipeCategory> categories,
+abstract class _MealState implements MealState {
+  const factory _MealState(
+      {final List<Meal> meals,
+      final List<MealCategory> categories,
       final String? selectedCategoryId,
-      final String? selectedRecipeId}) = _$_RecipeState;
+      final String? selectedRecipeId}) = _$_MealState;
 
-  factory _RecipeState.fromJson(Map<String, dynamic> json) = _$_RecipeState.fromJson;
+  factory _MealState.fromJson(Map<String, dynamic> json) = _$_MealState.fromJson;
 
   @override
-  List<Recipe> get recipes;
+  List<Meal> get meals;
   @override
-  List<RecipeCategory> get categories;
+  List<MealCategory> get categories;
   @override
   String? get selectedCategoryId;
   @override
   String? get selectedRecipeId;
   @override
   @JsonKey(ignore: true)
-  _$$_RecipeStateCopyWith<_$_RecipeState> get copyWith => throw _privateConstructorUsedError;
+  _$$_MealStateCopyWith<_$_MealState> get copyWith => throw _privateConstructorUsedError;
 }

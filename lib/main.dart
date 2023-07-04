@@ -15,13 +15,13 @@ import 'firebase_options.dart';
 import 'src/actions/index.dart';
 import 'src/data/auth_api.dart';
 import 'src/data/go_upc_api.dart';
+import 'src/data/meals_api.dart';
 import 'src/data/products_api.dart';
-import 'src/data/recipes_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
 import 'src/epics/go_upc_epics.dart';
+import 'src/epics/meals_epics.dart';
 import 'src/epics/products_epics.dart';
-import 'src/epics/recipes_epics.dart';
 import 'src/models/index.dart';
 import 'src/presentations/containers/index.dart';
 import 'src/presentations/create_user_page.dart';
@@ -58,14 +58,14 @@ Future<void> main() async {
   final GoUpcApi goUpcApi = GoUpcApi(client, apiKey);
   final GoUpcEpics goUpcEpics = GoUpcEpics(goUpcApi);
 
-  final RecipeApi recipeApi = RecipeApi(FirebaseFirestore.instance);
-  final RecipesEpics recipesEpics = RecipesEpics(recipeApi);
+  final MealsApi mealsApi = MealsApi(FirebaseFirestore.instance, client);
+  final MealsEpics mealsEpics = MealsEpics(mealsApi);
 
   final AppEpics epic = AppEpics(
     auth,
     products,
     goUpcEpics,
-    recipesEpics,
+    mealsEpics,
   );
 
   final Store<AppState> store = Store<AppState>(

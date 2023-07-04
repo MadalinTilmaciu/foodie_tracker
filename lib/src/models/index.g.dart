@@ -11,8 +11,7 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
       products: json['products'] == null
           ? const ProductState()
           : ProductState.fromJson(json['products'] as Map<String, dynamic>),
-      recipes:
-          json['recipes'] == null ? const RecipeState() : RecipeState.fromJson(json['recipes'] as Map<String, dynamic>),
+      meals: json['meals'] == null ? const MealState() : MealState.fromJson(json['meals'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -20,7 +19,7 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
 Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynamic>{
       'auth': instance.auth.toJson(),
       'products': instance.products.toJson(),
-      'recipes': instance.recipes.toJson(),
+      'meals': instance.meals.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -140,12 +139,32 @@ Map<String, dynamic> _$$_GoUpcResponseToJson(_$_GoUpcResponse instance) => <Stri
       'inferred': instance.inferred,
     };
 
-_$_RecipeCategory _$$_RecipeCategoryFromJson(Map<String, dynamic> json) => _$_RecipeCategory(
+_$_MealResponse _$$_MealResponseFromJson(Map<String, dynamic> json) => _$_MealResponse(
+      meals: (json['meals'] as List<dynamic>).map((dynamic e) => Meal.fromJson(e as Map<String, dynamic>)).toList(),
+    );
+
+Map<String, dynamic> _$$_MealResponseToJson(_$_MealResponse instance) => <String, dynamic>{
+      'meals': instance.meals.map((Meal e) => e.toJson()).toList(),
+    };
+
+_$_Meal _$$_MealFromJson(Map<String, dynamic> json) => _$_Meal(
+      name: json['strMeal'] as String,
+      pictureUrl: json['strMealThumb'] as String,
+      id: json['idMeal'] as String,
+    );
+
+Map<String, dynamic> _$$_MealToJson(_$_Meal instance) => <String, dynamic>{
+      'strMeal': instance.name,
+      'strMealThumb': instance.pictureUrl,
+      'idMeal': instance.id,
+    };
+
+_$_MealCategory _$$_MealCategoryFromJson(Map<String, dynamic> json) => _$_MealCategory(
       id: json['id'] as String,
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$_RecipeCategoryToJson(_$_RecipeCategory instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MealCategoryToJson(_$_MealCategory instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
     };
@@ -262,22 +281,20 @@ Map<String, dynamic> _$$_RecipeToJson(_$_Recipe instance) => <String, dynamic>{
       'dateModified': instance.dateModified,
     };
 
-_$_RecipeState _$$_RecipeStateFromJson(Map<String, dynamic> json) => _$_RecipeState(
-      recipes: (json['recipes'] as List<dynamic>?)
-              ?.map((dynamic e) => Recipe.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <Recipe>[],
+_$_MealState _$$_MealStateFromJson(Map<String, dynamic> json) => _$_MealState(
+      meals: (json['meals'] as List<dynamic>?)?.map((dynamic e) => Meal.fromJson(e as Map<String, dynamic>)).toList() ??
+          const <Meal>[],
       categories: (json['categories'] as List<dynamic>?)
-              ?.map((dynamic e) => RecipeCategory.fromJson(e as Map<String, dynamic>))
+              ?.map((dynamic e) => MealCategory.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <RecipeCategory>[],
+          const <MealCategory>[],
       selectedCategoryId: json['selectedCategoryId'] as String?,
       selectedRecipeId: json['selectedRecipeId'] as String?,
     );
 
-Map<String, dynamic> _$$_RecipeStateToJson(_$_RecipeState instance) => <String, dynamic>{
-      'recipes': instance.recipes.map((Recipe e) => e.toJson()).toList(),
-      'categories': instance.categories.map((RecipeCategory e) => e.toJson()).toList(),
+Map<String, dynamic> _$$_MealStateToJson(_$_MealState instance) => <String, dynamic>{
+      'meals': instance.meals.map((Meal e) => e.toJson()).toList(),
+      'categories': instance.categories.map((MealCategory e) => e.toJson()).toList(),
       'selectedCategoryId': instance.selectedCategoryId,
       'selectedRecipeId': instance.selectedRecipeId,
     };

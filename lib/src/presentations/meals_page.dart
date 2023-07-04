@@ -5,19 +5,19 @@ import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
 
-class RecipesPage extends StatelessWidget {
-  const RecipesPage({super.key});
+class MealsPage extends StatelessWidget {
+  const MealsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: RecipeCategoryContainer(
-        builder: (BuildContext context, List<RecipeCategory> categories) {
+      child: MealCategoryContainer(
+        builder: (BuildContext context, List<MealCategory> categories) {
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               title: const Text(
-                'Recipes',
+                'Meals',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -34,12 +34,12 @@ class RecipesPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: SizedBox(
                           height: 56,
-                          child: SelectedRecipeCategoryContainer(
-                            builder: (BuildContext context, RecipeCategory selectedCategory) {
+                          child: SelectedMealCategoryContainer(
+                            builder: (BuildContext context, MealCategory selectedCategory) {
                               return ListView(
                                 scrollDirection: Axis.horizontal,
                                 children: categories.map(
-                                  (RecipeCategory category) {
+                                  (MealCategory category) {
                                     return Padding(
                                       padding: const EdgeInsets.symmetric(horizontal: 4),
                                       child: ChoiceChip(
@@ -49,7 +49,7 @@ class RecipesPage extends StatelessWidget {
                                         onSelected: (bool selected) {
                                           if (selected) {
                                             StoreProvider.of<AppState>(context).dispatch(
-                                              SetRecipeCategory.start(category.id),
+                                              SetMealCategory.start(category.id),
                                             );
                                           }
                                         },
@@ -65,7 +65,7 @@ class RecipesPage extends StatelessWidget {
                     ),
             ),
             body: const Center(
-              child: Text('Recipes'),
+              child: Text('Meals'),
             ),
           );
         },
