@@ -5,18 +5,18 @@ import '../models/index.dart';
 
 Reducer<ProductState> productsReducer = combineReducers(
   <Reducer<ProductState>>[
-    TypedReducer<ProductState, ListCategoriesSuccessful>(_listCategorySuccessful).call,
-    TypedReducer<ProductState, SetCategory>(_setCategory).call,
+    TypedReducer<ProductState, ListProductCategoriesSuccessful>(_listProductCategorySuccessful).call,
+    TypedReducer<ProductState, SetProductCategory>(_setCategory).call,
     TypedReducer<ProductState, ListProductsSuccessful>(_listProductsSuccessful).call,
     TypedReducer<ProductState, SetProduct>(_setProduct).call,
   ],
 );
 
-ProductState _listCategorySuccessful(ProductState state, ListCategoriesSuccessful action) {
+ProductState _listProductCategorySuccessful(ProductState state, ListProductCategoriesSuccessful action) {
   return state.copyWith(categories: action.categories, selectedCategoryId: action.categories.first.id);
 }
 
-ProductState _setCategory(ProductState state, SetCategory action) {
+ProductState _setCategory(ProductState state, SetProductCategory action) {
   return state.copyWith(selectedCategoryId: action.categoryId);
 }
 

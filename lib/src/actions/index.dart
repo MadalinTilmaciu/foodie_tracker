@@ -12,11 +12,11 @@ part 'auth/logout_user.dart';
 part 'user_profile/update_picture_url.dart';
 part 'user_profile/update_display_name.dart';
 
-part 'products/add_category.dart';
+part 'products/add_product_category.dart';
 part 'products/add_product.dart';
-part 'products/list_categories.dart';
+part 'products/list_product_categories.dart';
 part 'products/list_products.dart';
-part 'products/set_category.dart';
+part 'products/set_product_category.dart';
 part 'products/set_product.dart';
 part 'products/find_go_upc_product.dart';
 part 'products/delete_product.dart';

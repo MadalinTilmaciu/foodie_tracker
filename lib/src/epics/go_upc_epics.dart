@@ -38,7 +38,7 @@ class GoUpcEpics implements EpicClass<AppState> {
             return <dynamic>[
               FindGoUpcProduct.successful(goUpcResponse),
               if (indexValue == -1)
-                AddCategory.start(
+                AddProductCategory.start(
                   goUpcResponse: goUpcResponse,
                 )
               else

@@ -54,7 +54,7 @@ class ProductsPage extends StatelessWidget {
                                               if (selected) {
                                                 StoreProvider.of<AppState>(context)
                                                   ..dispatch(
-                                                    SetCategory.start(category.id),
+                                                    SetProductCategory.start(category.id),
                                                   )
                                                   ..dispatch(
                                                     ListProducts.start(
