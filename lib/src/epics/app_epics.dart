@@ -4,17 +4,20 @@ import '../models/index.dart';
 import 'auth_epics.dart';
 import 'go_upc_epics.dart';
 import 'products_epics.dart';
+import 'recipes_epics.dart';
 
 class AppEpics implements EpicClass<AppState> {
   AppEpics(
     this._auth,
     this._product,
     this._goUpc,
+    this._recipes,
   );
 
   final AuthEpics _auth;
   final ProductsEpics _product;
   final GoUpcEpics _goUpc;
+  final RecipesEpics _recipes;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -23,6 +26,7 @@ class AppEpics implements EpicClass<AppState> {
         _auth.call,
         _product.call,
         _goUpc.call,
+        _recipes.call,
       ],
     )(actions, store);
   }

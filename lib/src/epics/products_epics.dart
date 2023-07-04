@@ -64,8 +64,8 @@ class ProductsEpics implements EpicClass<AppState> {
         return Stream<void>.value(null)
             .asyncMap((_) => _api.listCategories()) //
             .expand(
-          (List<Category> categories) {
-            final List<Category> list = categories..sort();
+          (List<ProductCategory> categories) {
+            final List<ProductCategory> list = categories..sort();
 
             return <dynamic>[
               ListProductCategories.successful(list),

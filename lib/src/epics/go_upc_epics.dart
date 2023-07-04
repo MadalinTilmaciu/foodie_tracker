@@ -30,7 +30,7 @@ class GoUpcEpics implements EpicClass<AppState> {
             .expand(
           (GoUpcResponse goUpcResponse) {
             final int indexValue = store.state.products.categories.indexWhere(
-              (Category category) {
+              (ProductCategory category) {
                 return category.title == goUpcResponse.product.category;
               },
             );

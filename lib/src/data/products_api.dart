@@ -9,11 +9,11 @@ class ProductApi {
 
   final FirebaseFirestore _firestore;
 
-  Future<List<Category>> listCategories() async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('categories').get();
+  Future<List<ProductCategory>> listCategories() async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('product_categories').get();
 
     return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Category.fromJson(doc.data()))
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => ProductCategory.fromJson(doc.data()))
         .toList();
   }
 
@@ -27,15 +27,15 @@ class ProductApi {
   }
 
   Future<void> addCategory(String title) async {
-    final Category category = Category(
+    final ProductCategory category = ProductCategory(
       id: UniqueKey().toString(),
       title: title,
     );
 
-    await _firestore.collection('categories').add(category.toJson());
+    await _firestore.collection('product_categories').add(category.toJson());
   }
 
-  Future<void> addProduct(String uid, List<Category> categories, GoUpcResponse goUpcResponse) async {
+  Future<void> addProduct(String uid, List<ProductCategory> categories, GoUpcResponse goUpcResponse) async {
     final ProductQueryConfiguration configuration = ProductQueryConfiguration(
       goUpcResponse.code,
       language: OpenFoodFactsLanguage.ENGLISH,
@@ -52,7 +52,7 @@ class ProductApi {
       id: goUpcResponse.code,
       name: goUpcResponse.product.name,
       imageUrl: goUpcResponse.product.imageUrl,
-      categoryId: categories.firstWhere((Category e) => e.title == goUpcResponse.product.category).id,
+      categoryId: categories.firstWhere((ProductCategory e) => e.title == goUpcResponse.product.category).id,
       quantity: result.status == ProductResultV3.statusSuccess ? result.product?.quantity : 'n/a',
       package: hasPackage == true ? result.product?.packagings!.first.material!.lcName.toString() : 'n/a',
       expirationDate: 'n/a',

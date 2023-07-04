@@ -5,6 +5,7 @@ import '../actions/index.dart';
 import '../models/index.dart';
 import 'auth_reducer.dart';
 import 'products_reducer.dart';
+import 'recipes_reducer.dart';
 
 Reducer<AppState> reducer = combineReducers(
   <Reducer<AppState>>[
@@ -26,6 +27,7 @@ AppState _reducer(AppState state, dynamic action) {
   return state.copyWith(
     auth: authReducer(state.auth, action),
     products: productsReducer(state.products, action),
+    recipes: recipesReducer(state.recipes, action),
   );
 }
 

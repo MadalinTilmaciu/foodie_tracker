@@ -22,6 +22,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   AuthState get auth => throw _privateConstructorUsedError;
   ProductState get products => throw _privateConstructorUsedError;
+  RecipeState get recipes => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,10 +34,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AuthState auth, ProductState products, Set<String> pendingActions});
+  $Res call({AuthState auth, ProductState products, RecipeState recipes, Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
   $ProductStateCopyWith<$Res> get products;
+  $RecipeStateCopyWith<$Res> get recipes;
 }
 
 /// @nodoc
@@ -53,6 +55,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
   $Res call({
     Object? auth = null,
     Object? products = null,
+    Object? recipes = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -64,6 +67,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductState,
+      recipes: null == recipes
+          ? _value.recipes
+          : recipes // ignore: cast_nullable_to_non_nullable
+              as RecipeState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -86,6 +93,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(products: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeStateCopyWith<$Res> get recipes {
+    return $RecipeStateCopyWith<$Res>(_value.recipes, (value) {
+      return _then(_value.copyWith(recipes: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -93,12 +108,14 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$_AppStateCopyWith(_$_AppState value, $Res Function(_$_AppState) then) = __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AuthState auth, ProductState products, Set<String> pendingActions});
+  $Res call({AuthState auth, ProductState products, RecipeState recipes, Set<String> pendingActions});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
   @override
   $ProductStateCopyWith<$Res> get products;
+  @override
+  $RecipeStateCopyWith<$Res> get recipes;
 }
 
 /// @nodoc
@@ -111,6 +128,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
   $Res call({
     Object? auth = null,
     Object? products = null,
+    Object? recipes = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -122,6 +140,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductState,
+      recipes: null == recipes
+          ? _value.recipes
+          : recipes // ignore: cast_nullable_to_non_nullable
+              as RecipeState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -136,6 +158,7 @@ class _$_AppState implements _AppState {
   const _$_AppState(
       {this.auth = const AuthState(),
       this.products = const ProductState(),
+      this.recipes = const RecipeState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -147,6 +170,9 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final ProductState products;
+  @override
+  @JsonKey()
+  final RecipeState recipes;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -158,7 +184,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, recipes: $recipes, pendingActions: $pendingActions)';
   }
 
   @override
@@ -168,12 +194,14 @@ class _$_AppState implements _AppState {
             other is _$_AppState &&
             (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.products, products) || other.products == products) &&
+            (identical(other.recipes, recipes) || other.recipes == recipes) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, auth, products, const DeepCollectionEquality().hash(_pendingActions));
+  int get hashCode =>
+      Object.hash(runtimeType, auth, products, recipes, const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -189,8 +217,11 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  const factory _AppState({final AuthState auth, final ProductState products, final Set<String> pendingActions}) =
-      _$_AppState;
+  const factory _AppState(
+      {final AuthState auth,
+      final ProductState products,
+      final RecipeState recipes,
+      final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
@@ -198,6 +229,8 @@ abstract class _AppState implements AppState {
   AuthState get auth;
   @override
   ProductState get products;
+  @override
+  RecipeState get recipes;
   @override
   Set<String> get pendingActions;
   @override
@@ -1088,30 +1121,31 @@ abstract class _FoodieProduct implements FoodieProduct {
   _$$_FoodieProductCopyWith<_$_FoodieProduct> get copyWith => throw _privateConstructorUsedError;
 }
 
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
+ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) {
+  return _ProductCategory.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Category {
+mixin _$ProductCategory {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith => throw _privateConstructorUsedError;
+  $ProductCategoryCopyWith<ProductCategory> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) = _$CategoryCopyWithImpl<$Res, Category>;
+abstract class $ProductCategoryCopyWith<$Res> {
+  factory $ProductCategoryCopyWith(ProductCategory value, $Res Function(ProductCategory) then) =
+      _$ProductCategoryCopyWithImpl<$Res, ProductCategory>;
   @useResult
   $Res call({String id, String title});
 }
 
 /// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category> implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
+class _$ProductCategoryCopyWithImpl<$Res, $Val extends ProductCategory> implements $ProductCategoryCopyWith<$Res> {
+  _$ProductCategoryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1138,17 +1172,19 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category> implements $CategoryCo
 }
 
 /// @nodoc
-abstract class _$$_CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
-  factory _$$_CategoryCopyWith(_$_Category value, $Res Function(_$_Category) then) = __$$_CategoryCopyWithImpl<$Res>;
+abstract class _$$_ProductCategoryCopyWith<$Res> implements $ProductCategoryCopyWith<$Res> {
+  factory _$$_ProductCategoryCopyWith(_$_ProductCategory value, $Res Function(_$_ProductCategory) then) =
+      __$$_ProductCategoryCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String title});
 }
 
 /// @nodoc
-class __$$_CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$_Category>
-    implements _$$_CategoryCopyWith<$Res> {
-  __$$_CategoryCopyWithImpl(_$_Category _value, $Res Function(_$_Category) _then) : super(_value, _then);
+class __$$_ProductCategoryCopyWithImpl<$Res> extends _$ProductCategoryCopyWithImpl<$Res, _$_ProductCategory>
+    implements _$$_ProductCategoryCopyWith<$Res> {
+  __$$_ProductCategoryCopyWithImpl(_$_ProductCategory _value, $Res Function(_$_ProductCategory) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1156,7 +1192,7 @@ class __$$_CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$_Ca
     Object? id = null,
     Object? title = null,
   }) {
-    return _then(_$_Category(
+    return _then(_$_ProductCategory(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1171,10 +1207,10 @@ class __$$_CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$_Ca
 
 /// @nodoc
 @JsonSerializable()
-class _$_Category implements _Category {
-  const _$_Category({required this.id, required this.title});
+class _$_ProductCategory implements _ProductCategory {
+  const _$_ProductCategory({required this.id, required this.title});
 
-  factory _$_Category.fromJson(Map<String, dynamic> json) => _$$_CategoryFromJson(json);
+  factory _$_ProductCategory.fromJson(Map<String, dynamic> json) => _$$_ProductCategoryFromJson(json);
 
   @override
   final String id;
@@ -1183,11 +1219,11 @@ class _$_Category implements _Category {
 
   @override
   String toString() {
-    return 'Category(id: $id, title: $title)';
+    return 'ProductCategory(id: $id, title: $title)';
   }
 
   @override
-  int compareTo(Category other) {
+  int compareTo(ProductCategory other) {
     return title.compareTo(other.title);
   }
 
@@ -1195,7 +1231,7 @@ class _$_Category implements _Category {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Category &&
+            other is _$_ProductCategory &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title));
   }
@@ -1207,20 +1243,21 @@ class _$_Category implements _Category {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CategoryCopyWith<_$_Category> get copyWith => __$$_CategoryCopyWithImpl<_$_Category>(this, _$identity);
+  _$$_ProductCategoryCopyWith<_$_ProductCategory> get copyWith =>
+      __$$_ProductCategoryCopyWithImpl<_$_ProductCategory>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CategoryToJson(
+    return _$$_ProductCategoryToJson(
       this,
     );
   }
 }
 
-abstract class _Category implements Category {
-  const factory _Category({required final String id, required final String title}) = _$_Category;
+abstract class _ProductCategory implements ProductCategory {
+  const factory _ProductCategory({required final String id, required final String title}) = _$_ProductCategory;
 
-  factory _Category.fromJson(Map<String, dynamic> json) = _$_Category.fromJson;
+  factory _ProductCategory.fromJson(Map<String, dynamic> json) = _$_ProductCategory.fromJson;
 
   @override
   String get id;
@@ -1228,7 +1265,7 @@ abstract class _Category implements Category {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_CategoryCopyWith<_$_Category> get copyWith => throw _privateConstructorUsedError;
+  _$$_ProductCategoryCopyWith<_$_ProductCategory> get copyWith => throw _privateConstructorUsedError;
 }
 
 ProductState _$ProductStateFromJson(Map<String, dynamic> json) {
@@ -1238,7 +1275,7 @@ ProductState _$ProductStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductState {
   List<FoodieProduct> get products => throw _privateConstructorUsedError;
-  List<Category> get categories => throw _privateConstructorUsedError;
+  List<ProductCategory> get categories => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
   String? get selectedProductId => throw _privateConstructorUsedError;
 
@@ -1253,7 +1290,10 @@ abstract class $ProductStateCopyWith<$Res> {
       _$ProductStateCopyWithImpl<$Res, ProductState>;
   @useResult
   $Res call(
-      {List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId, String? selectedProductId});
+      {List<FoodieProduct> products,
+      List<ProductCategory> categories,
+      String? selectedCategoryId,
+      String? selectedProductId});
 }
 
 /// @nodoc
@@ -1281,7 +1321,7 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState> implements $Pr
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<Category>,
+              as List<ProductCategory>,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
@@ -1301,7 +1341,10 @@ abstract class _$$_ProductStateCopyWith<$Res> implements $ProductStateCopyWith<$
   @override
   @useResult
   $Res call(
-      {List<FoodieProduct> products, List<Category> categories, String? selectedCategoryId, String? selectedProductId});
+      {List<FoodieProduct> products,
+      List<ProductCategory> categories,
+      String? selectedCategoryId,
+      String? selectedProductId});
 }
 
 /// @nodoc
@@ -1325,7 +1368,7 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<Category>,
+              as List<ProductCategory>,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
@@ -1343,7 +1386,7 @@ class __$$_ProductStateCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Re
 class _$_ProductState implements _ProductState {
   const _$_ProductState(
       {final List<FoodieProduct> products = const <FoodieProduct>[],
-      final List<Category> categories = const <Category>[],
+      final List<ProductCategory> categories = const <ProductCategory>[],
       this.selectedCategoryId,
       this.selectedProductId})
       : _products = products,
@@ -1360,10 +1403,10 @@ class _$_ProductState implements _ProductState {
     return EqualUnmodifiableListView(_products);
   }
 
-  final List<Category> _categories;
+  final List<ProductCategory> _categories;
   @override
   @JsonKey()
-  List<Category> get categories {
+  List<ProductCategory> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
@@ -1413,7 +1456,7 @@ class _$_ProductState implements _ProductState {
 abstract class _ProductState implements ProductState {
   const factory _ProductState(
       {final List<FoodieProduct> products,
-      final List<Category> categories,
+      final List<ProductCategory> categories,
       final String? selectedCategoryId,
       final String? selectedProductId}) = _$_ProductState;
 
@@ -1422,7 +1465,7 @@ abstract class _ProductState implements ProductState {
   @override
   List<FoodieProduct> get products;
   @override
-  List<Category> get categories;
+  List<ProductCategory> get categories;
   @override
   String? get selectedCategoryId;
   @override
@@ -1637,4 +1680,1732 @@ abstract class _GoUpcResponse implements GoUpcResponse {
   @override
   @JsonKey(ignore: true)
   _$$_GoUpcResponseCopyWith<_$_GoUpcResponse> get copyWith => throw _privateConstructorUsedError;
+}
+
+RecipeCategory _$RecipeCategoryFromJson(Map<String, dynamic> json) {
+  return _RecipeCategory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RecipeCategory {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RecipeCategoryCopyWith<RecipeCategory> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RecipeCategoryCopyWith<$Res> {
+  factory $RecipeCategoryCopyWith(RecipeCategory value, $Res Function(RecipeCategory) then) =
+      _$RecipeCategoryCopyWithImpl<$Res, RecipeCategory>;
+  @useResult
+  $Res call({String id, String title});
+}
+
+/// @nodoc
+class _$RecipeCategoryCopyWithImpl<$Res, $Val extends RecipeCategory> implements $RecipeCategoryCopyWith<$Res> {
+  _$RecipeCategoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_RecipeCategoryCopyWith<$Res> implements $RecipeCategoryCopyWith<$Res> {
+  factory _$$_RecipeCategoryCopyWith(_$_RecipeCategory value, $Res Function(_$_RecipeCategory) then) =
+      __$$_RecipeCategoryCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String title});
+}
+
+/// @nodoc
+class __$$_RecipeCategoryCopyWithImpl<$Res> extends _$RecipeCategoryCopyWithImpl<$Res, _$_RecipeCategory>
+    implements _$$_RecipeCategoryCopyWith<$Res> {
+  __$$_RecipeCategoryCopyWithImpl(_$_RecipeCategory _value, $Res Function(_$_RecipeCategory) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+  }) {
+    return _then(_$_RecipeCategory(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_RecipeCategory implements _RecipeCategory {
+  const _$_RecipeCategory({required this.id, required this.title});
+
+  factory _$_RecipeCategory.fromJson(Map<String, dynamic> json) => _$$_RecipeCategoryFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String title;
+
+  @override
+  String toString() {
+    return 'RecipeCategory(id: $id, title: $title)';
+  }
+
+  @override
+  int compareTo(RecipeCategory other) {
+    return title.compareTo(other.title);
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RecipeCategory &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, title);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecipeCategoryCopyWith<_$_RecipeCategory> get copyWith =>
+      __$$_RecipeCategoryCopyWithImpl<_$_RecipeCategory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RecipeCategoryToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RecipeCategory implements RecipeCategory {
+  const factory _RecipeCategory({required final String id, required final String title}) = _$_RecipeCategory;
+
+  factory _RecipeCategory.fromJson(Map<String, dynamic> json) = _$_RecipeCategory.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get title;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RecipeCategoryCopyWith<_$_RecipeCategory> get copyWith => throw _privateConstructorUsedError;
+}
+
+Recipe _$RecipeFromJson(Map<String, dynamic> json) {
+  return _Recipe.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Recipe {
+  @JsonKey(name: 'idMeal')
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeal')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strDrinkAlternate')
+  String? get matchingDrink => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strCategory')
+  String get category => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strArea')
+  String? get area => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strInstructions')
+  String get instructions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMealThumb')
+  String get pictureUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strTags')
+  String? get tags => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strYoutube')
+  String? get videoUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient1')
+  String? get ingredient1 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient2')
+  String? get ingredient2 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient3')
+  String? get ingredient3 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient4')
+  String? get ingredient4 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient5')
+  String? get ingredient5 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient6')
+  String? get ingredient6 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient7')
+  String? get ingredient7 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient8')
+  String? get ingredient8 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient9')
+  String? get ingredient9 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient10')
+  String? get ingredient10 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient11')
+  String? get ingredient11 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient12')
+  String? get ingredient12 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient13')
+  String? get ingredient13 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient14')
+  String? get ingredient14 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient15')
+  String? get ingredient15 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient16')
+  String? get ingredient16 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient17')
+  String? get ingredient17 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient18')
+  String? get ingredient18 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient19')
+  String? get ingredient19 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strIngredient20')
+  String? get ingredient20 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure1')
+  String? get measure1 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure2')
+  String? get measure2 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure3')
+  String? get measure3 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure4')
+  String? get measure4 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure5')
+  String? get measure5 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure6')
+  String? get measure6 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure7')
+  String? get measure7 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure8')
+  String? get measure8 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure9')
+  String? get measure9 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure10')
+  String? get measure10 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure11')
+  String? get measure11 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure12')
+  String? get measure12 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure13')
+  String? get measure13 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure14')
+  String? get measure14 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure15')
+  String? get measure15 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure16')
+  String? get measure16 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure17')
+  String? get measure17 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure18')
+  String? get measure18 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure19')
+  String? get measure19 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strMeasure20')
+  String? get measure20 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strSource')
+  String? get source => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strImageSource')
+  String? get imageSource => throw _privateConstructorUsedError;
+  @JsonKey(name: 'strCreativeCommonsConfirmed')
+  String? get cretiveCommonsConfirmed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dateModified')
+  String? get dateModified => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RecipeCopyWith<Recipe> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RecipeCopyWith<$Res> {
+  factory $RecipeCopyWith(Recipe value, $Res Function(Recipe) then) = _$RecipeCopyWithImpl<$Res, Recipe>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'idMeal') String id,
+      @JsonKey(name: 'strMeal') String name,
+      @JsonKey(name: 'strDrinkAlternate') String? matchingDrink,
+      @JsonKey(name: 'strCategory') String category,
+      @JsonKey(name: 'strArea') String? area,
+      @JsonKey(name: 'strInstructions') String instructions,
+      @JsonKey(name: 'strMealThumb') String pictureUrl,
+      @JsonKey(name: 'strTags') String? tags,
+      @JsonKey(name: 'strYoutube') String? videoUrl,
+      @JsonKey(name: 'strIngredient1') String? ingredient1,
+      @JsonKey(name: 'strIngredient2') String? ingredient2,
+      @JsonKey(name: 'strIngredient3') String? ingredient3,
+      @JsonKey(name: 'strIngredient4') String? ingredient4,
+      @JsonKey(name: 'strIngredient5') String? ingredient5,
+      @JsonKey(name: 'strIngredient6') String? ingredient6,
+      @JsonKey(name: 'strIngredient7') String? ingredient7,
+      @JsonKey(name: 'strIngredient8') String? ingredient8,
+      @JsonKey(name: 'strIngredient9') String? ingredient9,
+      @JsonKey(name: 'strIngredient10') String? ingredient10,
+      @JsonKey(name: 'strIngredient11') String? ingredient11,
+      @JsonKey(name: 'strIngredient12') String? ingredient12,
+      @JsonKey(name: 'strIngredient13') String? ingredient13,
+      @JsonKey(name: 'strIngredient14') String? ingredient14,
+      @JsonKey(name: 'strIngredient15') String? ingredient15,
+      @JsonKey(name: 'strIngredient16') String? ingredient16,
+      @JsonKey(name: 'strIngredient17') String? ingredient17,
+      @JsonKey(name: 'strIngredient18') String? ingredient18,
+      @JsonKey(name: 'strIngredient19') String? ingredient19,
+      @JsonKey(name: 'strIngredient20') String? ingredient20,
+      @JsonKey(name: 'strMeasure1') String? measure1,
+      @JsonKey(name: 'strMeasure2') String? measure2,
+      @JsonKey(name: 'strMeasure3') String? measure3,
+      @JsonKey(name: 'strMeasure4') String? measure4,
+      @JsonKey(name: 'strMeasure5') String? measure5,
+      @JsonKey(name: 'strMeasure6') String? measure6,
+      @JsonKey(name: 'strMeasure7') String? measure7,
+      @JsonKey(name: 'strMeasure8') String? measure8,
+      @JsonKey(name: 'strMeasure9') String? measure9,
+      @JsonKey(name: 'strMeasure10') String? measure10,
+      @JsonKey(name: 'strMeasure11') String? measure11,
+      @JsonKey(name: 'strMeasure12') String? measure12,
+      @JsonKey(name: 'strMeasure13') String? measure13,
+      @JsonKey(name: 'strMeasure14') String? measure14,
+      @JsonKey(name: 'strMeasure15') String? measure15,
+      @JsonKey(name: 'strMeasure16') String? measure16,
+      @JsonKey(name: 'strMeasure17') String? measure17,
+      @JsonKey(name: 'strMeasure18') String? measure18,
+      @JsonKey(name: 'strMeasure19') String? measure19,
+      @JsonKey(name: 'strMeasure20') String? measure20,
+      @JsonKey(name: 'strSource') String? source,
+      @JsonKey(name: 'strImageSource') String? imageSource,
+      @JsonKey(name: 'strCreativeCommonsConfirmed') String? cretiveCommonsConfirmed,
+      @JsonKey(name: 'dateModified') String? dateModified});
+}
+
+/// @nodoc
+class _$RecipeCopyWithImpl<$Res, $Val extends Recipe> implements $RecipeCopyWith<$Res> {
+  _$RecipeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? matchingDrink = freezed,
+    Object? category = null,
+    Object? area = freezed,
+    Object? instructions = null,
+    Object? pictureUrl = null,
+    Object? tags = freezed,
+    Object? videoUrl = freezed,
+    Object? ingredient1 = freezed,
+    Object? ingredient2 = freezed,
+    Object? ingredient3 = freezed,
+    Object? ingredient4 = freezed,
+    Object? ingredient5 = freezed,
+    Object? ingredient6 = freezed,
+    Object? ingredient7 = freezed,
+    Object? ingredient8 = freezed,
+    Object? ingredient9 = freezed,
+    Object? ingredient10 = freezed,
+    Object? ingredient11 = freezed,
+    Object? ingredient12 = freezed,
+    Object? ingredient13 = freezed,
+    Object? ingredient14 = freezed,
+    Object? ingredient15 = freezed,
+    Object? ingredient16 = freezed,
+    Object? ingredient17 = freezed,
+    Object? ingredient18 = freezed,
+    Object? ingredient19 = freezed,
+    Object? ingredient20 = freezed,
+    Object? measure1 = freezed,
+    Object? measure2 = freezed,
+    Object? measure3 = freezed,
+    Object? measure4 = freezed,
+    Object? measure5 = freezed,
+    Object? measure6 = freezed,
+    Object? measure7 = freezed,
+    Object? measure8 = freezed,
+    Object? measure9 = freezed,
+    Object? measure10 = freezed,
+    Object? measure11 = freezed,
+    Object? measure12 = freezed,
+    Object? measure13 = freezed,
+    Object? measure14 = freezed,
+    Object? measure15 = freezed,
+    Object? measure16 = freezed,
+    Object? measure17 = freezed,
+    Object? measure18 = freezed,
+    Object? measure19 = freezed,
+    Object? measure20 = freezed,
+    Object? source = freezed,
+    Object? imageSource = freezed,
+    Object? cretiveCommonsConfirmed = freezed,
+    Object? dateModified = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      matchingDrink: freezed == matchingDrink
+          ? _value.matchingDrink
+          : matchingDrink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      area: freezed == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instructions: null == instructions
+          ? _value.instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as String,
+      pictureUrl: null == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      tags: freezed == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as String?,
+      videoUrl: freezed == videoUrl
+          ? _value.videoUrl
+          : videoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient1: freezed == ingredient1
+          ? _value.ingredient1
+          : ingredient1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient2: freezed == ingredient2
+          ? _value.ingredient2
+          : ingredient2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient3: freezed == ingredient3
+          ? _value.ingredient3
+          : ingredient3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient4: freezed == ingredient4
+          ? _value.ingredient4
+          : ingredient4 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient5: freezed == ingredient5
+          ? _value.ingredient5
+          : ingredient5 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient6: freezed == ingredient6
+          ? _value.ingredient6
+          : ingredient6 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient7: freezed == ingredient7
+          ? _value.ingredient7
+          : ingredient7 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient8: freezed == ingredient8
+          ? _value.ingredient8
+          : ingredient8 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient9: freezed == ingredient9
+          ? _value.ingredient9
+          : ingredient9 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient10: freezed == ingredient10
+          ? _value.ingredient10
+          : ingredient10 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient11: freezed == ingredient11
+          ? _value.ingredient11
+          : ingredient11 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient12: freezed == ingredient12
+          ? _value.ingredient12
+          : ingredient12 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient13: freezed == ingredient13
+          ? _value.ingredient13
+          : ingredient13 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient14: freezed == ingredient14
+          ? _value.ingredient14
+          : ingredient14 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient15: freezed == ingredient15
+          ? _value.ingredient15
+          : ingredient15 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient16: freezed == ingredient16
+          ? _value.ingredient16
+          : ingredient16 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient17: freezed == ingredient17
+          ? _value.ingredient17
+          : ingredient17 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient18: freezed == ingredient18
+          ? _value.ingredient18
+          : ingredient18 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient19: freezed == ingredient19
+          ? _value.ingredient19
+          : ingredient19 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient20: freezed == ingredient20
+          ? _value.ingredient20
+          : ingredient20 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure1: freezed == measure1
+          ? _value.measure1
+          : measure1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure2: freezed == measure2
+          ? _value.measure2
+          : measure2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure3: freezed == measure3
+          ? _value.measure3
+          : measure3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure4: freezed == measure4
+          ? _value.measure4
+          : measure4 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure5: freezed == measure5
+          ? _value.measure5
+          : measure5 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure6: freezed == measure6
+          ? _value.measure6
+          : measure6 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure7: freezed == measure7
+          ? _value.measure7
+          : measure7 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure8: freezed == measure8
+          ? _value.measure8
+          : measure8 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure9: freezed == measure9
+          ? _value.measure9
+          : measure9 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure10: freezed == measure10
+          ? _value.measure10
+          : measure10 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure11: freezed == measure11
+          ? _value.measure11
+          : measure11 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure12: freezed == measure12
+          ? _value.measure12
+          : measure12 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure13: freezed == measure13
+          ? _value.measure13
+          : measure13 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure14: freezed == measure14
+          ? _value.measure14
+          : measure14 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure15: freezed == measure15
+          ? _value.measure15
+          : measure15 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure16: freezed == measure16
+          ? _value.measure16
+          : measure16 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure17: freezed == measure17
+          ? _value.measure17
+          : measure17 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure18: freezed == measure18
+          ? _value.measure18
+          : measure18 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure19: freezed == measure19
+          ? _value.measure19
+          : measure19 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure20: freezed == measure20
+          ? _value.measure20
+          : measure20 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageSource: freezed == imageSource
+          ? _value.imageSource
+          : imageSource // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cretiveCommonsConfirmed: freezed == cretiveCommonsConfirmed
+          ? _value.cretiveCommonsConfirmed
+          : cretiveCommonsConfirmed // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dateModified: freezed == dateModified
+          ? _value.dateModified
+          : dateModified // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
+  factory _$$_RecipeCopyWith(_$_Recipe value, $Res Function(_$_Recipe) then) = __$$_RecipeCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'idMeal') String id,
+      @JsonKey(name: 'strMeal') String name,
+      @JsonKey(name: 'strDrinkAlternate') String? matchingDrink,
+      @JsonKey(name: 'strCategory') String category,
+      @JsonKey(name: 'strArea') String? area,
+      @JsonKey(name: 'strInstructions') String instructions,
+      @JsonKey(name: 'strMealThumb') String pictureUrl,
+      @JsonKey(name: 'strTags') String? tags,
+      @JsonKey(name: 'strYoutube') String? videoUrl,
+      @JsonKey(name: 'strIngredient1') String? ingredient1,
+      @JsonKey(name: 'strIngredient2') String? ingredient2,
+      @JsonKey(name: 'strIngredient3') String? ingredient3,
+      @JsonKey(name: 'strIngredient4') String? ingredient4,
+      @JsonKey(name: 'strIngredient5') String? ingredient5,
+      @JsonKey(name: 'strIngredient6') String? ingredient6,
+      @JsonKey(name: 'strIngredient7') String? ingredient7,
+      @JsonKey(name: 'strIngredient8') String? ingredient8,
+      @JsonKey(name: 'strIngredient9') String? ingredient9,
+      @JsonKey(name: 'strIngredient10') String? ingredient10,
+      @JsonKey(name: 'strIngredient11') String? ingredient11,
+      @JsonKey(name: 'strIngredient12') String? ingredient12,
+      @JsonKey(name: 'strIngredient13') String? ingredient13,
+      @JsonKey(name: 'strIngredient14') String? ingredient14,
+      @JsonKey(name: 'strIngredient15') String? ingredient15,
+      @JsonKey(name: 'strIngredient16') String? ingredient16,
+      @JsonKey(name: 'strIngredient17') String? ingredient17,
+      @JsonKey(name: 'strIngredient18') String? ingredient18,
+      @JsonKey(name: 'strIngredient19') String? ingredient19,
+      @JsonKey(name: 'strIngredient20') String? ingredient20,
+      @JsonKey(name: 'strMeasure1') String? measure1,
+      @JsonKey(name: 'strMeasure2') String? measure2,
+      @JsonKey(name: 'strMeasure3') String? measure3,
+      @JsonKey(name: 'strMeasure4') String? measure4,
+      @JsonKey(name: 'strMeasure5') String? measure5,
+      @JsonKey(name: 'strMeasure6') String? measure6,
+      @JsonKey(name: 'strMeasure7') String? measure7,
+      @JsonKey(name: 'strMeasure8') String? measure8,
+      @JsonKey(name: 'strMeasure9') String? measure9,
+      @JsonKey(name: 'strMeasure10') String? measure10,
+      @JsonKey(name: 'strMeasure11') String? measure11,
+      @JsonKey(name: 'strMeasure12') String? measure12,
+      @JsonKey(name: 'strMeasure13') String? measure13,
+      @JsonKey(name: 'strMeasure14') String? measure14,
+      @JsonKey(name: 'strMeasure15') String? measure15,
+      @JsonKey(name: 'strMeasure16') String? measure16,
+      @JsonKey(name: 'strMeasure17') String? measure17,
+      @JsonKey(name: 'strMeasure18') String? measure18,
+      @JsonKey(name: 'strMeasure19') String? measure19,
+      @JsonKey(name: 'strMeasure20') String? measure20,
+      @JsonKey(name: 'strSource') String? source,
+      @JsonKey(name: 'strImageSource') String? imageSource,
+      @JsonKey(name: 'strCreativeCommonsConfirmed') String? cretiveCommonsConfirmed,
+      @JsonKey(name: 'dateModified') String? dateModified});
+}
+
+/// @nodoc
+class __$$_RecipeCopyWithImpl<$Res> extends _$RecipeCopyWithImpl<$Res, _$_Recipe> implements _$$_RecipeCopyWith<$Res> {
+  __$$_RecipeCopyWithImpl(_$_Recipe _value, $Res Function(_$_Recipe) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? matchingDrink = freezed,
+    Object? category = null,
+    Object? area = freezed,
+    Object? instructions = null,
+    Object? pictureUrl = null,
+    Object? tags = freezed,
+    Object? videoUrl = freezed,
+    Object? ingredient1 = freezed,
+    Object? ingredient2 = freezed,
+    Object? ingredient3 = freezed,
+    Object? ingredient4 = freezed,
+    Object? ingredient5 = freezed,
+    Object? ingredient6 = freezed,
+    Object? ingredient7 = freezed,
+    Object? ingredient8 = freezed,
+    Object? ingredient9 = freezed,
+    Object? ingredient10 = freezed,
+    Object? ingredient11 = freezed,
+    Object? ingredient12 = freezed,
+    Object? ingredient13 = freezed,
+    Object? ingredient14 = freezed,
+    Object? ingredient15 = freezed,
+    Object? ingredient16 = freezed,
+    Object? ingredient17 = freezed,
+    Object? ingredient18 = freezed,
+    Object? ingredient19 = freezed,
+    Object? ingredient20 = freezed,
+    Object? measure1 = freezed,
+    Object? measure2 = freezed,
+    Object? measure3 = freezed,
+    Object? measure4 = freezed,
+    Object? measure5 = freezed,
+    Object? measure6 = freezed,
+    Object? measure7 = freezed,
+    Object? measure8 = freezed,
+    Object? measure9 = freezed,
+    Object? measure10 = freezed,
+    Object? measure11 = freezed,
+    Object? measure12 = freezed,
+    Object? measure13 = freezed,
+    Object? measure14 = freezed,
+    Object? measure15 = freezed,
+    Object? measure16 = freezed,
+    Object? measure17 = freezed,
+    Object? measure18 = freezed,
+    Object? measure19 = freezed,
+    Object? measure20 = freezed,
+    Object? source = freezed,
+    Object? imageSource = freezed,
+    Object? cretiveCommonsConfirmed = freezed,
+    Object? dateModified = freezed,
+  }) {
+    return _then(_$_Recipe(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      matchingDrink: freezed == matchingDrink
+          ? _value.matchingDrink
+          : matchingDrink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      area: freezed == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instructions: null == instructions
+          ? _value.instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as String,
+      pictureUrl: null == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      tags: freezed == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as String?,
+      videoUrl: freezed == videoUrl
+          ? _value.videoUrl
+          : videoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient1: freezed == ingredient1
+          ? _value.ingredient1
+          : ingredient1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient2: freezed == ingredient2
+          ? _value.ingredient2
+          : ingredient2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient3: freezed == ingredient3
+          ? _value.ingredient3
+          : ingredient3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient4: freezed == ingredient4
+          ? _value.ingredient4
+          : ingredient4 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient5: freezed == ingredient5
+          ? _value.ingredient5
+          : ingredient5 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient6: freezed == ingredient6
+          ? _value.ingredient6
+          : ingredient6 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient7: freezed == ingredient7
+          ? _value.ingredient7
+          : ingredient7 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient8: freezed == ingredient8
+          ? _value.ingredient8
+          : ingredient8 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient9: freezed == ingredient9
+          ? _value.ingredient9
+          : ingredient9 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient10: freezed == ingredient10
+          ? _value.ingredient10
+          : ingredient10 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient11: freezed == ingredient11
+          ? _value.ingredient11
+          : ingredient11 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient12: freezed == ingredient12
+          ? _value.ingredient12
+          : ingredient12 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient13: freezed == ingredient13
+          ? _value.ingredient13
+          : ingredient13 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient14: freezed == ingredient14
+          ? _value.ingredient14
+          : ingredient14 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient15: freezed == ingredient15
+          ? _value.ingredient15
+          : ingredient15 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient16: freezed == ingredient16
+          ? _value.ingredient16
+          : ingredient16 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient17: freezed == ingredient17
+          ? _value.ingredient17
+          : ingredient17 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient18: freezed == ingredient18
+          ? _value.ingredient18
+          : ingredient18 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient19: freezed == ingredient19
+          ? _value.ingredient19
+          : ingredient19 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ingredient20: freezed == ingredient20
+          ? _value.ingredient20
+          : ingredient20 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure1: freezed == measure1
+          ? _value.measure1
+          : measure1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure2: freezed == measure2
+          ? _value.measure2
+          : measure2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure3: freezed == measure3
+          ? _value.measure3
+          : measure3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure4: freezed == measure4
+          ? _value.measure4
+          : measure4 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure5: freezed == measure5
+          ? _value.measure5
+          : measure5 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure6: freezed == measure6
+          ? _value.measure6
+          : measure6 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure7: freezed == measure7
+          ? _value.measure7
+          : measure7 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure8: freezed == measure8
+          ? _value.measure8
+          : measure8 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure9: freezed == measure9
+          ? _value.measure9
+          : measure9 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure10: freezed == measure10
+          ? _value.measure10
+          : measure10 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure11: freezed == measure11
+          ? _value.measure11
+          : measure11 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure12: freezed == measure12
+          ? _value.measure12
+          : measure12 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure13: freezed == measure13
+          ? _value.measure13
+          : measure13 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure14: freezed == measure14
+          ? _value.measure14
+          : measure14 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure15: freezed == measure15
+          ? _value.measure15
+          : measure15 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure16: freezed == measure16
+          ? _value.measure16
+          : measure16 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure17: freezed == measure17
+          ? _value.measure17
+          : measure17 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure18: freezed == measure18
+          ? _value.measure18
+          : measure18 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure19: freezed == measure19
+          ? _value.measure19
+          : measure19 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      measure20: freezed == measure20
+          ? _value.measure20
+          : measure20 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageSource: freezed == imageSource
+          ? _value.imageSource
+          : imageSource // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cretiveCommonsConfirmed: freezed == cretiveCommonsConfirmed
+          ? _value.cretiveCommonsConfirmed
+          : cretiveCommonsConfirmed // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dateModified: freezed == dateModified
+          ? _value.dateModified
+          : dateModified // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Recipe implements _Recipe {
+  _$_Recipe(
+      {@JsonKey(name: 'idMeal') required this.id,
+      @JsonKey(name: 'strMeal') required this.name,
+      @JsonKey(name: 'strDrinkAlternate') this.matchingDrink,
+      @JsonKey(name: 'strCategory') required this.category,
+      @JsonKey(name: 'strArea') this.area,
+      @JsonKey(name: 'strInstructions') required this.instructions,
+      @JsonKey(name: 'strMealThumb') required this.pictureUrl,
+      @JsonKey(name: 'strTags') this.tags,
+      @JsonKey(name: 'strYoutube') this.videoUrl,
+      @JsonKey(name: 'strIngredient1') required this.ingredient1,
+      @JsonKey(name: 'strIngredient2') required this.ingredient2,
+      @JsonKey(name: 'strIngredient3') required this.ingredient3,
+      @JsonKey(name: 'strIngredient4') required this.ingredient4,
+      @JsonKey(name: 'strIngredient5') required this.ingredient5,
+      @JsonKey(name: 'strIngredient6') required this.ingredient6,
+      @JsonKey(name: 'strIngredient7') required this.ingredient7,
+      @JsonKey(name: 'strIngredient8') required this.ingredient8,
+      @JsonKey(name: 'strIngredient9') required this.ingredient9,
+      @JsonKey(name: 'strIngredient10') required this.ingredient10,
+      @JsonKey(name: 'strIngredient11') required this.ingredient11,
+      @JsonKey(name: 'strIngredient12') required this.ingredient12,
+      @JsonKey(name: 'strIngredient13') required this.ingredient13,
+      @JsonKey(name: 'strIngredient14') required this.ingredient14,
+      @JsonKey(name: 'strIngredient15') required this.ingredient15,
+      @JsonKey(name: 'strIngredient16') required this.ingredient16,
+      @JsonKey(name: 'strIngredient17') required this.ingredient17,
+      @JsonKey(name: 'strIngredient18') required this.ingredient18,
+      @JsonKey(name: 'strIngredient19') required this.ingredient19,
+      @JsonKey(name: 'strIngredient20') required this.ingredient20,
+      @JsonKey(name: 'strMeasure1') required this.measure1,
+      @JsonKey(name: 'strMeasure2') required this.measure2,
+      @JsonKey(name: 'strMeasure3') required this.measure3,
+      @JsonKey(name: 'strMeasure4') required this.measure4,
+      @JsonKey(name: 'strMeasure5') required this.measure5,
+      @JsonKey(name: 'strMeasure6') required this.measure6,
+      @JsonKey(name: 'strMeasure7') required this.measure7,
+      @JsonKey(name: 'strMeasure8') required this.measure8,
+      @JsonKey(name: 'strMeasure9') required this.measure9,
+      @JsonKey(name: 'strMeasure10') required this.measure10,
+      @JsonKey(name: 'strMeasure11') required this.measure11,
+      @JsonKey(name: 'strMeasure12') required this.measure12,
+      @JsonKey(name: 'strMeasure13') required this.measure13,
+      @JsonKey(name: 'strMeasure14') required this.measure14,
+      @JsonKey(name: 'strMeasure15') required this.measure15,
+      @JsonKey(name: 'strMeasure16') required this.measure16,
+      @JsonKey(name: 'strMeasure17') required this.measure17,
+      @JsonKey(name: 'strMeasure18') required this.measure18,
+      @JsonKey(name: 'strMeasure19') required this.measure19,
+      @JsonKey(name: 'strMeasure20') required this.measure20,
+      @JsonKey(name: 'strSource') this.source,
+      @JsonKey(name: 'strImageSource') this.imageSource,
+      @JsonKey(name: 'strCreativeCommonsConfirmed') this.cretiveCommonsConfirmed,
+      @JsonKey(name: 'dateModified') this.dateModified});
+
+  factory _$_Recipe.fromJson(Map<String, dynamic> json) => _$$_RecipeFromJson(json);
+
+  @override
+  @JsonKey(name: 'idMeal')
+  final String id;
+  @override
+  @JsonKey(name: 'strMeal')
+  final String name;
+  @override
+  @JsonKey(name: 'strDrinkAlternate')
+  final String? matchingDrink;
+  @override
+  @JsonKey(name: 'strCategory')
+  final String category;
+  @override
+  @JsonKey(name: 'strArea')
+  final String? area;
+  @override
+  @JsonKey(name: 'strInstructions')
+  final String instructions;
+  @override
+  @JsonKey(name: 'strMealThumb')
+  final String pictureUrl;
+  @override
+  @JsonKey(name: 'strTags')
+  final String? tags;
+  @override
+  @JsonKey(name: 'strYoutube')
+  final String? videoUrl;
+  @override
+  @JsonKey(name: 'strIngredient1')
+  final String? ingredient1;
+  @override
+  @JsonKey(name: 'strIngredient2')
+  final String? ingredient2;
+  @override
+  @JsonKey(name: 'strIngredient3')
+  final String? ingredient3;
+  @override
+  @JsonKey(name: 'strIngredient4')
+  final String? ingredient4;
+  @override
+  @JsonKey(name: 'strIngredient5')
+  final String? ingredient5;
+  @override
+  @JsonKey(name: 'strIngredient6')
+  final String? ingredient6;
+  @override
+  @JsonKey(name: 'strIngredient7')
+  final String? ingredient7;
+  @override
+  @JsonKey(name: 'strIngredient8')
+  final String? ingredient8;
+  @override
+  @JsonKey(name: 'strIngredient9')
+  final String? ingredient9;
+  @override
+  @JsonKey(name: 'strIngredient10')
+  final String? ingredient10;
+  @override
+  @JsonKey(name: 'strIngredient11')
+  final String? ingredient11;
+  @override
+  @JsonKey(name: 'strIngredient12')
+  final String? ingredient12;
+  @override
+  @JsonKey(name: 'strIngredient13')
+  final String? ingredient13;
+  @override
+  @JsonKey(name: 'strIngredient14')
+  final String? ingredient14;
+  @override
+  @JsonKey(name: 'strIngredient15')
+  final String? ingredient15;
+  @override
+  @JsonKey(name: 'strIngredient16')
+  final String? ingredient16;
+  @override
+  @JsonKey(name: 'strIngredient17')
+  final String? ingredient17;
+  @override
+  @JsonKey(name: 'strIngredient18')
+  final String? ingredient18;
+  @override
+  @JsonKey(name: 'strIngredient19')
+  final String? ingredient19;
+  @override
+  @JsonKey(name: 'strIngredient20')
+  final String? ingredient20;
+  @override
+  @JsonKey(name: 'strMeasure1')
+  final String? measure1;
+  @override
+  @JsonKey(name: 'strMeasure2')
+  final String? measure2;
+  @override
+  @JsonKey(name: 'strMeasure3')
+  final String? measure3;
+  @override
+  @JsonKey(name: 'strMeasure4')
+  final String? measure4;
+  @override
+  @JsonKey(name: 'strMeasure5')
+  final String? measure5;
+  @override
+  @JsonKey(name: 'strMeasure6')
+  final String? measure6;
+  @override
+  @JsonKey(name: 'strMeasure7')
+  final String? measure7;
+  @override
+  @JsonKey(name: 'strMeasure8')
+  final String? measure8;
+  @override
+  @JsonKey(name: 'strMeasure9')
+  final String? measure9;
+  @override
+  @JsonKey(name: 'strMeasure10')
+  final String? measure10;
+  @override
+  @JsonKey(name: 'strMeasure11')
+  final String? measure11;
+  @override
+  @JsonKey(name: 'strMeasure12')
+  final String? measure12;
+  @override
+  @JsonKey(name: 'strMeasure13')
+  final String? measure13;
+  @override
+  @JsonKey(name: 'strMeasure14')
+  final String? measure14;
+  @override
+  @JsonKey(name: 'strMeasure15')
+  final String? measure15;
+  @override
+  @JsonKey(name: 'strMeasure16')
+  final String? measure16;
+  @override
+  @JsonKey(name: 'strMeasure17')
+  final String? measure17;
+  @override
+  @JsonKey(name: 'strMeasure18')
+  final String? measure18;
+  @override
+  @JsonKey(name: 'strMeasure19')
+  final String? measure19;
+  @override
+  @JsonKey(name: 'strMeasure20')
+  final String? measure20;
+  @override
+  @JsonKey(name: 'strSource')
+  final String? source;
+  @override
+  @JsonKey(name: 'strImageSource')
+  final String? imageSource;
+  @override
+  @JsonKey(name: 'strCreativeCommonsConfirmed')
+  final String? cretiveCommonsConfirmed;
+  @override
+  @JsonKey(name: 'dateModified')
+  final String? dateModified;
+
+  @override
+  String toString() {
+    return 'Recipe(id: $id, name: $name, matchingDrink: $matchingDrink, category: $category, area: $area, instructions: $instructions, pictureUrl: $pictureUrl, tags: $tags, videoUrl: $videoUrl, ingredient1: $ingredient1, ingredient2: $ingredient2, ingredient3: $ingredient3, ingredient4: $ingredient4, ingredient5: $ingredient5, ingredient6: $ingredient6, ingredient7: $ingredient7, ingredient8: $ingredient8, ingredient9: $ingredient9, ingredient10: $ingredient10, ingredient11: $ingredient11, ingredient12: $ingredient12, ingredient13: $ingredient13, ingredient14: $ingredient14, ingredient15: $ingredient15, ingredient16: $ingredient16, ingredient17: $ingredient17, ingredient18: $ingredient18, ingredient19: $ingredient19, ingredient20: $ingredient20, measure1: $measure1, measure2: $measure2, measure3: $measure3, measure4: $measure4, measure5: $measure5, measure6: $measure6, measure7: $measure7, measure8: $measure8, measure9: $measure9, measure10: $measure10, measure11: $measure11, measure12: $measure12, measure13: $measure13, measure14: $measure14, measure15: $measure15, measure16: $measure16, measure17: $measure17, measure18: $measure18, measure19: $measure19, measure20: $measure20, source: $source, imageSource: $imageSource, cretiveCommonsConfirmed: $cretiveCommonsConfirmed, dateModified: $dateModified)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Recipe &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.matchingDrink, matchingDrink) || other.matchingDrink == matchingDrink) &&
+            (identical(other.category, category) || other.category == category) &&
+            (identical(other.area, area) || other.area == area) &&
+            (identical(other.instructions, instructions) || other.instructions == instructions) &&
+            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl) &&
+            (identical(other.tags, tags) || other.tags == tags) &&
+            (identical(other.videoUrl, videoUrl) || other.videoUrl == videoUrl) &&
+            (identical(other.ingredient1, ingredient1) || other.ingredient1 == ingredient1) &&
+            (identical(other.ingredient2, ingredient2) || other.ingredient2 == ingredient2) &&
+            (identical(other.ingredient3, ingredient3) || other.ingredient3 == ingredient3) &&
+            (identical(other.ingredient4, ingredient4) || other.ingredient4 == ingredient4) &&
+            (identical(other.ingredient5, ingredient5) || other.ingredient5 == ingredient5) &&
+            (identical(other.ingredient6, ingredient6) || other.ingredient6 == ingredient6) &&
+            (identical(other.ingredient7, ingredient7) || other.ingredient7 == ingredient7) &&
+            (identical(other.ingredient8, ingredient8) || other.ingredient8 == ingredient8) &&
+            (identical(other.ingredient9, ingredient9) || other.ingredient9 == ingredient9) &&
+            (identical(other.ingredient10, ingredient10) || other.ingredient10 == ingredient10) &&
+            (identical(other.ingredient11, ingredient11) || other.ingredient11 == ingredient11) &&
+            (identical(other.ingredient12, ingredient12) || other.ingredient12 == ingredient12) &&
+            (identical(other.ingredient13, ingredient13) || other.ingredient13 == ingredient13) &&
+            (identical(other.ingredient14, ingredient14) || other.ingredient14 == ingredient14) &&
+            (identical(other.ingredient15, ingredient15) || other.ingredient15 == ingredient15) &&
+            (identical(other.ingredient16, ingredient16) || other.ingredient16 == ingredient16) &&
+            (identical(other.ingredient17, ingredient17) || other.ingredient17 == ingredient17) &&
+            (identical(other.ingredient18, ingredient18) || other.ingredient18 == ingredient18) &&
+            (identical(other.ingredient19, ingredient19) || other.ingredient19 == ingredient19) &&
+            (identical(other.ingredient20, ingredient20) || other.ingredient20 == ingredient20) &&
+            (identical(other.measure1, measure1) || other.measure1 == measure1) &&
+            (identical(other.measure2, measure2) || other.measure2 == measure2) &&
+            (identical(other.measure3, measure3) || other.measure3 == measure3) &&
+            (identical(other.measure4, measure4) || other.measure4 == measure4) &&
+            (identical(other.measure5, measure5) || other.measure5 == measure5) &&
+            (identical(other.measure6, measure6) || other.measure6 == measure6) &&
+            (identical(other.measure7, measure7) || other.measure7 == measure7) &&
+            (identical(other.measure8, measure8) || other.measure8 == measure8) &&
+            (identical(other.measure9, measure9) || other.measure9 == measure9) &&
+            (identical(other.measure10, measure10) || other.measure10 == measure10) &&
+            (identical(other.measure11, measure11) || other.measure11 == measure11) &&
+            (identical(other.measure12, measure12) || other.measure12 == measure12) &&
+            (identical(other.measure13, measure13) || other.measure13 == measure13) &&
+            (identical(other.measure14, measure14) || other.measure14 == measure14) &&
+            (identical(other.measure15, measure15) || other.measure15 == measure15) &&
+            (identical(other.measure16, measure16) || other.measure16 == measure16) &&
+            (identical(other.measure17, measure17) || other.measure17 == measure17) &&
+            (identical(other.measure18, measure18) || other.measure18 == measure18) &&
+            (identical(other.measure19, measure19) || other.measure19 == measure19) &&
+            (identical(other.measure20, measure20) || other.measure20 == measure20) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.imageSource, imageSource) || other.imageSource == imageSource) &&
+            (identical(other.cretiveCommonsConfirmed, cretiveCommonsConfirmed) ||
+                other.cretiveCommonsConfirmed == cretiveCommonsConfirmed) &&
+            (identical(other.dateModified, dateModified) || other.dateModified == dateModified));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        matchingDrink,
+        category,
+        area,
+        instructions,
+        pictureUrl,
+        tags,
+        videoUrl,
+        ingredient1,
+        ingredient2,
+        ingredient3,
+        ingredient4,
+        ingredient5,
+        ingredient6,
+        ingredient7,
+        ingredient8,
+        ingredient9,
+        ingredient10,
+        ingredient11,
+        ingredient12,
+        ingredient13,
+        ingredient14,
+        ingredient15,
+        ingredient16,
+        ingredient17,
+        ingredient18,
+        ingredient19,
+        ingredient20,
+        measure1,
+        measure2,
+        measure3,
+        measure4,
+        measure5,
+        measure6,
+        measure7,
+        measure8,
+        measure9,
+        measure10,
+        measure11,
+        measure12,
+        measure13,
+        measure14,
+        measure15,
+        measure16,
+        measure17,
+        measure18,
+        measure19,
+        measure20,
+        source,
+        imageSource,
+        cretiveCommonsConfirmed,
+        dateModified
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecipeCopyWith<_$_Recipe> get copyWith => __$$_RecipeCopyWithImpl<_$_Recipe>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RecipeToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Recipe implements Recipe {
+  factory _Recipe(
+      {@JsonKey(name: 'idMeal') required final String id,
+      @JsonKey(name: 'strMeal') required final String name,
+      @JsonKey(name: 'strDrinkAlternate') final String? matchingDrink,
+      @JsonKey(name: 'strCategory') required final String category,
+      @JsonKey(name: 'strArea') final String? area,
+      @JsonKey(name: 'strInstructions') required final String instructions,
+      @JsonKey(name: 'strMealThumb') required final String pictureUrl,
+      @JsonKey(name: 'strTags') final String? tags,
+      @JsonKey(name: 'strYoutube') final String? videoUrl,
+      @JsonKey(name: 'strIngredient1') required final String? ingredient1,
+      @JsonKey(name: 'strIngredient2') required final String? ingredient2,
+      @JsonKey(name: 'strIngredient3') required final String? ingredient3,
+      @JsonKey(name: 'strIngredient4') required final String? ingredient4,
+      @JsonKey(name: 'strIngredient5') required final String? ingredient5,
+      @JsonKey(name: 'strIngredient6') required final String? ingredient6,
+      @JsonKey(name: 'strIngredient7') required final String? ingredient7,
+      @JsonKey(name: 'strIngredient8') required final String? ingredient8,
+      @JsonKey(name: 'strIngredient9') required final String? ingredient9,
+      @JsonKey(name: 'strIngredient10') required final String? ingredient10,
+      @JsonKey(name: 'strIngredient11') required final String? ingredient11,
+      @JsonKey(name: 'strIngredient12') required final String? ingredient12,
+      @JsonKey(name: 'strIngredient13') required final String? ingredient13,
+      @JsonKey(name: 'strIngredient14') required final String? ingredient14,
+      @JsonKey(name: 'strIngredient15') required final String? ingredient15,
+      @JsonKey(name: 'strIngredient16') required final String? ingredient16,
+      @JsonKey(name: 'strIngredient17') required final String? ingredient17,
+      @JsonKey(name: 'strIngredient18') required final String? ingredient18,
+      @JsonKey(name: 'strIngredient19') required final String? ingredient19,
+      @JsonKey(name: 'strIngredient20') required final String? ingredient20,
+      @JsonKey(name: 'strMeasure1') required final String? measure1,
+      @JsonKey(name: 'strMeasure2') required final String? measure2,
+      @JsonKey(name: 'strMeasure3') required final String? measure3,
+      @JsonKey(name: 'strMeasure4') required final String? measure4,
+      @JsonKey(name: 'strMeasure5') required final String? measure5,
+      @JsonKey(name: 'strMeasure6') required final String? measure6,
+      @JsonKey(name: 'strMeasure7') required final String? measure7,
+      @JsonKey(name: 'strMeasure8') required final String? measure8,
+      @JsonKey(name: 'strMeasure9') required final String? measure9,
+      @JsonKey(name: 'strMeasure10') required final String? measure10,
+      @JsonKey(name: 'strMeasure11') required final String? measure11,
+      @JsonKey(name: 'strMeasure12') required final String? measure12,
+      @JsonKey(name: 'strMeasure13') required final String? measure13,
+      @JsonKey(name: 'strMeasure14') required final String? measure14,
+      @JsonKey(name: 'strMeasure15') required final String? measure15,
+      @JsonKey(name: 'strMeasure16') required final String? measure16,
+      @JsonKey(name: 'strMeasure17') required final String? measure17,
+      @JsonKey(name: 'strMeasure18') required final String? measure18,
+      @JsonKey(name: 'strMeasure19') required final String? measure19,
+      @JsonKey(name: 'strMeasure20') required final String? measure20,
+      @JsonKey(name: 'strSource') final String? source,
+      @JsonKey(name: 'strImageSource') final String? imageSource,
+      @JsonKey(name: 'strCreativeCommonsConfirmed') final String? cretiveCommonsConfirmed,
+      @JsonKey(name: 'dateModified') final String? dateModified}) = _$_Recipe;
+
+  factory _Recipe.fromJson(Map<String, dynamic> json) = _$_Recipe.fromJson;
+
+  @override
+  @JsonKey(name: 'idMeal')
+  String get id;
+  @override
+  @JsonKey(name: 'strMeal')
+  String get name;
+  @override
+  @JsonKey(name: 'strDrinkAlternate')
+  String? get matchingDrink;
+  @override
+  @JsonKey(name: 'strCategory')
+  String get category;
+  @override
+  @JsonKey(name: 'strArea')
+  String? get area;
+  @override
+  @JsonKey(name: 'strInstructions')
+  String get instructions;
+  @override
+  @JsonKey(name: 'strMealThumb')
+  String get pictureUrl;
+  @override
+  @JsonKey(name: 'strTags')
+  String? get tags;
+  @override
+  @JsonKey(name: 'strYoutube')
+  String? get videoUrl;
+  @override
+  @JsonKey(name: 'strIngredient1')
+  String? get ingredient1;
+  @override
+  @JsonKey(name: 'strIngredient2')
+  String? get ingredient2;
+  @override
+  @JsonKey(name: 'strIngredient3')
+  String? get ingredient3;
+  @override
+  @JsonKey(name: 'strIngredient4')
+  String? get ingredient4;
+  @override
+  @JsonKey(name: 'strIngredient5')
+  String? get ingredient5;
+  @override
+  @JsonKey(name: 'strIngredient6')
+  String? get ingredient6;
+  @override
+  @JsonKey(name: 'strIngredient7')
+  String? get ingredient7;
+  @override
+  @JsonKey(name: 'strIngredient8')
+  String? get ingredient8;
+  @override
+  @JsonKey(name: 'strIngredient9')
+  String? get ingredient9;
+  @override
+  @JsonKey(name: 'strIngredient10')
+  String? get ingredient10;
+  @override
+  @JsonKey(name: 'strIngredient11')
+  String? get ingredient11;
+  @override
+  @JsonKey(name: 'strIngredient12')
+  String? get ingredient12;
+  @override
+  @JsonKey(name: 'strIngredient13')
+  String? get ingredient13;
+  @override
+  @JsonKey(name: 'strIngredient14')
+  String? get ingredient14;
+  @override
+  @JsonKey(name: 'strIngredient15')
+  String? get ingredient15;
+  @override
+  @JsonKey(name: 'strIngredient16')
+  String? get ingredient16;
+  @override
+  @JsonKey(name: 'strIngredient17')
+  String? get ingredient17;
+  @override
+  @JsonKey(name: 'strIngredient18')
+  String? get ingredient18;
+  @override
+  @JsonKey(name: 'strIngredient19')
+  String? get ingredient19;
+  @override
+  @JsonKey(name: 'strIngredient20')
+  String? get ingredient20;
+  @override
+  @JsonKey(name: 'strMeasure1')
+  String? get measure1;
+  @override
+  @JsonKey(name: 'strMeasure2')
+  String? get measure2;
+  @override
+  @JsonKey(name: 'strMeasure3')
+  String? get measure3;
+  @override
+  @JsonKey(name: 'strMeasure4')
+  String? get measure4;
+  @override
+  @JsonKey(name: 'strMeasure5')
+  String? get measure5;
+  @override
+  @JsonKey(name: 'strMeasure6')
+  String? get measure6;
+  @override
+  @JsonKey(name: 'strMeasure7')
+  String? get measure7;
+  @override
+  @JsonKey(name: 'strMeasure8')
+  String? get measure8;
+  @override
+  @JsonKey(name: 'strMeasure9')
+  String? get measure9;
+  @override
+  @JsonKey(name: 'strMeasure10')
+  String? get measure10;
+  @override
+  @JsonKey(name: 'strMeasure11')
+  String? get measure11;
+  @override
+  @JsonKey(name: 'strMeasure12')
+  String? get measure12;
+  @override
+  @JsonKey(name: 'strMeasure13')
+  String? get measure13;
+  @override
+  @JsonKey(name: 'strMeasure14')
+  String? get measure14;
+  @override
+  @JsonKey(name: 'strMeasure15')
+  String? get measure15;
+  @override
+  @JsonKey(name: 'strMeasure16')
+  String? get measure16;
+  @override
+  @JsonKey(name: 'strMeasure17')
+  String? get measure17;
+  @override
+  @JsonKey(name: 'strMeasure18')
+  String? get measure18;
+  @override
+  @JsonKey(name: 'strMeasure19')
+  String? get measure19;
+  @override
+  @JsonKey(name: 'strMeasure20')
+  String? get measure20;
+  @override
+  @JsonKey(name: 'strSource')
+  String? get source;
+  @override
+  @JsonKey(name: 'strImageSource')
+  String? get imageSource;
+  @override
+  @JsonKey(name: 'strCreativeCommonsConfirmed')
+  String? get cretiveCommonsConfirmed;
+  @override
+  @JsonKey(name: 'dateModified')
+  String? get dateModified;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RecipeCopyWith<_$_Recipe> get copyWith => throw _privateConstructorUsedError;
+}
+
+RecipeState _$RecipeStateFromJson(Map<String, dynamic> json) {
+  return _RecipeState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RecipeState {
+  List<Recipe> get recipes => throw _privateConstructorUsedError;
+  List<RecipeCategory> get categories => throw _privateConstructorUsedError;
+  String? get selectedCategoryId => throw _privateConstructorUsedError;
+  String? get selectedRecipeId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RecipeStateCopyWith<RecipeState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RecipeStateCopyWith<$Res> {
+  factory $RecipeStateCopyWith(RecipeState value, $Res Function(RecipeState) then) =
+      _$RecipeStateCopyWithImpl<$Res, RecipeState>;
+  @useResult
+  $Res call(
+      {List<Recipe> recipes, List<RecipeCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+}
+
+/// @nodoc
+class _$RecipeStateCopyWithImpl<$Res, $Val extends RecipeState> implements $RecipeStateCopyWith<$Res> {
+  _$RecipeStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipes = null,
+    Object? categories = null,
+    Object? selectedCategoryId = freezed,
+    Object? selectedRecipeId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      recipes: null == recipes
+          ? _value.recipes
+          : recipes // ignore: cast_nullable_to_non_nullable
+              as List<Recipe>,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<RecipeCategory>,
+      selectedCategoryId: freezed == selectedCategoryId
+          ? _value.selectedCategoryId
+          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedRecipeId: freezed == selectedRecipeId
+          ? _value.selectedRecipeId
+          : selectedRecipeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_RecipeStateCopyWith<$Res> implements $RecipeStateCopyWith<$Res> {
+  factory _$$_RecipeStateCopyWith(_$_RecipeState value, $Res Function(_$_RecipeState) then) =
+      __$$_RecipeStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<Recipe> recipes, List<RecipeCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+}
+
+/// @nodoc
+class __$$_RecipeStateCopyWithImpl<$Res> extends _$RecipeStateCopyWithImpl<$Res, _$_RecipeState>
+    implements _$$_RecipeStateCopyWith<$Res> {
+  __$$_RecipeStateCopyWithImpl(_$_RecipeState _value, $Res Function(_$_RecipeState) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipes = null,
+    Object? categories = null,
+    Object? selectedCategoryId = freezed,
+    Object? selectedRecipeId = freezed,
+  }) {
+    return _then(_$_RecipeState(
+      recipes: null == recipes
+          ? _value._recipes
+          : recipes // ignore: cast_nullable_to_non_nullable
+              as List<Recipe>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<RecipeCategory>,
+      selectedCategoryId: freezed == selectedCategoryId
+          ? _value.selectedCategoryId
+          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedRecipeId: freezed == selectedRecipeId
+          ? _value.selectedRecipeId
+          : selectedRecipeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_RecipeState implements _RecipeState {
+  const _$_RecipeState(
+      {final List<Recipe> recipes = const <Recipe>[],
+      final List<RecipeCategory> categories = const <RecipeCategory>[],
+      this.selectedCategoryId,
+      this.selectedRecipeId})
+      : _recipes = recipes,
+        _categories = categories;
+
+  factory _$_RecipeState.fromJson(Map<String, dynamic> json) => _$$_RecipeStateFromJson(json);
+
+  final List<Recipe> _recipes;
+  @override
+  @JsonKey()
+  List<Recipe> get recipes {
+    if (_recipes is EqualUnmodifiableListView) return _recipes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_recipes);
+  }
+
+  final List<RecipeCategory> _categories;
+  @override
+  @JsonKey()
+  List<RecipeCategory> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
+  @override
+  final String? selectedCategoryId;
+  @override
+  final String? selectedRecipeId;
+
+  @override
+  String toString() {
+    return 'RecipeState(recipes: $recipes, categories: $categories, selectedCategoryId: $selectedCategoryId, selectedRecipeId: $selectedRecipeId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RecipeState &&
+            const DeepCollectionEquality().equals(other._recipes, _recipes) &&
+            const DeepCollectionEquality().equals(other._categories, _categories) &&
+            (identical(other.selectedCategoryId, selectedCategoryId) ||
+                other.selectedCategoryId == selectedCategoryId) &&
+            (identical(other.selectedRecipeId, selectedRecipeId) || other.selectedRecipeId == selectedRecipeId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_recipes),
+      const DeepCollectionEquality().hash(_categories), selectedCategoryId, selectedRecipeId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecipeStateCopyWith<_$_RecipeState> get copyWith =>
+      __$$_RecipeStateCopyWithImpl<_$_RecipeState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RecipeStateToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RecipeState implements RecipeState {
+  const factory _RecipeState(
+      {final List<Recipe> recipes,
+      final List<RecipeCategory> categories,
+      final String? selectedCategoryId,
+      final String? selectedRecipeId}) = _$_RecipeState;
+
+  factory _RecipeState.fromJson(Map<String, dynamic> json) = _$_RecipeState.fromJson;
+
+  @override
+  List<Recipe> get recipes;
+  @override
+  List<RecipeCategory> get categories;
+  @override
+  String? get selectedCategoryId;
+  @override
+  String? get selectedRecipeId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RecipeStateCopyWith<_$_RecipeState> get copyWith => throw _privateConstructorUsedError;
 }

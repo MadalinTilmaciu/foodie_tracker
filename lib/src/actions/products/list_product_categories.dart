@@ -12,7 +12,7 @@ class ListProductCategories with _$ListProductCategories {
 
   @Implements<StopAction>()
   const factory ListProductCategories.successful(
-    List<Category> categories, [
+    List<ProductCategory> categories, [
     @Default(_kListProductCategoriesPendingId) String pendingId,
   ]) = ListProductCategoriesSuccessful;
 

@@ -22,6 +22,10 @@ part 'products/find_go_upc_product.dart';
 part 'products/delete_product.dart';
 part 'products/update_product.dart';
 
+part 'recipes/list_recipe_categories.dart';
+part 'recipes/set_recipe_category.dart';
+part 'recipes/set_recipe.dart';
+
 abstract class PendingActions {
   String get pendingId;
 }

@@ -11,6 +11,8 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
       products: json['products'] == null
           ? const ProductState()
           : ProductState.fromJson(json['products'] as Map<String, dynamic>),
+      recipes:
+          json['recipes'] == null ? const RecipeState() : RecipeState.fromJson(json['recipes'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -18,6 +20,7 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
 Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynamic>{
       'auth': instance.auth.toJson(),
       'products': instance.products.toJson(),
+      'recipes': instance.recipes.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -91,12 +94,12 @@ Map<String, dynamic> _$$_FoodieProductToJson(_$_FoodieProduct instance) => <Stri
       'expirationDate': instance.expirationDate,
     };
 
-_$_Category _$$_CategoryFromJson(Map<String, dynamic> json) => _$_Category(
+_$_ProductCategory _$$_ProductCategoryFromJson(Map<String, dynamic> json) => _$_ProductCategory(
       id: json['id'] as String,
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$_CategoryToJson(_$_Category instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ProductCategoryToJson(_$_ProductCategory instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
     };
@@ -107,16 +110,16 @@ _$_ProductState _$$_ProductStateFromJson(Map<String, dynamic> json) => _$_Produc
               .toList() ??
           const <FoodieProduct>[],
       categories: (json['categories'] as List<dynamic>?)
-              ?.map((dynamic e) => Category.fromJson(e as Map<String, dynamic>))
+              ?.map((dynamic e) => ProductCategory.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <Category>[],
+          const <ProductCategory>[],
       selectedCategoryId: json['selectedCategoryId'] as String?,
       selectedProductId: json['selectedProductId'] as String?,
     );
 
 Map<String, dynamic> _$$_ProductStateToJson(_$_ProductState instance) => <String, dynamic>{
       'products': instance.products.map((FoodieProduct e) => e.toJson()).toList(),
-      'categories': instance.categories.map((Category e) => e.toJson()).toList(),
+      'categories': instance.categories.map((ProductCategory e) => e.toJson()).toList(),
       'selectedCategoryId': instance.selectedCategoryId,
       'selectedProductId': instance.selectedProductId,
     };
@@ -135,4 +138,146 @@ Map<String, dynamic> _$$_GoUpcResponseToJson(_$_GoUpcResponse instance) => <Stri
       'product': instance.product.toJson(),
       'barcodeUrl': instance.barcodeUrl,
       'inferred': instance.inferred,
+    };
+
+_$_RecipeCategory _$$_RecipeCategoryFromJson(Map<String, dynamic> json) => _$_RecipeCategory(
+      id: json['id'] as String,
+      title: json['title'] as String,
+    );
+
+Map<String, dynamic> _$$_RecipeCategoryToJson(_$_RecipeCategory instance) => <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+    };
+
+_$_Recipe _$$_RecipeFromJson(Map<String, dynamic> json) => _$_Recipe(
+      id: json['idMeal'] as String,
+      name: json['strMeal'] as String,
+      matchingDrink: json['strDrinkAlternate'] as String?,
+      category: json['strCategory'] as String,
+      area: json['strArea'] as String?,
+      instructions: json['strInstructions'] as String,
+      pictureUrl: json['strMealThumb'] as String,
+      tags: json['strTags'] as String?,
+      videoUrl: json['strYoutube'] as String?,
+      ingredient1: json['strIngredient1'] as String?,
+      ingredient2: json['strIngredient2'] as String?,
+      ingredient3: json['strIngredient3'] as String?,
+      ingredient4: json['strIngredient4'] as String?,
+      ingredient5: json['strIngredient5'] as String?,
+      ingredient6: json['strIngredient6'] as String?,
+      ingredient7: json['strIngredient7'] as String?,
+      ingredient8: json['strIngredient8'] as String?,
+      ingredient9: json['strIngredient9'] as String?,
+      ingredient10: json['strIngredient10'] as String?,
+      ingredient11: json['strIngredient11'] as String?,
+      ingredient12: json['strIngredient12'] as String?,
+      ingredient13: json['strIngredient13'] as String?,
+      ingredient14: json['strIngredient14'] as String?,
+      ingredient15: json['strIngredient15'] as String?,
+      ingredient16: json['strIngredient16'] as String?,
+      ingredient17: json['strIngredient17'] as String?,
+      ingredient18: json['strIngredient18'] as String?,
+      ingredient19: json['strIngredient19'] as String?,
+      ingredient20: json['strIngredient20'] as String?,
+      measure1: json['strMeasure1'] as String?,
+      measure2: json['strMeasure2'] as String?,
+      measure3: json['strMeasure3'] as String?,
+      measure4: json['strMeasure4'] as String?,
+      measure5: json['strMeasure5'] as String?,
+      measure6: json['strMeasure6'] as String?,
+      measure7: json['strMeasure7'] as String?,
+      measure8: json['strMeasure8'] as String?,
+      measure9: json['strMeasure9'] as String?,
+      measure10: json['strMeasure10'] as String?,
+      measure11: json['strMeasure11'] as String?,
+      measure12: json['strMeasure12'] as String?,
+      measure13: json['strMeasure13'] as String?,
+      measure14: json['strMeasure14'] as String?,
+      measure15: json['strMeasure15'] as String?,
+      measure16: json['strMeasure16'] as String?,
+      measure17: json['strMeasure17'] as String?,
+      measure18: json['strMeasure18'] as String?,
+      measure19: json['strMeasure19'] as String?,
+      measure20: json['strMeasure20'] as String?,
+      source: json['strSource'] as String?,
+      imageSource: json['strImageSource'] as String?,
+      cretiveCommonsConfirmed: json['strCreativeCommonsConfirmed'] as String?,
+      dateModified: json['dateModified'] as String?,
+    );
+
+Map<String, dynamic> _$$_RecipeToJson(_$_Recipe instance) => <String, dynamic>{
+      'idMeal': instance.id,
+      'strMeal': instance.name,
+      'strDrinkAlternate': instance.matchingDrink,
+      'strCategory': instance.category,
+      'strArea': instance.area,
+      'strInstructions': instance.instructions,
+      'strMealThumb': instance.pictureUrl,
+      'strTags': instance.tags,
+      'strYoutube': instance.videoUrl,
+      'strIngredient1': instance.ingredient1,
+      'strIngredient2': instance.ingredient2,
+      'strIngredient3': instance.ingredient3,
+      'strIngredient4': instance.ingredient4,
+      'strIngredient5': instance.ingredient5,
+      'strIngredient6': instance.ingredient6,
+      'strIngredient7': instance.ingredient7,
+      'strIngredient8': instance.ingredient8,
+      'strIngredient9': instance.ingredient9,
+      'strIngredient10': instance.ingredient10,
+      'strIngredient11': instance.ingredient11,
+      'strIngredient12': instance.ingredient12,
+      'strIngredient13': instance.ingredient13,
+      'strIngredient14': instance.ingredient14,
+      'strIngredient15': instance.ingredient15,
+      'strIngredient16': instance.ingredient16,
+      'strIngredient17': instance.ingredient17,
+      'strIngredient18': instance.ingredient18,
+      'strIngredient19': instance.ingredient19,
+      'strIngredient20': instance.ingredient20,
+      'strMeasure1': instance.measure1,
+      'strMeasure2': instance.measure2,
+      'strMeasure3': instance.measure3,
+      'strMeasure4': instance.measure4,
+      'strMeasure5': instance.measure5,
+      'strMeasure6': instance.measure6,
+      'strMeasure7': instance.measure7,
+      'strMeasure8': instance.measure8,
+      'strMeasure9': instance.measure9,
+      'strMeasure10': instance.measure10,
+      'strMeasure11': instance.measure11,
+      'strMeasure12': instance.measure12,
+      'strMeasure13': instance.measure13,
+      'strMeasure14': instance.measure14,
+      'strMeasure15': instance.measure15,
+      'strMeasure16': instance.measure16,
+      'strMeasure17': instance.measure17,
+      'strMeasure18': instance.measure18,
+      'strMeasure19': instance.measure19,
+      'strMeasure20': instance.measure20,
+      'strSource': instance.source,
+      'strImageSource': instance.imageSource,
+      'strCreativeCommonsConfirmed': instance.cretiveCommonsConfirmed,
+      'dateModified': instance.dateModified,
+    };
+
+_$_RecipeState _$$_RecipeStateFromJson(Map<String, dynamic> json) => _$_RecipeState(
+      recipes: (json['recipes'] as List<dynamic>?)
+              ?.map((dynamic e) => Recipe.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Recipe>[],
+      categories: (json['categories'] as List<dynamic>?)
+              ?.map((dynamic e) => RecipeCategory.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <RecipeCategory>[],
+      selectedCategoryId: json['selectedCategoryId'] as String?,
+      selectedRecipeId: json['selectedRecipeId'] as String?,
+    );
+
+Map<String, dynamic> _$$_RecipeStateToJson(_$_RecipeState instance) => <String, dynamic>{
+      'recipes': instance.recipes.map((Recipe e) => e.toJson()).toList(),
+      'categories': instance.categories.map((RecipeCategory e) => e.toJson()).toList(),
+      'selectedCategoryId': instance.selectedCategoryId,
+      'selectedRecipeId': instance.selectedRecipeId,
     };

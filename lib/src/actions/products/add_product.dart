@@ -7,7 +7,7 @@ class AddProduct with _$AddProduct {
   @Implements<StartAction>()
   const factory AddProduct.start({
     required String uid,
-    required List<Category> categories,
+    required List<ProductCategory> categories,
     required GoUpcResponse goUpcResponse,
     @Default(_kAddProductPendingId) String pendingId,
   }) = AddProductStart;

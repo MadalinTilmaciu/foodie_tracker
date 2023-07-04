@@ -15,8 +15,8 @@ class ProductsPage extends StatelessWidget {
     return SafeArea(
       child: UserContainer(
         builder: (BuildContext context, AppUser? user) {
-          return CategoryContainer(
-            builder: (BuildContext context, List<Category> categories) {
+          return ProductCategoryContainer(
+            builder: (BuildContext context, List<ProductCategory> categories) {
               return Scaffold(
                 appBar: AppBar(
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -38,12 +38,12 @@ class ProductsPage extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: SizedBox(
                               height: 56,
-                              child: SelectedCategoryContainer(
-                                builder: (BuildContext context, Category selectedCategory) {
+                              child: SelectedProductCategoryContainer(
+                                builder: (BuildContext context, ProductCategory selectedCategory) {
                                   return ListView(
                                     scrollDirection: Axis.horizontal,
                                     children: categories.map(
-                                      (Category category) {
+                                      (ProductCategory category) {
                                         return Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4),
                                           child: ChoiceChip(

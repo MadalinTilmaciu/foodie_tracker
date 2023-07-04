@@ -4,7 +4,7 @@ part of '../index.dart';
 class ProductState with _$ProductState {
   const factory ProductState({
     @Default(<FoodieProduct>[]) List<FoodieProduct> products,
-    @Default(<Category>[]) List<Category> categories,
+    @Default(<ProductCategory>[]) List<ProductCategory> categories,
     String? selectedCategoryId,
     String? selectedProductId,
   }) = _ProductState;

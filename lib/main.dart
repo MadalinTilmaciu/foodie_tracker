@@ -16,10 +16,12 @@ import 'src/actions/index.dart';
 import 'src/data/auth_api.dart';
 import 'src/data/go_upc_api.dart';
 import 'src/data/products_api.dart';
+import 'src/data/recipes_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
 import 'src/epics/go_upc_epics.dart';
 import 'src/epics/products_epics.dart';
+import 'src/epics/recipes_epics.dart';
 import 'src/models/index.dart';
 import 'src/presentations/containers/index.dart';
 import 'src/presentations/create_user_page.dart';
@@ -56,7 +58,15 @@ Future<void> main() async {
   final GoUpcApi goUpcApi = GoUpcApi(client, apiKey);
   final GoUpcEpics goUpcEpics = GoUpcEpics(goUpcApi);
 
-  final AppEpics epic = AppEpics(auth, products, goUpcEpics);
+  final RecipeApi recipeApi = RecipeApi(FirebaseFirestore.instance);
+  final RecipesEpics recipesEpics = RecipesEpics(recipeApi);
+
+  final AppEpics epic = AppEpics(
+    auth,
+    products,
+    goUpcEpics,
+    recipesEpics,
+  );
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -89,7 +99,7 @@ class FoodieTracker extends StatelessWidget {
       store: store,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'eCommerceApp',
+        title: 'Foodie Tracker',
         theme: ThemeData.dark(),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
