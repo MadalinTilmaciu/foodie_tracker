@@ -20,7 +20,7 @@ class MealsApi {
   }
 
   Future<List<Meal>> listMeals(String category) async {
-    final Uri uri = Uri.parse('www.themealdb.com/api/json/v1/1/filter.php?c=$category');
+    final Uri uri = Uri.parse('https://www.themealdb.com/api/json/v1/1/filter.php?c=$category');
 
     final Response response = await _client.get(uri);
 

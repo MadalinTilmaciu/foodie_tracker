@@ -16,7 +16,7 @@ MealState _listMealCategorySuccessful(MealState state, ListMealCategoriesSuccess
 }
 
 MealState _listMealsSuccessful(MealState state, ListMealsSuccessful action) {
-  return state.copyWith();
+  return state.copyWith(meals: action.meals);
 }
 
 MealState _setCategory(MealState state, SetMealCategory action) {

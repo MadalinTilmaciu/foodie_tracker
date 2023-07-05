@@ -31,7 +31,7 @@ class MealsEpics implements EpicClass<AppState> {
 
             return <dynamic>[
               ListMealCategories.successful(list),
-              // TO DO list Meals
+              ListMeals.start(list.first.title),
             ];
           },
         ).onErrorReturnWith((Object error, StackTrace stackTrace) => ListProductCategories.error(error, stackTrace));

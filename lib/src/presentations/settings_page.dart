@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 import '../actions/index.dart';
@@ -17,6 +20,14 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  Future<void> _deleteCacheDir() async {
+    final Directory cacheDir = await getTemporaryDirectory();
+
+    if (cacheDir.existsSync()) {
+      cacheDir.deleteSync(recursive: true);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -254,6 +265,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         onPressed: () {
+                          _deleteCacheDir();
                           StoreProvider.of<AppState>(context).dispatch(
                             const LogoutUserStart(),
                           );

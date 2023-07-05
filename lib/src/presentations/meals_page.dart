@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -48,9 +49,15 @@ class MealsPage extends StatelessWidget {
                                         selected: selectedCategory == category,
                                         onSelected: (bool selected) {
                                           if (selected) {
-                                            StoreProvider.of<AppState>(context).dispatch(
-                                              SetMealCategory.start(category.id),
-                                            );
+                                            StoreProvider.of<AppState>(context)
+                                              ..dispatch(
+                                                SetMealCategory.start(category.id),
+                                              )
+                                              ..dispatch(
+                                                ListMeals.start(
+                                                  category.title,
+                                                ),
+                                              );
                                           }
                                         },
                                       ),
@@ -64,8 +71,78 @@ class MealsPage extends StatelessWidget {
                       ),
                     ),
             ),
-            body: const Center(
-              child: Text('Meals'),
+            body: MealsContainer(
+              builder: (BuildContext context, List<Meal> meals) {
+                if (meals.isEmpty) {
+                  return const Center(
+                    child: Text(
+                      'There are no meals for this category',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  );
+                }
+
+                return ListView.builder(
+                  itemCount: meals.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: <Widget>[
+                        GestureDetector(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[800],
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(12),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: CachedNetworkImage(
+                                        imageUrl: meals[index].pictureUrl,
+                                        fit: BoxFit.cover,
+                                        width: 120,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Expanded(
+                                      child: Text(
+                                        meals[index].name,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          onTap: () {
+                            StoreProvider.of<AppState>(context).dispatch(
+                              SetMeal.start(meals[index].id),
+                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute<dynamic>(
+                            //     builder: (BuildContext context) => const MealDetailsPage(),
+                            //   ),
+                            // );
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             ),
           );
         },
