@@ -288,13 +288,15 @@ _$_MealState _$$_MealStateFromJson(Map<String, dynamic> json) => _$_MealState(
               ?.map((dynamic e) => MealCategory.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <MealCategory>[],
+      selectedMealId: json['selectedMealId'] as String?,
       selectedCategoryId: json['selectedCategoryId'] as String?,
-      selectedRecipeId: json['selectedRecipeId'] as String?,
+      recipe: json['recipe'] == null ? null : Recipe.fromJson(json['recipe'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MealStateToJson(_$_MealState instance) => <String, dynamic>{
       'meals': instance.meals.map((Meal e) => e.toJson()).toList(),
       'categories': instance.categories.map((MealCategory e) => e.toJson()).toList(),
+      'selectedMealId': instance.selectedMealId,
       'selectedCategoryId': instance.selectedCategoryId,
-      'selectedRecipeId': instance.selectedRecipeId,
+      'recipe': instance.recipe?.toJson(),
     };

@@ -3520,8 +3520,9 @@ MealState _$MealStateFromJson(Map<String, dynamic> json) {
 mixin _$MealState {
   List<Meal> get meals => throw _privateConstructorUsedError;
   List<MealCategory> get categories => throw _privateConstructorUsedError;
+  String? get selectedMealId => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
-  String? get selectedRecipeId => throw _privateConstructorUsedError;
+  Recipe? get recipe => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3532,7 +3533,14 @@ mixin _$MealState {
 abstract class $MealStateCopyWith<$Res> {
   factory $MealStateCopyWith(MealState value, $Res Function(MealState) then) = _$MealStateCopyWithImpl<$Res, MealState>;
   @useResult
-  $Res call({List<Meal> meals, List<MealCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+  $Res call(
+      {List<Meal> meals,
+      List<MealCategory> categories,
+      String? selectedMealId,
+      String? selectedCategoryId,
+      Recipe? recipe});
+
+  $RecipeCopyWith<$Res>? get recipe;
 }
 
 /// @nodoc
@@ -3549,8 +3557,9 @@ class _$MealStateCopyWithImpl<$Res, $Val extends MealState> implements $MealStat
   $Res call({
     Object? meals = null,
     Object? categories = null,
+    Object? selectedMealId = freezed,
     Object? selectedCategoryId = freezed,
-    Object? selectedRecipeId = freezed,
+    Object? recipe = freezed,
   }) {
     return _then(_value.copyWith(
       meals: null == meals
@@ -3561,15 +3570,31 @@ class _$MealStateCopyWithImpl<$Res, $Val extends MealState> implements $MealStat
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<MealCategory>,
+      selectedMealId: freezed == selectedMealId
+          ? _value.selectedMealId
+          : selectedMealId // ignore: cast_nullable_to_non_nullable
+              as String?,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      selectedRecipeId: freezed == selectedRecipeId
-          ? _value.selectedRecipeId
-          : selectedRecipeId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      recipe: freezed == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res>? get recipe {
+    if (_value.recipe == null) {
+      return null;
+    }
+
+    return $RecipeCopyWith<$Res>(_value.recipe!, (value) {
+      return _then(_value.copyWith(recipe: value) as $Val);
+    });
   }
 }
 
@@ -3579,7 +3604,15 @@ abstract class _$$_MealStateCopyWith<$Res> implements $MealStateCopyWith<$Res> {
       __$$_MealStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Meal> meals, List<MealCategory> categories, String? selectedCategoryId, String? selectedRecipeId});
+  $Res call(
+      {List<Meal> meals,
+      List<MealCategory> categories,
+      String? selectedMealId,
+      String? selectedCategoryId,
+      Recipe? recipe});
+
+  @override
+  $RecipeCopyWith<$Res>? get recipe;
 }
 
 /// @nodoc
@@ -3592,8 +3625,9 @@ class __$$_MealStateCopyWithImpl<$Res> extends _$MealStateCopyWithImpl<$Res, _$_
   $Res call({
     Object? meals = null,
     Object? categories = null,
+    Object? selectedMealId = freezed,
     Object? selectedCategoryId = freezed,
-    Object? selectedRecipeId = freezed,
+    Object? recipe = freezed,
   }) {
     return _then(_$_MealState(
       meals: null == meals
@@ -3604,14 +3638,18 @@ class __$$_MealStateCopyWithImpl<$Res> extends _$MealStateCopyWithImpl<$Res, _$_
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<MealCategory>,
+      selectedMealId: freezed == selectedMealId
+          ? _value.selectedMealId
+          : selectedMealId // ignore: cast_nullable_to_non_nullable
+              as String?,
       selectedCategoryId: freezed == selectedCategoryId
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
-      selectedRecipeId: freezed == selectedRecipeId
-          ? _value.selectedRecipeId
-          : selectedRecipeId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      recipe: freezed == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe?,
     ));
   }
 }
@@ -3622,8 +3660,9 @@ class _$_MealState implements _MealState {
   const _$_MealState(
       {final List<Meal> meals = const <Meal>[],
       final List<MealCategory> categories = const <MealCategory>[],
+      this.selectedMealId,
       this.selectedCategoryId,
-      this.selectedRecipeId})
+      this.recipe})
       : _meals = meals,
         _categories = categories;
 
@@ -3648,13 +3687,15 @@ class _$_MealState implements _MealState {
   }
 
   @override
+  final String? selectedMealId;
+  @override
   final String? selectedCategoryId;
   @override
-  final String? selectedRecipeId;
+  final Recipe? recipe;
 
   @override
   String toString() {
-    return 'MealState(meals: $meals, categories: $categories, selectedCategoryId: $selectedCategoryId, selectedRecipeId: $selectedRecipeId)';
+    return 'MealState(meals: $meals, categories: $categories, selectedMealId: $selectedMealId, selectedCategoryId: $selectedCategoryId, recipe: $recipe)';
   }
 
   @override
@@ -3664,15 +3705,16 @@ class _$_MealState implements _MealState {
             other is _$_MealState &&
             const DeepCollectionEquality().equals(other._meals, _meals) &&
             const DeepCollectionEquality().equals(other._categories, _categories) &&
+            (identical(other.selectedMealId, selectedMealId) || other.selectedMealId == selectedMealId) &&
             (identical(other.selectedCategoryId, selectedCategoryId) ||
                 other.selectedCategoryId == selectedCategoryId) &&
-            (identical(other.selectedRecipeId, selectedRecipeId) || other.selectedRecipeId == selectedRecipeId));
+            (identical(other.recipe, recipe) || other.recipe == recipe));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_meals),
-      const DeepCollectionEquality().hash(_categories), selectedCategoryId, selectedRecipeId);
+      const DeepCollectionEquality().hash(_categories), selectedMealId, selectedCategoryId, recipe);
 
   @JsonKey(ignore: true)
   @override
@@ -3691,8 +3733,9 @@ abstract class _MealState implements MealState {
   const factory _MealState(
       {final List<Meal> meals,
       final List<MealCategory> categories,
+      final String? selectedMealId,
       final String? selectedCategoryId,
-      final String? selectedRecipeId}) = _$_MealState;
+      final Recipe? recipe}) = _$_MealState;
 
   factory _MealState.fromJson(Map<String, dynamic> json) = _$_MealState.fromJson;
 
@@ -3701,9 +3744,11 @@ abstract class _MealState implements MealState {
   @override
   List<MealCategory> get categories;
   @override
+  String? get selectedMealId;
+  @override
   String? get selectedCategoryId;
   @override
-  String? get selectedRecipeId;
+  Recipe? get recipe;
   @override
   @JsonKey(ignore: true)
   _$$_MealStateCopyWith<_$_MealState> get copyWith => throw _privateConstructorUsedError;

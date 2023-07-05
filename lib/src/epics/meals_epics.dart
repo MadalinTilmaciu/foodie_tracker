@@ -16,6 +16,7 @@ class MealsEpics implements EpicClass<AppState> {
       <Epic<AppState>>[
         TypedEpic<AppState, ListMealCategoriesStart>(_listMealCategoriesStart).call,
         TypedEpic<AppState, ListMealsStart>(_listMealsStart).call,
+        TypedEpic<AppState, GetRecipeDetailsStart>(_getRecipeDetailsStart).call,
       ],
     )(actions, store);
   }
@@ -46,6 +47,17 @@ class MealsEpics implements EpicClass<AppState> {
             .asyncMap((_) => _api.listMeals(action.category))
             .map((List<Meal> meals) => ListMeals.successful(meals))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => ListMeals.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _getRecipeDetailsStart(Stream<GetRecipeDetailsStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (GetRecipeDetailsStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.getRecipeDetails(action.recipeId))
+            .map((Recipe recipe) => GetRecipeDetails.successful(recipe))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => GetRecipeDetails.error(error, stackTrace));
       },
     );
   }

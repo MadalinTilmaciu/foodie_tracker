@@ -47,7 +47,7 @@ class ProductDetailsPage extends StatelessWidget {
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.grey[400],
+                              color: Colors.grey[300],
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(8),
                               ),

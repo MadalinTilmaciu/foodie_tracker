@@ -8830,3 +8830,552 @@ abstract class SetMeal$ implements SetMeal {
   @JsonKey(ignore: true)
   _$$SetMeal$CopyWith<_$SetMeal$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$GetRecipeDetails {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String recipeId, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String recipeId, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String recipeId, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetRecipeDetailsStart value) start,
+    required TResult Function(GetRecipeDetailsSuccessful value) successful,
+    required TResult Function(GetRecipeDetailsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetRecipeDetailsStart value)? start,
+    TResult? Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult? Function(GetRecipeDetailsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetRecipeDetailsStart value)? start,
+    TResult Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult Function(GetRecipeDetailsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetRecipeDetailsCopyWith<GetRecipeDetails> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetRecipeDetailsCopyWith<$Res> {
+  factory $GetRecipeDetailsCopyWith(GetRecipeDetails value, $Res Function(GetRecipeDetails) then) =
+      _$GetRecipeDetailsCopyWithImpl<$Res, GetRecipeDetails>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetRecipeDetailsCopyWithImpl<$Res, $Val extends GetRecipeDetails> implements $GetRecipeDetailsCopyWith<$Res> {
+  _$GetRecipeDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetRecipeDetailsStartCopyWith<$Res> implements $GetRecipeDetailsCopyWith<$Res> {
+  factory _$$GetRecipeDetailsStartCopyWith(_$GetRecipeDetailsStart value, $Res Function(_$GetRecipeDetailsStart) then) =
+      __$$GetRecipeDetailsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String recipeId, String pendingId});
+}
+
+/// @nodoc
+class __$$GetRecipeDetailsStartCopyWithImpl<$Res> extends _$GetRecipeDetailsCopyWithImpl<$Res, _$GetRecipeDetailsStart>
+    implements _$$GetRecipeDetailsStartCopyWith<$Res> {
+  __$$GetRecipeDetailsStartCopyWithImpl(_$GetRecipeDetailsStart _value, $Res Function(_$GetRecipeDetailsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipeId = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetRecipeDetailsStart(
+      null == recipeId
+          ? _value.recipeId
+          : recipeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetRecipeDetailsStart implements GetRecipeDetailsStart {
+  const _$GetRecipeDetailsStart(this.recipeId, {this.pendingId = _kGetRecipeDetailsPendingId});
+
+  @override
+  final String recipeId;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetRecipeDetails.start(recipeId: $recipeId, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetRecipeDetailsStart &&
+            (identical(other.recipeId, recipeId) || other.recipeId == recipeId) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipeId, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetRecipeDetailsStartCopyWith<_$GetRecipeDetailsStart> get copyWith =>
+      __$$GetRecipeDetailsStartCopyWithImpl<_$GetRecipeDetailsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String recipeId, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(recipeId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String recipeId, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(recipeId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String recipeId, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(recipeId, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetRecipeDetailsStart value) start,
+    required TResult Function(GetRecipeDetailsSuccessful value) successful,
+    required TResult Function(GetRecipeDetailsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetRecipeDetailsStart value)? start,
+    TResult? Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult? Function(GetRecipeDetailsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetRecipeDetailsStart value)? start,
+    TResult Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult Function(GetRecipeDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetRecipeDetailsStart implements GetRecipeDetails, StartAction {
+  const factory GetRecipeDetailsStart(final String recipeId, {final String pendingId}) = _$GetRecipeDetailsStart;
+
+  String get recipeId;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetRecipeDetailsStartCopyWith<_$GetRecipeDetailsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetRecipeDetailsSuccessfulCopyWith<$Res> implements $GetRecipeDetailsCopyWith<$Res> {
+  factory _$$GetRecipeDetailsSuccessfulCopyWith(
+          _$GetRecipeDetailsSuccessful value, $Res Function(_$GetRecipeDetailsSuccessful) then) =
+      __$$GetRecipeDetailsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Recipe recipe, String pendingId});
+
+  $RecipeCopyWith<$Res> get recipe;
+}
+
+/// @nodoc
+class __$$GetRecipeDetailsSuccessfulCopyWithImpl<$Res>
+    extends _$GetRecipeDetailsCopyWithImpl<$Res, _$GetRecipeDetailsSuccessful>
+    implements _$$GetRecipeDetailsSuccessfulCopyWith<$Res> {
+  __$$GetRecipeDetailsSuccessfulCopyWithImpl(
+      _$GetRecipeDetailsSuccessful _value, $Res Function(_$GetRecipeDetailsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipe = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetRecipeDetailsSuccessful(
+      null == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res> get recipe {
+    return $RecipeCopyWith<$Res>(_value.recipe, (value) {
+      return _then(_value.copyWith(recipe: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetRecipeDetailsSuccessful implements GetRecipeDetailsSuccessful {
+  const _$GetRecipeDetailsSuccessful(this.recipe, [this.pendingId = _kGetRecipeDetailsPendingId]);
+
+  @override
+  final Recipe recipe;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetRecipeDetails.successful(recipe: $recipe, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetRecipeDetailsSuccessful &&
+            (identical(other.recipe, recipe) || other.recipe == recipe) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipe, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetRecipeDetailsSuccessfulCopyWith<_$GetRecipeDetailsSuccessful> get copyWith =>
+      __$$GetRecipeDetailsSuccessfulCopyWithImpl<_$GetRecipeDetailsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String recipeId, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(recipe, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String recipeId, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(recipe, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String recipeId, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(recipe, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetRecipeDetailsStart value) start,
+    required TResult Function(GetRecipeDetailsSuccessful value) successful,
+    required TResult Function(GetRecipeDetailsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetRecipeDetailsStart value)? start,
+    TResult? Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult? Function(GetRecipeDetailsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetRecipeDetailsStart value)? start,
+    TResult Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult Function(GetRecipeDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetRecipeDetailsSuccessful implements GetRecipeDetails, StopAction {
+  const factory GetRecipeDetailsSuccessful(final Recipe recipe, [final String pendingId]) =
+      _$GetRecipeDetailsSuccessful;
+
+  Recipe get recipe;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetRecipeDetailsSuccessfulCopyWith<_$GetRecipeDetailsSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetRecipeDetailsErrorCopyWith<$Res> implements $GetRecipeDetailsCopyWith<$Res> {
+  factory _$$GetRecipeDetailsErrorCopyWith(_$GetRecipeDetailsError value, $Res Function(_$GetRecipeDetailsError) then) =
+      __$$GetRecipeDetailsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetRecipeDetailsErrorCopyWithImpl<$Res> extends _$GetRecipeDetailsCopyWithImpl<$Res, _$GetRecipeDetailsError>
+    implements _$$GetRecipeDetailsErrorCopyWith<$Res> {
+  __$$GetRecipeDetailsErrorCopyWithImpl(_$GetRecipeDetailsError _value, $Res Function(_$GetRecipeDetailsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetRecipeDetailsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetRecipeDetailsError implements GetRecipeDetailsError {
+  const _$GetRecipeDetailsError(this.error, this.stackTrace, {this.pendingId = _kGetRecipeDetailsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetRecipeDetails.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetRecipeDetailsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetRecipeDetailsErrorCopyWith<_$GetRecipeDetailsError> get copyWith =>
+      __$$GetRecipeDetailsErrorCopyWithImpl<_$GetRecipeDetailsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String recipeId, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String recipeId, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String recipeId, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetRecipeDetailsStart value) start,
+    required TResult Function(GetRecipeDetailsSuccessful value) successful,
+    required TResult Function(GetRecipeDetailsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetRecipeDetailsStart value)? start,
+    TResult? Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult? Function(GetRecipeDetailsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetRecipeDetailsStart value)? start,
+    TResult Function(GetRecipeDetailsSuccessful value)? successful,
+    TResult Function(GetRecipeDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetRecipeDetailsError implements GetRecipeDetails, StopAction {
+  const factory GetRecipeDetailsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$GetRecipeDetailsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetRecipeDetailsErrorCopyWith<_$GetRecipeDetailsError> get copyWith => throw _privateConstructorUsedError;
+}

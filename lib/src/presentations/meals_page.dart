@@ -5,6 +5,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'meal_recipe_page.dart';
 
 class MealsPage extends StatelessWidget {
   const MealsPage({super.key});
@@ -127,15 +128,26 @@ class MealsPage extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            StoreProvider.of<AppState>(context).dispatch(
-                              SetMeal.start(meals[index].id),
+                            StoreProvider.of<AppState>(context)
+                              ..dispatch(
+                                GetRecipeDetails.start(
+                                  meals[index].id,
+                                ),
+                              )
+                              ..dispatch(
+                                SetMeal.start(meals[index].id),
+                              );
+
+                            Future<dynamic>.delayed(const Duration(milliseconds: 300)).then(
+                              (_) => <dynamic>{
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute<dynamic>(
+                                    builder: (BuildContext context) => const MealRecipePage(),
+                                  ),
+                                )
+                              },
                             );
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute<dynamic>(
-                            //     builder: (BuildContext context) => const MealDetailsPage(),
-                            //   ),
-                            // );
                           },
                         ),
                       ],

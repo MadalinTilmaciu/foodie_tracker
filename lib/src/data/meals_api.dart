@@ -30,4 +30,17 @@ class MealsApi {
 
     throw StateError(response.body);
   }
+
+  Future<Recipe> getRecipeDetails(String id) async {
+    final Uri uri = Uri.parse('https://www.themealdb.com/api/json/v1/1/lookup.php?i=$id');
+
+    final Response response = await _client.get(uri);
+
+    if (response.statusCode == 200) {
+      return Recipe.fromJson(
+          ((jsonDecode(response.body) as Map<String, dynamic>)['meals'] as List<dynamic>)[0] as Map<String, dynamic>);
+    }
+
+    throw StateError(response.body);
+  }
 }

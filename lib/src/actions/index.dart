@@ -26,6 +26,7 @@ part 'recipes/list_meals.dart';
 part 'recipes/list_meal_categories.dart';
 part 'recipes/set_meal_category.dart';
 part 'recipes/set_meal.dart';
+part 'recipes/get_recipe_details.dart';
 
 abstract class PendingActions {
   String get pendingId;
