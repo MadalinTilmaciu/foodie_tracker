@@ -60,4 +60,5 @@ flutter:
     - assets/icons/icons8-feedback-50.png
     - assets/icons/icons8-question-mark-50.png
     - assets/icons/icons8-camera-64.png
+    - assets/icons/icons8-ingredients-50.png
     - .env
