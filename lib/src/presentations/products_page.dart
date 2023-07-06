@@ -12,70 +12,70 @@ class ProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: UserContainer(
-        builder: (BuildContext context, AppUser? user) {
-          return ProductCategoryContainer(
-            builder: (BuildContext context, List<ProductCategory> categories) {
-              return Scaffold(
-                appBar: AppBar(
-                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                  title: const Text(
-                    'Products',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    ),
+    return UserContainer(
+      builder: (BuildContext context, AppUser? user) {
+        return ProductCategoryContainer(
+          builder: (BuildContext context, List<ProductCategory> categories) {
+            return Scaffold(
+              appBar: AppBar(
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                title: const Text(
+                  'Products',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
-                  automaticallyImplyLeading: false,
-                  elevation: 0,
-                  bottom: categories.isEmpty
-                      ? null
-                      : PreferredSize(
-                          preferredSize: const Size.fromHeight(56),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 12),
-                            child: SizedBox(
-                              height: 56,
-                              child: SelectedProductCategoryContainer(
-                                builder: (BuildContext context, ProductCategory selectedCategory) {
-                                  return ListView(
-                                    scrollDirection: Axis.horizontal,
-                                    children: categories.map(
-                                      (ProductCategory category) {
-                                        return Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                                          child: ChoiceChip(
-                                            selectedColor: Colors.blue,
-                                            label: Text(category.title),
-                                            selected: selectedCategory == category,
-                                            onSelected: (bool selected) {
-                                              if (selected) {
-                                                StoreProvider.of<AppState>(context)
-                                                  ..dispatch(
-                                                    SetProductCategory.start(category.id),
-                                                  )
-                                                  ..dispatch(
-                                                    ListProducts.start(
-                                                      user!.uid,
-                                                      category.id,
-                                                    ),
-                                                  );
-                                              }
-                                            },
-                                          ),
-                                        );
-                                      },
-                                    ).toList(),
-                                  );
-                                },
-                              ),
+                ),
+                automaticallyImplyLeading: false,
+                elevation: 0,
+                bottom: categories.isEmpty
+                    ? null
+                    : PreferredSize(
+                        preferredSize: const Size.fromHeight(56),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: SizedBox(
+                            height: 56,
+                            child: SelectedProductCategoryContainer(
+                              builder: (BuildContext context, ProductCategory selectedCategory) {
+                                return ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: categories.map(
+                                    (ProductCategory category) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                                        child: ChoiceChip(
+                                          selectedColor: Colors.blue,
+                                          label: Text(category.title),
+                                          selected: selectedCategory == category,
+                                          onSelected: (bool selected) {
+                                            if (selected) {
+                                              StoreProvider.of<AppState>(context)
+                                                ..dispatch(
+                                                  SetProductCategory.start(category.id),
+                                                )
+                                                ..dispatch(
+                                                  ListProducts.start(
+                                                    user!.uid,
+                                                    category.id,
+                                                  ),
+                                                );
+                                            }
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  ).toList(),
+                                );
+                              },
                             ),
                           ),
                         ),
-                ),
-                body: ProductsContainer(
+                      ),
+              ),
+              body: SafeArea(
+                child: ProductsContainer(
                   builder: (BuildContext context, List<FoodieProduct> products) {
                     if (products.isEmpty) {
                       return const Center(
@@ -148,11 +148,11 @@ class ProductsPage extends StatelessWidget {
                     );
                   },
                 ),
-              );
-            },
-          );
-        },
-      ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

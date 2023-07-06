@@ -15,9 +15,9 @@ class ProductDetailsPage extends StatelessWidget {
       builder: (BuildContext context, AppUser? user) {
         return SelectedProductContainer(
           builder: (BuildContext context, FoodieProduct product) {
-            return SafeArea(
-              child: Scaffold(
-                body: Column(
+            return Scaffold(
+              body: SafeArea(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Stack(

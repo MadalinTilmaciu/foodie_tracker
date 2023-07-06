@@ -30,24 +30,24 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: UserContainer(
-        builder: (BuildContext context, AppUser? user) {
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              title: const Text(
-                'Settings',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+    return UserContainer(
+      builder: (BuildContext context, AppUser? user) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: const Text(
+              'Settings',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
               ),
-              automaticallyImplyLeading: false,
-              elevation: 0,
             ),
-            body: SettingsList(
+            automaticallyImplyLeading: false,
+            elevation: 0,
+          ),
+          body: SafeArea(
+            child: SettingsList(
               darkTheme: SettingsThemeData(
                 settingsListBackground: Theme.of(context).scaffoldBackgroundColor,
               ),
@@ -278,9 +278,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

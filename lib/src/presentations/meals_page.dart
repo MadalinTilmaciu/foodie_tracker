@@ -12,67 +12,67 @@ class MealsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: MealCategoryContainer(
-        builder: (BuildContext context, List<MealCategory> categories) {
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              title: const Text(
-                'Meals',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+    return MealCategoryContainer(
+      builder: (BuildContext context, List<MealCategory> categories) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: const Text(
+              'Meals',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
               ),
-              automaticallyImplyLeading: false,
-              elevation: 0,
-              bottom: categories.isEmpty
-                  ? null
-                  : PreferredSize(
-                      preferredSize: const Size.fromHeight(56),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
-                        child: SizedBox(
-                          height: 56,
-                          child: SelectedMealCategoryContainer(
-                            builder: (BuildContext context, MealCategory selectedCategory) {
-                              return ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: categories.map(
-                                  (MealCategory category) {
-                                    return Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                                      child: ChoiceChip(
-                                        selectedColor: Colors.blue,
-                                        label: Text(category.title),
-                                        selected: selectedCategory == category,
-                                        onSelected: (bool selected) {
-                                          if (selected) {
-                                            StoreProvider.of<AppState>(context)
-                                              ..dispatch(
-                                                SetMealCategory.start(category.id),
-                                              )
-                                              ..dispatch(
-                                                ListMeals.start(
-                                                  category.title,
-                                                ),
-                                              );
-                                          }
-                                        },
-                                      ),
-                                    );
-                                  },
-                                ).toList(),
-                              );
-                            },
-                          ),
+            ),
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            bottom: categories.isEmpty
+                ? null
+                : PreferredSize(
+                    preferredSize: const Size.fromHeight(56),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: SizedBox(
+                        height: 56,
+                        child: SelectedMealCategoryContainer(
+                          builder: (BuildContext context, MealCategory selectedCategory) {
+                            return ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: categories.map(
+                                (MealCategory category) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                                    child: ChoiceChip(
+                                      selectedColor: Colors.blue,
+                                      label: Text(category.title),
+                                      selected: selectedCategory == category,
+                                      onSelected: (bool selected) {
+                                        if (selected) {
+                                          StoreProvider.of<AppState>(context)
+                                            ..dispatch(
+                                              SetMealCategory.start(category.id),
+                                            )
+                                            ..dispatch(
+                                              ListMeals.start(
+                                                category.title,
+                                              ),
+                                            );
+                                        }
+                                      },
+                                    ),
+                                  );
+                                },
+                              ).toList(),
+                            );
+                          },
                         ),
                       ),
                     ),
-            ),
-            body: MealsContainer(
+                  ),
+          ),
+          body: SafeArea(
+            child: MealsContainer(
               builder: (BuildContext context, List<Meal> meals) {
                 if (meals.isEmpty) {
                   return const Center(
@@ -156,9 +156,9 @@ class MealsPage extends StatelessWidget {
                 );
               },
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
