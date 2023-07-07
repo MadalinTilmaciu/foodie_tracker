@@ -8,6 +8,7 @@ Reducer<MealState> mealsReducer = combineReducers(
     TypedReducer<MealState, ListMealCategoriesSuccessful>(_listMealCategorySuccessful).call,
     TypedReducer<MealState, ListMealsSuccessful>(_listMealsSuccessful).call,
     TypedReducer<MealState, GetRecipeDetailsSuccessful>(_getRecipeDetailsSuccessful).call,
+    TypedReducer<MealState, SearchMealSuccessful>(_searchMealSuccessful).call,
     TypedReducer<MealState, SetMealCategory>(_setCategory).call,
     TypedReducer<MealState, SetMeal>(_setMeal).call,
   ],
@@ -23,6 +24,19 @@ MealState _listMealsSuccessful(MealState state, ListMealsSuccessful action) {
 
 MealState _getRecipeDetailsSuccessful(MealState state, GetRecipeDetailsSuccessful action) {
   return state.copyWith(recipe: action.recipe);
+}
+
+MealState _searchMealSuccessful(MealState state, SearchMealSuccessful action) {
+  return state.copyWith(
+    recipe: action.recipe,
+    meals: <Meal>[
+      Meal(
+        id: action.recipe.id,
+        name: action.recipe.name,
+        pictureUrl: action.recipe.pictureUrl,
+      ),
+    ],
+  );
 }
 
 MealState _setCategory(MealState state, SetMealCategory action) {

@@ -62,4 +62,5 @@ flutter:
     - assets/icons/icons8-camera-64.png
     - assets/icons/icons8-ingredients-50.png
     - assets/icons/icons8-instructions-49.png
+    - assets/icons/icons8-video-48.png
     - .env

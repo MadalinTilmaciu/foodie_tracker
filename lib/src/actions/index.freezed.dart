@@ -9379,3 +9379,547 @@ abstract class GetRecipeDetailsError implements GetRecipeDetails, StopAction {
   @JsonKey(ignore: true)
   _$$GetRecipeDetailsErrorCopyWith<_$GetRecipeDetailsError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SearchMeal {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchMealStart value) start,
+    required TResult Function(SearchMealSuccessful value) successful,
+    required TResult Function(SearchMealError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SearchMealStart value)? start,
+    TResult? Function(SearchMealSuccessful value)? successful,
+    TResult? Function(SearchMealError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchMealStart value)? start,
+    TResult Function(SearchMealSuccessful value)? successful,
+    TResult Function(SearchMealError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SearchMealCopyWith<SearchMeal> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SearchMealCopyWith<$Res> {
+  factory $SearchMealCopyWith(SearchMeal value, $Res Function(SearchMeal) then) =
+      _$SearchMealCopyWithImpl<$Res, SearchMeal>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SearchMealCopyWithImpl<$Res, $Val extends SearchMeal> implements $SearchMealCopyWith<$Res> {
+  _$SearchMealCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SearchMealStartCopyWith<$Res> implements $SearchMealCopyWith<$Res> {
+  factory _$$SearchMealStartCopyWith(_$SearchMealStart value, $Res Function(_$SearchMealStart) then) =
+      __$$SearchMealStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String pendingId});
+}
+
+/// @nodoc
+class __$$SearchMealStartCopyWithImpl<$Res> extends _$SearchMealCopyWithImpl<$Res, _$SearchMealStart>
+    implements _$$SearchMealStartCopyWith<$Res> {
+  __$$SearchMealStartCopyWithImpl(_$SearchMealStart _value, $Res Function(_$SearchMealStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SearchMealStart(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchMealStart implements SearchMealStart {
+  const _$SearchMealStart(this.name, {this.pendingId = _kSearchMealPendingId});
+
+  @override
+  final String name;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SearchMeal.start(name: $name, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchMealStart &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchMealStartCopyWith<_$SearchMealStart> get copyWith =>
+      __$$SearchMealStartCopyWithImpl<_$SearchMealStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(name, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(name, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(name, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchMealStart value) start,
+    required TResult Function(SearchMealSuccessful value) successful,
+    required TResult Function(SearchMealError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SearchMealStart value)? start,
+    TResult? Function(SearchMealSuccessful value)? successful,
+    TResult? Function(SearchMealError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchMealStart value)? start,
+    TResult Function(SearchMealSuccessful value)? successful,
+    TResult Function(SearchMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchMealStart implements SearchMeal, StartAction {
+  const factory SearchMealStart(final String name, {final String pendingId}) = _$SearchMealStart;
+
+  String get name;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SearchMealStartCopyWith<_$SearchMealStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchMealSuccessfulCopyWith<$Res> implements $SearchMealCopyWith<$Res> {
+  factory _$$SearchMealSuccessfulCopyWith(_$SearchMealSuccessful value, $Res Function(_$SearchMealSuccessful) then) =
+      __$$SearchMealSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Recipe recipe, String pendingId});
+
+  $RecipeCopyWith<$Res> get recipe;
+}
+
+/// @nodoc
+class __$$SearchMealSuccessfulCopyWithImpl<$Res> extends _$SearchMealCopyWithImpl<$Res, _$SearchMealSuccessful>
+    implements _$$SearchMealSuccessfulCopyWith<$Res> {
+  __$$SearchMealSuccessfulCopyWithImpl(_$SearchMealSuccessful _value, $Res Function(_$SearchMealSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipe = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SearchMealSuccessful(
+      null == recipe
+          ? _value.recipe
+          : recipe // ignore: cast_nullable_to_non_nullable
+              as Recipe,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeCopyWith<$Res> get recipe {
+    return $RecipeCopyWith<$Res>(_value.recipe, (value) {
+      return _then(_value.copyWith(recipe: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SearchMealSuccessful implements SearchMealSuccessful {
+  const _$SearchMealSuccessful(this.recipe, [this.pendingId = _kSearchMealPendingId]);
+
+  @override
+  final Recipe recipe;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SearchMeal.successful(recipe: $recipe, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchMealSuccessful &&
+            (identical(other.recipe, recipe) || other.recipe == recipe) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recipe, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchMealSuccessfulCopyWith<_$SearchMealSuccessful> get copyWith =>
+      __$$SearchMealSuccessfulCopyWithImpl<_$SearchMealSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(recipe, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(recipe, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(recipe, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchMealStart value) start,
+    required TResult Function(SearchMealSuccessful value) successful,
+    required TResult Function(SearchMealError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SearchMealStart value)? start,
+    TResult? Function(SearchMealSuccessful value)? successful,
+    TResult? Function(SearchMealError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchMealStart value)? start,
+    TResult Function(SearchMealSuccessful value)? successful,
+    TResult Function(SearchMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchMealSuccessful implements SearchMeal, StopAction {
+  const factory SearchMealSuccessful(final Recipe recipe, [final String pendingId]) = _$SearchMealSuccessful;
+
+  Recipe get recipe;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SearchMealSuccessfulCopyWith<_$SearchMealSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchMealErrorCopyWith<$Res> implements $SearchMealCopyWith<$Res> {
+  factory _$$SearchMealErrorCopyWith(_$SearchMealError value, $Res Function(_$SearchMealError) then) =
+      __$$SearchMealErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$SearchMealErrorCopyWithImpl<$Res> extends _$SearchMealCopyWithImpl<$Res, _$SearchMealError>
+    implements _$$SearchMealErrorCopyWith<$Res> {
+  __$$SearchMealErrorCopyWithImpl(_$SearchMealError _value, $Res Function(_$SearchMealError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SearchMealError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchMealError implements SearchMealError {
+  const _$SearchMealError(this.error, this.stackTrace, {this.pendingId = _kSearchMealPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SearchMeal.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchMealError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchMealErrorCopyWith<_$SearchMealError> get copyWith =>
+      __$$SearchMealErrorCopyWithImpl<_$SearchMealError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String pendingId) start,
+    required TResult Function(Recipe recipe, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name, String pendingId)? start,
+    TResult? Function(Recipe recipe, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String pendingId)? start,
+    TResult Function(Recipe recipe, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchMealStart value) start,
+    required TResult Function(SearchMealSuccessful value) successful,
+    required TResult Function(SearchMealError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SearchMealStart value)? start,
+    TResult? Function(SearchMealSuccessful value)? successful,
+    TResult? Function(SearchMealError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchMealStart value)? start,
+    TResult Function(SearchMealSuccessful value)? successful,
+    TResult Function(SearchMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchMealError implements SearchMeal, StopAction {
+  const factory SearchMealError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$SearchMealError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SearchMealErrorCopyWith<_$SearchMealError> get copyWith => throw _privateConstructorUsedError;
+}

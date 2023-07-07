@@ -30,43 +30,66 @@ class MealsPage extends StatelessWidget {
             bottom: categories.isEmpty
                 ? null
                 : PreferredSize(
-                    preferredSize: const Size.fromHeight(56),
+                    preferredSize: const Size.fromHeight(100),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: SizedBox(
-                        height: 56,
-                        child: SelectedMealCategoryContainer(
-                          builder: (BuildContext context, MealCategory selectedCategory) {
-                            return ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: categories.map(
-                                (MealCategory category) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                                    child: ChoiceChip(
-                                      selectedColor: Colors.blue,
-                                      label: Text(category.title),
-                                      selected: selectedCategory == category,
-                                      onSelected: (bool selected) {
-                                        if (selected) {
-                                          StoreProvider.of<AppState>(context)
-                                            ..dispatch(
-                                              SetMealCategory.start(category.id),
-                                            )
-                                            ..dispatch(
-                                              ListMeals.start(
-                                                category.title,
-                                              ),
-                                            );
-                                        }
-                                      },
-                                    ),
-                                  );
-                                },
-                              ).toList(),
-                            );
-                          },
-                        ),
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: TextField(
+                              decoration: const InputDecoration(
+                                label: Text('search meal...'),
+                                prefixIcon: Icon(Icons.search),
+                                prefixIconColor: Colors.lightBlue,
+                              ),
+                              onChanged: (String value) {
+                                if (value.isEmpty) {
+                                  return;
+                                }
+
+                                StoreProvider.of<AppState>(context).dispatch(
+                                  SearchMeal.start(value),
+                                );
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 56,
+                            child: SelectedMealCategoryContainer(
+                              builder: (BuildContext context, MealCategory selectedCategory) {
+                                return ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: categories.map(
+                                    (MealCategory category) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                                        child: ChoiceChip(
+                                          selectedColor: Colors.blue,
+                                          label: Text(category.title),
+                                          selected: selectedCategory == category,
+                                          onSelected: (bool selected) {
+                                            if (selected) {
+                                              StoreProvider.of<AppState>(context)
+                                                ..dispatch(
+                                                  SetMealCategory.start(category.id),
+                                                )
+                                                ..dispatch(
+                                                  ListMeals.start(
+                                                    category.title,
+                                                  ),
+                                                );
+                                            }
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  ).toList(),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
