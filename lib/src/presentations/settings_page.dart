@@ -10,6 +10,7 @@ import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
 import 'edit_profile_page.dart';
+import 'feedback_page.dart';
 import 'user_qr_page.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -237,7 +238,14 @@ class _SettingsPageState extends State<SettingsPage> {
                         'Feedback',
                         style: TextStyle(fontSize: 15),
                       ),
-                      onPressed: (BuildContext context) {},
+                      onPressed: (BuildContext context) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => const FeedbackPage(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

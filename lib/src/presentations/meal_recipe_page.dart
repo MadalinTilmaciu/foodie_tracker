@@ -358,41 +358,6 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                   ),
                                 ],
                               ),
-                              if (recipe.videoUrl != null && recipe.videoUrl != '')
-                                ExpansionTile(
-                                  initiallyExpanded: true,
-                                  shape: const Border(),
-                                  tilePadding: const EdgeInsets.only(
-                                    left: 12,
-                                    right: 12,
-                                  ),
-                                  leading: const Image(
-                                    height: 25,
-                                    color: Colors.white,
-                                    image: AssetImage('assets/icons/icons8-video-48.png'),
-                                  ),
-                                  trailing: const Icon(
-                                    Icons.keyboard_arrow_down,
-                                    color: Colors.white,
-                                  ),
-                                  title: Transform.translate(
-                                    offset: const Offset(-16, 0),
-                                    child: const Text(
-                                      'Video tutorial',
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                  children: const <Widget>[
-                                    Divider(
-                                      color: Colors.white,
-                                      height: 5,
-                                    ),
-                                  ],
-                                ),
                             ],
                           ),
                         ),
