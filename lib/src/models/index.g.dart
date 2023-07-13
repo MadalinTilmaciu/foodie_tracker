@@ -284,10 +284,15 @@ Map<String, dynamic> _$$_RecipeToJson(_$_Recipe instance) => <String, dynamic>{
 _$_MealState _$$_MealStateFromJson(Map<String, dynamic> json) => _$_MealState(
       meals: (json['meals'] as List<dynamic>?)?.map((dynamic e) => Meal.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Meal>[],
+      favoriteMeals: (json['favoriteMeals'] as List<dynamic>?)
+              ?.map((dynamic e) => Meal.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Meal>[],
       categories: (json['categories'] as List<dynamic>?)
               ?.map((dynamic e) => MealCategory.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <MealCategory>[],
+      isFavorite: json['isFavorite'] as bool?,
       selectedMealId: json['selectedMealId'] as String?,
       selectedCategoryId: json['selectedCategoryId'] as String?,
       recipe: json['recipe'] == null ? null : Recipe.fromJson(json['recipe'] as Map<String, dynamic>),
@@ -295,7 +300,9 @@ _$_MealState _$$_MealStateFromJson(Map<String, dynamic> json) => _$_MealState(
 
 Map<String, dynamic> _$$_MealStateToJson(_$_MealState instance) => <String, dynamic>{
       'meals': instance.meals.map((Meal e) => e.toJson()).toList(),
+      'favoriteMeals': instance.favoriteMeals.map((Meal e) => e.toJson()).toList(),
       'categories': instance.categories.map((MealCategory e) => e.toJson()).toList(),
+      'isFavorite': instance.isFavorite,
       'selectedMealId': instance.selectedMealId,
       'selectedCategoryId': instance.selectedCategoryId,
       'recipe': instance.recipe?.toJson(),

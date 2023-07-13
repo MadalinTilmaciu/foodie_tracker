@@ -56,4 +56,29 @@ class MealsApi {
 
     throw StateError(response.body);
   }
+
+  Future<void> addFavoriteMeal(String uid, Meal meal) async {
+    await _firestore.collection('users/$uid/favorite_meals').add(meal.toJson());
+  }
+
+  Future<void> removeFavoriteMeal(String uid, Meal meal) async {
+    await _firestore
+        .collection('users/$uid/favorite_meals')
+        .where('idMeal', isEqualTo: meal.id)
+        .get()
+        .then((QuerySnapshot<Map<String, dynamic>> meal) => meal.docs[0].reference.delete());
+  }
+
+  Future<bool> checkFavoriteMeal(String uid, String id) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot =
+        await _firestore.collection('users/$uid/favorite_meals').where('idMeal', isEqualTo: id).get();
+
+    return snapshot.docs.isNotEmpty;
+  }
+
+  Future<List<Meal>> listFavoriteMeals(String uid) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('users/$uid/favorite_meals').get();
+
+    return snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Meal.fromJson(doc.data())).toList();
+  }
 }

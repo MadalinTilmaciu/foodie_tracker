@@ -9,7 +9,9 @@ Reducer<MealState> mealsReducer = combineReducers(
     TypedReducer<MealState, ListMealsSuccessful>(_listMealsSuccessful).call,
     TypedReducer<MealState, GetRecipeDetailsSuccessful>(_getRecipeDetailsSuccessful).call,
     TypedReducer<MealState, SearchMealSuccessful>(_searchMealSuccessful).call,
-    TypedReducer<MealState, SetMealCategory>(_setCategory).call,
+    TypedReducer<MealState, CheckFavoriteMealSuccessful>(_checkFavoriteMealSuccessful).call,
+    TypedReducer<MealState, ListFavoriteMealsSuccessful>(_listFavoriteMealsSuccessful).call,
+    TypedReducer<MealState, SetMealCategory>(_setMealCategory).call,
     TypedReducer<MealState, SetMeal>(_setMeal).call,
   ],
 );
@@ -20,6 +22,10 @@ MealState _listMealCategorySuccessful(MealState state, ListMealCategoriesSuccess
 
 MealState _listMealsSuccessful(MealState state, ListMealsSuccessful action) {
   return state.copyWith(meals: action.meals);
+}
+
+MealState _listFavoriteMealsSuccessful(MealState state, ListFavoriteMealsSuccessful action) {
+  return state.copyWith(favoriteMeals: action.favoriteMeals);
 }
 
 MealState _getRecipeDetailsSuccessful(MealState state, GetRecipeDetailsSuccessful action) {
@@ -39,7 +45,11 @@ MealState _searchMealSuccessful(MealState state, SearchMealSuccessful action) {
   );
 }
 
-MealState _setCategory(MealState state, SetMealCategory action) {
+MealState _checkFavoriteMealSuccessful(MealState state, CheckFavoriteMealSuccessful action) {
+  return state.copyWith(isFavorite: action.isFavorite);
+}
+
+MealState _setMealCategory(MealState state, SetMealCategory action) {
   return state.copyWith(selectedCategoryId: action.categoryId);
 }
 

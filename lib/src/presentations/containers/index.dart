@@ -15,3 +15,5 @@ part 'selected_meal_category_container.dart';
 part 'meals_container.dart';
 part 'selected_meal_container.dart';
 part 'recipe_container.dart';
+part 'is_favorite_meal_container.dart';
+part 'favorite_meals_container.dart';

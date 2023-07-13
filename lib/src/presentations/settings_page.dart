@@ -10,6 +10,7 @@ import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
 import 'edit_profile_page.dart';
+import 'favorite_meals_page.dart';
 import 'feedback_page.dart';
 import 'user_qr_page.dart';
 
@@ -165,10 +166,26 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Image.asset('assets/icons/icons8-favorite-50.png'),
                       ),
                       title: const Text(
-                        'Favorite recipes',
+                        'Favorite meals',
                         style: TextStyle(fontSize: 15),
                       ),
-                      onPressed: (BuildContext context) {},
+                      onPressed: (BuildContext context) {
+                        StoreProvider.of<AppState>(context).dispatch(
+                          ListFavoriteMeals.start(
+                            user.uid,
+                          ),
+                        );
+                        Future<dynamic>.delayed(const Duration(milliseconds: 300)).then(
+                          (_) => <dynamic>{
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                builder: (BuildContext context) => const FavoriteMealsPage(),
+                              ),
+                            )
+                          },
+                        );
+                      },
                     ),
                     SettingsTile.navigation(
                       leading: SizedBox(

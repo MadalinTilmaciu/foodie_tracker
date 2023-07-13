@@ -9923,3 +9923,2212 @@ abstract class SearchMealError implements SearchMeal, StopAction {
   @JsonKey(ignore: true)
   _$$SearchMealErrorCopyWith<_$SearchMealError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$AddFavoriteMeal {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteMealStart value) start,
+    required TResult Function(AddFavoriteMealSuccessful value) successful,
+    required TResult Function(AddFavoriteMealError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteMealStart value)? start,
+    TResult? Function(AddFavoriteMealSuccessful value)? successful,
+    TResult? Function(AddFavoriteMealError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteMealStart value)? start,
+    TResult Function(AddFavoriteMealSuccessful value)? successful,
+    TResult Function(AddFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddFavoriteMealCopyWith<AddFavoriteMeal> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddFavoriteMealCopyWith<$Res> {
+  factory $AddFavoriteMealCopyWith(AddFavoriteMeal value, $Res Function(AddFavoriteMeal) then) =
+      _$AddFavoriteMealCopyWithImpl<$Res, AddFavoriteMeal>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddFavoriteMealCopyWithImpl<$Res, $Val extends AddFavoriteMeal> implements $AddFavoriteMealCopyWith<$Res> {
+  _$AddFavoriteMealCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteMealStartCopyWith<$Res> implements $AddFavoriteMealCopyWith<$Res> {
+  factory _$$AddFavoriteMealStartCopyWith(_$AddFavoriteMealStart value, $Res Function(_$AddFavoriteMealStart) then) =
+      __$$AddFavoriteMealStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, Meal meal, String pendingId});
+
+  $MealCopyWith<$Res> get meal;
+}
+
+/// @nodoc
+class __$$AddFavoriteMealStartCopyWithImpl<$Res> extends _$AddFavoriteMealCopyWithImpl<$Res, _$AddFavoriteMealStart>
+    implements _$$AddFavoriteMealStartCopyWith<$Res> {
+  __$$AddFavoriteMealStartCopyWithImpl(_$AddFavoriteMealStart _value, $Res Function(_$AddFavoriteMealStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? meal = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteMealStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == meal
+          ? _value.meal
+          : meal // ignore: cast_nullable_to_non_nullable
+              as Meal,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MealCopyWith<$Res> get meal {
+    return $MealCopyWith<$Res>(_value.meal, (value) {
+      return _then(_value.copyWith(meal: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteMealStart implements AddFavoriteMealStart {
+  const _$AddFavoriteMealStart(this.uid, this.meal, {this.pendingId = _kAddFavoriteMealPendingId});
+
+  @override
+  final String uid;
+  @override
+  final Meal meal;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavoriteMeal.start(uid: $uid, meal: $meal, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteMealStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.meal, meal) || other.meal == meal) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, meal, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteMealStartCopyWith<_$AddFavoriteMealStart> get copyWith =>
+      __$$AddFavoriteMealStartCopyWithImpl<_$AddFavoriteMealStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, meal, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, meal, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, meal, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteMealStart value) start,
+    required TResult Function(AddFavoriteMealSuccessful value) successful,
+    required TResult Function(AddFavoriteMealError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteMealStart value)? start,
+    TResult? Function(AddFavoriteMealSuccessful value)? successful,
+    TResult? Function(AddFavoriteMealError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteMealStart value)? start,
+    TResult Function(AddFavoriteMealSuccessful value)? successful,
+    TResult Function(AddFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteMealStart implements AddFavoriteMeal, StartAction {
+  const factory AddFavoriteMealStart(final String uid, final Meal meal, {final String pendingId}) =
+      _$AddFavoriteMealStart;
+
+  String get uid;
+  Meal get meal;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteMealStartCopyWith<_$AddFavoriteMealStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteMealSuccessfulCopyWith<$Res> implements $AddFavoriteMealCopyWith<$Res> {
+  factory _$$AddFavoriteMealSuccessfulCopyWith(
+          _$AddFavoriteMealSuccessful value, $Res Function(_$AddFavoriteMealSuccessful) then) =
+      __$$AddFavoriteMealSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AddFavoriteMealSuccessfulCopyWithImpl<$Res>
+    extends _$AddFavoriteMealCopyWithImpl<$Res, _$AddFavoriteMealSuccessful>
+    implements _$$AddFavoriteMealSuccessfulCopyWith<$Res> {
+  __$$AddFavoriteMealSuccessfulCopyWithImpl(
+      _$AddFavoriteMealSuccessful _value, $Res Function(_$AddFavoriteMealSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteMealSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteMealSuccessful implements AddFavoriteMealSuccessful {
+  const _$AddFavoriteMealSuccessful([this.pendingId = _kAddFavoriteMealPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavoriteMeal.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteMealSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteMealSuccessfulCopyWith<_$AddFavoriteMealSuccessful> get copyWith =>
+      __$$AddFavoriteMealSuccessfulCopyWithImpl<_$AddFavoriteMealSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteMealStart value) start,
+    required TResult Function(AddFavoriteMealSuccessful value) successful,
+    required TResult Function(AddFavoriteMealError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteMealStart value)? start,
+    TResult? Function(AddFavoriteMealSuccessful value)? successful,
+    TResult? Function(AddFavoriteMealError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteMealStart value)? start,
+    TResult Function(AddFavoriteMealSuccessful value)? successful,
+    TResult Function(AddFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteMealSuccessful implements AddFavoriteMeal, StopAction {
+  const factory AddFavoriteMealSuccessful([final String pendingId]) = _$AddFavoriteMealSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteMealSuccessfulCopyWith<_$AddFavoriteMealSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteMealErrorCopyWith<$Res> implements $AddFavoriteMealCopyWith<$Res> {
+  factory _$$AddFavoriteMealErrorCopyWith(_$AddFavoriteMealError value, $Res Function(_$AddFavoriteMealError) then) =
+      __$$AddFavoriteMealErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddFavoriteMealErrorCopyWithImpl<$Res> extends _$AddFavoriteMealCopyWithImpl<$Res, _$AddFavoriteMealError>
+    implements _$$AddFavoriteMealErrorCopyWith<$Res> {
+  __$$AddFavoriteMealErrorCopyWithImpl(_$AddFavoriteMealError _value, $Res Function(_$AddFavoriteMealError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteMealError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteMealError implements AddFavoriteMealError {
+  const _$AddFavoriteMealError(this.error, this.stackTrace, {this.pendingId = _kAddFavoriteMealPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavoriteMeal.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteMealError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteMealErrorCopyWith<_$AddFavoriteMealError> get copyWith =>
+      __$$AddFavoriteMealErrorCopyWithImpl<_$AddFavoriteMealError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteMealStart value) start,
+    required TResult Function(AddFavoriteMealSuccessful value) successful,
+    required TResult Function(AddFavoriteMealError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteMealStart value)? start,
+    TResult? Function(AddFavoriteMealSuccessful value)? successful,
+    TResult? Function(AddFavoriteMealError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteMealStart value)? start,
+    TResult Function(AddFavoriteMealSuccessful value)? successful,
+    TResult Function(AddFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteMealError implements AddFavoriteMeal, StopAction {
+  const factory AddFavoriteMealError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AddFavoriteMealError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteMealErrorCopyWith<_$AddFavoriteMealError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$CheckFavoriteMeal {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String mealId, String pendingId) start,
+    required TResult Function(bool isFavorite, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String mealId, String pendingId)? start,
+    TResult? Function(bool isFavorite, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String mealId, String pendingId)? start,
+    TResult Function(bool isFavorite, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckFavoriteMealStart value) start,
+    required TResult Function(CheckFavoriteMealSuccessful value) successful,
+    required TResult Function(CheckFavoriteMealError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckFavoriteMealStart value)? start,
+    TResult? Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult? Function(CheckFavoriteMealError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckFavoriteMealStart value)? start,
+    TResult Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult Function(CheckFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CheckFavoriteMealCopyWith<CheckFavoriteMeal> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CheckFavoriteMealCopyWith<$Res> {
+  factory $CheckFavoriteMealCopyWith(CheckFavoriteMeal value, $Res Function(CheckFavoriteMeal) then) =
+      _$CheckFavoriteMealCopyWithImpl<$Res, CheckFavoriteMeal>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CheckFavoriteMealCopyWithImpl<$Res, $Val extends CheckFavoriteMeal>
+    implements $CheckFavoriteMealCopyWith<$Res> {
+  _$CheckFavoriteMealCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CheckFavoriteMealStartCopyWith<$Res> implements $CheckFavoriteMealCopyWith<$Res> {
+  factory _$$CheckFavoriteMealStartCopyWith(
+          _$CheckFavoriteMealStart value, $Res Function(_$CheckFavoriteMealStart) then) =
+      __$$CheckFavoriteMealStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, String mealId, String pendingId});
+}
+
+/// @nodoc
+class __$$CheckFavoriteMealStartCopyWithImpl<$Res>
+    extends _$CheckFavoriteMealCopyWithImpl<$Res, _$CheckFavoriteMealStart>
+    implements _$$CheckFavoriteMealStartCopyWith<$Res> {
+  __$$CheckFavoriteMealStartCopyWithImpl(_$CheckFavoriteMealStart _value, $Res Function(_$CheckFavoriteMealStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? mealId = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckFavoriteMealStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == mealId
+          ? _value.mealId
+          : mealId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckFavoriteMealStart implements CheckFavoriteMealStart {
+  const _$CheckFavoriteMealStart(this.uid, this.mealId, {this.pendingId = _kCheckFavoriteMealPendingId});
+
+  @override
+  final String uid;
+  @override
+  final String mealId;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckFavoriteMeal.start(uid: $uid, mealId: $mealId, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckFavoriteMealStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.mealId, mealId) || other.mealId == mealId) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, mealId, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckFavoriteMealStartCopyWith<_$CheckFavoriteMealStart> get copyWith =>
+      __$$CheckFavoriteMealStartCopyWithImpl<_$CheckFavoriteMealStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String mealId, String pendingId) start,
+    required TResult Function(bool isFavorite, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, mealId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String mealId, String pendingId)? start,
+    TResult? Function(bool isFavorite, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, mealId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String mealId, String pendingId)? start,
+    TResult Function(bool isFavorite, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, mealId, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckFavoriteMealStart value) start,
+    required TResult Function(CheckFavoriteMealSuccessful value) successful,
+    required TResult Function(CheckFavoriteMealError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckFavoriteMealStart value)? start,
+    TResult? Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult? Function(CheckFavoriteMealError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckFavoriteMealStart value)? start,
+    TResult Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult Function(CheckFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckFavoriteMealStart implements CheckFavoriteMeal, StartAction {
+  const factory CheckFavoriteMealStart(final String uid, final String mealId, {final String pendingId}) =
+      _$CheckFavoriteMealStart;
+
+  String get uid;
+  String get mealId;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckFavoriteMealStartCopyWith<_$CheckFavoriteMealStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckFavoriteMealSuccessfulCopyWith<$Res> implements $CheckFavoriteMealCopyWith<$Res> {
+  factory _$$CheckFavoriteMealSuccessfulCopyWith(
+          _$CheckFavoriteMealSuccessful value, $Res Function(_$CheckFavoriteMealSuccessful) then) =
+      __$$CheckFavoriteMealSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isFavorite, String pendingId});
+}
+
+/// @nodoc
+class __$$CheckFavoriteMealSuccessfulCopyWithImpl<$Res>
+    extends _$CheckFavoriteMealCopyWithImpl<$Res, _$CheckFavoriteMealSuccessful>
+    implements _$$CheckFavoriteMealSuccessfulCopyWith<$Res> {
+  __$$CheckFavoriteMealSuccessfulCopyWithImpl(
+      _$CheckFavoriteMealSuccessful _value, $Res Function(_$CheckFavoriteMealSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isFavorite = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckFavoriteMealSuccessful(
+      null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckFavoriteMealSuccessful implements CheckFavoriteMealSuccessful {
+  const _$CheckFavoriteMealSuccessful(this.isFavorite, [this.pendingId = _kCheckFavoriteMealPendingId]);
+
+  @override
+  final bool isFavorite;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckFavoriteMeal.successful(isFavorite: $isFavorite, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckFavoriteMealSuccessful &&
+            (identical(other.isFavorite, isFavorite) || other.isFavorite == isFavorite) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isFavorite, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckFavoriteMealSuccessfulCopyWith<_$CheckFavoriteMealSuccessful> get copyWith =>
+      __$$CheckFavoriteMealSuccessfulCopyWithImpl<_$CheckFavoriteMealSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String mealId, String pendingId) start,
+    required TResult Function(bool isFavorite, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(isFavorite, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String mealId, String pendingId)? start,
+    TResult? Function(bool isFavorite, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(isFavorite, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String mealId, String pendingId)? start,
+    TResult Function(bool isFavorite, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(isFavorite, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckFavoriteMealStart value) start,
+    required TResult Function(CheckFavoriteMealSuccessful value) successful,
+    required TResult Function(CheckFavoriteMealError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckFavoriteMealStart value)? start,
+    TResult? Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult? Function(CheckFavoriteMealError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckFavoriteMealStart value)? start,
+    TResult Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult Function(CheckFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckFavoriteMealSuccessful implements CheckFavoriteMeal, StopAction {
+  const factory CheckFavoriteMealSuccessful(final bool isFavorite, [final String pendingId]) =
+      _$CheckFavoriteMealSuccessful;
+
+  bool get isFavorite;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckFavoriteMealSuccessfulCopyWith<_$CheckFavoriteMealSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckFavoriteMealErrorCopyWith<$Res> implements $CheckFavoriteMealCopyWith<$Res> {
+  factory _$$CheckFavoriteMealErrorCopyWith(
+          _$CheckFavoriteMealError value, $Res Function(_$CheckFavoriteMealError) then) =
+      __$$CheckFavoriteMealErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$CheckFavoriteMealErrorCopyWithImpl<$Res>
+    extends _$CheckFavoriteMealCopyWithImpl<$Res, _$CheckFavoriteMealError>
+    implements _$$CheckFavoriteMealErrorCopyWith<$Res> {
+  __$$CheckFavoriteMealErrorCopyWithImpl(_$CheckFavoriteMealError _value, $Res Function(_$CheckFavoriteMealError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckFavoriteMealError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckFavoriteMealError implements CheckFavoriteMealError {
+  const _$CheckFavoriteMealError(this.error, this.stackTrace, {this.pendingId = _kCheckFavoriteMealPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckFavoriteMeal.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckFavoriteMealError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckFavoriteMealErrorCopyWith<_$CheckFavoriteMealError> get copyWith =>
+      __$$CheckFavoriteMealErrorCopyWithImpl<_$CheckFavoriteMealError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String mealId, String pendingId) start,
+    required TResult Function(bool isFavorite, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String mealId, String pendingId)? start,
+    TResult? Function(bool isFavorite, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String mealId, String pendingId)? start,
+    TResult Function(bool isFavorite, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckFavoriteMealStart value) start,
+    required TResult Function(CheckFavoriteMealSuccessful value) successful,
+    required TResult Function(CheckFavoriteMealError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckFavoriteMealStart value)? start,
+    TResult? Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult? Function(CheckFavoriteMealError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckFavoriteMealStart value)? start,
+    TResult Function(CheckFavoriteMealSuccessful value)? successful,
+    TResult Function(CheckFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckFavoriteMealError implements CheckFavoriteMeal, StopAction {
+  const factory CheckFavoriteMealError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$CheckFavoriteMealError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckFavoriteMealErrorCopyWith<_$CheckFavoriteMealError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ListFavoriteMeals {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Meal> favoriteMeals, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListFavoriteMealsStart value) start,
+    required TResult Function(ListFavoriteMealsSuccessful value) successful,
+    required TResult Function(ListFavoriteMealsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListFavoriteMealsStart value)? start,
+    TResult? Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult? Function(ListFavoriteMealsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListFavoriteMealsStart value)? start,
+    TResult Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult Function(ListFavoriteMealsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListFavoriteMealsCopyWith<ListFavoriteMeals> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListFavoriteMealsCopyWith<$Res> {
+  factory $ListFavoriteMealsCopyWith(ListFavoriteMeals value, $Res Function(ListFavoriteMeals) then) =
+      _$ListFavoriteMealsCopyWithImpl<$Res, ListFavoriteMeals>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ListFavoriteMealsCopyWithImpl<$Res, $Val extends ListFavoriteMeals>
+    implements $ListFavoriteMealsCopyWith<$Res> {
+  _$ListFavoriteMealsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ListFavoriteMealsStartCopyWith<$Res> implements $ListFavoriteMealsCopyWith<$Res> {
+  factory _$$ListFavoriteMealsStartCopyWith(
+          _$ListFavoriteMealsStart value, $Res Function(_$ListFavoriteMealsStart) then) =
+      __$$ListFavoriteMealsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, String pendingId});
+}
+
+/// @nodoc
+class __$$ListFavoriteMealsStartCopyWithImpl<$Res>
+    extends _$ListFavoriteMealsCopyWithImpl<$Res, _$ListFavoriteMealsStart>
+    implements _$$ListFavoriteMealsStartCopyWith<$Res> {
+  __$$ListFavoriteMealsStartCopyWithImpl(_$ListFavoriteMealsStart _value, $Res Function(_$ListFavoriteMealsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListFavoriteMealsStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListFavoriteMealsStart implements ListFavoriteMealsStart {
+  const _$ListFavoriteMealsStart(this.uid, {this.pendingId = _kListFavoriteMealsPendingId});
+
+  @override
+  final String uid;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListFavoriteMeals.start(uid: $uid, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListFavoriteMealsStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListFavoriteMealsStartCopyWith<_$ListFavoriteMealsStart> get copyWith =>
+      __$$ListFavoriteMealsStartCopyWithImpl<_$ListFavoriteMealsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Meal> favoriteMeals, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListFavoriteMealsStart value) start,
+    required TResult Function(ListFavoriteMealsSuccessful value) successful,
+    required TResult Function(ListFavoriteMealsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListFavoriteMealsStart value)? start,
+    TResult? Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult? Function(ListFavoriteMealsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListFavoriteMealsStart value)? start,
+    TResult Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult Function(ListFavoriteMealsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListFavoriteMealsStart implements ListFavoriteMeals, StartAction {
+  const factory ListFavoriteMealsStart(final String uid, {final String pendingId}) = _$ListFavoriteMealsStart;
+
+  String get uid;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListFavoriteMealsStartCopyWith<_$ListFavoriteMealsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListFavoriteMealsSuccessfulCopyWith<$Res> implements $ListFavoriteMealsCopyWith<$Res> {
+  factory _$$ListFavoriteMealsSuccessfulCopyWith(
+          _$ListFavoriteMealsSuccessful value, $Res Function(_$ListFavoriteMealsSuccessful) then) =
+      __$$ListFavoriteMealsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Meal> favoriteMeals, String pendingId});
+}
+
+/// @nodoc
+class __$$ListFavoriteMealsSuccessfulCopyWithImpl<$Res>
+    extends _$ListFavoriteMealsCopyWithImpl<$Res, _$ListFavoriteMealsSuccessful>
+    implements _$$ListFavoriteMealsSuccessfulCopyWith<$Res> {
+  __$$ListFavoriteMealsSuccessfulCopyWithImpl(
+      _$ListFavoriteMealsSuccessful _value, $Res Function(_$ListFavoriteMealsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? favoriteMeals = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListFavoriteMealsSuccessful(
+      null == favoriteMeals
+          ? _value._favoriteMeals
+          : favoriteMeals // ignore: cast_nullable_to_non_nullable
+              as List<Meal>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListFavoriteMealsSuccessful implements ListFavoriteMealsSuccessful {
+  const _$ListFavoriteMealsSuccessful(final List<Meal> favoriteMeals, [this.pendingId = _kListFavoriteMealsPendingId])
+      : _favoriteMeals = favoriteMeals;
+
+  final List<Meal> _favoriteMeals;
+  @override
+  List<Meal> get favoriteMeals {
+    if (_favoriteMeals is EqualUnmodifiableListView) return _favoriteMeals;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favoriteMeals);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListFavoriteMeals.successful(favoriteMeals: $favoriteMeals, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListFavoriteMealsSuccessful &&
+            const DeepCollectionEquality().equals(other._favoriteMeals, _favoriteMeals) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_favoriteMeals), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListFavoriteMealsSuccessfulCopyWith<_$ListFavoriteMealsSuccessful> get copyWith =>
+      __$$ListFavoriteMealsSuccessfulCopyWithImpl<_$ListFavoriteMealsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Meal> favoriteMeals, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(favoriteMeals, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(favoriteMeals, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(favoriteMeals, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListFavoriteMealsStart value) start,
+    required TResult Function(ListFavoriteMealsSuccessful value) successful,
+    required TResult Function(ListFavoriteMealsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListFavoriteMealsStart value)? start,
+    TResult? Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult? Function(ListFavoriteMealsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListFavoriteMealsStart value)? start,
+    TResult Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult Function(ListFavoriteMealsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListFavoriteMealsSuccessful implements ListFavoriteMeals, StopAction {
+  const factory ListFavoriteMealsSuccessful(final List<Meal> favoriteMeals, [final String pendingId]) =
+      _$ListFavoriteMealsSuccessful;
+
+  List<Meal> get favoriteMeals;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListFavoriteMealsSuccessfulCopyWith<_$ListFavoriteMealsSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListFavoriteMealsErrorCopyWith<$Res> implements $ListFavoriteMealsCopyWith<$Res> {
+  factory _$$ListFavoriteMealsErrorCopyWith(
+          _$ListFavoriteMealsError value, $Res Function(_$ListFavoriteMealsError) then) =
+      __$$ListFavoriteMealsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ListFavoriteMealsErrorCopyWithImpl<$Res>
+    extends _$ListFavoriteMealsCopyWithImpl<$Res, _$ListFavoriteMealsError>
+    implements _$$ListFavoriteMealsErrorCopyWith<$Res> {
+  __$$ListFavoriteMealsErrorCopyWithImpl(_$ListFavoriteMealsError _value, $Res Function(_$ListFavoriteMealsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListFavoriteMealsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListFavoriteMealsError implements ListFavoriteMealsError {
+  const _$ListFavoriteMealsError(this.error, this.stackTrace, {this.pendingId = _kListFavoriteMealsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListFavoriteMeals.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListFavoriteMealsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListFavoriteMealsErrorCopyWith<_$ListFavoriteMealsError> get copyWith =>
+      __$$ListFavoriteMealsErrorCopyWithImpl<_$ListFavoriteMealsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Meal> favoriteMeals, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Meal> favoriteMeals, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListFavoriteMealsStart value) start,
+    required TResult Function(ListFavoriteMealsSuccessful value) successful,
+    required TResult Function(ListFavoriteMealsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListFavoriteMealsStart value)? start,
+    TResult? Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult? Function(ListFavoriteMealsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListFavoriteMealsStart value)? start,
+    TResult Function(ListFavoriteMealsSuccessful value)? successful,
+    TResult Function(ListFavoriteMealsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListFavoriteMealsError implements ListFavoriteMeals, StopAction {
+  const factory ListFavoriteMealsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListFavoriteMealsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListFavoriteMealsErrorCopyWith<_$ListFavoriteMealsError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$RemoveFavoriteMeal {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveFavoriteMealStart value) start,
+    required TResult Function(RemoveFavoriteMealSuccessful value) successful,
+    required TResult Function(RemoveFavoriteMealError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveFavoriteMealStart value)? start,
+    TResult? Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult? Function(RemoveFavoriteMealError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveFavoriteMealStart value)? start,
+    TResult Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult Function(RemoveFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RemoveFavoriteMealCopyWith<RemoveFavoriteMeal> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RemoveFavoriteMealCopyWith<$Res> {
+  factory $RemoveFavoriteMealCopyWith(RemoveFavoriteMeal value, $Res Function(RemoveFavoriteMeal) then) =
+      _$RemoveFavoriteMealCopyWithImpl<$Res, RemoveFavoriteMeal>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$RemoveFavoriteMealCopyWithImpl<$Res, $Val extends RemoveFavoriteMeal>
+    implements $RemoveFavoriteMealCopyWith<$Res> {
+  _$RemoveFavoriteMealCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RemoveFavoriteMealStartCopyWith<$Res> implements $RemoveFavoriteMealCopyWith<$Res> {
+  factory _$$RemoveFavoriteMealStartCopyWith(
+          _$RemoveFavoriteMealStart value, $Res Function(_$RemoveFavoriteMealStart) then) =
+      __$$RemoveFavoriteMealStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, Meal meal, String pendingId});
+
+  $MealCopyWith<$Res> get meal;
+}
+
+/// @nodoc
+class __$$RemoveFavoriteMealStartCopyWithImpl<$Res>
+    extends _$RemoveFavoriteMealCopyWithImpl<$Res, _$RemoveFavoriteMealStart>
+    implements _$$RemoveFavoriteMealStartCopyWith<$Res> {
+  __$$RemoveFavoriteMealStartCopyWithImpl(
+      _$RemoveFavoriteMealStart _value, $Res Function(_$RemoveFavoriteMealStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? meal = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveFavoriteMealStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == meal
+          ? _value.meal
+          : meal // ignore: cast_nullable_to_non_nullable
+              as Meal,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MealCopyWith<$Res> get meal {
+    return $MealCopyWith<$Res>(_value.meal, (value) {
+      return _then(_value.copyWith(meal: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFavoriteMealStart implements RemoveFavoriteMealStart {
+  const _$RemoveFavoriteMealStart(this.uid, this.meal, {this.pendingId = _kRemoveFavoriteMealPendingId});
+
+  @override
+  final String uid;
+  @override
+  final Meal meal;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveFavoriteMeal.start(uid: $uid, meal: $meal, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFavoriteMealStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.meal, meal) || other.meal == meal) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, meal, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFavoriteMealStartCopyWith<_$RemoveFavoriteMealStart> get copyWith =>
+      __$$RemoveFavoriteMealStartCopyWithImpl<_$RemoveFavoriteMealStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, meal, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, meal, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, meal, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveFavoriteMealStart value) start,
+    required TResult Function(RemoveFavoriteMealSuccessful value) successful,
+    required TResult Function(RemoveFavoriteMealError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveFavoriteMealStart value)? start,
+    TResult? Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult? Function(RemoveFavoriteMealError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveFavoriteMealStart value)? start,
+    TResult Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult Function(RemoveFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFavoriteMealStart implements RemoveFavoriteMeal, StartAction {
+  const factory RemoveFavoriteMealStart(final String uid, final Meal meal, {final String pendingId}) =
+      _$RemoveFavoriteMealStart;
+
+  String get uid;
+  Meal get meal;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveFavoriteMealStartCopyWith<_$RemoveFavoriteMealStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveFavoriteMealSuccessfulCopyWith<$Res> implements $RemoveFavoriteMealCopyWith<$Res> {
+  factory _$$RemoveFavoriteMealSuccessfulCopyWith(
+          _$RemoveFavoriteMealSuccessful value, $Res Function(_$RemoveFavoriteMealSuccessful) then) =
+      __$$RemoveFavoriteMealSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$RemoveFavoriteMealSuccessfulCopyWithImpl<$Res>
+    extends _$RemoveFavoriteMealCopyWithImpl<$Res, _$RemoveFavoriteMealSuccessful>
+    implements _$$RemoveFavoriteMealSuccessfulCopyWith<$Res> {
+  __$$RemoveFavoriteMealSuccessfulCopyWithImpl(
+      _$RemoveFavoriteMealSuccessful _value, $Res Function(_$RemoveFavoriteMealSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveFavoriteMealSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFavoriteMealSuccessful implements RemoveFavoriteMealSuccessful {
+  const _$RemoveFavoriteMealSuccessful([this.pendingId = _kRemoveFavoriteMealPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveFavoriteMeal.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFavoriteMealSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFavoriteMealSuccessfulCopyWith<_$RemoveFavoriteMealSuccessful> get copyWith =>
+      __$$RemoveFavoriteMealSuccessfulCopyWithImpl<_$RemoveFavoriteMealSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveFavoriteMealStart value) start,
+    required TResult Function(RemoveFavoriteMealSuccessful value) successful,
+    required TResult Function(RemoveFavoriteMealError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveFavoriteMealStart value)? start,
+    TResult? Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult? Function(RemoveFavoriteMealError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveFavoriteMealStart value)? start,
+    TResult Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult Function(RemoveFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFavoriteMealSuccessful implements RemoveFavoriteMeal, StopAction {
+  const factory RemoveFavoriteMealSuccessful([final String pendingId]) = _$RemoveFavoriteMealSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveFavoriteMealSuccessfulCopyWith<_$RemoveFavoriteMealSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveFavoriteMealErrorCopyWith<$Res> implements $RemoveFavoriteMealCopyWith<$Res> {
+  factory _$$RemoveFavoriteMealErrorCopyWith(
+          _$RemoveFavoriteMealError value, $Res Function(_$RemoveFavoriteMealError) then) =
+      __$$RemoveFavoriteMealErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$RemoveFavoriteMealErrorCopyWithImpl<$Res>
+    extends _$RemoveFavoriteMealCopyWithImpl<$Res, _$RemoveFavoriteMealError>
+    implements _$$RemoveFavoriteMealErrorCopyWith<$Res> {
+  __$$RemoveFavoriteMealErrorCopyWithImpl(
+      _$RemoveFavoriteMealError _value, $Res Function(_$RemoveFavoriteMealError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveFavoriteMealError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFavoriteMealError implements RemoveFavoriteMealError {
+  const _$RemoveFavoriteMealError(this.error, this.stackTrace, {this.pendingId = _kRemoveFavoriteMealPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveFavoriteMeal.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFavoriteMealError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFavoriteMealErrorCopyWith<_$RemoveFavoriteMealError> get copyWith =>
+      __$$RemoveFavoriteMealErrorCopyWithImpl<_$RemoveFavoriteMealError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, Meal meal, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, Meal meal, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, Meal meal, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveFavoriteMealStart value) start,
+    required TResult Function(RemoveFavoriteMealSuccessful value) successful,
+    required TResult Function(RemoveFavoriteMealError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveFavoriteMealStart value)? start,
+    TResult? Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult? Function(RemoveFavoriteMealError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveFavoriteMealStart value)? start,
+    TResult Function(RemoveFavoriteMealSuccessful value)? successful,
+    TResult Function(RemoveFavoriteMealError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFavoriteMealError implements RemoveFavoriteMeal, StopAction {
+  const factory RemoveFavoriteMealError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$RemoveFavoriteMealError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveFavoriteMealErrorCopyWith<_$RemoveFavoriteMealError> get copyWith => throw _privateConstructorUsedError;
+}

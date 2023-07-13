@@ -22,12 +22,16 @@ part 'products/find_go_upc_product.dart';
 part 'products/delete_product.dart';
 part 'products/update_product.dart';
 
-part 'recipes/list_meals.dart';
-part 'recipes/list_meal_categories.dart';
-part 'recipes/set_meal_category.dart';
-part 'recipes/set_meal.dart';
-part 'recipes/get_recipe_details.dart';
-part 'recipes/search_meal.dart';
+part 'meals/list_meals.dart';
+part 'meals/list_meal_categories.dart';
+part 'meals/set_meal_category.dart';
+part 'meals/set_meal.dart';
+part 'meals/get_recipe_details.dart';
+part 'meals/search_meal.dart';
+part 'meals/add_favorite_meal.dart';
+part 'meals/check_favorite_meal.dart';
+part 'meals/list_favorite_meals.dart';
+part 'meals/remove_favorite_meal.dart';
 
 abstract class PendingActions {
   String get pendingId;

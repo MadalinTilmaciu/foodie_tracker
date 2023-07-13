@@ -115,12 +115,14 @@ class ProductsEpics implements EpicClass<AppState> {
   Stream<dynamic> _deleteProductStart(Stream<DeleteProductStart> actions, EpicStore<AppState> store) {
     return actions.flatMap(
       (DeleteProductStart action) {
-        return Stream<void>.value(null).asyncMap((_) => _api.deleteProduct(action.uid, action.productId)).expand((_) {
-          return <dynamic>[
-            const DeleteProduct.successful(),
-            ListProducts.start(action.uid, action.categoryId),
-          ];
-        }).onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteProduct.error(error, stackTrace));
+        return Stream<void>.value(null).asyncMap((_) => _api.deleteProduct(action.uid, action.productId)).expand(
+          (_) {
+            return <dynamic>[
+              const DeleteProduct.successful(),
+              ListProducts.start(action.uid, action.categoryId),
+            ];
+          },
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteProduct.error(error, stackTrace));
       },
     );
   }
