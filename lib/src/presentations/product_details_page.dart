@@ -1,8 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-
-import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
 
@@ -149,62 +146,7 @@ class ProductDetailsPage extends StatelessWidget {
                                   ),
                               ],
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                MaterialButton(
-                                  height: 50,
-                                  onPressed: () {},
-                                  color: Colors.blue[700],
-                                  elevation: 0,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                                  child: const Text(
-                                    'Edit',
-                                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                                  ),
-                                ),
-                                MaterialButton(
-                                  height: 50,
-                                  color: Colors.red,
-                                  elevation: 0,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                                  child: const Text(
-                                    'Delete',
-                                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                                  ),
-                                  onPressed: () {
-                                    // showDialog(
-                                    //   context: context,
-                                    //   builder: (BuildContext context) {
-                                    //     return AlertDialog(
-                                    //       title: const Text(
-                                    //         'Did you recycled the package?',
-                                    //       ),
-                                    //       actions: <Widget>[
-                                    //         TextButton(
-                                    //           onPressed: () {},
-                                    //           child: const Text('Yes'),
-                                    //         ),
-                                    //         TextButton(
-                                    //           onPressed: () {},
-                                    //           child: const Text('No'),
-                                    //         ),
-                                    //       ],
-                                    //     );
-                                    //   },
-                                    // );
-                                    StoreProvider.of<AppState>(context).dispatch(
-                                      DeleteProduct.start(
-                                        uid: user!.uid,
-                                        productId: product.id,
-                                        categoryId: product.categoryId,
-                                      ),
-                                    );
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                              ],
-                            ),
+                            const SizedBox(height: 50),
                           ],
                         ),
                       ),
@@ -212,6 +154,45 @@ class ProductDetailsPage extends StatelessWidget {
                   ],
                 ),
               ),
+              // floatingActionButton: FloatingActionButton(
+              //   backgroundColor: Colors.red,
+              //   elevation: 0,
+              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+              //   child: const Icon(
+              //     Icons.delete_rounded,
+              //     color: Colors.white,
+              //   ),
+              //   onPressed: () {
+              // showDialog(
+              //   context: context,
+              //   builder: (BuildContext context) {
+              //     return AlertDialog(
+              //       title: const Text(
+              //         'Did you recycled the package?',
+              //       ),
+              //       actions: <Widget>[
+              //         TextButton(
+              //           onPressed: () {},
+              //           child: const Text('Yes'),
+              //         ),
+              //         TextButton(
+              //           onPressed: () {},
+              //           child: const Text('No'),
+              //         ),
+              //       ],
+              //     );
+              //   },
+              // );
+              //     StoreProvider.of<AppState>(context).dispatch(
+              //       DeleteProduct.start(
+              //         uid: user!.uid,
+              //         productId: product.id,
+              //         categoryId: product.categoryId,
+              //       ),
+              //     );
+              //     Navigator.pop(context);
+              //   },
+              // ),
             );
           },
         );

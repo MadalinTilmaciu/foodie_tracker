@@ -19,3 +19,6 @@ part 'meals/meal.dart';
 part 'meals/meal_category.dart';
 part 'meals/recipe.dart';
 part 'meals/meal_state.dart';
+
+part 'contacts/contact.dart';
+part 'contacts/contact_state.dart';

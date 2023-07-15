@@ -4,6 +4,7 @@ import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'qr_scanner_page.dart';
 
 class UserQRScreen extends StatefulWidget {
   const UserQRScreen({super.key});
@@ -174,6 +175,26 @@ class _UserQRScreenState extends State<UserQRScreen> {
                           color: Colors.white,
                         ),
                       ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 120),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                  color: Colors.blue,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<dynamic>(
+                        builder: (BuildContext context) => const QRScannerPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Scan',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

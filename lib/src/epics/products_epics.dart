@@ -8,7 +8,7 @@ import '../models/index.dart';
 class ProductsEpics implements EpicClass<AppState> {
   ProductsEpics(this._api);
 
-  final ProductApi _api;
+  final ProductsApi _api;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {

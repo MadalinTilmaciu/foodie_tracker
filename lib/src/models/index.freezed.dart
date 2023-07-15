@@ -23,6 +23,7 @@ mixin _$AppState {
   AuthState get auth => throw _privateConstructorUsedError;
   ProductState get products => throw _privateConstructorUsedError;
   MealState get meals => throw _privateConstructorUsedError;
+  ContactState get contacts => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,11 +35,13 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AuthState auth, ProductState products, MealState meals, Set<String> pendingActions});
+  $Res call(
+      {AuthState auth, ProductState products, MealState meals, ContactState contacts, Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
   $ProductStateCopyWith<$Res> get products;
   $MealStateCopyWith<$Res> get meals;
+  $ContactStateCopyWith<$Res> get contacts;
 }
 
 /// @nodoc
@@ -56,6 +59,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? auth = null,
     Object? products = null,
     Object? meals = null,
+    Object? contacts = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -71,6 +75,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.meals
           : meals // ignore: cast_nullable_to_non_nullable
               as MealState,
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as ContactState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -101,6 +109,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(meals: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactStateCopyWith<$Res> get contacts {
+    return $ContactStateCopyWith<$Res>(_value.contacts, (value) {
+      return _then(_value.copyWith(contacts: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -108,7 +124,8 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$_AppStateCopyWith(_$_AppState value, $Res Function(_$_AppState) then) = __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AuthState auth, ProductState products, MealState meals, Set<String> pendingActions});
+  $Res call(
+      {AuthState auth, ProductState products, MealState meals, ContactState contacts, Set<String> pendingActions});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
@@ -116,6 +133,8 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $ProductStateCopyWith<$Res> get products;
   @override
   $MealStateCopyWith<$Res> get meals;
+  @override
+  $ContactStateCopyWith<$Res> get contacts;
 }
 
 /// @nodoc
@@ -129,6 +148,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
     Object? auth = null,
     Object? products = null,
     Object? meals = null,
+    Object? contacts = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -144,6 +164,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.meals
           : meals // ignore: cast_nullable_to_non_nullable
               as MealState,
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as ContactState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -159,6 +183,7 @@ class _$_AppState implements _AppState {
       {this.auth = const AuthState(),
       this.products = const ProductState(),
       this.meals = const MealState(),
+      this.contacts = const ContactState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -173,6 +198,9 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final MealState meals;
+  @override
+  @JsonKey()
+  final ContactState contacts;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -184,7 +212,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, meals: $meals, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, pendingActions: $pendingActions)';
   }
 
   @override
@@ -195,13 +223,14 @@ class _$_AppState implements _AppState {
             (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.products, products) || other.products == products) &&
             (identical(other.meals, meals) || other.meals == meals) &&
+            (identical(other.contacts, contacts) || other.contacts == contacts) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, auth, products, meals, const DeepCollectionEquality().hash(_pendingActions));
+      Object.hash(runtimeType, auth, products, meals, contacts, const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -221,6 +250,7 @@ abstract class _AppState implements AppState {
       {final AuthState auth,
       final ProductState products,
       final MealState meals,
+      final ContactState contacts,
       final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
@@ -231,6 +261,8 @@ abstract class _AppState implements AppState {
   ProductState get products;
   @override
   MealState get meals;
+  @override
+  ContactState get contacts;
   @override
   Set<String> get pendingActions;
   @override
@@ -3807,4 +3839,307 @@ abstract class _MealState implements MealState {
   @override
   @JsonKey(ignore: true)
   _$$_MealStateCopyWith<_$_MealState> get copyWith => throw _privateConstructorUsedError;
+}
+
+Contact _$ContactFromJson(Map<String, dynamic> json) {
+  return _Contact.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Contact {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ContactCopyWith<Contact> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ContactCopyWith<$Res> {
+  factory $ContactCopyWith(Contact value, $Res Function(Contact) then) = _$ContactCopyWithImpl<$Res, Contact>;
+  @useResult
+  $Res call({String id, String name, String imageUrl});
+}
+
+/// @nodoc
+class _$ContactCopyWithImpl<$Res, $Val extends Contact> implements $ContactCopyWith<$Res> {
+  _$ContactCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? imageUrl = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
+  factory _$$_ContactCopyWith(_$_Contact value, $Res Function(_$_Contact) then) = __$$_ContactCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name, String imageUrl});
+}
+
+/// @nodoc
+class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res, _$_Contact>
+    implements _$$_ContactCopyWith<$Res> {
+  __$$_ContactCopyWithImpl(_$_Contact _value, $Res Function(_$_Contact) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? imageUrl = null,
+  }) {
+    return _then(_$_Contact(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Contact implements _Contact {
+  _$_Contact({required this.id, required this.name, required this.imageUrl});
+
+  factory _$_Contact.fromJson(Map<String, dynamic> json) => _$$_ContactFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String imageUrl;
+
+  @override
+  String toString() {
+    return 'Contact(id: $id, name: $name, imageUrl: $imageUrl)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Contact &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, imageUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ContactCopyWith<_$_Contact> get copyWith => __$$_ContactCopyWithImpl<_$_Contact>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ContactToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Contact implements Contact {
+  factory _Contact({required final String id, required final String name, required final String imageUrl}) = _$_Contact;
+
+  factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  String get imageUrl;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ContactCopyWith<_$_Contact> get copyWith => throw _privateConstructorUsedError;
+}
+
+ContactState _$ContactStateFromJson(Map<String, dynamic> json) {
+  return _ContactState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ContactState {
+  List<Contact> get contacts => throw _privateConstructorUsedError;
+  String? get selectedContactId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ContactStateCopyWith<ContactState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ContactStateCopyWith<$Res> {
+  factory $ContactStateCopyWith(ContactState value, $Res Function(ContactState) then) =
+      _$ContactStateCopyWithImpl<$Res, ContactState>;
+  @useResult
+  $Res call({List<Contact> contacts, String? selectedContactId});
+}
+
+/// @nodoc
+class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState> implements $ContactStateCopyWith<$Res> {
+  _$ContactStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contacts = null,
+    Object? selectedContactId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      selectedContactId: freezed == selectedContactId
+          ? _value.selectedContactId
+          : selectedContactId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ContactStateCopyWith<$Res> implements $ContactStateCopyWith<$Res> {
+  factory _$$_ContactStateCopyWith(_$_ContactState value, $Res Function(_$_ContactState) then) =
+      __$$_ContactStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Contact> contacts, String? selectedContactId});
+}
+
+/// @nodoc
+class __$$_ContactStateCopyWithImpl<$Res> extends _$ContactStateCopyWithImpl<$Res, _$_ContactState>
+    implements _$$_ContactStateCopyWith<$Res> {
+  __$$_ContactStateCopyWithImpl(_$_ContactState _value, $Res Function(_$_ContactState) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contacts = null,
+    Object? selectedContactId = freezed,
+  }) {
+    return _then(_$_ContactState(
+      contacts: null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      selectedContactId: freezed == selectedContactId
+          ? _value.selectedContactId
+          : selectedContactId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ContactState implements _ContactState {
+  const _$_ContactState({final List<Contact> contacts = const <Contact>[], this.selectedContactId})
+      : _contacts = contacts;
+
+  factory _$_ContactState.fromJson(Map<String, dynamic> json) => _$$_ContactStateFromJson(json);
+
+  final List<Contact> _contacts;
+  @override
+  @JsonKey()
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  @override
+  final String? selectedContactId;
+
+  @override
+  String toString() {
+    return 'ContactState(contacts: $contacts, selectedContactId: $selectedContactId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ContactState &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            (identical(other.selectedContactId, selectedContactId) || other.selectedContactId == selectedContactId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts), selectedContactId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ContactStateCopyWith<_$_ContactState> get copyWith =>
+      __$$_ContactStateCopyWithImpl<_$_ContactState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ContactStateToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ContactState implements ContactState {
+  const factory _ContactState({final List<Contact> contacts, final String? selectedContactId}) = _$_ContactState;
+
+  factory _ContactState.fromJson(Map<String, dynamic> json) = _$_ContactState.fromJson;
+
+  @override
+  List<Contact> get contacts;
+  @override
+  String? get selectedContactId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ContactStateCopyWith<_$_ContactState> get copyWith => throw _privateConstructorUsedError;
 }

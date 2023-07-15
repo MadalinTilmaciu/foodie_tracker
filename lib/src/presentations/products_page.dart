@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
+import 'barcode_scanner_page.dart';
 import 'containers/index.dart';
 import 'product_details_page.dart';
 
@@ -73,18 +75,51 @@ class ProductsPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                actions: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      right: 16,
+                    ),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => const BarcodeScannerPage(),
+                          ),
+                        );
+                      },
+                      child: const Icon(
+                        CupertinoIcons.doc_text_viewfinder,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               body: SafeArea(
                 child: ProductsContainer(
                   builder: (BuildContext context, List<FoodieProduct> products) {
                     if (products.isEmpty) {
-                      return const Center(
-                        child: Text(
-                          'There are no products for this category',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'No products for this category yet.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
+                              ),
+                            ),
+                            Text(
+                              'Use barcode scanner to add something.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     }

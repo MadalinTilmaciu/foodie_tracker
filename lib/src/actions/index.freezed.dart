@@ -12132,3 +12132,1071 @@ abstract class RemoveFavoriteMealError implements RemoveFavoriteMeal, StopAction
   @JsonKey(ignore: true)
   _$$RemoveFavoriteMealErrorCopyWith<_$RemoveFavoriteMealError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$ListContacts {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListContactsStart value) start,
+    required TResult Function(ListContactsSuccessful value) successful,
+    required TResult Function(ListContactsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListContactsStart value)? start,
+    TResult? Function(ListContactsSuccessful value)? successful,
+    TResult? Function(ListContactsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListContactsStart value)? start,
+    TResult Function(ListContactsSuccessful value)? successful,
+    TResult Function(ListContactsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListContactsCopyWith<ListContacts> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListContactsCopyWith<$Res> {
+  factory $ListContactsCopyWith(ListContacts value, $Res Function(ListContacts) then) =
+      _$ListContactsCopyWithImpl<$Res, ListContacts>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ListContactsCopyWithImpl<$Res, $Val extends ListContacts> implements $ListContactsCopyWith<$Res> {
+  _$ListContactsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ListContactsStartCopyWith<$Res> implements $ListContactsCopyWith<$Res> {
+  factory _$$ListContactsStartCopyWith(_$ListContactsStart value, $Res Function(_$ListContactsStart) then) =
+      __$$ListContactsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, String pendingId});
+}
+
+/// @nodoc
+class __$$ListContactsStartCopyWithImpl<$Res> extends _$ListContactsCopyWithImpl<$Res, _$ListContactsStart>
+    implements _$$ListContactsStartCopyWith<$Res> {
+  __$$ListContactsStartCopyWithImpl(_$ListContactsStart _value, $Res Function(_$ListContactsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListContactsStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListContactsStart implements ListContactsStart {
+  const _$ListContactsStart(this.uid, {this.pendingId = _kListContactsPendingId});
+
+  @override
+  final String uid;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListContacts.start(uid: $uid, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListContactsStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListContactsStartCopyWith<_$ListContactsStart> get copyWith =>
+      __$$ListContactsStartCopyWithImpl<_$ListContactsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListContactsStart value) start,
+    required TResult Function(ListContactsSuccessful value) successful,
+    required TResult Function(ListContactsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListContactsStart value)? start,
+    TResult? Function(ListContactsSuccessful value)? successful,
+    TResult? Function(ListContactsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListContactsStart value)? start,
+    TResult Function(ListContactsSuccessful value)? successful,
+    TResult Function(ListContactsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListContactsStart implements ListContacts, StartAction {
+  const factory ListContactsStart(final String uid, {final String pendingId}) = _$ListContactsStart;
+
+  String get uid;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListContactsStartCopyWith<_$ListContactsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListContactsSuccessfulCopyWith<$Res> implements $ListContactsCopyWith<$Res> {
+  factory _$$ListContactsSuccessfulCopyWith(
+          _$ListContactsSuccessful value, $Res Function(_$ListContactsSuccessful) then) =
+      __$$ListContactsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Contact> contacts, String pendingId});
+}
+
+/// @nodoc
+class __$$ListContactsSuccessfulCopyWithImpl<$Res> extends _$ListContactsCopyWithImpl<$Res, _$ListContactsSuccessful>
+    implements _$$ListContactsSuccessfulCopyWith<$Res> {
+  __$$ListContactsSuccessfulCopyWithImpl(_$ListContactsSuccessful _value, $Res Function(_$ListContactsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contacts = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListContactsSuccessful(
+      null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListContactsSuccessful implements ListContactsSuccessful {
+  const _$ListContactsSuccessful(final List<Contact> contacts, [this.pendingId = _kListContactsPendingId])
+      : _contacts = contacts;
+
+  final List<Contact> _contacts;
+  @override
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListContacts.successful(contacts: $contacts, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListContactsSuccessful &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListContactsSuccessfulCopyWith<_$ListContactsSuccessful> get copyWith =>
+      __$$ListContactsSuccessfulCopyWithImpl<_$ListContactsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(contacts, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListContactsStart value) start,
+    required TResult Function(ListContactsSuccessful value) successful,
+    required TResult Function(ListContactsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListContactsStart value)? start,
+    TResult? Function(ListContactsSuccessful value)? successful,
+    TResult? Function(ListContactsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListContactsStart value)? start,
+    TResult Function(ListContactsSuccessful value)? successful,
+    TResult Function(ListContactsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListContactsSuccessful implements ListContacts, StopAction {
+  const factory ListContactsSuccessful(final List<Contact> contacts, [final String pendingId]) =
+      _$ListContactsSuccessful;
+
+  List<Contact> get contacts;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListContactsSuccessfulCopyWith<_$ListContactsSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListContactsErrorCopyWith<$Res> implements $ListContactsCopyWith<$Res> {
+  factory _$$ListContactsErrorCopyWith(_$ListContactsError value, $Res Function(_$ListContactsError) then) =
+      __$$ListContactsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ListContactsErrorCopyWithImpl<$Res> extends _$ListContactsCopyWithImpl<$Res, _$ListContactsError>
+    implements _$$ListContactsErrorCopyWith<$Res> {
+  __$$ListContactsErrorCopyWithImpl(_$ListContactsError _value, $Res Function(_$ListContactsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListContactsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListContactsError implements ListContactsError {
+  const _$ListContactsError(this.error, this.stackTrace, {this.pendingId = _kListContactsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListContacts.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListContactsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListContactsErrorCopyWith<_$ListContactsError> get copyWith =>
+      __$$ListContactsErrorCopyWithImpl<_$ListContactsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListContactsStart value) start,
+    required TResult Function(ListContactsSuccessful value) successful,
+    required TResult Function(ListContactsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListContactsStart value)? start,
+    TResult? Function(ListContactsSuccessful value)? successful,
+    TResult? Function(ListContactsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListContactsStart value)? start,
+    TResult Function(ListContactsSuccessful value)? successful,
+    TResult Function(ListContactsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListContactsError implements ListContacts, StopAction {
+  const factory ListContactsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListContactsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListContactsErrorCopyWith<_$ListContactsError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AddContact {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String contactUid, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String contactUid, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String contactUid, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddContactStart value) start,
+    required TResult Function(AddContactSuccessful value) successful,
+    required TResult Function(AddContactError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddContactStart value)? start,
+    TResult? Function(AddContactSuccessful value)? successful,
+    TResult? Function(AddContactError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddContactStart value)? start,
+    TResult Function(AddContactSuccessful value)? successful,
+    TResult Function(AddContactError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddContactCopyWith<AddContact> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddContactCopyWith<$Res> {
+  factory $AddContactCopyWith(AddContact value, $Res Function(AddContact) then) =
+      _$AddContactCopyWithImpl<$Res, AddContact>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddContactCopyWithImpl<$Res, $Val extends AddContact> implements $AddContactCopyWith<$Res> {
+  _$AddContactCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddContactStartCopyWith<$Res> implements $AddContactCopyWith<$Res> {
+  factory _$$AddContactStartCopyWith(_$AddContactStart value, $Res Function(_$AddContactStart) then) =
+      __$$AddContactStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String contactUid, String pendingId});
+}
+
+/// @nodoc
+class __$$AddContactStartCopyWithImpl<$Res> extends _$AddContactCopyWithImpl<$Res, _$AddContactStart>
+    implements _$$AddContactStartCopyWith<$Res> {
+  __$$AddContactStartCopyWithImpl(_$AddContactStart _value, $Res Function(_$AddContactStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contactUid = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddContactStart(
+      null == contactUid
+          ? _value.contactUid
+          : contactUid // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddContactStart implements AddContactStart {
+  const _$AddContactStart(this.contactUid, {this.pendingId = _kAddContactPendingId});
+
+  @override
+  final String contactUid;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddContact.start(contactUid: $contactUid, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddContactStart &&
+            (identical(other.contactUid, contactUid) || other.contactUid == contactUid) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, contactUid, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddContactStartCopyWith<_$AddContactStart> get copyWith =>
+      __$$AddContactStartCopyWithImpl<_$AddContactStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String contactUid, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(contactUid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String contactUid, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(contactUid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String contactUid, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(contactUid, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddContactStart value) start,
+    required TResult Function(AddContactSuccessful value) successful,
+    required TResult Function(AddContactError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddContactStart value)? start,
+    TResult? Function(AddContactSuccessful value)? successful,
+    TResult? Function(AddContactError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddContactStart value)? start,
+    TResult Function(AddContactSuccessful value)? successful,
+    TResult Function(AddContactError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddContactStart implements AddContact, StartAction {
+  const factory AddContactStart(final String contactUid, {final String pendingId}) = _$AddContactStart;
+
+  String get contactUid;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddContactStartCopyWith<_$AddContactStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddContactSuccessfulCopyWith<$Res> implements $AddContactCopyWith<$Res> {
+  factory _$$AddContactSuccessfulCopyWith(_$AddContactSuccessful value, $Res Function(_$AddContactSuccessful) then) =
+      __$$AddContactSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AddContactSuccessfulCopyWithImpl<$Res> extends _$AddContactCopyWithImpl<$Res, _$AddContactSuccessful>
+    implements _$$AddContactSuccessfulCopyWith<$Res> {
+  __$$AddContactSuccessfulCopyWithImpl(_$AddContactSuccessful _value, $Res Function(_$AddContactSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddContactSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddContactSuccessful implements AddContactSuccessful {
+  const _$AddContactSuccessful([this.pendingId = _kAddContactPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddContact.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddContactSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddContactSuccessfulCopyWith<_$AddContactSuccessful> get copyWith =>
+      __$$AddContactSuccessfulCopyWithImpl<_$AddContactSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String contactUid, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String contactUid, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String contactUid, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddContactStart value) start,
+    required TResult Function(AddContactSuccessful value) successful,
+    required TResult Function(AddContactError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddContactStart value)? start,
+    TResult? Function(AddContactSuccessful value)? successful,
+    TResult? Function(AddContactError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddContactStart value)? start,
+    TResult Function(AddContactSuccessful value)? successful,
+    TResult Function(AddContactError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddContactSuccessful implements AddContact, StopAction {
+  const factory AddContactSuccessful([final String pendingId]) = _$AddContactSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddContactSuccessfulCopyWith<_$AddContactSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddContactErrorCopyWith<$Res> implements $AddContactCopyWith<$Res> {
+  factory _$$AddContactErrorCopyWith(_$AddContactError value, $Res Function(_$AddContactError) then) =
+      __$$AddContactErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddContactErrorCopyWithImpl<$Res> extends _$AddContactCopyWithImpl<$Res, _$AddContactError>
+    implements _$$AddContactErrorCopyWith<$Res> {
+  __$$AddContactErrorCopyWithImpl(_$AddContactError _value, $Res Function(_$AddContactError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddContactError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddContactError implements AddContactError {
+  const _$AddContactError(this.error, this.stackTrace, {this.pendingId = _kAddContactPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddContact.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddContactError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddContactErrorCopyWith<_$AddContactError> get copyWith =>
+      __$$AddContactErrorCopyWithImpl<_$AddContactError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String contactUid, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String contactUid, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String contactUid, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddContactStart value) start,
+    required TResult Function(AddContactSuccessful value) successful,
+    required TResult Function(AddContactError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddContactStart value)? start,
+    TResult? Function(AddContactSuccessful value)? successful,
+    TResult? Function(AddContactError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddContactStart value)? start,
+    TResult Function(AddContactSuccessful value)? successful,
+    TResult Function(AddContactError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddContactError implements AddContact, StopAction {
+  const factory AddContactError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AddContactError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddContactErrorCopyWith<_$AddContactError> get copyWith => throw _privateConstructorUsedError;
+}

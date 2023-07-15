@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
 
-class ScannerPage extends StatefulWidget {
-  const ScannerPage({
+class BarcodeScannerPage extends StatefulWidget {
+  const BarcodeScannerPage({
     super.key,
-    required this.persistentTabController,
   });
 
-  final PersistentTabController persistentTabController;
-
   @override
-  State<ScannerPage> createState() => _ScannerPageState();
+  State<BarcodeScannerPage> createState() => _BarcodeScannerPageState();
 }
 
-class _ScannerPageState extends State<ScannerPage> {
+class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
   Barcode? result;
   QRViewController? controller;
   String? lastScanned;
@@ -95,6 +91,20 @@ class _ScannerPageState extends State<ScannerPage> {
                 ),
               ),
             ),
+            Positioned(
+              bottom: MediaQuery.of(context).size.height - 140,
+              left: 8,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  size: 20,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -138,8 +148,8 @@ class _ScannerPageState extends State<ScannerPage> {
           StoreProvider.of<AppState>(context).dispatch(
             FindGoUpcProduct.start(barcode: scanData.code!),
           );
+          Navigator.pop(context);
           lastScanned = scanData.code;
-          widget.persistentTabController.jumpToTab(0);
         }
       },
     );

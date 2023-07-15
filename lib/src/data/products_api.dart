@@ -4,8 +4,8 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 
 import '../models/index.dart';
 
-class ProductApi {
-  ProductApi(this._firestore);
+class ProductsApi {
+  ProductsApi(this._firestore);
 
   final FirebaseFirestore _firestore;
 

@@ -12,6 +12,7 @@ dependencies:
   cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   cloud_firestore: ^4.7.0
+  drop_down_list: ^0.0.4
   email_validator: ^2.1.17
   fancy_password_field: ^2.0.0
   firebase_auth: ^4.5.0

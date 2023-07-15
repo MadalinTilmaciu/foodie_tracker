@@ -4,6 +4,7 @@ import 'package:redux/redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'auth_reducer.dart';
+import 'contacts_reducer.dart';
 import 'meals_reducer.dart';
 import 'products_reducer.dart';
 
@@ -28,6 +29,7 @@ AppState _reducer(AppState state, dynamic action) {
     auth: authReducer(state.auth, action),
     products: productsReducer(state.products, action),
     meals: mealsReducer(state.meals, action),
+    contacts: contactsReducer(state.contacts, action),
   );
 }
 

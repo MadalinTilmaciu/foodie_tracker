@@ -14,11 +14,13 @@ import 'package:redux_epics/redux_epics.dart';
 import 'firebase_options.dart';
 import 'src/actions/index.dart';
 import 'src/data/auth_api.dart';
+import 'src/data/contacts_api.dart';
 import 'src/data/go_upc_api.dart';
 import 'src/data/meals_api.dart';
 import 'src/data/products_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
+import 'src/epics/contacts_epics.dart';
 import 'src/epics/go_upc_epics.dart';
 import 'src/epics/meals_epics.dart';
 import 'src/epics/products_epics.dart';
@@ -47,9 +49,10 @@ Future<void> main() async {
   final AuthApi authApi = AuthApi(
     FirebaseAuth.instance,
     FirebaseStorage.instance,
+    FirebaseFirestore.instance,
   );
   final AuthEpics auth = AuthEpics(authApi);
-  final ProductApi productsApi = ProductApi(FirebaseFirestore.instance);
+  final ProductsApi productsApi = ProductsApi(FirebaseFirestore.instance);
   final ProductsEpics products = ProductsEpics(productsApi);
 
   await dotenv.load();
@@ -61,11 +64,15 @@ Future<void> main() async {
   final MealsApi mealsApi = MealsApi(FirebaseFirestore.instance, client);
   final MealsEpics mealsEpics = MealsEpics(mealsApi);
 
+  final ContactsApi contactsApi = ContactsApi(FirebaseFirestore.instance);
+  final ContactsEpics contactsEpics = ContactsEpics(contactsApi);
+
   final AppEpics epic = AppEpics(
     auth,
     products,
     goUpcEpics,
     mealsEpics,
+    contactsEpics,
   );
 
   final Store<AppState> store = Store<AppState>(

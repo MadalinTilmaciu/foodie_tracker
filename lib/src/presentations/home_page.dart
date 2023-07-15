@@ -5,7 +5,6 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'meals_page.dart';
 import 'messages_page.dart';
 import 'products_page.dart';
-import 'scanner_page.dart';
 import 'settings_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +18,6 @@ class HomePage extends StatelessWidget {
       return <Widget>[
         const ProductsPage(),
         const MealsPage(),
-        ScannerPage(persistentTabController: controller),
         const MessagesPage(),
         const SettingsPage(),
       ];
@@ -35,14 +33,6 @@ class HomePage extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.doc_append),
           title: 'Meals',
-          inactiveColorPrimary: Colors.white70,
-        ),
-        PersistentBottomNavBarItem(
-          icon: const Icon(
-            CupertinoIcons.doc_text_viewfinder,
-            color: Colors.white,
-          ),
-          title: 'Scan',
           inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(
@@ -77,7 +67,7 @@ class HomePage extends StatelessWidget {
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
       ),
-      navBarStyle: NavBarStyle.style15,
+      navBarStyle: NavBarStyle.style3,
     );
   }
 }

@@ -12,6 +12,9 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
           ? const ProductState()
           : ProductState.fromJson(json['products'] as Map<String, dynamic>),
       meals: json['meals'] == null ? const MealState() : MealState.fromJson(json['meals'] as Map<String, dynamic>),
+      contacts: json['contacts'] == null
+          ? const ContactState()
+          : ContactState.fromJson(json['contacts'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -20,6 +23,7 @@ Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynami
       'auth': instance.auth.toJson(),
       'products': instance.products.toJson(),
       'meals': instance.meals.toJson(),
+      'contacts': instance.contacts.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -306,4 +310,29 @@ Map<String, dynamic> _$$_MealStateToJson(_$_MealState instance) => <String, dyna
       'selectedMealId': instance.selectedMealId,
       'selectedCategoryId': instance.selectedCategoryId,
       'recipe': instance.recipe?.toJson(),
+    };
+
+_$_Contact _$$_ContactFromJson(Map<String, dynamic> json) => _$_Contact(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      imageUrl: json['imageUrl'] as String,
+    );
+
+Map<String, dynamic> _$$_ContactToJson(_$_Contact instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'imageUrl': instance.imageUrl,
+    };
+
+_$_ContactState _$$_ContactStateFromJson(Map<String, dynamic> json) => _$_ContactState(
+      contacts: (json['contacts'] as List<dynamic>?)
+              ?.map((dynamic e) => Contact.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Contact>[],
+      selectedContactId: json['selectedContactId'] as String?,
+    );
+
+Map<String, dynamic> _$$_ContactStateToJson(_$_ContactState instance) => <String, dynamic>{
+      'contacts': instance.contacts.map((Contact e) => e.toJson()).toList(),
+      'selectedContactId': instance.selectedContactId,
     };
