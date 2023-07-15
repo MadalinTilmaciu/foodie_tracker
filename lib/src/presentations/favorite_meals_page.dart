@@ -41,13 +41,25 @@ class FavoriteMealsPage extends StatelessWidget {
             child: FavoriteMealsContainer(
               builder: (BuildContext context, List<Meal> favoriteMeals) {
                 if (favoriteMeals.isEmpty) {
-                  return const Center(
-                    child: Text(
-                      'You have no favorite meals yet',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'No favorite meals yet.',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          'Explore meals to find your favorites.',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 }

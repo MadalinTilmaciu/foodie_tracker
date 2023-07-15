@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -73,17 +72,20 @@ class AuthApi {
 
     final String url = await ref.getDownloadURL();
     _auth.currentUser!.updatePhotoURL(url);
+
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('/users').doc(_auth.currentUser!.uid);
+    docRef.update(<String, dynamic>{'imageUrl': url});
   }
 
   Future<void> updateDisplayName({required String name}) async {
     await _auth.currentUser?.updateDisplayName(name);
-    await _firestore.collection('/contacts').where('id', isEqualTo: _auth.currentUser?.uid).get().then(
-          (QuerySnapshot<Map<String, dynamic>> contact) => contact.docs[0].reference.set(
-            <String, dynamic>{
-              'id': _auth.currentUser?.uid,
-              'name': _auth.currentUser!.displayName,
-            },
-          ),
-        );
+
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('/users').doc(_auth.currentUser!.uid);
+    docRef.update(
+      <String, dynamic>{
+        'firstName': name.split(' ').first,
+        'lastName': name.split(' ').last,
+      },
+    );
   }
 }

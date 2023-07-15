@@ -13200,3 +13200,578 @@ abstract class AddContactError implements AddContact, StopAction {
   @JsonKey(ignore: true)
   _$$AddContactErrorCopyWith<_$AddContactError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$RefreshContactsPicture {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Contact> contacts, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshContactsPictureStart value) start,
+    required TResult Function(RefreshContactsPictureSuccessful value) successful,
+    required TResult Function(RefreshContactsPictureError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RefreshContactsPictureStart value)? start,
+    TResult? Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult? Function(RefreshContactsPictureError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshContactsPictureStart value)? start,
+    TResult Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult Function(RefreshContactsPictureError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RefreshContactsPictureCopyWith<RefreshContactsPicture> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RefreshContactsPictureCopyWith<$Res> {
+  factory $RefreshContactsPictureCopyWith(RefreshContactsPicture value, $Res Function(RefreshContactsPicture) then) =
+      _$RefreshContactsPictureCopyWithImpl<$Res, RefreshContactsPicture>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$RefreshContactsPictureCopyWithImpl<$Res, $Val extends RefreshContactsPicture>
+    implements $RefreshContactsPictureCopyWith<$Res> {
+  _$RefreshContactsPictureCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RefreshContactsPictureStartCopyWith<$Res> implements $RefreshContactsPictureCopyWith<$Res> {
+  factory _$$RefreshContactsPictureStartCopyWith(
+          _$RefreshContactsPictureStart value, $Res Function(_$RefreshContactsPictureStart) then) =
+      __$$RefreshContactsPictureStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, List<Contact> contacts, String pendingId});
+}
+
+/// @nodoc
+class __$$RefreshContactsPictureStartCopyWithImpl<$Res>
+    extends _$RefreshContactsPictureCopyWithImpl<$Res, _$RefreshContactsPictureStart>
+    implements _$$RefreshContactsPictureStartCopyWith<$Res> {
+  __$$RefreshContactsPictureStartCopyWithImpl(
+      _$RefreshContactsPictureStart _value, $Res Function(_$RefreshContactsPictureStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? contacts = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RefreshContactsPictureStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshContactsPictureStart implements RefreshContactsPictureStart {
+  const _$RefreshContactsPictureStart(this.uid, final List<Contact> contacts,
+      {this.pendingId = _kRefreshContactsPicturePendingId})
+      : _contacts = contacts;
+
+  @override
+  final String uid;
+  final List<Contact> _contacts;
+  @override
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RefreshContactsPicture.start(uid: $uid, contacts: $contacts, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshContactsPictureStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, const DeepCollectionEquality().hash(_contacts), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshContactsPictureStartCopyWith<_$RefreshContactsPictureStart> get copyWith =>
+      __$$RefreshContactsPictureStartCopyWithImpl<_$RefreshContactsPictureStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Contact> contacts, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, contacts, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshContactsPictureStart value) start,
+    required TResult Function(RefreshContactsPictureSuccessful value) successful,
+    required TResult Function(RefreshContactsPictureError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RefreshContactsPictureStart value)? start,
+    TResult? Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult? Function(RefreshContactsPictureError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshContactsPictureStart value)? start,
+    TResult Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult Function(RefreshContactsPictureError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshContactsPictureStart implements RefreshContactsPicture, StartAction {
+  const factory RefreshContactsPictureStart(final String uid, final List<Contact> contacts, {final String pendingId}) =
+      _$RefreshContactsPictureStart;
+
+  String get uid;
+  List<Contact> get contacts;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RefreshContactsPictureStartCopyWith<_$RefreshContactsPictureStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RefreshContactsPictureSuccessfulCopyWith<$Res> implements $RefreshContactsPictureCopyWith<$Res> {
+  factory _$$RefreshContactsPictureSuccessfulCopyWith(
+          _$RefreshContactsPictureSuccessful value, $Res Function(_$RefreshContactsPictureSuccessful) then) =
+      __$$RefreshContactsPictureSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Contact> contacts, String pendingId});
+}
+
+/// @nodoc
+class __$$RefreshContactsPictureSuccessfulCopyWithImpl<$Res>
+    extends _$RefreshContactsPictureCopyWithImpl<$Res, _$RefreshContactsPictureSuccessful>
+    implements _$$RefreshContactsPictureSuccessfulCopyWith<$Res> {
+  __$$RefreshContactsPictureSuccessfulCopyWithImpl(
+      _$RefreshContactsPictureSuccessful _value, $Res Function(_$RefreshContactsPictureSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contacts = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RefreshContactsPictureSuccessful(
+      null == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<Contact>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshContactsPictureSuccessful implements RefreshContactsPictureSuccessful {
+  const _$RefreshContactsPictureSuccessful(final List<Contact> contacts,
+      [this.pendingId = _kRefreshContactsPicturePendingId])
+      : _contacts = contacts;
+
+  final List<Contact> _contacts;
+  @override
+  List<Contact> get contacts {
+    if (_contacts is EqualUnmodifiableListView) return _contacts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_contacts);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RefreshContactsPicture.successful(contacts: $contacts, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshContactsPictureSuccessful &&
+            const DeepCollectionEquality().equals(other._contacts, _contacts) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshContactsPictureSuccessfulCopyWith<_$RefreshContactsPictureSuccessful> get copyWith =>
+      __$$RefreshContactsPictureSuccessfulCopyWithImpl<_$RefreshContactsPictureSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Contact> contacts, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(contacts, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(contacts, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshContactsPictureStart value) start,
+    required TResult Function(RefreshContactsPictureSuccessful value) successful,
+    required TResult Function(RefreshContactsPictureError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RefreshContactsPictureStart value)? start,
+    TResult? Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult? Function(RefreshContactsPictureError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshContactsPictureStart value)? start,
+    TResult Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult Function(RefreshContactsPictureError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshContactsPictureSuccessful implements RefreshContactsPicture, StopAction {
+  const factory RefreshContactsPictureSuccessful(final List<Contact> contacts, [final String pendingId]) =
+      _$RefreshContactsPictureSuccessful;
+
+  List<Contact> get contacts;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RefreshContactsPictureSuccessfulCopyWith<_$RefreshContactsPictureSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RefreshContactsPictureErrorCopyWith<$Res> implements $RefreshContactsPictureCopyWith<$Res> {
+  factory _$$RefreshContactsPictureErrorCopyWith(
+          _$RefreshContactsPictureError value, $Res Function(_$RefreshContactsPictureError) then) =
+      __$$RefreshContactsPictureErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$RefreshContactsPictureErrorCopyWithImpl<$Res>
+    extends _$RefreshContactsPictureCopyWithImpl<$Res, _$RefreshContactsPictureError>
+    implements _$$RefreshContactsPictureErrorCopyWith<$Res> {
+  __$$RefreshContactsPictureErrorCopyWithImpl(
+      _$RefreshContactsPictureError _value, $Res Function(_$RefreshContactsPictureError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RefreshContactsPictureError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshContactsPictureError implements RefreshContactsPictureError {
+  const _$RefreshContactsPictureError(this.error, this.stackTrace,
+      {this.pendingId = _kRefreshContactsPicturePendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RefreshContactsPicture.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshContactsPictureError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshContactsPictureErrorCopyWith<_$RefreshContactsPictureError> get copyWith =>
+      __$$RefreshContactsPictureErrorCopyWithImpl<_$RefreshContactsPictureError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, List<Contact> contacts, String pendingId) start,
+    required TResult Function(List<Contact> contacts, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult? Function(List<Contact> contacts, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, List<Contact> contacts, String pendingId)? start,
+    TResult Function(List<Contact> contacts, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RefreshContactsPictureStart value) start,
+    required TResult Function(RefreshContactsPictureSuccessful value) successful,
+    required TResult Function(RefreshContactsPictureError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RefreshContactsPictureStart value)? start,
+    TResult? Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult? Function(RefreshContactsPictureError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RefreshContactsPictureStart value)? start,
+    TResult Function(RefreshContactsPictureSuccessful value)? successful,
+    TResult Function(RefreshContactsPictureError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshContactsPictureError implements RefreshContactsPicture, StopAction {
+  const factory RefreshContactsPictureError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$RefreshContactsPictureError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RefreshContactsPictureErrorCopyWith<_$RefreshContactsPictureError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

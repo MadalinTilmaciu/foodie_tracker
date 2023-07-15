@@ -141,7 +141,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
     );
     controller.scannedDataStream.listen(
       (Barcode scanData) {
-        if (scanData.code!.length == 13 && scanData.code != lastScanned) {
+        if (scanData.code!.length == 28 && scanData.code != lastScanned) {
           StoreProvider.of<AppState>(context).dispatch(
             AddContact.start(scanData.code!),
           );

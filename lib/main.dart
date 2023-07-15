@@ -64,7 +64,10 @@ Future<void> main() async {
   final MealsApi mealsApi = MealsApi(FirebaseFirestore.instance, client);
   final MealsEpics mealsEpics = MealsEpics(mealsApi);
 
-  final ContactsApi contactsApi = ContactsApi(FirebaseFirestore.instance);
+  final ContactsApi contactsApi = ContactsApi(
+    FirebaseStorage.instance,
+    FirebaseFirestore.instance,
+  );
   final ContactsEpics contactsEpics = ContactsEpics(contactsApi);
 
   final AppEpics epic = AppEpics(

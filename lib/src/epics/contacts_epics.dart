@@ -16,6 +16,7 @@ class ContactsEpics implements EpicClass<AppState> {
       <Epic<AppState>>[
         TypedEpic<AppState, AddContactStart>(_addContactStart).call,
         TypedEpic<AppState, ListContactsStart>(_listContactsStart).call,
+        TypedEpic<AppState, RefreshContactsPictureStart>(_refreshContactsPictureStart).call,
       ],
     )(actions, store);
   }
@@ -25,8 +26,12 @@ class ContactsEpics implements EpicClass<AppState> {
       (ListContactsStart action) {
         return Stream<void>.value(null)
             .asyncMap((_) => _api.listContacts(store.state.auth.user!.uid))
-            .map((List<Contact> contacts) => ListContacts.successful(contacts))
-            .onErrorReturnWith((Object error, StackTrace stackTrace) => ListContacts.error(error, stackTrace));
+            .expand((List<Contact> contacts) {
+          return <dynamic>[
+            ListContacts.successful(contacts),
+            RefreshContactsPicture.start(store.state.auth.user!.uid, contacts),
+          ];
+        }).onErrorReturnWith((Object error, StackTrace stackTrace) => ListContacts.error(error, stackTrace));
       },
     );
   }
@@ -40,10 +45,23 @@ class ContactsEpics implements EpicClass<AppState> {
           (_) {
             return <dynamic>[
               const AddContact.successful(),
+              ListContacts.start(action.contactUid),
               ListContacts.start(store.state.auth.user!.uid),
             ];
           },
         ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddContact.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _refreshContactsPictureStart(Stream<RefreshContactsPictureStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (RefreshContactsPictureStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.refreshContactsPicture(store.state.auth.user!.uid, action.contacts))
+            .map((List<Contact> contacts) => RefreshContactsPicture.successful(contacts))
+            .onErrorReturnWith(
+                (Object error, StackTrace stackTrace) => RefreshContactsPicture.error(error, stackTrace));
       },
     );
   }

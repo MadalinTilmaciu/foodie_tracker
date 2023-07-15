@@ -3848,8 +3848,9 @@ Contact _$ContactFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Contact {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3860,7 +3861,7 @@ mixin _$Contact {
 abstract class $ContactCopyWith<$Res> {
   factory $ContactCopyWith(Contact value, $Res Function(Contact) then) = _$ContactCopyWithImpl<$Res, Contact>;
   @useResult
-  $Res call({String id, String name, String imageUrl});
+  $Res call({String id, String firstName, String lastName, String? imageUrl});
 }
 
 /// @nodoc
@@ -3876,22 +3877,27 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact> implements $ContactCopyW
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? imageUrl = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -3901,7 +3907,7 @@ abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
   factory _$$_ContactCopyWith(_$_Contact value, $Res Function(_$_Contact) then) = __$$_ContactCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String imageUrl});
+  $Res call({String id, String firstName, String lastName, String? imageUrl});
 }
 
 /// @nodoc
@@ -3913,22 +3919,27 @@ class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res, _$_Cont
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? imageUrl = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_Contact(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -3936,20 +3947,22 @@ class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res, _$_Cont
 /// @nodoc
 @JsonSerializable()
 class _$_Contact implements _Contact {
-  _$_Contact({required this.id, required this.name, required this.imageUrl});
+  _$_Contact({required this.id, required this.firstName, required this.lastName, required this.imageUrl});
 
   factory _$_Contact.fromJson(Map<String, dynamic> json) => _$$_ContactFromJson(json);
 
   @override
   final String id;
   @override
-  final String name;
+  final String firstName;
   @override
-  final String imageUrl;
+  final String lastName;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'Contact(id: $id, name: $name, imageUrl: $imageUrl)';
+    return 'Contact(id: $id, firstName: $firstName, lastName: $lastName, imageUrl: $imageUrl)';
   }
 
   @override
@@ -3958,13 +3971,14 @@ class _$_Contact implements _Contact {
         (other.runtimeType == runtimeType &&
             other is _$_Contact &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.firstName, firstName) || other.firstName == firstName) &&
+            (identical(other.lastName, lastName) || other.lastName == lastName) &&
             (identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, imageUrl);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -3980,16 +3994,22 @@ class _$_Contact implements _Contact {
 }
 
 abstract class _Contact implements Contact {
-  factory _Contact({required final String id, required final String name, required final String imageUrl}) = _$_Contact;
+  factory _Contact(
+      {required final String id,
+      required final String firstName,
+      required final String lastName,
+      required final String? imageUrl}) = _$_Contact;
 
   factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
 
   @override
   String get id;
   @override
-  String get name;
+  String get firstName;
   @override
-  String get imageUrl;
+  String get lastName;
+  @override
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_ContactCopyWith<_$_Contact> get copyWith => throw _privateConstructorUsedError;

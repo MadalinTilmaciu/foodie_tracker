@@ -180,6 +180,7 @@ class _UserQRScreenState extends State<UserQRScreen> {
                 ),
                 const SizedBox(height: 120),
                 MaterialButton(
+                  minWidth: 125,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                   color: Colors.blue,
                   onPressed: () {
@@ -193,7 +194,7 @@ class _UserQRScreenState extends State<UserQRScreen> {
                   child: const Text(
                     'Scan',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

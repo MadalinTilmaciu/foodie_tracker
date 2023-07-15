@@ -35,6 +35,7 @@ part 'meals/remove_favorite_meal.dart';
 
 part 'contacts/list_contacts.dart';
 part 'contacts/add_contact.dart';
+part 'contacts/refresh_contacts_picture.dart';
 
 abstract class PendingActions {
   String get pendingId;
