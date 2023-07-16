@@ -36,7 +36,7 @@ class ProductsEpics implements EpicClass<AppState> {
               ListProductCategories.start(action.goUpcResponse),
             ];
           },
-        ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProduct.error(error, stackTrace));
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => AddProductCategory.error(error, stackTrace));
       },
     );
   }

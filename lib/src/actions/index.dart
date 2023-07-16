@@ -37,6 +37,10 @@ part 'contacts/list_contacts.dart';
 part 'contacts/add_contact.dart';
 part 'contacts/refresh_contacts_picture.dart';
 
+part 'starred_messages/add_starred_message.dart';
+part 'starred_messages/list_starred_messages.dart';
+part 'starred_messages/remove_starred_message.dart';
+
 abstract class PendingActions {
   String get pendingId;
 }

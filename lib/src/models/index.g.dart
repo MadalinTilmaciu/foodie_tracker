@@ -15,6 +15,9 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
       contacts: json['contacts'] == null
           ? const ContactState()
           : ContactState.fromJson(json['contacts'] as Map<String, dynamic>),
+      starredMessages: json['starredMessages'] == null
+          ? const StarredMessageState()
+          : StarredMessageState.fromJson(json['starredMessages'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -24,6 +27,7 @@ Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynami
       'products': instance.products.toJson(),
       'meals': instance.meals.toJson(),
       'contacts': instance.contacts.toJson(),
+      'starredMessages': instance.starredMessages.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -337,4 +341,27 @@ _$_ContactState _$$_ContactStateFromJson(Map<String, dynamic> json) => _$_Contac
 Map<String, dynamic> _$$_ContactStateToJson(_$_ContactState instance) => <String, dynamic>{
       'contacts': instance.contacts.map((Contact e) => e.toJson()).toList(),
       'selectedContactId': instance.selectedContactId,
+    };
+
+_$_StarredMessage _$$_StarredMessageFromJson(Map<String, dynamic> json) => _$_StarredMessage(
+      authorId: json['authorId'] as String,
+      roomId: json['roomId'] as String,
+      text: json['text'] as String,
+    );
+
+Map<String, dynamic> _$$_StarredMessageToJson(_$_StarredMessage instance) => <String, dynamic>{
+      'authorId': instance.authorId,
+      'roomId': instance.roomId,
+      'text': instance.text,
+    };
+
+_$_StarredMessageState _$$_StarredMessageStateFromJson(Map<String, dynamic> json) => _$_StarredMessageState(
+      messages: (json['messages'] as List<dynamic>?)
+              ?.map((dynamic e) => StarredMessage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <StarredMessage>[],
+    );
+
+Map<String, dynamic> _$$_StarredMessageStateToJson(_$_StarredMessageState instance) => <String, dynamic>{
+      'messages': instance.messages.map((StarredMessage e) => e.toJson()).toList(),
     };

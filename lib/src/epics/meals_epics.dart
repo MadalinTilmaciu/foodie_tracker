@@ -124,7 +124,7 @@ class MealsEpics implements EpicClass<AppState> {
               ListFavoriteMeals.start(action.uid),
             ];
           },
-        ).onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteProduct.error(error, stackTrace));
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => RemoveFavoriteMeal.error(error, stackTrace));
       },
     );
   }

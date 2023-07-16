@@ -24,6 +24,7 @@ mixin _$AppState {
   ProductState get products => throw _privateConstructorUsedError;
   MealState get meals => throw _privateConstructorUsedError;
   ContactState get contacts => throw _privateConstructorUsedError;
+  StarredMessageState get starredMessages => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,12 +37,18 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call(
-      {AuthState auth, ProductState products, MealState meals, ContactState contacts, Set<String> pendingActions});
+      {AuthState auth,
+      ProductState products,
+      MealState meals,
+      ContactState contacts,
+      StarredMessageState starredMessages,
+      Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
   $ProductStateCopyWith<$Res> get products;
   $MealStateCopyWith<$Res> get meals;
   $ContactStateCopyWith<$Res> get contacts;
+  $StarredMessageStateCopyWith<$Res> get starredMessages;
 }
 
 /// @nodoc
@@ -60,6 +67,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? products = null,
     Object? meals = null,
     Object? contacts = null,
+    Object? starredMessages = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +87,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as ContactState,
+      starredMessages: null == starredMessages
+          ? _value.starredMessages
+          : starredMessages // ignore: cast_nullable_to_non_nullable
+              as StarredMessageState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -117,6 +129,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(contacts: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StarredMessageStateCopyWith<$Res> get starredMessages {
+    return $StarredMessageStateCopyWith<$Res>(_value.starredMessages, (value) {
+      return _then(_value.copyWith(starredMessages: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -125,7 +145,12 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {AuthState auth, ProductState products, MealState meals, ContactState contacts, Set<String> pendingActions});
+      {AuthState auth,
+      ProductState products,
+      MealState meals,
+      ContactState contacts,
+      StarredMessageState starredMessages,
+      Set<String> pendingActions});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
@@ -135,6 +160,8 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $MealStateCopyWith<$Res> get meals;
   @override
   $ContactStateCopyWith<$Res> get contacts;
+  @override
+  $StarredMessageStateCopyWith<$Res> get starredMessages;
 }
 
 /// @nodoc
@@ -149,6 +176,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
     Object? products = null,
     Object? meals = null,
     Object? contacts = null,
+    Object? starredMessages = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -168,6 +196,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as ContactState,
+      starredMessages: null == starredMessages
+          ? _value.starredMessages
+          : starredMessages // ignore: cast_nullable_to_non_nullable
+              as StarredMessageState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -184,6 +216,7 @@ class _$_AppState implements _AppState {
       this.products = const ProductState(),
       this.meals = const MealState(),
       this.contacts = const ContactState(),
+      this.starredMessages = const StarredMessageState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -201,6 +234,9 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final ContactState contacts;
+  @override
+  @JsonKey()
+  final StarredMessageState starredMessages;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -212,7 +248,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, starredMessages: $starredMessages, pendingActions: $pendingActions)';
   }
 
   @override
@@ -224,13 +260,14 @@ class _$_AppState implements _AppState {
             (identical(other.products, products) || other.products == products) &&
             (identical(other.meals, meals) || other.meals == meals) &&
             (identical(other.contacts, contacts) || other.contacts == contacts) &&
+            (identical(other.starredMessages, starredMessages) || other.starredMessages == starredMessages) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, auth, products, meals, contacts, const DeepCollectionEquality().hash(_pendingActions));
+  int get hashCode => Object.hash(runtimeType, auth, products, meals, contacts, starredMessages,
+      const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -251,6 +288,7 @@ abstract class _AppState implements AppState {
       final ProductState products,
       final MealState meals,
       final ContactState contacts,
+      final StarredMessageState starredMessages,
       final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
@@ -263,6 +301,8 @@ abstract class _AppState implements AppState {
   MealState get meals;
   @override
   ContactState get contacts;
+  @override
+  StarredMessageState get starredMessages;
   @override
   Set<String> get pendingActions;
   @override
@@ -4162,4 +4202,296 @@ abstract class _ContactState implements ContactState {
   @override
   @JsonKey(ignore: true)
   _$$_ContactStateCopyWith<_$_ContactState> get copyWith => throw _privateConstructorUsedError;
+}
+
+StarredMessage _$StarredMessageFromJson(Map<String, dynamic> json) {
+  return _StarredMessage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StarredMessage {
+  String get authorId => throw _privateConstructorUsedError;
+  String get roomId => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StarredMessageCopyWith<StarredMessage> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StarredMessageCopyWith<$Res> {
+  factory $StarredMessageCopyWith(StarredMessage value, $Res Function(StarredMessage) then) =
+      _$StarredMessageCopyWithImpl<$Res, StarredMessage>;
+  @useResult
+  $Res call({String authorId, String roomId, String text});
+}
+
+/// @nodoc
+class _$StarredMessageCopyWithImpl<$Res, $Val extends StarredMessage> implements $StarredMessageCopyWith<$Res> {
+  _$StarredMessageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? authorId = null,
+    Object? roomId = null,
+    Object? text = null,
+  }) {
+    return _then(_value.copyWith(
+      authorId: null == authorId
+          ? _value.authorId
+          : authorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      roomId: null == roomId
+          ? _value.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_StarredMessageCopyWith<$Res> implements $StarredMessageCopyWith<$Res> {
+  factory _$$_StarredMessageCopyWith(_$_StarredMessage value, $Res Function(_$_StarredMessage) then) =
+      __$$_StarredMessageCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String authorId, String roomId, String text});
+}
+
+/// @nodoc
+class __$$_StarredMessageCopyWithImpl<$Res> extends _$StarredMessageCopyWithImpl<$Res, _$_StarredMessage>
+    implements _$$_StarredMessageCopyWith<$Res> {
+  __$$_StarredMessageCopyWithImpl(_$_StarredMessage _value, $Res Function(_$_StarredMessage) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? authorId = null,
+    Object? roomId = null,
+    Object? text = null,
+  }) {
+    return _then(_$_StarredMessage(
+      authorId: null == authorId
+          ? _value.authorId
+          : authorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      roomId: null == roomId
+          ? _value.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StarredMessage implements _StarredMessage {
+  _$_StarredMessage({required this.authorId, required this.roomId, required this.text});
+
+  factory _$_StarredMessage.fromJson(Map<String, dynamic> json) => _$$_StarredMessageFromJson(json);
+
+  @override
+  final String authorId;
+  @override
+  final String roomId;
+  @override
+  final String text;
+
+  @override
+  String toString() {
+    return 'StarredMessage(authorId: $authorId, roomId: $roomId, text: $text)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_StarredMessage &&
+            (identical(other.authorId, authorId) || other.authorId == authorId) &&
+            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.text, text) || other.text == text));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, authorId, roomId, text);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StarredMessageCopyWith<_$_StarredMessage> get copyWith =>
+      __$$_StarredMessageCopyWithImpl<_$_StarredMessage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_StarredMessageToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StarredMessage implements StarredMessage {
+  factory _StarredMessage({required final String authorId, required final String roomId, required final String text}) =
+      _$_StarredMessage;
+
+  factory _StarredMessage.fromJson(Map<String, dynamic> json) = _$_StarredMessage.fromJson;
+
+  @override
+  String get authorId;
+  @override
+  String get roomId;
+  @override
+  String get text;
+  @override
+  @JsonKey(ignore: true)
+  _$$_StarredMessageCopyWith<_$_StarredMessage> get copyWith => throw _privateConstructorUsedError;
+}
+
+StarredMessageState _$StarredMessageStateFromJson(Map<String, dynamic> json) {
+  return _StarredMessageState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StarredMessageState {
+  List<StarredMessage> get messages => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StarredMessageStateCopyWith<StarredMessageState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StarredMessageStateCopyWith<$Res> {
+  factory $StarredMessageStateCopyWith(StarredMessageState value, $Res Function(StarredMessageState) then) =
+      _$StarredMessageStateCopyWithImpl<$Res, StarredMessageState>;
+  @useResult
+  $Res call({List<StarredMessage> messages});
+}
+
+/// @nodoc
+class _$StarredMessageStateCopyWithImpl<$Res, $Val extends StarredMessageState>
+    implements $StarredMessageStateCopyWith<$Res> {
+  _$StarredMessageStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? messages = null,
+  }) {
+    return _then(_value.copyWith(
+      messages: null == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<StarredMessage>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_StarredMessageStateCopyWith<$Res> implements $StarredMessageStateCopyWith<$Res> {
+  factory _$$_StarredMessageStateCopyWith(_$_StarredMessageState value, $Res Function(_$_StarredMessageState) then) =
+      __$$_StarredMessageStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<StarredMessage> messages});
+}
+
+/// @nodoc
+class __$$_StarredMessageStateCopyWithImpl<$Res> extends _$StarredMessageStateCopyWithImpl<$Res, _$_StarredMessageState>
+    implements _$$_StarredMessageStateCopyWith<$Res> {
+  __$$_StarredMessageStateCopyWithImpl(_$_StarredMessageState _value, $Res Function(_$_StarredMessageState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? messages = null,
+  }) {
+    return _then(_$_StarredMessageState(
+      messages: null == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<StarredMessage>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_StarredMessageState implements _StarredMessageState {
+  const _$_StarredMessageState({final List<StarredMessage> messages = const <StarredMessage>[]}) : _messages = messages;
+
+  factory _$_StarredMessageState.fromJson(Map<String, dynamic> json) => _$$_StarredMessageStateFromJson(json);
+
+  final List<StarredMessage> _messages;
+  @override
+  @JsonKey()
+  List<StarredMessage> get messages {
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_messages);
+  }
+
+  @override
+  String toString() {
+    return 'StarredMessageState(messages: $messages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_StarredMessageState &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StarredMessageStateCopyWith<_$_StarredMessageState> get copyWith =>
+      __$$_StarredMessageStateCopyWithImpl<_$_StarredMessageState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_StarredMessageStateToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StarredMessageState implements StarredMessageState {
+  const factory _StarredMessageState({final List<StarredMessage> messages}) = _$_StarredMessageState;
+
+  factory _StarredMessageState.fromJson(Map<String, dynamic> json) = _$_StarredMessageState.fromJson;
+
+  @override
+  List<StarredMessage> get messages;
+  @override
+  @JsonKey(ignore: true)
+  _$$_StarredMessageStateCopyWith<_$_StarredMessageState> get copyWith => throw _privateConstructorUsedError;
 }

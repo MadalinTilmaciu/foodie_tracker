@@ -7,6 +7,7 @@ class AppState with _$AppState {
     @Default(ProductState()) ProductState products,
     @Default(MealState()) MealState meals,
     @Default(ContactState()) ContactState contacts,
+    @Default(StarredMessageState()) StarredMessageState starredMessages,
     @Default(<String>{}) Set<String> pendingActions,
   }) = _AppState;
 

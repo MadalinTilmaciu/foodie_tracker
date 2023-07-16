@@ -22,3 +22,6 @@ part 'meals/meal_state.dart';
 
 part 'contacts/contact.dart';
 part 'contacts/contact_state.dart';
+
+part 'starred_messages/starred_message.dart';
+part 'starred_messages/starred_message_state.dart';
