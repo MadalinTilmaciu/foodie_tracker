@@ -49,7 +49,7 @@ class ProductsPage extends StatelessWidget {
                                       return Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 4),
                                         child: ChoiceChip(
-                                          selectedColor: Colors.blue[900],
+                                          selectedColor: Colors.blue,
                                           label: Text(category.title),
                                           selected: selectedCategory == category,
                                           onSelected: (bool selected) {

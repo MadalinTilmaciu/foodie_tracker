@@ -41,7 +41,7 @@ Future<void> main() async {
   bilionsUI.setColors(
     ColorConfig(
       danger: Colors.red,
-      primary: Colors.blue[900],
+      primary: Colors.blue,
       success: Colors.green,
       warning: Colors.yellow,
       info: Colors.purple,

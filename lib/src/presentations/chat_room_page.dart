@@ -195,7 +195,7 @@ class ChatRoomPageState extends State<ChatRoomPage> {
               theme: DarkChatTheme(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 inputBackgroundColor: Colors.black,
-                primaryColor: Colors.blue[900]!,
+                primaryColor: Colors.blue,
                 secondaryColor: Colors.grey,
               ),
               isAttachmentUploading: _isAttachmentUploading,
