@@ -27,6 +27,12 @@ class ContactsEpics implements EpicClass<AppState> {
         return Stream<void>.value(null)
             .asyncMap((_) => _api.listContacts(store.state.auth.user!.uid))
             .expand((List<Contact> contacts) {
+          contacts.sort(
+            (Contact a, Contact b) {
+              return a.firstName.compareTo(b.firstName) & a.lastName.compareTo(b.lastName);
+            },
+          );
+
           return <dynamic>[
             ListContacts.successful(contacts),
             RefreshContactsPicture.start(store.state.auth.user!.uid, contacts),
