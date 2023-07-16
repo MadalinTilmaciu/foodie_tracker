@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
@@ -124,11 +125,10 @@ class FavoriteMealsPage extends StatelessWidget {
 
                             Future<dynamic>.delayed(const Duration(milliseconds: 500)).then(
                               (_) => <dynamic>{
-                                Navigator.push(
+                                PersistentNavBarNavigator.pushNewScreen(
                                   context,
-                                  MaterialPageRoute<dynamic>(
-                                    builder: (BuildContext context) => const MealRecipePage(),
-                                  ),
+                                  screen: const MealRecipePage(),
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
                                 )
                               },
                             );

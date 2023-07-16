@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
@@ -82,11 +83,11 @@ class ProductsPage extends StatelessWidget {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
+                        PersistentNavBarNavigator.pushNewScreen(
                           context,
-                          MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => const BarcodeScannerPage(),
-                          ),
+                          screen: const BarcodeScannerPage(),
+                          withNavBar: false,
+                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
                         );
                       },
                       child: const Icon(
@@ -169,11 +170,10 @@ class ProductsPage extends StatelessWidget {
                                 StoreProvider.of<AppState>(context).dispatch(
                                   SetProduct.start(products[index].id),
                                 );
-                                Navigator.push(
+                                PersistentNavBarNavigator.pushNewScreen(
                                   context,
-                                  MaterialPageRoute<dynamic>(
-                                    builder: (BuildContext context) => const ProductDetailsPage(),
-                                  ),
+                                  screen: const ProductDetailsPage(),
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
                                 );
                               },
                             ),

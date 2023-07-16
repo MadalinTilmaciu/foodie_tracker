@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 import '../models/index.dart';
@@ -179,23 +180,29 @@ class _UserQRScreenState extends State<UserQRScreen> {
                   ),
                 ),
                 const SizedBox(height: 120),
-                MaterialButton(
-                  minWidth: 125,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                  color: Colors.blue,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                        builder: (BuildContext context) => const QRScannerPage(),
+                SizedBox(
+                  width: 140,
+                  child: MaterialButton(
+                    height: 50,
+                    onPressed: () {
+                      PersistentNavBarNavigator.pushNewScreen(
+                        context,
+                        screen: const QRScannerPage(),
+                        withNavBar: false,
+                        pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                      );
+                    },
+                    color: Theme.of(context).colorScheme.primary,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Text(
+                      'Scan',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
                       ),
-                    );
-                  },
-                  child: const Text(
-                    'Scan',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

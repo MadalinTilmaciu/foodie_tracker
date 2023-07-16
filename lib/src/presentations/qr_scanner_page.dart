@@ -25,7 +25,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
     return Scaffold(
       body: SafeArea(
         child: Stack(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.topCenter,
           children: <Widget>[
             Flex(
               direction: Axis.vertical,
@@ -92,7 +92,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.height - 140,
+              bottom: MediaQuery.of(context).size.height - 90,
               left: 8,
               child: IconButton(
                 onPressed: () {
@@ -125,6 +125,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
         cutOutWidth: scanArea,
         cutOutHeight: scanArea,
       ),
+      formatsAllowed: const <BarcodeFormat>[BarcodeFormat.qrcode],
       onPermissionSet: (QRViewController ctrl, bool p) => _onPermissionSet(
         context,
         ctrl,

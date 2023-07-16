@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 import '../actions/index.dart';
@@ -64,11 +65,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   tiles: <SettingsTile>[
                     SettingsTile.navigation(
                       onPressed: (BuildContext context) {
-                        Navigator.push(
+                        PersistentNavBarNavigator.pushNewScreen(
                           context,
-                          MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => const EditProfilePage(),
-                          ),
+                          screen: const EditProfilePage(),
+                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
                         );
                       },
                       leading: SizedBox(
@@ -130,11 +130,11 @@ class _SettingsPageState extends State<SettingsPage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(
+                            PersistentNavBarNavigator.pushNewScreen(
                               context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (BuildContext context) => const UserQRScreen(),
-                              ),
+                              screen: const UserQRScreen(),
+                              withNavBar: false,
+                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
                             );
                           },
                         ),
@@ -177,11 +177,10 @@ class _SettingsPageState extends State<SettingsPage> {
                         );
                         Future<dynamic>.delayed(const Duration(milliseconds: 300)).then(
                           (_) => <dynamic>{
-                            Navigator.push(
+                            PersistentNavBarNavigator.pushNewScreen(
                               context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (BuildContext context) => const FavoriteMealsPage(),
-                              ),
+                              screen: const FavoriteMealsPage(),
+                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
                             )
                           },
                         );
@@ -256,11 +255,10 @@ class _SettingsPageState extends State<SettingsPage> {
                         style: TextStyle(fontSize: 15),
                       ),
                       onPressed: (BuildContext context) {
-                        Navigator.push(
+                        PersistentNavBarNavigator.pushNewScreen(
                           context,
-                          MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => const FeedbackPage(),
-                          ),
+                          screen: const FeedbackPage(),
+                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
                         );
                       },
                     ),

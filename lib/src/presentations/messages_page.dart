@@ -158,18 +158,19 @@ class MessagesPage extends StatelessWidget {
 
                               return GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute<dynamic>(
-                                      builder: (BuildContext context) => ChatRoomPage(
-                                        room: room,
-                                      ),
-                                      settings: RouteSettings(
-                                        arguments: <String, String?>{
-                                          'name': '${contact.firstName} ${contact.lastName}',
-                                          'imageUrl': contact.imageUrl,
-                                        },
-                                      ),
+                                  PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                                    context,
+                                    settings: RouteSettings(
+                                      arguments: <String, String?>{
+                                        'name': '${contact.firstName} ${contact.lastName}',
+                                        'imageUrl': contact.imageUrl,
+                                      },
                                     ),
+                                    screen: ChatRoomPage(
+                                      room: room,
+                                    ),
+                                    withNavBar: false,
+                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
                                   );
                                 },
                                 child: Container(

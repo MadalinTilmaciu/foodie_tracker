@@ -92,7 +92,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.height - 140,
+              bottom: MediaQuery.of(context).size.height - 90,
               left: 8,
               child: IconButton(
                 onPressed: () {
@@ -128,6 +128,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
         cutOutWidth: scanArea,
         cutOutHeight: scanArea - 100,
       ),
+      formatsAllowed: const <BarcodeFormat>[BarcodeFormat.ean13],
       onPermissionSet: (QRViewController ctrl, bool p) => _onPermissionSet(
         context,
         ctrl,
