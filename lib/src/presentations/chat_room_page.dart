@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +10,16 @@ import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:mime/mime.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../actions/index.dart';
+import '../data/starred_messages_api.dart';
+import '../models/index.dart';
 
 class ChatRoomPage extends StatefulWidget {
   const ChatRoomPage({
@@ -29,101 +35,98 @@ class ChatRoomPage extends StatefulWidget {
 
 class ChatRoomPageState extends State<ChatRoomPage> {
   bool _isAttachmentUploading = false;
+  Offset _tapPosition = Offset.zero;
 
-  // Offset _tapPosition = Offset.zero;
+  void _getTapPosition(TapDownDetails tapPosition) {
+    final RenderBox? referenceBox = context.findRenderObject() as RenderBox?;
+    _tapPosition = referenceBox!.globalToLocal(tapPosition.globalPosition);
+  }
 
-  // void _getTapPosition(TapDownDetails tapPosition) {
-  //   final RenderBox? referenceBox = context.findRenderObject() as RenderBox?;
-  //   _tapPosition = referenceBox!.globalToLocal(tapPosition.globalPosition);
-  // }
+  Future<void> _showContextMenu(BuildContext context, types.Message message) async {
+    final RenderObject? overlay = Overlay.of(context).context.findRenderObject();
 
-  // Future<void> _showContextMenu(BuildContext context, types.Message message) async {
-  //   final RenderObject? overlay = Overlay.of(context).context.findRenderObject();
+    final bool isStarred = await StarredMessagesApi(FirebaseFirestore.instance).checkStarredMessage(
+      FirebaseChatCore.instance.firebaseUser!.uid,
+      StarredMessage.fromJson(
+        <String, dynamic>{
+          'authorId': message.author.id,
+          'roomId': widget.room.id,
+          'text': message.props[message.props.length - 2],
+        },
+      ),
+    );
 
-  //   String? authToken;
-  //   final User? auth = FirebaseAuth.instance.currentUser;
-  //   final String? userId = FirebaseAuth.instance.currentUser?.uid;
-  //   Map<String, dynamic> starredMessage = <String, dynamic>{};
-  //   Map<String, dynamic> selectedMessage = <String, dynamic>{};
+    // ignore: use_build_context_synchronously
+    final String? result = await showMenu(
+      context: context,
+      position: RelativeRect.fromRect(
+        Rect.fromLTWH(_tapPosition.dx, _tapPosition.dy, 100, 100),
+        Rect.fromLTWH(
+          0,
+          0,
+          overlay!.paintBounds.size.width,
+          overlay.paintBounds.size.height,
+        ),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      items: <PopupMenuEntry<String>>[
+        PopupMenuItem<String>(
+          value: isStarred == true ? 'Unstar' : 'Star',
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                isStarred == true ? 'Unstar' : 'Star',
+              ),
+              if (isStarred == true)
+                const Icon(
+                  Icons.star_rounded,
+                )
+              else
+                const Icon(
+                  Icons.star_border_rounded,
+                ),
+            ],
+          ),
+        ),
+      ],
+    );
 
-  //   await auth?.getIdTokenResult().then((IdTokenResult value) => authToken = value.token);
-
-  //   final String url =
-  //       'https://foodie-tracker-fabf3-default-rtdb.europe-west1.firebasedatabase.app/users/$userId/starred_messages/${message.id}.json?auth=$authToken';
-
-  //   try {
-  //     final http.Response response = await http.get(Uri.parse(url));
-  //     if (response.body != 'null') {
-  //       starredMessage = json.decode(response.body) as Map<String, dynamic>;
-
-  //       starredMessage.forEach(
-  //         (String key, dynamic value) {
-  //           selectedMessage = starredMessage[key] as Map<String, dynamic>;
-  //         },
-  //       );
-  //     }
-
-  //     // ignore: use_build_context_synchronously
-  //     final String? result = await showMenu(
-  //       context: context,
-  //       position: RelativeRect.fromRect(
-  //         Rect.fromLTWH(_tapPosition.dx, _tapPosition.dy, 100, 100),
-  //         Rect.fromLTWH(
-  //           0,
-  //           0,
-  //           overlay!.paintBounds.size.width,
-  //           overlay.paintBounds.size.height,
-  //         ),
-  //       ),
-  //       shape: RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.circular(10.0),
-  //       ),
-  //       items: <PopupMenuEntry<String>>[
-  //         PopupMenuItem<String>(
-  //           value: selectedMessage['authorId'] != null ? 'Unstar' : 'Star',
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: <Widget>[
-  //               Text(
-  //                 selectedMessage['authorId'] != null ? 'Unstar' : 'Star',
-  //               ),
-  //               if (selectedMessage['authorId'] != null)
-  //                 const Icon(
-  //                   Icons.star_rounded,
-  //                 )
-  //               else
-  //                 const Icon(
-  //                   Icons.star_border_rounded,
-  //                 ),
-  //             ],
-  //           ),
-  //         ),
-  //       ],
-  //     );
-
-  //     switch (result) {
-  //       case 'Unstar':
-  //         await http.delete(Uri.parse(url));
-  //         break;
-  //       case 'Star':
-  //         final String url =
-  //             'https://foodie-tracker-fabf3-default-rtdb.europe-west1.firebasedatabase.app/users/$userId/starred_messages/${message.id}.json?auth=$authToken';
-  //         await http.post(
-  //           Uri.parse(url),
-  //           body: json.encode(
-  //             <Object?, Object?>{
-  //               'authorId': message.author.id,
-  //               'roomId': widget.room.id,
-  //               'text': message.props[message.props.length - 2],
-  //             },
-  //           ),
-  //         );
-  //         break;
-  //     }
-  //   } catch (error) {
-  //     rethrow;
-  //   }
-  // }
+    switch (result) {
+      case 'Unstar':
+        // ignore: use_build_context_synchronously
+        StoreProvider.of<AppState>(context).dispatch(
+          RemoveStarredMessage.start(
+            FirebaseChatCore.instance.firebaseUser!.uid,
+            StarredMessage.fromJson(
+              <String, dynamic>{
+                'authorId': message.author.id,
+                'roomId': widget.room.id,
+                'text': message.props[message.props.length - 2],
+              },
+            ),
+          ),
+        );
+        break;
+      case 'Star':
+        // ignore: use_build_context_synchronously
+        StoreProvider.of<AppState>(context).dispatch(
+          AddStarredMessage.start(
+            FirebaseChatCore.instance.firebaseUser!.uid,
+            StarredMessage.fromJson(
+              <String, dynamic>{
+                'authorId': message.author.id,
+                'roomId': widget.room.id,
+                'text': message.props[message.props.length - 2],
+              },
+            ),
+          ),
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +180,7 @@ class ChatRoomPageState extends State<ChatRoomPage> {
     );
 
     return GestureDetector(
-      // onTapDown: (TapDownDetails position) => <void>{_getTapPosition(position)},
+      onTapDown: (TapDownDetails position) => <void>{_getTapPosition(position)},
       child: Scaffold(
         appBar: appBar,
         body: StreamBuilder<types.Room>(
@@ -192,14 +195,14 @@ class ChatRoomPageState extends State<ChatRoomPage> {
               theme: DarkChatTheme(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 inputBackgroundColor: Colors.black,
-                primaryColor: Colors.blue,
+                primaryColor: Colors.blue[900]!,
                 secondaryColor: Colors.grey,
               ),
               isAttachmentUploading: _isAttachmentUploading,
               messages: snapshot.data!,
-              // onMessageLongPress: (BuildContext context, types.Message message) {
-              //   _showContextMenu(context, message);
-              // },
+              onMessageLongPress: (BuildContext context, types.Message message) {
+                _showContextMenu(context, message);
+              },
               onAttachmentPressed: _handleAtachmentPressed,
               onMessageTap: _handleMessageTap,
               onPreviewDataFetched: _handlePreviewDataFetched,

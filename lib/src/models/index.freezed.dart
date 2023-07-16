@@ -4211,6 +4211,8 @@ StarredMessage _$StarredMessageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StarredMessage {
   String get authorId => throw _privateConstructorUsedError;
+  String? get authorName => throw _privateConstructorUsedError;
+  String? get authorImageUrl => throw _privateConstructorUsedError;
   String get roomId => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
 
@@ -4224,7 +4226,7 @@ abstract class $StarredMessageCopyWith<$Res> {
   factory $StarredMessageCopyWith(StarredMessage value, $Res Function(StarredMessage) then) =
       _$StarredMessageCopyWithImpl<$Res, StarredMessage>;
   @useResult
-  $Res call({String authorId, String roomId, String text});
+  $Res call({String authorId, String? authorName, String? authorImageUrl, String roomId, String text});
 }
 
 /// @nodoc
@@ -4240,6 +4242,8 @@ class _$StarredMessageCopyWithImpl<$Res, $Val extends StarredMessage> implements
   @override
   $Res call({
     Object? authorId = null,
+    Object? authorName = freezed,
+    Object? authorImageUrl = freezed,
     Object? roomId = null,
     Object? text = null,
   }) {
@@ -4248,6 +4252,14 @@ class _$StarredMessageCopyWithImpl<$Res, $Val extends StarredMessage> implements
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as String,
+      authorName: freezed == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authorImageUrl: freezed == authorImageUrl
+          ? _value.authorImageUrl
+          : authorImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
@@ -4266,7 +4278,7 @@ abstract class _$$_StarredMessageCopyWith<$Res> implements $StarredMessageCopyWi
       __$$_StarredMessageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String authorId, String roomId, String text});
+  $Res call({String authorId, String? authorName, String? authorImageUrl, String roomId, String text});
 }
 
 /// @nodoc
@@ -4279,6 +4291,8 @@ class __$$_StarredMessageCopyWithImpl<$Res> extends _$StarredMessageCopyWithImpl
   @override
   $Res call({
     Object? authorId = null,
+    Object? authorName = freezed,
+    Object? authorImageUrl = freezed,
     Object? roomId = null,
     Object? text = null,
   }) {
@@ -4287,6 +4301,14 @@ class __$$_StarredMessageCopyWithImpl<$Res> extends _$StarredMessageCopyWithImpl
           ? _value.authorId
           : authorId // ignore: cast_nullable_to_non_nullable
               as String,
+      authorName: freezed == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authorImageUrl: freezed == authorImageUrl
+          ? _value.authorImageUrl
+          : authorImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
@@ -4302,12 +4324,21 @@ class __$$_StarredMessageCopyWithImpl<$Res> extends _$StarredMessageCopyWithImpl
 /// @nodoc
 @JsonSerializable()
 class _$_StarredMessage implements _StarredMessage {
-  _$_StarredMessage({required this.authorId, required this.roomId, required this.text});
+  _$_StarredMessage(
+      {required this.authorId,
+      required this.authorName,
+      required this.authorImageUrl,
+      required this.roomId,
+      required this.text});
 
   factory _$_StarredMessage.fromJson(Map<String, dynamic> json) => _$$_StarredMessageFromJson(json);
 
   @override
   final String authorId;
+  @override
+  final String? authorName;
+  @override
+  final String? authorImageUrl;
   @override
   final String roomId;
   @override
@@ -4315,7 +4346,7 @@ class _$_StarredMessage implements _StarredMessage {
 
   @override
   String toString() {
-    return 'StarredMessage(authorId: $authorId, roomId: $roomId, text: $text)';
+    return 'StarredMessage(authorId: $authorId, authorName: $authorName, authorImageUrl: $authorImageUrl, roomId: $roomId, text: $text)';
   }
 
   @override
@@ -4324,13 +4355,15 @@ class _$_StarredMessage implements _StarredMessage {
         (other.runtimeType == runtimeType &&
             other is _$_StarredMessage &&
             (identical(other.authorId, authorId) || other.authorId == authorId) &&
+            (identical(other.authorName, authorName) || other.authorName == authorName) &&
+            (identical(other.authorImageUrl, authorImageUrl) || other.authorImageUrl == authorImageUrl) &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.text, text) || other.text == text));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, authorId, roomId, text);
+  int get hashCode => Object.hash(runtimeType, authorId, authorName, authorImageUrl, roomId, text);
 
   @JsonKey(ignore: true)
   @override
@@ -4347,13 +4380,21 @@ class _$_StarredMessage implements _StarredMessage {
 }
 
 abstract class _StarredMessage implements StarredMessage {
-  factory _StarredMessage({required final String authorId, required final String roomId, required final String text}) =
-      _$_StarredMessage;
+  factory _StarredMessage(
+      {required final String authorId,
+      required final String? authorName,
+      required final String? authorImageUrl,
+      required final String roomId,
+      required final String text}) = _$_StarredMessage;
 
   factory _StarredMessage.fromJson(Map<String, dynamic> json) = _$_StarredMessage.fromJson;
 
   @override
   String get authorId;
+  @override
+  String? get authorName;
+  @override
+  String? get authorImageUrl;
   @override
   String get roomId;
   @override
@@ -4370,6 +4411,7 @@ StarredMessageState _$StarredMessageStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StarredMessageState {
   List<StarredMessage> get messages => throw _privateConstructorUsedError;
+  bool? get isStarred => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4381,7 +4423,7 @@ abstract class $StarredMessageStateCopyWith<$Res> {
   factory $StarredMessageStateCopyWith(StarredMessageState value, $Res Function(StarredMessageState) then) =
       _$StarredMessageStateCopyWithImpl<$Res, StarredMessageState>;
   @useResult
-  $Res call({List<StarredMessage> messages});
+  $Res call({List<StarredMessage> messages, bool? isStarred});
 }
 
 /// @nodoc
@@ -4398,12 +4440,17 @@ class _$StarredMessageStateCopyWithImpl<$Res, $Val extends StarredMessageState>
   @override
   $Res call({
     Object? messages = null,
+    Object? isStarred = freezed,
   }) {
     return _then(_value.copyWith(
       messages: null == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<StarredMessage>,
+      isStarred: freezed == isStarred
+          ? _value.isStarred
+          : isStarred // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -4414,7 +4461,7 @@ abstract class _$$_StarredMessageStateCopyWith<$Res> implements $StarredMessageS
       __$$_StarredMessageStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<StarredMessage> messages});
+  $Res call({List<StarredMessage> messages, bool? isStarred});
 }
 
 /// @nodoc
@@ -4427,12 +4474,17 @@ class __$$_StarredMessageStateCopyWithImpl<$Res> extends _$StarredMessageStateCo
   @override
   $Res call({
     Object? messages = null,
+    Object? isStarred = freezed,
   }) {
     return _then(_$_StarredMessageState(
       messages: null == messages
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<StarredMessage>,
+      isStarred: freezed == isStarred
+          ? _value.isStarred
+          : isStarred // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -4440,7 +4492,8 @@ class __$$_StarredMessageStateCopyWithImpl<$Res> extends _$StarredMessageStateCo
 /// @nodoc
 @JsonSerializable()
 class _$_StarredMessageState implements _StarredMessageState {
-  const _$_StarredMessageState({final List<StarredMessage> messages = const <StarredMessage>[]}) : _messages = messages;
+  const _$_StarredMessageState({final List<StarredMessage> messages = const <StarredMessage>[], this.isStarred})
+      : _messages = messages;
 
   factory _$_StarredMessageState.fromJson(Map<String, dynamic> json) => _$$_StarredMessageStateFromJson(json);
 
@@ -4454,8 +4507,11 @@ class _$_StarredMessageState implements _StarredMessageState {
   }
 
   @override
+  final bool? isStarred;
+
+  @override
   String toString() {
-    return 'StarredMessageState(messages: $messages)';
+    return 'StarredMessageState(messages: $messages, isStarred: $isStarred)';
   }
 
   @override
@@ -4463,12 +4519,13 @@ class _$_StarredMessageState implements _StarredMessageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StarredMessageState &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
+            const DeepCollectionEquality().equals(other._messages, _messages) &&
+            (identical(other.isStarred, isStarred) || other.isStarred == isStarred));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages), isStarred);
 
   @JsonKey(ignore: true)
   @override
@@ -4485,12 +4542,15 @@ class _$_StarredMessageState implements _StarredMessageState {
 }
 
 abstract class _StarredMessageState implements StarredMessageState {
-  const factory _StarredMessageState({final List<StarredMessage> messages}) = _$_StarredMessageState;
+  const factory _StarredMessageState({final List<StarredMessage> messages, final bool? isStarred}) =
+      _$_StarredMessageState;
 
   factory _StarredMessageState.fromJson(Map<String, dynamic> json) = _$_StarredMessageState.fromJson;
 
   @override
   List<StarredMessage> get messages;
+  @override
+  bool? get isStarred;
   @override
   @JsonKey(ignore: true)
   _$$_StarredMessageStateCopyWith<_$_StarredMessageState> get copyWith => throw _privateConstructorUsedError;

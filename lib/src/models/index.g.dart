@@ -345,12 +345,16 @@ Map<String, dynamic> _$$_ContactStateToJson(_$_ContactState instance) => <String
 
 _$_StarredMessage _$$_StarredMessageFromJson(Map<String, dynamic> json) => _$_StarredMessage(
       authorId: json['authorId'] as String,
+      authorName: json['authorName'] as String?,
+      authorImageUrl: json['authorImageUrl'] as String?,
       roomId: json['roomId'] as String,
       text: json['text'] as String,
     );
 
 Map<String, dynamic> _$$_StarredMessageToJson(_$_StarredMessage instance) => <String, dynamic>{
       'authorId': instance.authorId,
+      'authorName': instance.authorName,
+      'authorImageUrl': instance.authorImageUrl,
       'roomId': instance.roomId,
       'text': instance.text,
     };
@@ -360,8 +364,10 @@ _$_StarredMessageState _$$_StarredMessageStateFromJson(Map<String, dynamic> json
               ?.map((dynamic e) => StarredMessage.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <StarredMessage>[],
+      isStarred: json['isStarred'] as bool?,
     );
 
 Map<String, dynamic> _$$_StarredMessageStateToJson(_$_StarredMessageState instance) => <String, dynamic>{
       'messages': instance.messages.map((StarredMessage e) => e.toJson()).toList(),
+      'isStarred': instance.isStarred,
     };

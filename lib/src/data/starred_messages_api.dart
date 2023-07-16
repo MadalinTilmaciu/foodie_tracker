@@ -19,12 +19,39 @@ class StarredMessagesApi {
   }
 
   Future<void> addStarredMessage(String uid, StarredMessage message) async {
-    await _firestore.collection('users/$uid/starred_messages').add(message.toJson());
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('/users').doc(message.authorId);
+
+    docRef.get().then(
+      (DocumentSnapshot<Map<String, dynamic>> doc) async {
+        final Map<String, dynamic>? data = doc.data();
+
+        await _firestore.collection('users/$uid/starred_messages').add(
+          <String, dynamic>{
+            'authorId': message.authorId,
+            'authorName': '${data!['firstName']} ${data['lastName']}',
+            'authorImageUrl': data['imageUrl'].toString(),
+            'roomId': message.roomId,
+            'text': message.text,
+          },
+        );
+      },
+    );
+  }
+
+  Future<bool> checkStarredMessage(String uid, StarredMessage message) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection('users/$uid/starred_messages')
+        .where('authorId', isEqualTo: message.authorId)
+        .where('roomId', isEqualTo: message.roomId)
+        .where('text', isEqualTo: message.text)
+        .get();
+
+    return snapshot.docs.isNotEmpty;
   }
 
   Future<void> removeStarredMessage(String uid, StarredMessage message) async {
     await _firestore
-        .collection('users/$uid/favorite_meals')
+        .collection('users/$uid/starred_messages')
         .where('authorId', isEqualTo: message.authorId)
         .where('roomId', isEqualTo: message.roomId)
         .where('text', isEqualTo: message.text)

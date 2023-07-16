@@ -17,6 +17,7 @@ class StarredMessagesEpics implements EpicClass<AppState> {
         TypedEpic<AppState, ListStarredMessagesStart>(_listStarredMessagesStart).call,
         TypedEpic<AppState, AddStarredMessageStart>(_addStarredMessageStart).call,
         TypedEpic<AppState, RemoveStarredMessageStart>(_removeStarredMessageStart).call,
+        TypedEpic<AppState, CheckStarredMessageStart>(_checkStarredMessageStart).call,
       ],
     )(actions, store);
   }
@@ -39,6 +40,17 @@ class StarredMessagesEpics implements EpicClass<AppState> {
             .asyncMap((_) => _api.addStarredMessage(store.state.auth.user!.uid, action.message))
             .mapTo(const AddStarredMessage.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => AddStarredMessage.error(error, stackTrace));
+      },
+    );
+  }
+
+  Stream<dynamic> _checkStarredMessageStart(Stream<CheckStarredMessageStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (CheckStarredMessageStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.checkStarredMessage(store.state.auth.user!.uid, action.message))
+            .map((bool isFavorite) => CheckStarredMessage.successful(isFavorite))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => CheckStarredMessage.error(error, stackTrace));
       },
     );
   }

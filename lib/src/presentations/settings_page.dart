@@ -13,6 +13,7 @@ import 'containers/index.dart';
 import 'edit_profile_page.dart';
 import 'favorite_meals_page.dart';
 import 'feedback_page.dart';
+import 'starred_messages_page.dart';
 import 'user_qr_page.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -158,7 +159,22 @@ class _SettingsPageState extends State<SettingsPage> {
                         'Starred messages',
                         style: TextStyle(fontSize: 15),
                       ),
-                      onPressed: (BuildContext context) {},
+                      onPressed: (BuildContext context) {
+                        StoreProvider.of<AppState>(context).dispatch(
+                          ListStarredMessages.start(
+                            user.uid,
+                          ),
+                        );
+                        Future<dynamic>.delayed(const Duration(milliseconds: 300)).then(
+                          (_) => <dynamic>{
+                            PersistentNavBarNavigator.pushNewScreen(
+                              context,
+                              screen: const StarredMessagesPage(),
+                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                            )
+                          },
+                        );
+                      },
                     ),
                     SettingsTile.navigation(
                       leading: SizedBox(

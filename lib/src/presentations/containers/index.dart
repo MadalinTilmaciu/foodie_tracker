@@ -19,3 +19,4 @@ part 'is_favorite_meal_container.dart';
 part 'favorite_meals_container.dart';
 part 'contacts_container.dart';
 part 'starred_messages_container.dart';
+part 'is_starred_message_container.dart';

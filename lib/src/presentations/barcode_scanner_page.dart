@@ -54,7 +54,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                         future: controller?.getFlashStatus(),
                         builder: (BuildContext context, AsyncSnapshot<bool?> snapshot) {
                           return IconButton(
-                            color: snapshot.data == false ? Colors.grey : Colors.blue,
+                            color: snapshot.data == false ? Colors.grey : Colors.blue[900],
                             icon: snapshot.data == false ? const Icon(Icons.flash_off) : const Icon(Icons.flash_on),
                             onPressed: () async {
                               await controller?.toggleFlash();
@@ -75,7 +75,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                         future: controller?.getCameraInfo(),
                         builder: (BuildContext context, AsyncSnapshot<CameraFacing> snapshot) {
                           return IconButton(
-                            color: Colors.blue,
+                            color: Colors.blue[900],
                             icon: snapshot.data == CameraFacing.back
                                 ? const Icon(Icons.camera_front)
                                 : const Icon(Icons.camera_rear),

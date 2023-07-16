@@ -15439,3 +15439,569 @@ abstract class RemoveStarredMessageError implements RemoveStarredMessage, StopAc
   @JsonKey(ignore: true)
   _$$RemoveStarredMessageErrorCopyWith<_$RemoveStarredMessageError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$CheckStarredMessage {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, StarredMessage message, String pendingId) start,
+    required TResult Function(bool isStarred, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult? Function(bool isStarred, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult Function(bool isStarred, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckStarredMessageStart value) start,
+    required TResult Function(CheckStarredMessageSuccessful value) successful,
+    required TResult Function(CheckStarredMessageError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckStarredMessageStart value)? start,
+    TResult? Function(CheckStarredMessageSuccessful value)? successful,
+    TResult? Function(CheckStarredMessageError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckStarredMessageStart value)? start,
+    TResult Function(CheckStarredMessageSuccessful value)? successful,
+    TResult Function(CheckStarredMessageError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CheckStarredMessageCopyWith<CheckStarredMessage> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CheckStarredMessageCopyWith<$Res> {
+  factory $CheckStarredMessageCopyWith(CheckStarredMessage value, $Res Function(CheckStarredMessage) then) =
+      _$CheckStarredMessageCopyWithImpl<$Res, CheckStarredMessage>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CheckStarredMessageCopyWithImpl<$Res, $Val extends CheckStarredMessage>
+    implements $CheckStarredMessageCopyWith<$Res> {
+  _$CheckStarredMessageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CheckStarredMessageStartCopyWith<$Res> implements $CheckStarredMessageCopyWith<$Res> {
+  factory _$$CheckStarredMessageStartCopyWith(
+          _$CheckStarredMessageStart value, $Res Function(_$CheckStarredMessageStart) then) =
+      __$$CheckStarredMessageStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, StarredMessage message, String pendingId});
+
+  $StarredMessageCopyWith<$Res> get message;
+}
+
+/// @nodoc
+class __$$CheckStarredMessageStartCopyWithImpl<$Res>
+    extends _$CheckStarredMessageCopyWithImpl<$Res, _$CheckStarredMessageStart>
+    implements _$$CheckStarredMessageStartCopyWith<$Res> {
+  __$$CheckStarredMessageStartCopyWithImpl(
+      _$CheckStarredMessageStart _value, $Res Function(_$CheckStarredMessageStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? message = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckStarredMessageStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as StarredMessage,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StarredMessageCopyWith<$Res> get message {
+    return $StarredMessageCopyWith<$Res>(_value.message, (value) {
+      return _then(_value.copyWith(message: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CheckStarredMessageStart implements CheckStarredMessageStart {
+  const _$CheckStarredMessageStart(this.uid, this.message, {this.pendingId = _kCheckStarredMessagePendingId});
+
+  @override
+  final String uid;
+  @override
+  final StarredMessage message;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckStarredMessage.start(uid: $uid, message: $message, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckStarredMessageStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, message, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckStarredMessageStartCopyWith<_$CheckStarredMessageStart> get copyWith =>
+      __$$CheckStarredMessageStartCopyWithImpl<_$CheckStarredMessageStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, StarredMessage message, String pendingId) start,
+    required TResult Function(bool isStarred, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, message, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult? Function(bool isStarred, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, message, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult Function(bool isStarred, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, message, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckStarredMessageStart value) start,
+    required TResult Function(CheckStarredMessageSuccessful value) successful,
+    required TResult Function(CheckStarredMessageError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckStarredMessageStart value)? start,
+    TResult? Function(CheckStarredMessageSuccessful value)? successful,
+    TResult? Function(CheckStarredMessageError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckStarredMessageStart value)? start,
+    TResult Function(CheckStarredMessageSuccessful value)? successful,
+    TResult Function(CheckStarredMessageError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckStarredMessageStart implements CheckStarredMessage, StartAction {
+  const factory CheckStarredMessageStart(final String uid, final StarredMessage message, {final String pendingId}) =
+      _$CheckStarredMessageStart;
+
+  String get uid;
+  StarredMessage get message;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckStarredMessageStartCopyWith<_$CheckStarredMessageStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckStarredMessageSuccessfulCopyWith<$Res> implements $CheckStarredMessageCopyWith<$Res> {
+  factory _$$CheckStarredMessageSuccessfulCopyWith(
+          _$CheckStarredMessageSuccessful value, $Res Function(_$CheckStarredMessageSuccessful) then) =
+      __$$CheckStarredMessageSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isStarred, String pendingId});
+}
+
+/// @nodoc
+class __$$CheckStarredMessageSuccessfulCopyWithImpl<$Res>
+    extends _$CheckStarredMessageCopyWithImpl<$Res, _$CheckStarredMessageSuccessful>
+    implements _$$CheckStarredMessageSuccessfulCopyWith<$Res> {
+  __$$CheckStarredMessageSuccessfulCopyWithImpl(
+      _$CheckStarredMessageSuccessful _value, $Res Function(_$CheckStarredMessageSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isStarred = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckStarredMessageSuccessful(
+      null == isStarred
+          ? _value.isStarred
+          : isStarred // ignore: cast_nullable_to_non_nullable
+              as bool,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckStarredMessageSuccessful implements CheckStarredMessageSuccessful {
+  const _$CheckStarredMessageSuccessful(this.isStarred, [this.pendingId = _kCheckStarredMessagePendingId]);
+
+  @override
+  final bool isStarred;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckStarredMessage.successful(isStarred: $isStarred, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckStarredMessageSuccessful &&
+            (identical(other.isStarred, isStarred) || other.isStarred == isStarred) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isStarred, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckStarredMessageSuccessfulCopyWith<_$CheckStarredMessageSuccessful> get copyWith =>
+      __$$CheckStarredMessageSuccessfulCopyWithImpl<_$CheckStarredMessageSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, StarredMessage message, String pendingId) start,
+    required TResult Function(bool isStarred, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(isStarred, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult? Function(bool isStarred, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(isStarred, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult Function(bool isStarred, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(isStarred, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckStarredMessageStart value) start,
+    required TResult Function(CheckStarredMessageSuccessful value) successful,
+    required TResult Function(CheckStarredMessageError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckStarredMessageStart value)? start,
+    TResult? Function(CheckStarredMessageSuccessful value)? successful,
+    TResult? Function(CheckStarredMessageError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckStarredMessageStart value)? start,
+    TResult Function(CheckStarredMessageSuccessful value)? successful,
+    TResult Function(CheckStarredMessageError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckStarredMessageSuccessful implements CheckStarredMessage, StopAction {
+  const factory CheckStarredMessageSuccessful(final bool isStarred, [final String pendingId]) =
+      _$CheckStarredMessageSuccessful;
+
+  bool get isStarred;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckStarredMessageSuccessfulCopyWith<_$CheckStarredMessageSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckStarredMessageErrorCopyWith<$Res> implements $CheckStarredMessageCopyWith<$Res> {
+  factory _$$CheckStarredMessageErrorCopyWith(
+          _$CheckStarredMessageError value, $Res Function(_$CheckStarredMessageError) then) =
+      __$$CheckStarredMessageErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$CheckStarredMessageErrorCopyWithImpl<$Res>
+    extends _$CheckStarredMessageCopyWithImpl<$Res, _$CheckStarredMessageError>
+    implements _$$CheckStarredMessageErrorCopyWith<$Res> {
+  __$$CheckStarredMessageErrorCopyWithImpl(
+      _$CheckStarredMessageError _value, $Res Function(_$CheckStarredMessageError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$CheckStarredMessageError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckStarredMessageError implements CheckStarredMessageError {
+  const _$CheckStarredMessageError(this.error, this.stackTrace, {this.pendingId = _kCheckStarredMessagePendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CheckStarredMessage.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckStarredMessageError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckStarredMessageErrorCopyWith<_$CheckStarredMessageError> get copyWith =>
+      __$$CheckStarredMessageErrorCopyWithImpl<_$CheckStarredMessageError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, StarredMessage message, String pendingId) start,
+    required TResult Function(bool isStarred, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult? Function(bool isStarred, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, StarredMessage message, String pendingId)? start,
+    TResult Function(bool isStarred, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckStarredMessageStart value) start,
+    required TResult Function(CheckStarredMessageSuccessful value) successful,
+    required TResult Function(CheckStarredMessageError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckStarredMessageStart value)? start,
+    TResult? Function(CheckStarredMessageSuccessful value)? successful,
+    TResult? Function(CheckStarredMessageError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckStarredMessageStart value)? start,
+    TResult Function(CheckStarredMessageSuccessful value)? successful,
+    TResult Function(CheckStarredMessageError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckStarredMessageError implements CheckStarredMessage, StopAction {
+  const factory CheckStarredMessageError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$CheckStarredMessageError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$CheckStarredMessageErrorCopyWith<_$CheckStarredMessageError> get copyWith => throw _privateConstructorUsedError;
+}

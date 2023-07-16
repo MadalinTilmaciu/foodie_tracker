@@ -7,6 +7,7 @@ import 'contacts_epics.dart';
 import 'go_upc_epics.dart';
 import 'meals_epics.dart';
 import 'products_epics.dart';
+import 'starred_messages_epics.dart';
 
 class AppEpics implements EpicClass<AppState> {
   AppEpics(
@@ -15,6 +16,7 @@ class AppEpics implements EpicClass<AppState> {
     this._goUpc,
     this._meals,
     this._contacts,
+    this._starredMessages,
   );
 
   final AuthEpics _auth;
@@ -22,6 +24,7 @@ class AppEpics implements EpicClass<AppState> {
   final GoUpcEpics _goUpc;
   final MealsEpics _meals;
   final ContactsEpics _contacts;
+  final StarredMessagesEpics _starredMessages;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -32,6 +35,7 @@ class AppEpics implements EpicClass<AppState> {
         _goUpc.call,
         _meals.call,
         _contacts.call,
+        _starredMessages.call,
       ],
     )(actions, store);
   }

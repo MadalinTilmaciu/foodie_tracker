@@ -67,7 +67,7 @@ class MealsPage extends StatelessWidget {
                                         return Padding(
                                           padding: const EdgeInsets.symmetric(horizontal: 4),
                                           child: ChoiceChip(
-                                            selectedColor: Colors.blue,
+                                            selectedColor: Colors.blue[900],
                                             label: Text(category.title),
                                             selected: selectedCategory == category,
                                             onSelected: (bool selected) {

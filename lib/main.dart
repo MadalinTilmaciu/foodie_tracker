@@ -18,12 +18,14 @@ import 'src/data/contacts_api.dart';
 import 'src/data/go_upc_api.dart';
 import 'src/data/meals_api.dart';
 import 'src/data/products_api.dart';
+import 'src/data/starred_messages_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
 import 'src/epics/contacts_epics.dart';
 import 'src/epics/go_upc_epics.dart';
 import 'src/epics/meals_epics.dart';
 import 'src/epics/products_epics.dart';
+import 'src/epics/starred_messages_epics.dart';
 import 'src/models/index.dart';
 import 'src/presentations/containers/index.dart';
 import 'src/presentations/create_user_page.dart';
@@ -39,7 +41,7 @@ Future<void> main() async {
   bilionsUI.setColors(
     ColorConfig(
       danger: Colors.red,
-      primary: Colors.blue,
+      primary: Colors.blue[900],
       success: Colors.green,
       warning: Colors.yellow,
       info: Colors.purple,
@@ -70,12 +72,16 @@ Future<void> main() async {
   );
   final ContactsEpics contactsEpics = ContactsEpics(contactsApi);
 
+  final StarredMessagesApi starredMessagesApi = StarredMessagesApi(FirebaseFirestore.instance);
+  final StarredMessagesEpics starredMessagesEpics = StarredMessagesEpics(starredMessagesApi);
+
   final AppEpics epic = AppEpics(
     auth,
     products,
     goUpcEpics,
     mealsEpics,
     contactsEpics,
+    starredMessagesEpics,
   );
 
   final Store<AppState> store = Store<AppState>(
