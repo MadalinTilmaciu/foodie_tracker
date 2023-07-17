@@ -37,81 +37,92 @@ class StarredMessagesPage extends StatelessWidget {
             ),
           ),
           body: SafeArea(
-            child: StarredMessagesContainer(
-              builder: (BuildContext context, List<StarredMessage> starredMessages) {
-                if (starredMessages.isEmpty) {
-                  return Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'No starred messages yet.',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'Chat with friends to find your stars.',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
+            child: PendingContainer(
+              builder: (BuildContext context, Set<String> pending) {
+                if (pending.contains(ListStarredMessages.pendingKey)) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
                   );
                 }
 
-                return ListView.builder(
-                  itemCount: starredMessages.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: starredMessages[index].authorId == user!.uid ? Colors.blue : Colors.grey[800],
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(12),
+                return StarredMessagesContainer(
+                  builder: (BuildContext context, List<StarredMessage> starredMessages) {
+                    if (starredMessages.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'No starred messages yet.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
                               ),
                             ),
-                            child: ListTile(
-                              leading: ClipOval(
-                                child: CachedNetworkImage(
-                                  imageUrl: starredMessages[index].authorImageUrl!,
-                                  placeholder: (BuildContext context, String url) => const CircularProgressIndicator(),
-                                  fit: BoxFit.cover,
-                                  width: 50,
-                                  height: 50,
-                                ),
-                              ),
-                              titleAlignment: ListTileTitleAlignment.center,
-                              title: Text(
-                                starredMessages[index].authorName!,
-                              ),
-                              subtitle: Text(
-                                starredMessages[index].text,
-                              ),
-                              trailing: IconButton(
-                                icon: const Icon(
-                                  Icons.delete,
-                                  color: Colors.red,
-                                ),
-                                onPressed: () {
-                                  StoreProvider.of<AppState>(context).dispatch(
-                                    RemoveStarredMessage.start(
-                                      user.uid,
-                                      starredMessages[index],
-                                    ),
-                                  );
-                                },
+                            Text(
+                              'Chat with friends to find your stars.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      );
+                    }
+
+                    return ListView.builder(
+                      itemCount: starredMessages.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: starredMessages[index].authorId == user!.uid ? Colors.blue : Colors.grey[800],
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(12),
+                                  ),
+                                ),
+                                child: ListTile(
+                                  leading: ClipOval(
+                                    child: CachedNetworkImage(
+                                      imageUrl: starredMessages[index].authorImageUrl!,
+                                      placeholder: (BuildContext context, String url) =>
+                                          const CircularProgressIndicator(),
+                                      fit: BoxFit.cover,
+                                      width: 50,
+                                      height: 50,
+                                    ),
+                                  ),
+                                  titleAlignment: ListTileTitleAlignment.center,
+                                  title: Text(
+                                    starredMessages[index].authorName!,
+                                  ),
+                                  subtitle: Text(
+                                    starredMessages[index].text,
+                                  ),
+                                  trailing: IconButton(
+                                    icon: const Icon(
+                                      Icons.delete,
+                                      color: Colors.red,
+                                    ),
+                                    onPressed: () {
+                                      StoreProvider.of<AppState>(context).dispatch(
+                                        RemoveStarredMessage.start(
+                                          user.uid,
+                                          starredMessages[index],
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     );
                   },
                 );

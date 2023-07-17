@@ -99,85 +99,95 @@ class ProductsPage extends StatelessWidget {
                 ],
               ),
               body: SafeArea(
-                child: ProductsContainer(
-                  builder: (BuildContext context, List<FoodieProduct> products) {
-                    if (products.isEmpty) {
-                      return Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'No products for this category yet.',
-                              style: TextStyle(
-                                color: Colors.grey[400],
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              'Use barcode scanner to add something.',
-                              style: TextStyle(
-                                color: Colors.grey[400],
-                                fontSize: 14,
-                              ),
-                            ),
-                          ],
-                        ),
+                child: PendingContainer(
+                  builder: (BuildContext context, Set<String> pending) {
+                    if (pending.contains(ListProducts.pendingKey)) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
                       );
                     }
 
-                    return ListView.builder(
-                      itemCount: products.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: <Widget>[
-                            GestureDetector(
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[800],
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(12),
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: <Widget>[
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.circular(12.0),
-                                          child: CachedNetworkImage(
-                                            imageUrl: products[index].imageUrl,
-                                            fit: BoxFit.cover,
-                                            width: 120,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 20),
-                                        Expanded(
-                                          child: Text(
-                                            products[index].name,
-                                            style: const TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                    return ProductsContainer(
+                      builder: (BuildContext context, List<FoodieProduct> products) {
+                        if (products.isEmpty) {
+                          return Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'No products for this category yet.',
+                                  style: TextStyle(
+                                    color: Colors.grey[400],
+                                    fontSize: 14,
                                   ),
                                 ),
-                              ),
-                              onTap: () {
-                                StoreProvider.of<AppState>(context).dispatch(
-                                  SetProduct.start(products[index].id),
-                                );
-                                PersistentNavBarNavigator.pushNewScreen(
-                                  context,
-                                  screen: const ProductDetailsPage(),
-                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                );
-                              },
+                                Text(
+                                  'Use barcode scanner to add something.',
+                                  style: TextStyle(
+                                    color: Colors.grey[400],
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          );
+                        }
+
+                        return ListView.builder(
+                          itemCount: products.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Column(
+                              children: <Widget>[
+                                GestureDetector(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[800],
+                                        borderRadius: const BorderRadius.all(
+                                          Radius.circular(12),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            ClipRRect(
+                                              borderRadius: BorderRadius.circular(12.0),
+                                              child: CachedNetworkImage(
+                                                imageUrl: products[index].imageUrl,
+                                                fit: BoxFit.cover,
+                                                width: 120,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 20),
+                                            Expanded(
+                                              child: Text(
+                                                products[index].name,
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    StoreProvider.of<AppState>(context).dispatch(
+                                      SetProduct.start(products[index].id),
+                                    );
+                                    PersistentNavBarNavigator.pushNewScreen(
+                                      context,
+                                      screen: const ProductDetailsPage(),
+                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                    );
+                                  },
+                                ),
+                              ],
+                            );
+                          },
                         );
                       },
                     );

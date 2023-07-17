@@ -16005,3 +16005,1113 @@ abstract class CheckStarredMessageError implements CheckStarredMessage, StopActi
   @JsonKey(ignore: true)
   _$$CheckStarredMessageErrorCopyWith<_$CheckStarredMessageError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$ListRecyclingStats {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<RecyclingStats> stats, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListRecyclingStatsStart value) start,
+    required TResult Function(ListRecyclingStatsSuccessful value) successful,
+    required TResult Function(ListRecyclingStatsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListRecyclingStatsStart value)? start,
+    TResult? Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult? Function(ListRecyclingStatsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListRecyclingStatsStart value)? start,
+    TResult Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult Function(ListRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListRecyclingStatsCopyWith<ListRecyclingStats> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListRecyclingStatsCopyWith<$Res> {
+  factory $ListRecyclingStatsCopyWith(ListRecyclingStats value, $Res Function(ListRecyclingStats) then) =
+      _$ListRecyclingStatsCopyWithImpl<$Res, ListRecyclingStats>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ListRecyclingStatsCopyWithImpl<$Res, $Val extends ListRecyclingStats>
+    implements $ListRecyclingStatsCopyWith<$Res> {
+  _$ListRecyclingStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ListRecyclingStatsStartCopyWith<$Res> implements $ListRecyclingStatsCopyWith<$Res> {
+  factory _$$ListRecyclingStatsStartCopyWith(
+          _$ListRecyclingStatsStart value, $Res Function(_$ListRecyclingStatsStart) then) =
+      __$$ListRecyclingStatsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, String pendingId});
+}
+
+/// @nodoc
+class __$$ListRecyclingStatsStartCopyWithImpl<$Res>
+    extends _$ListRecyclingStatsCopyWithImpl<$Res, _$ListRecyclingStatsStart>
+    implements _$$ListRecyclingStatsStartCopyWith<$Res> {
+  __$$ListRecyclingStatsStartCopyWithImpl(
+      _$ListRecyclingStatsStart _value, $Res Function(_$ListRecyclingStatsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListRecyclingStatsStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListRecyclingStatsStart implements ListRecyclingStatsStart {
+  const _$ListRecyclingStatsStart(this.uid, {this.pendingId = _kListRecyclingStatsPendingId});
+
+  @override
+  final String uid;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListRecyclingStats.start(uid: $uid, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListRecyclingStatsStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListRecyclingStatsStartCopyWith<_$ListRecyclingStatsStart> get copyWith =>
+      __$$ListRecyclingStatsStartCopyWithImpl<_$ListRecyclingStatsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<RecyclingStats> stats, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListRecyclingStatsStart value) start,
+    required TResult Function(ListRecyclingStatsSuccessful value) successful,
+    required TResult Function(ListRecyclingStatsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListRecyclingStatsStart value)? start,
+    TResult? Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult? Function(ListRecyclingStatsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListRecyclingStatsStart value)? start,
+    TResult Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult Function(ListRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListRecyclingStatsStart implements ListRecyclingStats, StartAction {
+  const factory ListRecyclingStatsStart(final String uid, {final String pendingId}) = _$ListRecyclingStatsStart;
+
+  String get uid;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListRecyclingStatsStartCopyWith<_$ListRecyclingStatsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListRecyclingStatsSuccessfulCopyWith<$Res> implements $ListRecyclingStatsCopyWith<$Res> {
+  factory _$$ListRecyclingStatsSuccessfulCopyWith(
+          _$ListRecyclingStatsSuccessful value, $Res Function(_$ListRecyclingStatsSuccessful) then) =
+      __$$ListRecyclingStatsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<RecyclingStats> stats, String pendingId});
+}
+
+/// @nodoc
+class __$$ListRecyclingStatsSuccessfulCopyWithImpl<$Res>
+    extends _$ListRecyclingStatsCopyWithImpl<$Res, _$ListRecyclingStatsSuccessful>
+    implements _$$ListRecyclingStatsSuccessfulCopyWith<$Res> {
+  __$$ListRecyclingStatsSuccessfulCopyWithImpl(
+      _$ListRecyclingStatsSuccessful _value, $Res Function(_$ListRecyclingStatsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? stats = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListRecyclingStatsSuccessful(
+      null == stats
+          ? _value._stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<RecyclingStats>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListRecyclingStatsSuccessful implements ListRecyclingStatsSuccessful {
+  const _$ListRecyclingStatsSuccessful(final List<RecyclingStats> stats,
+      [this.pendingId = _kListRecyclingStatsPendingId])
+      : _stats = stats;
+
+  final List<RecyclingStats> _stats;
+  @override
+  List<RecyclingStats> get stats {
+    if (_stats is EqualUnmodifiableListView) return _stats;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stats);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListRecyclingStats.successful(stats: $stats, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListRecyclingStatsSuccessful &&
+            const DeepCollectionEquality().equals(other._stats, _stats) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_stats), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListRecyclingStatsSuccessfulCopyWith<_$ListRecyclingStatsSuccessful> get copyWith =>
+      __$$ListRecyclingStatsSuccessfulCopyWithImpl<_$ListRecyclingStatsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<RecyclingStats> stats, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(stats, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(stats, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(stats, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListRecyclingStatsStart value) start,
+    required TResult Function(ListRecyclingStatsSuccessful value) successful,
+    required TResult Function(ListRecyclingStatsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListRecyclingStatsStart value)? start,
+    TResult? Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult? Function(ListRecyclingStatsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListRecyclingStatsStart value)? start,
+    TResult Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult Function(ListRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListRecyclingStatsSuccessful implements ListRecyclingStats, StopAction {
+  const factory ListRecyclingStatsSuccessful(final List<RecyclingStats> stats, [final String pendingId]) =
+      _$ListRecyclingStatsSuccessful;
+
+  List<RecyclingStats> get stats;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListRecyclingStatsSuccessfulCopyWith<_$ListRecyclingStatsSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListRecyclingStatsErrorCopyWith<$Res> implements $ListRecyclingStatsCopyWith<$Res> {
+  factory _$$ListRecyclingStatsErrorCopyWith(
+          _$ListRecyclingStatsError value, $Res Function(_$ListRecyclingStatsError) then) =
+      __$$ListRecyclingStatsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ListRecyclingStatsErrorCopyWithImpl<$Res>
+    extends _$ListRecyclingStatsCopyWithImpl<$Res, _$ListRecyclingStatsError>
+    implements _$$ListRecyclingStatsErrorCopyWith<$Res> {
+  __$$ListRecyclingStatsErrorCopyWithImpl(
+      _$ListRecyclingStatsError _value, $Res Function(_$ListRecyclingStatsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListRecyclingStatsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListRecyclingStatsError implements ListRecyclingStatsError {
+  const _$ListRecyclingStatsError(this.error, this.stackTrace, {this.pendingId = _kListRecyclingStatsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListRecyclingStats.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListRecyclingStatsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListRecyclingStatsErrorCopyWith<_$ListRecyclingStatsError> get copyWith =>
+      __$$ListRecyclingStatsErrorCopyWithImpl<_$ListRecyclingStatsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<RecyclingStats> stats, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<RecyclingStats> stats, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListRecyclingStatsStart value) start,
+    required TResult Function(ListRecyclingStatsSuccessful value) successful,
+    required TResult Function(ListRecyclingStatsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListRecyclingStatsStart value)? start,
+    TResult? Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult? Function(ListRecyclingStatsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListRecyclingStatsStart value)? start,
+    TResult Function(ListRecyclingStatsSuccessful value)? successful,
+    TResult Function(ListRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListRecyclingStatsError implements ListRecyclingStats, StopAction {
+  const factory ListRecyclingStatsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListRecyclingStatsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListRecyclingStatsErrorCopyWith<_$ListRecyclingStatsError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$UpdateRecyclingStats {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, RecyclingStats stats, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateRecyclingStatsStart value) start,
+    required TResult Function(UpdateRecyclingStatsSuccessful value) successful,
+    required TResult Function(UpdateRecyclingStatsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateRecyclingStatsStart value)? start,
+    TResult? Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult? Function(UpdateRecyclingStatsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateRecyclingStatsStart value)? start,
+    TResult Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult Function(UpdateRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateRecyclingStatsCopyWith<UpdateRecyclingStats> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateRecyclingStatsCopyWith<$Res> {
+  factory $UpdateRecyclingStatsCopyWith(UpdateRecyclingStats value, $Res Function(UpdateRecyclingStats) then) =
+      _$UpdateRecyclingStatsCopyWithImpl<$Res, UpdateRecyclingStats>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$UpdateRecyclingStatsCopyWithImpl<$Res, $Val extends UpdateRecyclingStats>
+    implements $UpdateRecyclingStatsCopyWith<$Res> {
+  _$UpdateRecyclingStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateRecyclingStatsStartCopyWith<$Res> implements $UpdateRecyclingStatsCopyWith<$Res> {
+  factory _$$UpdateRecyclingStatsStartCopyWith(
+          _$UpdateRecyclingStatsStart value, $Res Function(_$UpdateRecyclingStatsStart) then) =
+      __$$UpdateRecyclingStatsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, RecyclingStats stats, String pendingId});
+
+  $RecyclingStatsCopyWith<$Res> get stats;
+}
+
+/// @nodoc
+class __$$UpdateRecyclingStatsStartCopyWithImpl<$Res>
+    extends _$UpdateRecyclingStatsCopyWithImpl<$Res, _$UpdateRecyclingStatsStart>
+    implements _$$UpdateRecyclingStatsStartCopyWith<$Res> {
+  __$$UpdateRecyclingStatsStartCopyWithImpl(
+      _$UpdateRecyclingStatsStart _value, $Res Function(_$UpdateRecyclingStatsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? stats = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateRecyclingStatsStart(
+      null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as RecyclingStats,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecyclingStatsCopyWith<$Res> get stats {
+    return $RecyclingStatsCopyWith<$Res>(_value.stats, (value) {
+      return _then(_value.copyWith(stats: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRecyclingStatsStart implements UpdateRecyclingStatsStart {
+  const _$UpdateRecyclingStatsStart(this.uid, this.stats, {this.pendingId = _kUpdateRecyclingStatsPendingId});
+
+  @override
+  final String uid;
+  @override
+  final RecyclingStats stats;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateRecyclingStats.start(uid: $uid, stats: $stats, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRecyclingStatsStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.stats, stats) || other.stats == stats) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, stats, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRecyclingStatsStartCopyWith<_$UpdateRecyclingStatsStart> get copyWith =>
+      __$$UpdateRecyclingStatsStartCopyWithImpl<_$UpdateRecyclingStatsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, RecyclingStats stats, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, stats, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, stats, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, stats, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateRecyclingStatsStart value) start,
+    required TResult Function(UpdateRecyclingStatsSuccessful value) successful,
+    required TResult Function(UpdateRecyclingStatsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateRecyclingStatsStart value)? start,
+    TResult? Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult? Function(UpdateRecyclingStatsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateRecyclingStatsStart value)? start,
+    TResult Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult Function(UpdateRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRecyclingStatsStart implements UpdateRecyclingStats, StartAction {
+  const factory UpdateRecyclingStatsStart(final String uid, final RecyclingStats stats, {final String pendingId}) =
+      _$UpdateRecyclingStatsStart;
+
+  String get uid;
+  RecyclingStats get stats;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateRecyclingStatsStartCopyWith<_$UpdateRecyclingStatsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRecyclingStatsSuccessfulCopyWith<$Res> implements $UpdateRecyclingStatsCopyWith<$Res> {
+  factory _$$UpdateRecyclingStatsSuccessfulCopyWith(
+          _$UpdateRecyclingStatsSuccessful value, $Res Function(_$UpdateRecyclingStatsSuccessful) then) =
+      __$$UpdateRecyclingStatsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateRecyclingStatsSuccessfulCopyWithImpl<$Res>
+    extends _$UpdateRecyclingStatsCopyWithImpl<$Res, _$UpdateRecyclingStatsSuccessful>
+    implements _$$UpdateRecyclingStatsSuccessfulCopyWith<$Res> {
+  __$$UpdateRecyclingStatsSuccessfulCopyWithImpl(
+      _$UpdateRecyclingStatsSuccessful _value, $Res Function(_$UpdateRecyclingStatsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateRecyclingStatsSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRecyclingStatsSuccessful implements UpdateRecyclingStatsSuccessful {
+  const _$UpdateRecyclingStatsSuccessful([this.pendingId = _kUpdateRecyclingStatsPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateRecyclingStats.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRecyclingStatsSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRecyclingStatsSuccessfulCopyWith<_$UpdateRecyclingStatsSuccessful> get copyWith =>
+      __$$UpdateRecyclingStatsSuccessfulCopyWithImpl<_$UpdateRecyclingStatsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, RecyclingStats stats, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateRecyclingStatsStart value) start,
+    required TResult Function(UpdateRecyclingStatsSuccessful value) successful,
+    required TResult Function(UpdateRecyclingStatsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateRecyclingStatsStart value)? start,
+    TResult? Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult? Function(UpdateRecyclingStatsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateRecyclingStatsStart value)? start,
+    TResult Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult Function(UpdateRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRecyclingStatsSuccessful implements UpdateRecyclingStats, StopAction {
+  const factory UpdateRecyclingStatsSuccessful([final String pendingId]) = _$UpdateRecyclingStatsSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateRecyclingStatsSuccessfulCopyWith<_$UpdateRecyclingStatsSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRecyclingStatsErrorCopyWith<$Res> implements $UpdateRecyclingStatsCopyWith<$Res> {
+  factory _$$UpdateRecyclingStatsErrorCopyWith(
+          _$UpdateRecyclingStatsError value, $Res Function(_$UpdateRecyclingStatsError) then) =
+      __$$UpdateRecyclingStatsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateRecyclingStatsErrorCopyWithImpl<$Res>
+    extends _$UpdateRecyclingStatsCopyWithImpl<$Res, _$UpdateRecyclingStatsError>
+    implements _$$UpdateRecyclingStatsErrorCopyWith<$Res> {
+  __$$UpdateRecyclingStatsErrorCopyWithImpl(
+      _$UpdateRecyclingStatsError _value, $Res Function(_$UpdateRecyclingStatsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateRecyclingStatsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRecyclingStatsError implements UpdateRecyclingStatsError {
+  const _$UpdateRecyclingStatsError(this.error, this.stackTrace, {this.pendingId = _kUpdateRecyclingStatsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateRecyclingStats.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRecyclingStatsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRecyclingStatsErrorCopyWith<_$UpdateRecyclingStatsError> get copyWith =>
+      __$$UpdateRecyclingStatsErrorCopyWithImpl<_$UpdateRecyclingStatsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, RecyclingStats stats, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, RecyclingStats stats, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateRecyclingStatsStart value) start,
+    required TResult Function(UpdateRecyclingStatsSuccessful value) successful,
+    required TResult Function(UpdateRecyclingStatsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateRecyclingStatsStart value)? start,
+    TResult? Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult? Function(UpdateRecyclingStatsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateRecyclingStatsStart value)? start,
+    TResult Function(UpdateRecyclingStatsSuccessful value)? successful,
+    TResult Function(UpdateRecyclingStatsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRecyclingStatsError implements UpdateRecyclingStats, StopAction {
+  const factory UpdateRecyclingStatsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$UpdateRecyclingStatsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateRecyclingStatsErrorCopyWith<_$UpdateRecyclingStatsError> get copyWith => throw _privateConstructorUsedError;
+}

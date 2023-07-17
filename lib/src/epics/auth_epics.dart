@@ -38,6 +38,7 @@ class AuthEpics implements EpicClass<AppState> {
           if (hasLoggedIn) ...<dynamic>[
             const ListProductCategories.start(null),
             const ListMealCategories.start(),
+            ListRecyclingStats.start(users.last!.uid),
             ListContacts.start(users.last!.uid),
           ]
         ];

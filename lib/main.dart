@@ -18,6 +18,7 @@ import 'src/data/contacts_api.dart';
 import 'src/data/go_upc_api.dart';
 import 'src/data/meals_api.dart';
 import 'src/data/products_api.dart';
+import 'src/data/recycling_stats_api.dart';
 import 'src/data/starred_messages_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
@@ -25,6 +26,7 @@ import 'src/epics/contacts_epics.dart';
 import 'src/epics/go_upc_epics.dart';
 import 'src/epics/meals_epics.dart';
 import 'src/epics/products_epics.dart';
+import 'src/epics/recycling_stats.dart';
 import 'src/epics/starred_messages_epics.dart';
 import 'src/models/index.dart';
 import 'src/presentations/containers/index.dart';
@@ -75,6 +77,9 @@ Future<void> main() async {
   final StarredMessagesApi starredMessagesApi = StarredMessagesApi(FirebaseFirestore.instance);
   final StarredMessagesEpics starredMessagesEpics = StarredMessagesEpics(starredMessagesApi);
 
+  final RecyclingStatsApi recyclingStatsApi = RecyclingStatsApi(FirebaseFirestore.instance);
+  final RecyclingStatsEpics recyclingStatsEpics = RecyclingStatsEpics(recyclingStatsApi);
+
   final AppEpics epic = AppEpics(
     auth,
     products,
@@ -82,6 +87,7 @@ Future<void> main() async {
     mealsEpics,
     contactsEpics,
     starredMessagesEpics,
+    recyclingStatsEpics,
   );
 
   final Store<AppState> store = Store<AppState>(

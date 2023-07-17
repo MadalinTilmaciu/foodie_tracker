@@ -42,6 +42,9 @@ part 'starred_messages/list_starred_messages.dart';
 part 'starred_messages/remove_starred_message.dart';
 part 'starred_messages/check_starred_message.dart';
 
+part 'recycling_stats/list_recycling_stats.dart';
+part 'recycling_stats/update_recycling_stats.dart';
+
 abstract class PendingActions {
   String get pendingId;
 }

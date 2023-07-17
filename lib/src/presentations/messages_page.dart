@@ -116,6 +116,12 @@ class MessagesPage extends StatelessWidget {
                   stream: FirebaseChatCore.instance.rooms(),
                   initialData: const <types.Room>[],
                   builder: (BuildContext context, AsyncSnapshot<List<types.Room>> snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+
                     if (!snapshot.hasData || snapshot.data!.isEmpty) {
                       return Center(
                         child: Column(

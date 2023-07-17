@@ -25,6 +25,7 @@ mixin _$AppState {
   MealState get meals => throw _privateConstructorUsedError;
   ContactState get contacts => throw _privateConstructorUsedError;
   StarredMessageState get starredMessages => throw _privateConstructorUsedError;
+  RecyclingStatsState get recyclingStats => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $AppStateCopyWith<$Res> {
       MealState meals,
       ContactState contacts,
       StarredMessageState starredMessages,
+      RecyclingStatsState recyclingStats,
       Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
@@ -49,6 +51,7 @@ abstract class $AppStateCopyWith<$Res> {
   $MealStateCopyWith<$Res> get meals;
   $ContactStateCopyWith<$Res> get contacts;
   $StarredMessageStateCopyWith<$Res> get starredMessages;
+  $RecyclingStatsStateCopyWith<$Res> get recyclingStats;
 }
 
 /// @nodoc
@@ -68,6 +71,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? meals = null,
     Object? contacts = null,
     Object? starredMessages = null,
+    Object? recyclingStats = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -91,6 +95,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.starredMessages
           : starredMessages // ignore: cast_nullable_to_non_nullable
               as StarredMessageState,
+      recyclingStats: null == recyclingStats
+          ? _value.recyclingStats
+          : recyclingStats // ignore: cast_nullable_to_non_nullable
+              as RecyclingStatsState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -137,6 +145,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(starredMessages: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecyclingStatsStateCopyWith<$Res> get recyclingStats {
+    return $RecyclingStatsStateCopyWith<$Res>(_value.recyclingStats, (value) {
+      return _then(_value.copyWith(recyclingStats: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -150,6 +166,7 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       MealState meals,
       ContactState contacts,
       StarredMessageState starredMessages,
+      RecyclingStatsState recyclingStats,
       Set<String> pendingActions});
 
   @override
@@ -162,6 +179,8 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $ContactStateCopyWith<$Res> get contacts;
   @override
   $StarredMessageStateCopyWith<$Res> get starredMessages;
+  @override
+  $RecyclingStatsStateCopyWith<$Res> get recyclingStats;
 }
 
 /// @nodoc
@@ -177,6 +196,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
     Object? meals = null,
     Object? contacts = null,
     Object? starredMessages = null,
+    Object? recyclingStats = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -200,6 +220,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.starredMessages
           : starredMessages // ignore: cast_nullable_to_non_nullable
               as StarredMessageState,
+      recyclingStats: null == recyclingStats
+          ? _value.recyclingStats
+          : recyclingStats // ignore: cast_nullable_to_non_nullable
+              as RecyclingStatsState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -217,6 +241,7 @@ class _$_AppState implements _AppState {
       this.meals = const MealState(),
       this.contacts = const ContactState(),
       this.starredMessages = const StarredMessageState(),
+      this.recyclingStats = const RecyclingStatsState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -237,6 +262,9 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final StarredMessageState starredMessages;
+  @override
+  @JsonKey()
+  final RecyclingStatsState recyclingStats;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -248,7 +276,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, starredMessages: $starredMessages, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, starredMessages: $starredMessages, recyclingStats: $recyclingStats, pendingActions: $pendingActions)';
   }
 
   @override
@@ -261,12 +289,13 @@ class _$_AppState implements _AppState {
             (identical(other.meals, meals) || other.meals == meals) &&
             (identical(other.contacts, contacts) || other.contacts == contacts) &&
             (identical(other.starredMessages, starredMessages) || other.starredMessages == starredMessages) &&
+            (identical(other.recyclingStats, recyclingStats) || other.recyclingStats == recyclingStats) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, auth, products, meals, contacts, starredMessages,
+  int get hashCode => Object.hash(runtimeType, auth, products, meals, contacts, starredMessages, recyclingStats,
       const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
@@ -289,6 +318,7 @@ abstract class _AppState implements AppState {
       final MealState meals,
       final ContactState contacts,
       final StarredMessageState starredMessages,
+      final RecyclingStatsState recyclingStats,
       final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
@@ -303,6 +333,8 @@ abstract class _AppState implements AppState {
   ContactState get contacts;
   @override
   StarredMessageState get starredMessages;
+  @override
+  RecyclingStatsState get recyclingStats;
   @override
   Set<String> get pendingActions;
   @override
@@ -4554,4 +4586,299 @@ abstract class _StarredMessageState implements StarredMessageState {
   @override
   @JsonKey(ignore: true)
   _$$_StarredMessageStateCopyWith<_$_StarredMessageState> get copyWith => throw _privateConstructorUsedError;
+}
+
+RecyclingStats _$RecyclingStatsFromJson(Map<String, dynamic> json) {
+  return _RecyclingStats.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RecyclingStats {
+  String get packageName => throw _privateConstructorUsedError;
+  int get totalProducts => throw _privateConstructorUsedError;
+  int get recycledProducts => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RecyclingStatsCopyWith<RecyclingStats> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RecyclingStatsCopyWith<$Res> {
+  factory $RecyclingStatsCopyWith(RecyclingStats value, $Res Function(RecyclingStats) then) =
+      _$RecyclingStatsCopyWithImpl<$Res, RecyclingStats>;
+  @useResult
+  $Res call({String packageName, int totalProducts, int recycledProducts});
+}
+
+/// @nodoc
+class _$RecyclingStatsCopyWithImpl<$Res, $Val extends RecyclingStats> implements $RecyclingStatsCopyWith<$Res> {
+  _$RecyclingStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? packageName = null,
+    Object? totalProducts = null,
+    Object? recycledProducts = null,
+  }) {
+    return _then(_value.copyWith(
+      packageName: null == packageName
+          ? _value.packageName
+          : packageName // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalProducts: null == totalProducts
+          ? _value.totalProducts
+          : totalProducts // ignore: cast_nullable_to_non_nullable
+              as int,
+      recycledProducts: null == recycledProducts
+          ? _value.recycledProducts
+          : recycledProducts // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_RecyclingStatsCopyWith<$Res> implements $RecyclingStatsCopyWith<$Res> {
+  factory _$$_RecyclingStatsCopyWith(_$_RecyclingStats value, $Res Function(_$_RecyclingStats) then) =
+      __$$_RecyclingStatsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String packageName, int totalProducts, int recycledProducts});
+}
+
+/// @nodoc
+class __$$_RecyclingStatsCopyWithImpl<$Res> extends _$RecyclingStatsCopyWithImpl<$Res, _$_RecyclingStats>
+    implements _$$_RecyclingStatsCopyWith<$Res> {
+  __$$_RecyclingStatsCopyWithImpl(_$_RecyclingStats _value, $Res Function(_$_RecyclingStats) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? packageName = null,
+    Object? totalProducts = null,
+    Object? recycledProducts = null,
+  }) {
+    return _then(_$_RecyclingStats(
+      packageName: null == packageName
+          ? _value.packageName
+          : packageName // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalProducts: null == totalProducts
+          ? _value.totalProducts
+          : totalProducts // ignore: cast_nullable_to_non_nullable
+              as int,
+      recycledProducts: null == recycledProducts
+          ? _value.recycledProducts
+          : recycledProducts // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_RecyclingStats implements _RecyclingStats {
+  _$_RecyclingStats({required this.packageName, required this.totalProducts, required this.recycledProducts});
+
+  factory _$_RecyclingStats.fromJson(Map<String, dynamic> json) => _$$_RecyclingStatsFromJson(json);
+
+  @override
+  final String packageName;
+  @override
+  final int totalProducts;
+  @override
+  final int recycledProducts;
+
+  @override
+  String toString() {
+    return 'RecyclingStats(packageName: $packageName, totalProducts: $totalProducts, recycledProducts: $recycledProducts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RecyclingStats &&
+            (identical(other.packageName, packageName) || other.packageName == packageName) &&
+            (identical(other.totalProducts, totalProducts) || other.totalProducts == totalProducts) &&
+            (identical(other.recycledProducts, recycledProducts) || other.recycledProducts == recycledProducts));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, packageName, totalProducts, recycledProducts);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecyclingStatsCopyWith<_$_RecyclingStats> get copyWith =>
+      __$$_RecyclingStatsCopyWithImpl<_$_RecyclingStats>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RecyclingStatsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RecyclingStats implements RecyclingStats {
+  factory _RecyclingStats(
+      {required final String packageName,
+      required final int totalProducts,
+      required final int recycledProducts}) = _$_RecyclingStats;
+
+  factory _RecyclingStats.fromJson(Map<String, dynamic> json) = _$_RecyclingStats.fromJson;
+
+  @override
+  String get packageName;
+  @override
+  int get totalProducts;
+  @override
+  int get recycledProducts;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RecyclingStatsCopyWith<_$_RecyclingStats> get copyWith => throw _privateConstructorUsedError;
+}
+
+RecyclingStatsState _$RecyclingStatsStateFromJson(Map<String, dynamic> json) {
+  return _RecyclingStatsState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RecyclingStatsState {
+  List<RecyclingStats> get recyclingStats => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RecyclingStatsStateCopyWith<RecyclingStatsState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RecyclingStatsStateCopyWith<$Res> {
+  factory $RecyclingStatsStateCopyWith(RecyclingStatsState value, $Res Function(RecyclingStatsState) then) =
+      _$RecyclingStatsStateCopyWithImpl<$Res, RecyclingStatsState>;
+  @useResult
+  $Res call({List<RecyclingStats> recyclingStats});
+}
+
+/// @nodoc
+class _$RecyclingStatsStateCopyWithImpl<$Res, $Val extends RecyclingStatsState>
+    implements $RecyclingStatsStateCopyWith<$Res> {
+  _$RecyclingStatsStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recyclingStats = null,
+  }) {
+    return _then(_value.copyWith(
+      recyclingStats: null == recyclingStats
+          ? _value.recyclingStats
+          : recyclingStats // ignore: cast_nullable_to_non_nullable
+              as List<RecyclingStats>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_RecyclingStatsStateCopyWith<$Res> implements $RecyclingStatsStateCopyWith<$Res> {
+  factory _$$_RecyclingStatsStateCopyWith(_$_RecyclingStatsState value, $Res Function(_$_RecyclingStatsState) then) =
+      __$$_RecyclingStatsStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<RecyclingStats> recyclingStats});
+}
+
+/// @nodoc
+class __$$_RecyclingStatsStateCopyWithImpl<$Res> extends _$RecyclingStatsStateCopyWithImpl<$Res, _$_RecyclingStatsState>
+    implements _$$_RecyclingStatsStateCopyWith<$Res> {
+  __$$_RecyclingStatsStateCopyWithImpl(_$_RecyclingStatsState _value, $Res Function(_$_RecyclingStatsState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recyclingStats = null,
+  }) {
+    return _then(_$_RecyclingStatsState(
+      recyclingStats: null == recyclingStats
+          ? _value._recyclingStats
+          : recyclingStats // ignore: cast_nullable_to_non_nullable
+              as List<RecyclingStats>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_RecyclingStatsState implements _RecyclingStatsState {
+  const _$_RecyclingStatsState({final List<RecyclingStats> recyclingStats = const <RecyclingStats>[]})
+      : _recyclingStats = recyclingStats;
+
+  factory _$_RecyclingStatsState.fromJson(Map<String, dynamic> json) => _$$_RecyclingStatsStateFromJson(json);
+
+  final List<RecyclingStats> _recyclingStats;
+  @override
+  @JsonKey()
+  List<RecyclingStats> get recyclingStats {
+    if (_recyclingStats is EqualUnmodifiableListView) return _recyclingStats;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_recyclingStats);
+  }
+
+  @override
+  String toString() {
+    return 'RecyclingStatsState(recyclingStats: $recyclingStats)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RecyclingStatsState &&
+            const DeepCollectionEquality().equals(other._recyclingStats, _recyclingStats));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_recyclingStats));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecyclingStatsStateCopyWith<_$_RecyclingStatsState> get copyWith =>
+      __$$_RecyclingStatsStateCopyWithImpl<_$_RecyclingStatsState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RecyclingStatsStateToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RecyclingStatsState implements RecyclingStatsState {
+  const factory _RecyclingStatsState({final List<RecyclingStats> recyclingStats}) = _$_RecyclingStatsState;
+
+  factory _RecyclingStatsState.fromJson(Map<String, dynamic> json) = _$_RecyclingStatsState.fromJson;
+
+  @override
+  List<RecyclingStats> get recyclingStats;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RecyclingStatsStateCopyWith<_$_RecyclingStatsState> get copyWith => throw _privateConstructorUsedError;
 }

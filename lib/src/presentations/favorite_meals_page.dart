@@ -39,102 +39,112 @@ class FavoriteMealsPage extends StatelessWidget {
             ),
           ),
           body: SafeArea(
-            child: FavoriteMealsContainer(
-              builder: (BuildContext context, List<Meal> favoriteMeals) {
-                if (favoriteMeals.isEmpty) {
-                  return Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'No favorite meals yet.',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'Explore meals to find your favorites.',
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
+            child: PendingContainer(
+              builder: (BuildContext context, Set<String> pending) {
+                if (pending.contains(ListFavoriteMeals.pendingKey)) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
                   );
                 }
 
-                return ListView.builder(
-                  itemCount: favoriteMeals.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      children: <Widget>[
-                        GestureDetector(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey[800],
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(12),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: CachedNetworkImage(
-                                        imageUrl: favoriteMeals[index].pictureUrl,
-                                        fit: BoxFit.cover,
-                                        width: 120,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 20),
-                                    Expanded(
-                                      child: Text(
-                                        favoriteMeals[index].name,
-                                        style: const TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                return FavoriteMealsContainer(
+                  builder: (BuildContext context, List<Meal> favoriteMeals) {
+                    if (favoriteMeals.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'No favorite meals yet.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
                               ),
                             ),
-                          ),
-                          onTap: () {
-                            StoreProvider.of<AppState>(context)
-                              ..dispatch(
-                                GetRecipeDetails.start(
-                                  favoriteMeals[index].id,
-                                ),
-                              )
-                              ..dispatch(
-                                CheckFavoriteMeal.start(
-                                  user!.uid,
-                                  favoriteMeals[index].id,
-                                ),
-                              )
-                              ..dispatch(
-                                SetMeal.start(favoriteMeals[index].id),
-                              );
-
-                            Future<dynamic>.delayed(const Duration(milliseconds: 500)).then(
-                              (_) => <dynamic>{
-                                PersistentNavBarNavigator.pushNewScreen(
-                                  context,
-                                  screen: const MealRecipePage(),
-                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                )
-                              },
-                            );
-                          },
+                            Text(
+                              'Explore meals to find your favorites.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      );
+                    }
+
+                    return ListView.builder(
+                      itemCount: favoriteMeals.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: <Widget>[
+                            GestureDetector(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey[800],
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(12),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: <Widget>[
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(12.0),
+                                          child: CachedNetworkImage(
+                                            imageUrl: favoriteMeals[index].pictureUrl,
+                                            fit: BoxFit.cover,
+                                            width: 120,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 20),
+                                        Expanded(
+                                          child: Text(
+                                            favoriteMeals[index].name,
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              onTap: () {
+                                StoreProvider.of<AppState>(context)
+                                  ..dispatch(
+                                    GetRecipeDetails.start(
+                                      favoriteMeals[index].id,
+                                    ),
+                                  )
+                                  ..dispatch(
+                                    CheckFavoriteMeal.start(
+                                      user!.uid,
+                                      favoriteMeals[index].id,
+                                    ),
+                                  )
+                                  ..dispatch(
+                                    SetMeal.start(favoriteMeals[index].id),
+                                  );
+
+                                Future<dynamic>.delayed(const Duration(milliseconds: 500)).then(
+                                  (_) => <dynamic>{
+                                    PersistentNavBarNavigator.pushNewScreen(
+                                      context,
+                                      screen: const MealRecipePage(),
+                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                    )
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                      },
                     );
                   },
                 );

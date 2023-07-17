@@ -25,3 +25,6 @@ part 'contacts/contact_state.dart';
 
 part 'starred_messages/starred_message.dart';
 part 'starred_messages/starred_message_state.dart';
+
+part 'recycling_stats/recycling_stats.dart';
+part 'recycling_stats/recycling_stats_state.dart';

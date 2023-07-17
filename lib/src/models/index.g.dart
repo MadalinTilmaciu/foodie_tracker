@@ -18,6 +18,9 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
       starredMessages: json['starredMessages'] == null
           ? const StarredMessageState()
           : StarredMessageState.fromJson(json['starredMessages'] as Map<String, dynamic>),
+      recyclingStats: json['recyclingStats'] == null
+          ? const RecyclingStatsState()
+          : RecyclingStatsState.fromJson(json['recyclingStats'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -28,6 +31,7 @@ Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynami
       'meals': instance.meals.toJson(),
       'contacts': instance.contacts.toJson(),
       'starredMessages': instance.starredMessages.toJson(),
+      'recyclingStats': instance.recyclingStats.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -370,4 +374,27 @@ _$_StarredMessageState _$$_StarredMessageStateFromJson(Map<String, dynamic> json
 Map<String, dynamic> _$$_StarredMessageStateToJson(_$_StarredMessageState instance) => <String, dynamic>{
       'messages': instance.messages.map((StarredMessage e) => e.toJson()).toList(),
       'isStarred': instance.isStarred,
+    };
+
+_$_RecyclingStats _$$_RecyclingStatsFromJson(Map<String, dynamic> json) => _$_RecyclingStats(
+      packageName: json['packageName'] as String,
+      totalProducts: json['totalProducts'] as int,
+      recycledProducts: json['recycledProducts'] as int,
+    );
+
+Map<String, dynamic> _$$_RecyclingStatsToJson(_$_RecyclingStats instance) => <String, dynamic>{
+      'packageName': instance.packageName,
+      'totalProducts': instance.totalProducts,
+      'recycledProducts': instance.recycledProducts,
+    };
+
+_$_RecyclingStatsState _$$_RecyclingStatsStateFromJson(Map<String, dynamic> json) => _$_RecyclingStatsState(
+      recyclingStats: (json['recyclingStats'] as List<dynamic>?)
+              ?.map((dynamic e) => RecyclingStats.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <RecyclingStats>[],
+    );
+
+Map<String, dynamic> _$$_RecyclingStatsStateToJson(_$_RecyclingStatsState instance) => <String, dynamic>{
+      'recyclingStats': instance.recyclingStats.map((RecyclingStats e) => e.toJson()).toList(),
     };
