@@ -117,6 +117,11 @@ class FavoriteMealsPage extends StatelessWidget {
                               onTap: () {
                                 StoreProvider.of<AppState>(context)
                                   ..dispatch(
+                                    SearchMeal.start(
+                                      favoriteMeals[index].name,
+                                    ),
+                                  )
+                                  ..dispatch(
                                     GetRecipeDetails.start(
                                       favoriteMeals[index].id,
                                     ),
