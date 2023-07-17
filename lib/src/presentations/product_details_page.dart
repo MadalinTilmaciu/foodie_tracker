@@ -177,43 +177,95 @@ class ProductDetailsPage extends StatelessWidget {
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () {
-                                  final RecyclingStats currentStats = stats
+                                  Navigator.pop(context);
+
+                                  late RecyclingStats updatedStats;
+                                  late RecyclingStats currentStats;
+
+                                  if (stats
                                       .where((RecyclingStats element) => element.packageName == product.package)
-                                      .first;
+                                      .isNotEmpty) {
+                                    currentStats = stats
+                                        .where((RecyclingStats element) => element.packageName == product.package)
+                                        .first;
 
-                                  final RecyclingStats updatedStats = RecyclingStats(
-                                    packageName: currentStats.packageName,
-                                    recycledProducts: currentStats.recycledProducts + 1,
-                                    totalProducts: currentStats.totalProducts + 1,
-                                  );
+                                    updatedStats = RecyclingStats(
+                                      packageName: currentStats.packageName,
+                                      recycledProducts: currentStats.recycledProducts + 1,
+                                      totalProducts: currentStats.totalProducts + 1,
+                                    );
+                                  } else {
+                                    updatedStats = RecyclingStats(
+                                      packageName: product.package.toString(),
+                                      recycledProducts: 1,
+                                      totalProducts: 1,
+                                    );
+                                  }
 
-                                  StoreProvider.of<AppState>(context).dispatch(
-                                    UpdateRecyclingStats.start(
-                                      user!.uid,
-                                      updatedStats,
-                                    ),
-                                  );
+                                  StoreProvider.of<AppState>(context)
+                                    ..dispatch(
+                                      UpdateRecyclingStats.start(
+                                        user!.uid,
+                                        updatedStats,
+                                      ),
+                                    )
+                                    ..dispatch(
+                                      DeleteProduct.start(
+                                        uid: user.uid,
+                                        productId: product.id,
+                                        categoryId: product.categoryId,
+                                      ),
+                                    )
+                                    ..dispatch(
+                                      ListRecyclingStats.start(user.uid),
+                                    );
                                 },
                                 child: const Text('Yes'),
                               ),
                               TextButton(
                                 onPressed: () {
-                                  final RecyclingStats currentStats = stats
+                                  Navigator.pop(context);
+
+                                  late RecyclingStats updatedStats;
+                                  late RecyclingStats currentStats;
+
+                                  if (stats
                                       .where((RecyclingStats element) => element.packageName == product.package)
-                                      .first;
+                                      .isNotEmpty) {
+                                    currentStats = stats
+                                        .where((RecyclingStats element) => element.packageName == product.package)
+                                        .first;
 
-                                  final RecyclingStats updatedStats = RecyclingStats(
-                                    packageName: currentStats.packageName,
-                                    recycledProducts: currentStats.recycledProducts,
-                                    totalProducts: currentStats.totalProducts + 1,
-                                  );
+                                    updatedStats = RecyclingStats(
+                                      packageName: currentStats.packageName,
+                                      recycledProducts: currentStats.recycledProducts + 1,
+                                      totalProducts: currentStats.totalProducts + 1,
+                                    );
+                                  } else {
+                                    updatedStats = RecyclingStats(
+                                      packageName: product.package.toString(),
+                                      recycledProducts: 1,
+                                      totalProducts: 1,
+                                    );
+                                  }
 
-                                  StoreProvider.of<AppState>(context).dispatch(
-                                    UpdateRecyclingStats.start(
-                                      user!.uid,
-                                      updatedStats,
-                                    ),
-                                  );
+                                  StoreProvider.of<AppState>(context)
+                                    ..dispatch(
+                                      UpdateRecyclingStats.start(
+                                        user!.uid,
+                                        updatedStats,
+                                      ),
+                                    )
+                                    ..dispatch(
+                                      DeleteProduct.start(
+                                        uid: user.uid,
+                                        productId: product.id,
+                                        categoryId: product.categoryId,
+                                      ),
+                                    )
+                                    ..dispatch(
+                                      ListRecyclingStats.start(user.uid),
+                                    );
                                 },
                                 child: const Text('No'),
                               ),
@@ -221,14 +273,6 @@ class ProductDetailsPage extends StatelessWidget {
                           );
                         },
                       );
-                      StoreProvider.of<AppState>(context).dispatch(
-                        DeleteProduct.start(
-                          uid: user!.uid,
-                          productId: product.id,
-                          categoryId: product.categoryId,
-                        ),
-                      );
-                      Navigator.pop(context);
                     },
                   ),
                 );

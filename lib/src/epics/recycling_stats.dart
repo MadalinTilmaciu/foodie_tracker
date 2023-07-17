@@ -23,10 +23,17 @@ class RecyclingStatsEpics implements EpicClass<AppState> {
   Stream<dynamic> _listRecyclingStatsStart(Stream<ListRecyclingStatsStart> actions, EpicStore<AppState> store) {
     return actions.flatMap(
       (ListRecyclingStatsStart action) {
-        return Stream<void>.value(null)
-            .asyncMap((_) => _api.listRecyclingStats(action.uid))
-            .map((List<RecyclingStats> RecyclingStats) => ListRecyclingStats.successful(RecyclingStats))
-            .onErrorReturnWith((Object error, StackTrace stackTrace) => ListRecyclingStats.error(error, stackTrace));
+        return Stream<void>.value(null).asyncMap((_) => _api.listRecyclingStats(action.uid)).expand(
+          (List<RecyclingStats> recyclingStats) {
+            recyclingStats.sort(
+              (RecyclingStats a, RecyclingStats b) {
+                return a.packageName.compareTo(b.packageName);
+              },
+            );
+
+            return <dynamic>[ListRecyclingStats.successful(recyclingStats)];
+          },
+        ).onErrorReturnWith((Object error, StackTrace stackTrace) => ListRecyclingStats.error(error, stackTrace));
       },
     );
   }
