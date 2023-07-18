@@ -64,6 +64,7 @@ class FeedbackPage extends StatelessWidget {
                   height: 50,
                   onPressed: () {
                     feedback.clear();
+                    FocusManager.instance.primaryFocus?.unfocus();
                   },
                   color: Theme.of(context).colorScheme.primary,
                   elevation: 0,

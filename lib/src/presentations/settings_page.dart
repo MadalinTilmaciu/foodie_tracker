@@ -13,6 +13,7 @@ import 'containers/index.dart';
 import 'edit_profile_page.dart';
 import 'favorite_meals_page.dart';
 import 'feedback_page.dart';
+import 'learning_page.dart';
 import 'recycling_stats_page.dart';
 import 'starred_messages_page.dart';
 import 'user_qr_page.dart';
@@ -273,9 +274,16 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Image.asset('assets/icons/icons8-question-mark-50.png'),
                       ),
                       title: const Text(
-                        'Help',
+                        'Learn to recycle',
                         style: TextStyle(fontSize: 15),
                       ),
+                      onPressed: (BuildContext context) {
+                        PersistentNavBarNavigator.pushNewScreen(
+                          context,
+                          screen: const LearningPage(),
+                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                        );
+                      },
                     ),
                     SettingsTile.navigation(
                       leading: SizedBox(

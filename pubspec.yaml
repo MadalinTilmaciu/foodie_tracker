@@ -22,6 +22,7 @@ dependencies:
   firebase_storage: ^11.2.4
   flutter:
     sdk: flutter
+  flutter_cached_pdfview: ^0.4.2
   flutter_chat_ui: ^1.6.9
   flutter_chat_types: ^3.6.2
   flutter_dotenv: ^5.0.2
@@ -71,4 +72,16 @@ flutter:
     - assets/icons/icons8-ingredients-50.png
     - assets/icons/icons8-instructions-49.png
     - assets/icons/icons8-video-64.png
+    - assets/ilustrations/bioplastics.png
+    - assets/ilustrations/plastic.png
+    - assets/ilustrations/glass.png
+    - assets/ilustrations/metal.png
+    - assets/ilustrations/paper_board.png
+    - assets/ilustrations/multimaterial.png
+    - assets/documents/bioplastics.pdf
+    - assets/documents/plastic.pdf
+    - assets/documents/glass.pdf
+    - assets/documents/metal.pdf
+    - assets/documents/paper_board.pdf
+    - assets/documents/multimaterial.pdf
     - .env
