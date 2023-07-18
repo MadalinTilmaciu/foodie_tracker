@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'containers/index.dart';
+import 'edit_product_page.dart';
 
 class ProductDetailsPage extends StatelessWidget {
   const ProductDetailsPage({super.key});
@@ -82,6 +84,7 @@ class ProductDetailsPage extends StatelessWidget {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
+                                    const SizedBox(height: 16),
                                     if (product.description != null) const SizedBox(height: 8),
                                     if (product.description != null)
                                       Text(
@@ -100,13 +103,13 @@ class ProductDetailsPage extends StatelessWidget {
                                         leading: const Text(
                                           'Quantity',
                                           style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                         trailing: Text(
                                           '${product.quantity}',
                                           style: const TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                       ),
@@ -119,13 +122,13 @@ class ProductDetailsPage extends StatelessWidget {
                                         leading: const Text(
                                           'Package',
                                           style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                         trailing: Text(
                                           '${product.package}',
                                           style: const TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                       ),
@@ -138,142 +141,179 @@ class ProductDetailsPage extends StatelessWidget {
                                         leading: const Text(
                                           'Expiration date',
                                           style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                         trailing: Text(
                                           '${product.expirationDate}',
                                           style: const TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 18,
                                           ),
                                         ),
                                       ),
                                   ],
                                 ),
-                                const SizedBox(height: 50),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    MaterialButton(
+                                      height: 50,
+                                      onPressed: () {
+                                        PersistentNavBarNavigator.pushNewScreen(
+                                          context,
+                                          screen: const EditProductPage(),
+                                          withNavBar: false,
+                                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                        );
+                                      },
+                                      color: Colors.blue[700],
+                                      elevation: 0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const Text(
+                                        'Edit',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                    MaterialButton(
+                                      height: 50,
+                                      color: Colors.red,
+                                      elevation: 0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const Text(
+                                        'Delete',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: const Text(
+                                                'Did you recycled the package?',
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+
+                                                    late RecyclingStats updatedStats;
+                                                    late RecyclingStats currentStats;
+
+                                                    if (stats
+                                                        .where((RecyclingStats element) =>
+                                                            element.packageName == product.package)
+                                                        .isNotEmpty) {
+                                                      currentStats = stats
+                                                          .where((RecyclingStats element) =>
+                                                              element.packageName == product.package)
+                                                          .first;
+
+                                                      updatedStats = RecyclingStats(
+                                                        packageName: currentStats.packageName,
+                                                        recycledProducts: currentStats.recycledProducts + 1,
+                                                        totalProducts: currentStats.totalProducts + 1,
+                                                      );
+                                                    } else {
+                                                      updatedStats = RecyclingStats(
+                                                        packageName: product.package.toString(),
+                                                        recycledProducts: 1,
+                                                        totalProducts: 1,
+                                                      );
+                                                    }
+
+                                                    StoreProvider.of<AppState>(context)
+                                                      ..dispatch(
+                                                        UpdateRecyclingStats.start(
+                                                          user!.uid,
+                                                          updatedStats,
+                                                        ),
+                                                      )
+                                                      ..dispatch(
+                                                        DeleteProduct.start(
+                                                          uid: user.uid,
+                                                          productId: product.id,
+                                                          categoryId: product.categoryId,
+                                                        ),
+                                                      )
+                                                      ..dispatch(
+                                                        ListRecyclingStats.start(user.uid),
+                                                      );
+                                                  },
+                                                  child: const Text('Yes'),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+
+                                                    late RecyclingStats updatedStats;
+                                                    late RecyclingStats currentStats;
+
+                                                    if (stats
+                                                        .where((RecyclingStats element) =>
+                                                            element.packageName == product.package)
+                                                        .isNotEmpty) {
+                                                      currentStats = stats
+                                                          .where((RecyclingStats element) =>
+                                                              element.packageName == product.package)
+                                                          .first;
+
+                                                      updatedStats = RecyclingStats(
+                                                        packageName: currentStats.packageName,
+                                                        recycledProducts: currentStats.recycledProducts + 1,
+                                                        totalProducts: currentStats.totalProducts + 1,
+                                                      );
+                                                    } else {
+                                                      updatedStats = RecyclingStats(
+                                                        packageName: product.package.toString(),
+                                                        recycledProducts: 1,
+                                                        totalProducts: 1,
+                                                      );
+                                                    }
+
+                                                    StoreProvider.of<AppState>(context)
+                                                      ..dispatch(
+                                                        UpdateRecyclingStats.start(
+                                                          user!.uid,
+                                                          updatedStats,
+                                                        ),
+                                                      )
+                                                      ..dispatch(
+                                                        DeleteProduct.start(
+                                                          uid: user.uid,
+                                                          productId: product.id,
+                                                          categoryId: product.categoryId,
+                                                        ),
+                                                      )
+                                                      ..dispatch(
+                                                        ListRecyclingStats.start(user.uid),
+                                                      );
+                                                  },
+                                                  child: const Text('No'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  floatingActionButton: FloatingActionButton(
-                    backgroundColor: Colors.red,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                    child: const Icon(
-                      Icons.delete_rounded,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: const Text(
-                              'Did you recycled the package?',
-                            ),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-
-                                  late RecyclingStats updatedStats;
-                                  late RecyclingStats currentStats;
-
-                                  if (stats
-                                      .where((RecyclingStats element) => element.packageName == product.package)
-                                      .isNotEmpty) {
-                                    currentStats = stats
-                                        .where((RecyclingStats element) => element.packageName == product.package)
-                                        .first;
-
-                                    updatedStats = RecyclingStats(
-                                      packageName: currentStats.packageName,
-                                      recycledProducts: currentStats.recycledProducts + 1,
-                                      totalProducts: currentStats.totalProducts + 1,
-                                    );
-                                  } else {
-                                    updatedStats = RecyclingStats(
-                                      packageName: product.package.toString(),
-                                      recycledProducts: 1,
-                                      totalProducts: 1,
-                                    );
-                                  }
-
-                                  StoreProvider.of<AppState>(context)
-                                    ..dispatch(
-                                      UpdateRecyclingStats.start(
-                                        user!.uid,
-                                        updatedStats,
-                                      ),
-                                    )
-                                    ..dispatch(
-                                      DeleteProduct.start(
-                                        uid: user.uid,
-                                        productId: product.id,
-                                        categoryId: product.categoryId,
-                                      ),
-                                    )
-                                    ..dispatch(
-                                      ListRecyclingStats.start(user.uid),
-                                    );
-                                },
-                                child: const Text('Yes'),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-
-                                  late RecyclingStats updatedStats;
-                                  late RecyclingStats currentStats;
-
-                                  if (stats
-                                      .where((RecyclingStats element) => element.packageName == product.package)
-                                      .isNotEmpty) {
-                                    currentStats = stats
-                                        .where((RecyclingStats element) => element.packageName == product.package)
-                                        .first;
-
-                                    updatedStats = RecyclingStats(
-                                      packageName: currentStats.packageName,
-                                      recycledProducts: currentStats.recycledProducts + 1,
-                                      totalProducts: currentStats.totalProducts + 1,
-                                    );
-                                  } else {
-                                    updatedStats = RecyclingStats(
-                                      packageName: product.package.toString(),
-                                      recycledProducts: 1,
-                                      totalProducts: 1,
-                                    );
-                                  }
-
-                                  StoreProvider.of<AppState>(context)
-                                    ..dispatch(
-                                      UpdateRecyclingStats.start(
-                                        user!.uid,
-                                        updatedStats,
-                                      ),
-                                    )
-                                    ..dispatch(
-                                      DeleteProduct.start(
-                                        uid: user.uid,
-                                        productId: product.id,
-                                        categoryId: product.categoryId,
-                                      ),
-                                    )
-                                    ..dispatch(
-                                      ListRecyclingStats.start(user.uid),
-                                    );
-                                },
-                                child: const Text('No'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
                   ),
                 );
               },
