@@ -1,8 +1,13 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../models/index.dart';
 
@@ -56,6 +61,73 @@ class AuthApi {
       email: email,
       password: password,
     );
+  }
+
+  Future<void> signInWithGoogle() async {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    final OAuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    await _auth.signInWithCredential(credential);
+  }
+
+  String generateNonce([int length = 32]) {
+    const String charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
+    final Random random = Random.secure();
+    return List<String>.generate(length, (_) => charset[random.nextInt(charset.length)]).join();
+  }
+
+  String sha256ofString(String input) {
+    final List<int> bytes = utf8.encode(input);
+    final Digest digest = sha256.convert(bytes);
+    return digest.toString();
+  }
+
+  Future<void> signInWithApple() async {
+    final String rawNonce = generateNonce();
+    final String nonce = sha256ofString(rawNonce);
+
+    final AuthorizationCredentialAppleID appleCredential = await SignInWithApple.getAppleIDCredential(
+      scopes: <AppleIDAuthorizationScopes>[
+        AppleIDAuthorizationScopes.email,
+        AppleIDAuthorizationScopes.fullName,
+      ],
+      nonce: nonce,
+    );
+
+    final OAuthCredential oauthCredential = OAuthProvider('apple.com').credential(
+      idToken: appleCredential.identityToken,
+      rawNonce: rawNonce,
+    );
+
+    await _auth.signInWithCredential(oauthCredential);
+  }
+
+  Future<void> signInWithFacebook() async {
+    // final LoginResult loginResult = await FacebookAuth.instance.login();
+
+    // final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken.token);
+
+    // await _auth.signInWithCredential(facebookAuthCredential);
+  }
+
+  Future<void> signInWithTwitter() async {
+    // final twitterLogin = TwitterLogin(
+    //     apiKey: '<your consumer key>', apiSecretKey: ' <your consumer secret>', redirectURI: '<your_scheme>://');
+
+    // final authResult = await twitterLogin.login();
+
+    // final OAuthCredential twitterAuthCredential = TwitterAuthProvider.credential(
+    //   accessToken: authResult.authToken!,
+    //   secret: authResult.authTokenSecret!,
+    // );
+
+    // await _auth.signInWithCredential(twitterAuthCredential);
   }
 
   Future<void> logoutUser() async {

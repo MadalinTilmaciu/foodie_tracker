@@ -17,6 +17,10 @@ class AuthEpics implements EpicClass<AppState> {
         TypedEpic<AppState, InitializeAppStart>(_initializeAppStart).call,
         TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
         TypedEpic<AppState, LoginUserStart>(_loginUserStart).call,
+        TypedEpic<AppState, AppleSignInStart>(_appleSignInStart).call,
+        TypedEpic<AppState, FacebookSignInStart>(_facebookSignInStart).call,
+        TypedEpic<AppState, TwitterSignInStart>(_twitterSignInStart).call,
+        TypedEpic<AppState, GoogleSignInStart>(_googleSignInStart).call,
         TypedEpic<AppState, LogoutUserStart>(_logoutUserStart).call,
         TypedEpic<AppState, UpdatePictureUrlStart>(_updatePictureUrlStart).call,
         TypedEpic<AppState, UpdateDisplayNameStart>(_updateDisplayNameStart).call,
@@ -71,6 +75,54 @@ class AuthEpics implements EpicClass<AppState> {
             .asyncMap((_) => _api.loginUser(email: action.email, password: action.password))
             .mapTo(const LoginUser.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginUser.error(error, stackTrace))
+            .doOnData(action.result);
+      },
+    );
+  }
+
+  Stream<dynamic> _appleSignInStart(Stream<AppleSignInStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (AppleSignInStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.signInWithApple())
+            .mapTo(const AppleSignIn.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => AppleSignIn.error(error, stackTrace))
+            .doOnData(action.result);
+      },
+    );
+  }
+
+  Stream<dynamic> _facebookSignInStart(Stream<FacebookSignInStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (FacebookSignInStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.signInWithFacebook())
+            .mapTo(const FacebookSignIn.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => FacebookSignIn.error(error, stackTrace))
+            .doOnData(action.result);
+      },
+    );
+  }
+
+  Stream<dynamic> _twitterSignInStart(Stream<TwitterSignInStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (TwitterSignInStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.signInWithTwitter())
+            .mapTo(const TwitterSignIn.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => TwitterSignIn.error(error, stackTrace))
+            .doOnData(action.result);
+      },
+    );
+  }
+
+  Stream<dynamic> _googleSignInStart(Stream<GoogleSignInStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (GoogleSignInStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.signInWithGoogle())
+            .mapTo(const GoogleSignIn.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => GoogleSignIn.error(error, stackTrace))
             .doOnData(action.result);
       },
     );

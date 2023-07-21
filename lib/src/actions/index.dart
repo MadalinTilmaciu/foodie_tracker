@@ -8,6 +8,10 @@ part 'auth/initialize_app.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
+part 'auth/apple_sign_in.dart';
+part 'auth/facebook_sign_in.dart';
+part 'auth/google_sign_in.dart';
+part 'auth/twitter_sign.in.dart';
 
 part 'user_profile/update_picture_url.dart';
 part 'user_profile/update_display_name.dart';

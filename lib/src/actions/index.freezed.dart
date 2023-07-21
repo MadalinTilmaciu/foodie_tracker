@@ -1995,6 +1995,2113 @@ abstract class LogoutUserError implements LogoutUser {
 }
 
 /// @nodoc
+mixin _$AppleSignIn {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppleSignInStart value) start,
+    required TResult Function(AppleSignInSuccessful value) successful,
+    required TResult Function(AppleSignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppleSignInStart value)? start,
+    TResult? Function(AppleSignInSuccessful value)? successful,
+    TResult? Function(AppleSignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppleSignInStart value)? start,
+    TResult Function(AppleSignInSuccessful value)? successful,
+    TResult Function(AppleSignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AppleSignInCopyWith<AppleSignIn> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppleSignInCopyWith<$Res> {
+  factory $AppleSignInCopyWith(AppleSignIn value, $Res Function(AppleSignIn) then) =
+      _$AppleSignInCopyWithImpl<$Res, AppleSignIn>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AppleSignInCopyWithImpl<$Res, $Val extends AppleSignIn> implements $AppleSignInCopyWith<$Res> {
+  _$AppleSignInCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppleSignInStartCopyWith<$Res> implements $AppleSignInCopyWith<$Res> {
+  factory _$$AppleSignInStartCopyWith(_$AppleSignInStart value, $Res Function(_$AppleSignInStart) then) =
+      __$$AppleSignInStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult result, String pendingId});
+}
+
+/// @nodoc
+class __$$AppleSignInStartCopyWithImpl<$Res> extends _$AppleSignInCopyWithImpl<$Res, _$AppleSignInStart>
+    implements _$$AppleSignInStartCopyWith<$Res> {
+  __$$AppleSignInStartCopyWithImpl(_$AppleSignInStart _value, $Res Function(_$AppleSignInStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AppleSignInStart(
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppleSignInStart implements AppleSignInStart {
+  const _$AppleSignInStart({required this.result, this.pendingId = _kAppleSignInPendingId});
+
+  @override
+  final ActionResult result;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AppleSignIn.start(result: $result, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppleSignInStart &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, result, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppleSignInStartCopyWith<_$AppleSignInStart> get copyWith =>
+      __$$AppleSignInStartCopyWithImpl<_$AppleSignInStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(result, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppleSignInStart value) start,
+    required TResult Function(AppleSignInSuccessful value) successful,
+    required TResult Function(AppleSignInError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppleSignInStart value)? start,
+    TResult? Function(AppleSignInSuccessful value)? successful,
+    TResult? Function(AppleSignInError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppleSignInStart value)? start,
+    TResult Function(AppleSignInSuccessful value)? successful,
+    TResult Function(AppleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppleSignInStart implements AppleSignIn, StartAction {
+  const factory AppleSignInStart({required final ActionResult result, final String pendingId}) = _$AppleSignInStart;
+
+  ActionResult get result;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppleSignInStartCopyWith<_$AppleSignInStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppleSignInSuccessfulCopyWith<$Res> implements $AppleSignInCopyWith<$Res> {
+  factory _$$AppleSignInSuccessfulCopyWith(_$AppleSignInSuccessful value, $Res Function(_$AppleSignInSuccessful) then) =
+      __$$AppleSignInSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AppleSignInSuccessfulCopyWithImpl<$Res> extends _$AppleSignInCopyWithImpl<$Res, _$AppleSignInSuccessful>
+    implements _$$AppleSignInSuccessfulCopyWith<$Res> {
+  __$$AppleSignInSuccessfulCopyWithImpl(_$AppleSignInSuccessful _value, $Res Function(_$AppleSignInSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AppleSignInSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppleSignInSuccessful implements AppleSignInSuccessful {
+  const _$AppleSignInSuccessful({this.pendingId = _kAppleSignInPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AppleSignIn.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppleSignInSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppleSignInSuccessfulCopyWith<_$AppleSignInSuccessful> get copyWith =>
+      __$$AppleSignInSuccessfulCopyWithImpl<_$AppleSignInSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppleSignInStart value) start,
+    required TResult Function(AppleSignInSuccessful value) successful,
+    required TResult Function(AppleSignInError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppleSignInStart value)? start,
+    TResult? Function(AppleSignInSuccessful value)? successful,
+    TResult? Function(AppleSignInError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppleSignInStart value)? start,
+    TResult Function(AppleSignInSuccessful value)? successful,
+    TResult Function(AppleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppleSignInSuccessful implements AppleSignIn, StopAction {
+  const factory AppleSignInSuccessful({final String pendingId}) = _$AppleSignInSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppleSignInSuccessfulCopyWith<_$AppleSignInSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppleSignInErrorCopyWith<$Res> implements $AppleSignInCopyWith<$Res> {
+  factory _$$AppleSignInErrorCopyWith(_$AppleSignInError value, $Res Function(_$AppleSignInError) then) =
+      __$$AppleSignInErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AppleSignInErrorCopyWithImpl<$Res> extends _$AppleSignInCopyWithImpl<$Res, _$AppleSignInError>
+    implements _$$AppleSignInErrorCopyWith<$Res> {
+  __$$AppleSignInErrorCopyWithImpl(_$AppleSignInError _value, $Res Function(_$AppleSignInError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AppleSignInError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppleSignInError implements AppleSignInError {
+  const _$AppleSignInError(this.error, this.stackTrace, {this.pendingId = _kAppleSignInPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AppleSignIn.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppleSignInError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppleSignInErrorCopyWith<_$AppleSignInError> get copyWith =>
+      __$$AppleSignInErrorCopyWithImpl<_$AppleSignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppleSignInStart value) start,
+    required TResult Function(AppleSignInSuccessful value) successful,
+    required TResult Function(AppleSignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppleSignInStart value)? start,
+    TResult? Function(AppleSignInSuccessful value)? successful,
+    TResult? Function(AppleSignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppleSignInStart value)? start,
+    TResult Function(AppleSignInSuccessful value)? successful,
+    TResult Function(AppleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppleSignInError implements AppleSignIn, StopAction {
+  const factory AppleSignInError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AppleSignInError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppleSignInErrorCopyWith<_$AppleSignInError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$FacebookSignIn {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FacebookSignInStart value) start,
+    required TResult Function(FacebookSignInSuccessful value) successful,
+    required TResult Function(FacebookSignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FacebookSignInStart value)? start,
+    TResult? Function(FacebookSignInSuccessful value)? successful,
+    TResult? Function(FacebookSignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FacebookSignInStart value)? start,
+    TResult Function(FacebookSignInSuccessful value)? successful,
+    TResult Function(FacebookSignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FacebookSignInCopyWith<FacebookSignIn> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FacebookSignInCopyWith<$Res> {
+  factory $FacebookSignInCopyWith(FacebookSignIn value, $Res Function(FacebookSignIn) then) =
+      _$FacebookSignInCopyWithImpl<$Res, FacebookSignIn>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$FacebookSignInCopyWithImpl<$Res, $Val extends FacebookSignIn> implements $FacebookSignInCopyWith<$Res> {
+  _$FacebookSignInCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FacebookSignInStartCopyWith<$Res> implements $FacebookSignInCopyWith<$Res> {
+  factory _$$FacebookSignInStartCopyWith(_$FacebookSignInStart value, $Res Function(_$FacebookSignInStart) then) =
+      __$$FacebookSignInStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult result, String pendingId});
+}
+
+/// @nodoc
+class __$$FacebookSignInStartCopyWithImpl<$Res> extends _$FacebookSignInCopyWithImpl<$Res, _$FacebookSignInStart>
+    implements _$$FacebookSignInStartCopyWith<$Res> {
+  __$$FacebookSignInStartCopyWithImpl(_$FacebookSignInStart _value, $Res Function(_$FacebookSignInStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$FacebookSignInStart(
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FacebookSignInStart implements FacebookSignInStart {
+  const _$FacebookSignInStart({required this.result, this.pendingId = _kFacebookSignInPendingId});
+
+  @override
+  final ActionResult result;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FacebookSignIn.start(result: $result, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FacebookSignInStart &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, result, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FacebookSignInStartCopyWith<_$FacebookSignInStart> get copyWith =>
+      __$$FacebookSignInStartCopyWithImpl<_$FacebookSignInStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(result, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FacebookSignInStart value) start,
+    required TResult Function(FacebookSignInSuccessful value) successful,
+    required TResult Function(FacebookSignInError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FacebookSignInStart value)? start,
+    TResult? Function(FacebookSignInSuccessful value)? successful,
+    TResult? Function(FacebookSignInError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FacebookSignInStart value)? start,
+    TResult Function(FacebookSignInSuccessful value)? successful,
+    TResult Function(FacebookSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FacebookSignInStart implements FacebookSignIn, StartAction {
+  const factory FacebookSignInStart({required final ActionResult result, final String pendingId}) =
+      _$FacebookSignInStart;
+
+  ActionResult get result;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FacebookSignInStartCopyWith<_$FacebookSignInStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FacebookSignInSuccessfulCopyWith<$Res> implements $FacebookSignInCopyWith<$Res> {
+  factory _$$FacebookSignInSuccessfulCopyWith(
+          _$FacebookSignInSuccessful value, $Res Function(_$FacebookSignInSuccessful) then) =
+      __$$FacebookSignInSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$FacebookSignInSuccessfulCopyWithImpl<$Res>
+    extends _$FacebookSignInCopyWithImpl<$Res, _$FacebookSignInSuccessful>
+    implements _$$FacebookSignInSuccessfulCopyWith<$Res> {
+  __$$FacebookSignInSuccessfulCopyWithImpl(
+      _$FacebookSignInSuccessful _value, $Res Function(_$FacebookSignInSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$FacebookSignInSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FacebookSignInSuccessful implements FacebookSignInSuccessful {
+  const _$FacebookSignInSuccessful({this.pendingId = _kFacebookSignInPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FacebookSignIn.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FacebookSignInSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FacebookSignInSuccessfulCopyWith<_$FacebookSignInSuccessful> get copyWith =>
+      __$$FacebookSignInSuccessfulCopyWithImpl<_$FacebookSignInSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FacebookSignInStart value) start,
+    required TResult Function(FacebookSignInSuccessful value) successful,
+    required TResult Function(FacebookSignInError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FacebookSignInStart value)? start,
+    TResult? Function(FacebookSignInSuccessful value)? successful,
+    TResult? Function(FacebookSignInError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FacebookSignInStart value)? start,
+    TResult Function(FacebookSignInSuccessful value)? successful,
+    TResult Function(FacebookSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FacebookSignInSuccessful implements FacebookSignIn, StopAction {
+  const factory FacebookSignInSuccessful({final String pendingId}) = _$FacebookSignInSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FacebookSignInSuccessfulCopyWith<_$FacebookSignInSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FacebookSignInErrorCopyWith<$Res> implements $FacebookSignInCopyWith<$Res> {
+  factory _$$FacebookSignInErrorCopyWith(_$FacebookSignInError value, $Res Function(_$FacebookSignInError) then) =
+      __$$FacebookSignInErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$FacebookSignInErrorCopyWithImpl<$Res> extends _$FacebookSignInCopyWithImpl<$Res, _$FacebookSignInError>
+    implements _$$FacebookSignInErrorCopyWith<$Res> {
+  __$$FacebookSignInErrorCopyWithImpl(_$FacebookSignInError _value, $Res Function(_$FacebookSignInError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$FacebookSignInError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FacebookSignInError implements FacebookSignInError {
+  const _$FacebookSignInError(this.error, this.stackTrace, {this.pendingId = _kFacebookSignInPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FacebookSignIn.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FacebookSignInError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FacebookSignInErrorCopyWith<_$FacebookSignInError> get copyWith =>
+      __$$FacebookSignInErrorCopyWithImpl<_$FacebookSignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FacebookSignInStart value) start,
+    required TResult Function(FacebookSignInSuccessful value) successful,
+    required TResult Function(FacebookSignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FacebookSignInStart value)? start,
+    TResult? Function(FacebookSignInSuccessful value)? successful,
+    TResult? Function(FacebookSignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FacebookSignInStart value)? start,
+    TResult Function(FacebookSignInSuccessful value)? successful,
+    TResult Function(FacebookSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FacebookSignInError implements FacebookSignIn, StopAction {
+  const factory FacebookSignInError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$FacebookSignInError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FacebookSignInErrorCopyWith<_$FacebookSignInError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$GoogleSignIn {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleSignInStart value) start,
+    required TResult Function(GoogleSignInSuccessful value) successful,
+    required TResult Function(GoogleSignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleSignInStart value)? start,
+    TResult? Function(GoogleSignInSuccessful value)? successful,
+    TResult? Function(GoogleSignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleSignInStart value)? start,
+    TResult Function(GoogleSignInSuccessful value)? successful,
+    TResult Function(GoogleSignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GoogleSignInCopyWith<GoogleSignIn> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GoogleSignInCopyWith<$Res> {
+  factory $GoogleSignInCopyWith(GoogleSignIn value, $Res Function(GoogleSignIn) then) =
+      _$GoogleSignInCopyWithImpl<$Res, GoogleSignIn>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GoogleSignInCopyWithImpl<$Res, $Val extends GoogleSignIn> implements $GoogleSignInCopyWith<$Res> {
+  _$GoogleSignInCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInStartCopyWith<$Res> implements $GoogleSignInCopyWith<$Res> {
+  factory _$$GoogleSignInStartCopyWith(_$GoogleSignInStart value, $Res Function(_$GoogleSignInStart) then) =
+      __$$GoogleSignInStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult result, String pendingId});
+}
+
+/// @nodoc
+class __$$GoogleSignInStartCopyWithImpl<$Res> extends _$GoogleSignInCopyWithImpl<$Res, _$GoogleSignInStart>
+    implements _$$GoogleSignInStartCopyWith<$Res> {
+  __$$GoogleSignInStartCopyWithImpl(_$GoogleSignInStart _value, $Res Function(_$GoogleSignInStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleSignInStart(
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleSignInStart implements GoogleSignInStart {
+  const _$GoogleSignInStart({required this.result, this.pendingId = _kGoogleSignInPendingId});
+
+  @override
+  final ActionResult result;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleSignIn.start(result: $result, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInStart &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, result, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleSignInStartCopyWith<_$GoogleSignInStart> get copyWith =>
+      __$$GoogleSignInStartCopyWithImpl<_$GoogleSignInStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(result, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleSignInStart value) start,
+    required TResult Function(GoogleSignInSuccessful value) successful,
+    required TResult Function(GoogleSignInError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleSignInStart value)? start,
+    TResult? Function(GoogleSignInSuccessful value)? successful,
+    TResult? Function(GoogleSignInError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleSignInStart value)? start,
+    TResult Function(GoogleSignInSuccessful value)? successful,
+    TResult Function(GoogleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInStart implements GoogleSignIn, StartAction {
+  const factory GoogleSignInStart({required final ActionResult result, final String pendingId}) = _$GoogleSignInStart;
+
+  ActionResult get result;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleSignInStartCopyWith<_$GoogleSignInStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInSuccessfulCopyWith<$Res> implements $GoogleSignInCopyWith<$Res> {
+  factory _$$GoogleSignInSuccessfulCopyWith(
+          _$GoogleSignInSuccessful value, $Res Function(_$GoogleSignInSuccessful) then) =
+      __$$GoogleSignInSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$GoogleSignInSuccessfulCopyWithImpl<$Res> extends _$GoogleSignInCopyWithImpl<$Res, _$GoogleSignInSuccessful>
+    implements _$$GoogleSignInSuccessfulCopyWith<$Res> {
+  __$$GoogleSignInSuccessfulCopyWithImpl(_$GoogleSignInSuccessful _value, $Res Function(_$GoogleSignInSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleSignInSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleSignInSuccessful implements GoogleSignInSuccessful {
+  const _$GoogleSignInSuccessful({this.pendingId = _kGoogleSignInPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleSignIn.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleSignInSuccessfulCopyWith<_$GoogleSignInSuccessful> get copyWith =>
+      __$$GoogleSignInSuccessfulCopyWithImpl<_$GoogleSignInSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleSignInStart value) start,
+    required TResult Function(GoogleSignInSuccessful value) successful,
+    required TResult Function(GoogleSignInError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleSignInStart value)? start,
+    TResult? Function(GoogleSignInSuccessful value)? successful,
+    TResult? Function(GoogleSignInError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleSignInStart value)? start,
+    TResult Function(GoogleSignInSuccessful value)? successful,
+    TResult Function(GoogleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInSuccessful implements GoogleSignIn, StopAction {
+  const factory GoogleSignInSuccessful({final String pendingId}) = _$GoogleSignInSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleSignInSuccessfulCopyWith<_$GoogleSignInSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleSignInErrorCopyWith<$Res> implements $GoogleSignInCopyWith<$Res> {
+  factory _$$GoogleSignInErrorCopyWith(_$GoogleSignInError value, $Res Function(_$GoogleSignInError) then) =
+      __$$GoogleSignInErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GoogleSignInErrorCopyWithImpl<$Res> extends _$GoogleSignInCopyWithImpl<$Res, _$GoogleSignInError>
+    implements _$$GoogleSignInErrorCopyWith<$Res> {
+  __$$GoogleSignInErrorCopyWithImpl(_$GoogleSignInError _value, $Res Function(_$GoogleSignInError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleSignInError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleSignInError implements GoogleSignInError {
+  const _$GoogleSignInError(this.error, this.stackTrace, {this.pendingId = _kGoogleSignInPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleSignIn.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleSignInErrorCopyWith<_$GoogleSignInError> get copyWith =>
+      __$$GoogleSignInErrorCopyWithImpl<_$GoogleSignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleSignInStart value) start,
+    required TResult Function(GoogleSignInSuccessful value) successful,
+    required TResult Function(GoogleSignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleSignInStart value)? start,
+    TResult? Function(GoogleSignInSuccessful value)? successful,
+    TResult? Function(GoogleSignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleSignInStart value)? start,
+    TResult Function(GoogleSignInSuccessful value)? successful,
+    TResult Function(GoogleSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignInError implements GoogleSignIn, StopAction {
+  const factory GoogleSignInError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$GoogleSignInError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleSignInErrorCopyWith<_$GoogleSignInError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$TwitterSignIn {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TwitterSignInStart value) start,
+    required TResult Function(TwitterSignInSuccessful value) successful,
+    required TResult Function(TwitterSignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TwitterSignInStart value)? start,
+    TResult? Function(TwitterSignInSuccessful value)? successful,
+    TResult? Function(TwitterSignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TwitterSignInStart value)? start,
+    TResult Function(TwitterSignInSuccessful value)? successful,
+    TResult Function(TwitterSignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $TwitterSignInCopyWith<TwitterSignIn> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TwitterSignInCopyWith<$Res> {
+  factory $TwitterSignInCopyWith(TwitterSignIn value, $Res Function(TwitterSignIn) then) =
+      _$TwitterSignInCopyWithImpl<$Res, TwitterSignIn>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$TwitterSignInCopyWithImpl<$Res, $Val extends TwitterSignIn> implements $TwitterSignInCopyWith<$Res> {
+  _$TwitterSignInCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TwitterSignInStartCopyWith<$Res> implements $TwitterSignInCopyWith<$Res> {
+  factory _$$TwitterSignInStartCopyWith(_$TwitterSignInStart value, $Res Function(_$TwitterSignInStart) then) =
+      __$$TwitterSignInStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult result, String pendingId});
+}
+
+/// @nodoc
+class __$$TwitterSignInStartCopyWithImpl<$Res> extends _$TwitterSignInCopyWithImpl<$Res, _$TwitterSignInStart>
+    implements _$$TwitterSignInStartCopyWith<$Res> {
+  __$$TwitterSignInStartCopyWithImpl(_$TwitterSignInStart _value, $Res Function(_$TwitterSignInStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$TwitterSignInStart(
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TwitterSignInStart implements TwitterSignInStart {
+  const _$TwitterSignInStart({required this.result, this.pendingId = _kTwitterSignInPendingId});
+
+  @override
+  final ActionResult result;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'TwitterSignIn.start(result: $result, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TwitterSignInStart &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, result, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TwitterSignInStartCopyWith<_$TwitterSignInStart> get copyWith =>
+      __$$TwitterSignInStartCopyWithImpl<_$TwitterSignInStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(result, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(result, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TwitterSignInStart value) start,
+    required TResult Function(TwitterSignInSuccessful value) successful,
+    required TResult Function(TwitterSignInError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TwitterSignInStart value)? start,
+    TResult? Function(TwitterSignInSuccessful value)? successful,
+    TResult? Function(TwitterSignInError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TwitterSignInStart value)? start,
+    TResult Function(TwitterSignInSuccessful value)? successful,
+    TResult Function(TwitterSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TwitterSignInStart implements TwitterSignIn, StartAction {
+  const factory TwitterSignInStart({required final ActionResult result, final String pendingId}) = _$TwitterSignInStart;
+
+  ActionResult get result;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$TwitterSignInStartCopyWith<_$TwitterSignInStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TwitterSignInSuccessfulCopyWith<$Res> implements $TwitterSignInCopyWith<$Res> {
+  factory _$$TwitterSignInSuccessfulCopyWith(
+          _$TwitterSignInSuccessful value, $Res Function(_$TwitterSignInSuccessful) then) =
+      __$$TwitterSignInSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$TwitterSignInSuccessfulCopyWithImpl<$Res> extends _$TwitterSignInCopyWithImpl<$Res, _$TwitterSignInSuccessful>
+    implements _$$TwitterSignInSuccessfulCopyWith<$Res> {
+  __$$TwitterSignInSuccessfulCopyWithImpl(
+      _$TwitterSignInSuccessful _value, $Res Function(_$TwitterSignInSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$TwitterSignInSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TwitterSignInSuccessful implements TwitterSignInSuccessful {
+  const _$TwitterSignInSuccessful({this.pendingId = _kTwitterSignInPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'TwitterSignIn.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TwitterSignInSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TwitterSignInSuccessfulCopyWith<_$TwitterSignInSuccessful> get copyWith =>
+      __$$TwitterSignInSuccessfulCopyWithImpl<_$TwitterSignInSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TwitterSignInStart value) start,
+    required TResult Function(TwitterSignInSuccessful value) successful,
+    required TResult Function(TwitterSignInError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TwitterSignInStart value)? start,
+    TResult? Function(TwitterSignInSuccessful value)? successful,
+    TResult? Function(TwitterSignInError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TwitterSignInStart value)? start,
+    TResult Function(TwitterSignInSuccessful value)? successful,
+    TResult Function(TwitterSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TwitterSignInSuccessful implements TwitterSignIn, StopAction {
+  const factory TwitterSignInSuccessful({final String pendingId}) = _$TwitterSignInSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$TwitterSignInSuccessfulCopyWith<_$TwitterSignInSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TwitterSignInErrorCopyWith<$Res> implements $TwitterSignInCopyWith<$Res> {
+  factory _$$TwitterSignInErrorCopyWith(_$TwitterSignInError value, $Res Function(_$TwitterSignInError) then) =
+      __$$TwitterSignInErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$TwitterSignInErrorCopyWithImpl<$Res> extends _$TwitterSignInCopyWithImpl<$Res, _$TwitterSignInError>
+    implements _$$TwitterSignInErrorCopyWith<$Res> {
+  __$$TwitterSignInErrorCopyWithImpl(_$TwitterSignInError _value, $Res Function(_$TwitterSignInError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$TwitterSignInError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TwitterSignInError implements TwitterSignInError {
+  const _$TwitterSignInError(this.error, this.stackTrace, {this.pendingId = _kTwitterSignInPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'TwitterSignIn.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TwitterSignInError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TwitterSignInErrorCopyWith<_$TwitterSignInError> get copyWith =>
+      __$$TwitterSignInErrorCopyWithImpl<_$TwitterSignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult result, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult result, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult result, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TwitterSignInStart value) start,
+    required TResult Function(TwitterSignInSuccessful value) successful,
+    required TResult Function(TwitterSignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TwitterSignInStart value)? start,
+    TResult? Function(TwitterSignInSuccessful value)? successful,
+    TResult? Function(TwitterSignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TwitterSignInStart value)? start,
+    TResult Function(TwitterSignInSuccessful value)? successful,
+    TResult Function(TwitterSignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TwitterSignInError implements TwitterSignIn, StopAction {
+  const factory TwitterSignInError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$TwitterSignInError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$TwitterSignInErrorCopyWith<_$TwitterSignInError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UpdatePictureUrl {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

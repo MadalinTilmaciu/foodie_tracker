@@ -199,7 +199,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
                         );
                       }
                       return SizedBox(
-                        width: 160,
+                        width: 220,
                         child: ElevatedButton(
                           onPressed: _onNext,
                           style: ButtonStyle(
