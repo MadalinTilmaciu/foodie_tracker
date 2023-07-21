@@ -144,6 +144,33 @@ class ChatRoomPageState extends State<ChatRoomPage> {
                 width: 45,
                 height: 45,
               ),
+            )
+          else
+            ClipOval(
+              child: widget.room.imageUrl != ''
+                  ? CachedNetworkImage(
+                      imageUrl: widget.room.imageUrl!,
+                      placeholder: (BuildContext context, String url) => const CircularProgressIndicator(),
+                      fit: BoxFit.cover,
+                      width: 45,
+                      height: 45,
+                    )
+                  : const ClipOval(
+                      child: Material(
+                        color: Colors.grey,
+                        child: InkWell(
+                          child: SizedBox(
+                            width: 45,
+                            height: 45,
+                            child: Icon(
+                              Icons.group_outlined,
+                              color: Colors.black,
+                              size: 60,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
             ),
           const SizedBox(
             height: 0,
@@ -192,11 +219,13 @@ class ChatRoomPageState extends State<ChatRoomPage> {
               snapshot.data!,
             ),
             builder: (BuildContext context, AsyncSnapshot<List<types.Message>> snapshot) => Chat(
+              showUserNames: widget.room.type == types.RoomType.group,
               theme: DarkChatTheme(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 inputBackgroundColor: Colors.black,
                 primaryColor: Colors.blue,
                 secondaryColor: Colors.grey,
+                userAvatarNameColors: const <Color>[Colors.purple, Colors.orange, Colors.red],
               ),
               isAttachmentUploading: _isAttachmentUploading,
               messages: snapshot.data!,

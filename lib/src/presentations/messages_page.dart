@@ -9,6 +9,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../models/index.dart';
 import 'chat_room_page.dart';
 import 'containers/index.dart';
+import 'create_group_page.dart';
 
 class MessagesPage extends StatelessWidget {
   const MessagesPage({super.key});
@@ -97,6 +98,13 @@ class MessagesPage extends StatelessWidget {
                                   withNavBar: false,
                                   pageTransitionAnimation: PageTransitionAnimation.cupertino,
                                 );
+                              } else {
+                                PersistentNavBarNavigator.pushNewScreen(
+                                  context,
+                                  screen: CreateGroupPage(list),
+                                  withNavBar: false,
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                );
                               }
                             },
                             enableMultipleSelection: true,
@@ -147,6 +155,12 @@ class MessagesPage extends StatelessWidget {
                     }
 
                     if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                      snapshot.data?.sort(
+                        (types.Room a, types.Room b) {
+                          return b.updatedAt!.compareTo(a.updatedAt!);
+                        },
+                      );
+
                       return Column(
                         children: <Widget>[
                           const Divider(),
@@ -155,22 +169,30 @@ class MessagesPage extends StatelessWidget {
                             itemCount: snapshot.data!.length,
                             itemBuilder: (BuildContext context, int index) {
                               final types.Room room = snapshot.data![index];
-                              final Contact contact = contacts.where(
-                                (Contact contact) {
-                                  return '${contact.firstName} ${contact.lastName}' == room.name ||
-                                      contact.firstName == room.name;
-                                },
-                              ).first;
+                              Contact contact = Contact(id: '', firstName: '', lastName: '', imageUrl: '');
+                              if (room.type == types.RoomType.direct) {
+                                contact = contacts.where(
+                                  (Contact contact) {
+                                    return '${contact.firstName} ${contact.lastName}' == room.name ||
+                                        contact.firstName == room.name;
+                                  },
+                                ).first;
+                              }
 
                               return GestureDetector(
                                 onTap: () {
                                   PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
                                     context,
                                     settings: RouteSettings(
-                                      arguments: <String, String?>{
-                                        'name': '${contact.firstName} ${contact.lastName}',
-                                        'imageUrl': contact.imageUrl,
-                                      },
+                                      arguments: contact.firstName != ''
+                                          ? <String, String?>{
+                                              'name': '${contact.firstName} ${contact.lastName}',
+                                              'imageUrl': contact.imageUrl,
+                                            }
+                                          : <String, String?>{
+                                              'name': room.name,
+                                              'imageUrl': room.imageUrl,
+                                            },
                                     ),
                                     screen: ChatRoomPage(
                                       room: room,
@@ -202,10 +224,40 @@ class MessagesPage extends StatelessWidget {
                                                   width: 70,
                                                   height: 70,
                                                 ),
+                                              )
+                                            else
+                                              ClipOval(
+                                                child: room.imageUrl != ''
+                                                    ? CachedNetworkImage(
+                                                        imageUrl: room.imageUrl!,
+                                                        placeholder: (BuildContext context, String url) =>
+                                                            const CircularProgressIndicator(),
+                                                        fit: BoxFit.cover,
+                                                        width: 70,
+                                                        height: 70,
+                                                      )
+                                                    : const ClipOval(
+                                                        child: Material(
+                                                          color: Colors.grey,
+                                                          child: InkWell(
+                                                            child: SizedBox(
+                                                              width: 70,
+                                                              height: 70,
+                                                              child: Icon(
+                                                                Icons.group_outlined,
+                                                                color: Colors.black,
+                                                                size: 60,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
                                               ),
                                             const SizedBox(width: 16),
                                             Text(
-                                              '${contact.firstName} ${contact.lastName}',
+                                              contact.firstName != ''
+                                                  ? '${contact.firstName} ${contact.lastName}'
+                                                  : room.name!,
                                               style: const TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold,
