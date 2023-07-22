@@ -4,6 +4,7 @@ import 'package:drop_down_list/model/selected_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../models/index.dart';
@@ -212,58 +213,78 @@ class MessagesPage extends StatelessWidget {
                                     ),
                                     child: Column(
                                       children: <Widget>[
-                                        Row(
-                                          children: <Widget>[
-                                            if (room.type == types.RoomType.direct)
-                                              ClipOval(
-                                                child: CachedNetworkImage(
-                                                  imageUrl: contact.imageUrl!,
-                                                  placeholder: (BuildContext context, String url) =>
-                                                      const CircularProgressIndicator(),
-                                                  fit: BoxFit.cover,
-                                                  width: 70,
-                                                  height: 70,
-                                                ),
-                                              )
-                                            else
-                                              ClipOval(
-                                                child: room.imageUrl != ''
-                                                    ? CachedNetworkImage(
-                                                        imageUrl: room.imageUrl!,
+                                        Slidable(
+                                          endActionPane: ActionPane(
+                                            motion: const ScrollMotion(),
+                                            children: <Widget>[
+                                              SlidableAction(
+                                                onPressed: (BuildContext context) {
+                                                  FirebaseChatCore.instance.deleteRoom(room.id);
+                                                },
+                                                backgroundColor: Colors.red,
+                                                foregroundColor: Colors.white,
+                                                icon: Icons.delete,
+                                                label: 'Delete',
+                                              ),
+                                            ],
+                                          ),
+                                          child: Column(
+                                            children: <Widget>[
+                                              Row(
+                                                children: <Widget>[
+                                                  if (room.type == types.RoomType.direct)
+                                                    ClipOval(
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: contact.imageUrl!,
                                                         placeholder: (BuildContext context, String url) =>
                                                             const CircularProgressIndicator(),
                                                         fit: BoxFit.cover,
                                                         width: 70,
                                                         height: 70,
-                                                      )
-                                                    : const ClipOval(
-                                                        child: Material(
-                                                          color: Colors.grey,
-                                                          child: InkWell(
-                                                            child: SizedBox(
+                                                      ),
+                                                    )
+                                                  else
+                                                    ClipOval(
+                                                      child: room.imageUrl != ''
+                                                          ? CachedNetworkImage(
+                                                              imageUrl: room.imageUrl!,
+                                                              placeholder: (BuildContext context, String url) =>
+                                                                  const CircularProgressIndicator(),
+                                                              fit: BoxFit.cover,
                                                               width: 70,
                                                               height: 70,
-                                                              child: Icon(
-                                                                Icons.group_outlined,
-                                                                color: Colors.black,
-                                                                size: 60,
+                                                            )
+                                                          : const ClipOval(
+                                                              child: Material(
+                                                                color: Colors.grey,
+                                                                child: InkWell(
+                                                                  child: SizedBox(
+                                                                    width: 70,
+                                                                    height: 70,
+                                                                    child: Icon(
+                                                                      Icons.group_outlined,
+                                                                      color: Colors.black,
+                                                                      size: 60,
+                                                                    ),
+                                                                  ),
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ),
-                                                      ),
+                                                    ),
+                                                  const SizedBox(width: 16),
+                                                  Text(
+                                                    contact.firstName != ''
+                                                        ? '${contact.firstName} ${contact.lastName}'
+                                                        : room.name!,
+                                                    style: const TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            const SizedBox(width: 16),
-                                            Text(
-                                              contact.firstName != ''
-                                                  ? '${contact.firstName} ${contact.lastName}'
-                                                  : room.name!,
-                                              style: const TextStyle(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                         const Divider(),
                                       ],
