@@ -6,6 +6,7 @@ import 'meals_page.dart';
 import 'messages_page.dart';
 import 'products_page.dart';
 import 'settings_page.dart';
+import 'shopping_list_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
       return <Widget>[
         const ProductsPage(),
         const MealsPage(),
+        const ShoppingListPage(),
         const MessagesPage(),
         const SettingsPage(),
       ];
@@ -33,6 +35,11 @@ class HomePage extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.doc_append),
           title: 'Meals',
+          inactiveColorPrimary: Colors.white70,
+        ),
+        PersistentBottomNavBarItem(
+          icon: const Icon(Icons.shopping_basket),
+          title: "Shop' List",
           inactiveColorPrimary: Colors.white70,
         ),
         PersistentBottomNavBarItem(

@@ -77,7 +77,10 @@ class StarredMessagesPage extends StatelessWidget {
                         return Column(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 4,
+                                horizontal: 14,
+                              ),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: starredMessages[index].authorId == user!.uid ? Colors.blue : Colors.grey[800],

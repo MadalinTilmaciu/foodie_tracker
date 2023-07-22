@@ -26,6 +26,7 @@ mixin _$AppState {
   ContactState get contacts => throw _privateConstructorUsedError;
   StarredMessageState get starredMessages => throw _privateConstructorUsedError;
   RecyclingStatsState get recyclingStats => throw _privateConstructorUsedError;
+  ShoppingListItemState get shoppingList => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $AppStateCopyWith<$Res> {
       ContactState contacts,
       StarredMessageState starredMessages,
       RecyclingStatsState recyclingStats,
+      ShoppingListItemState shoppingList,
       Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
@@ -52,6 +54,7 @@ abstract class $AppStateCopyWith<$Res> {
   $ContactStateCopyWith<$Res> get contacts;
   $StarredMessageStateCopyWith<$Res> get starredMessages;
   $RecyclingStatsStateCopyWith<$Res> get recyclingStats;
+  $ShoppingListItemStateCopyWith<$Res> get shoppingList;
 }
 
 /// @nodoc
@@ -72,6 +75,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? contacts = null,
     Object? starredMessages = null,
     Object? recyclingStats = null,
+    Object? shoppingList = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -99,6 +103,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.recyclingStats
           : recyclingStats // ignore: cast_nullable_to_non_nullable
               as RecyclingStatsState,
+      shoppingList: null == shoppingList
+          ? _value.shoppingList
+          : shoppingList // ignore: cast_nullable_to_non_nullable
+              as ShoppingListItemState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -153,6 +161,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(recyclingStats: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ShoppingListItemStateCopyWith<$Res> get shoppingList {
+    return $ShoppingListItemStateCopyWith<$Res>(_value.shoppingList, (value) {
+      return _then(_value.copyWith(shoppingList: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -167,6 +183,7 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       ContactState contacts,
       StarredMessageState starredMessages,
       RecyclingStatsState recyclingStats,
+      ShoppingListItemState shoppingList,
       Set<String> pendingActions});
 
   @override
@@ -181,6 +198,8 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $StarredMessageStateCopyWith<$Res> get starredMessages;
   @override
   $RecyclingStatsStateCopyWith<$Res> get recyclingStats;
+  @override
+  $ShoppingListItemStateCopyWith<$Res> get shoppingList;
 }
 
 /// @nodoc
@@ -197,6 +216,7 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
     Object? contacts = null,
     Object? starredMessages = null,
     Object? recyclingStats = null,
+    Object? shoppingList = null,
     Object? pendingActions = null,
   }) {
     return _then(_$_AppState(
@@ -224,6 +244,10 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$_Ap
           ? _value.recyclingStats
           : recyclingStats // ignore: cast_nullable_to_non_nullable
               as RecyclingStatsState,
+      shoppingList: null == shoppingList
+          ? _value.shoppingList
+          : shoppingList // ignore: cast_nullable_to_non_nullable
+              as ShoppingListItemState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -242,6 +266,7 @@ class _$_AppState implements _AppState {
       this.contacts = const ContactState(),
       this.starredMessages = const StarredMessageState(),
       this.recyclingStats = const RecyclingStatsState(),
+      this.shoppingList = const ShoppingListItemState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -265,6 +290,9 @@ class _$_AppState implements _AppState {
   @override
   @JsonKey()
   final RecyclingStatsState recyclingStats;
+  @override
+  @JsonKey()
+  final ShoppingListItemState shoppingList;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -276,7 +304,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, starredMessages: $starredMessages, recyclingStats: $recyclingStats, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, products: $products, meals: $meals, contacts: $contacts, starredMessages: $starredMessages, recyclingStats: $recyclingStats, shoppingList: $shoppingList, pendingActions: $pendingActions)';
   }
 
   @override
@@ -290,13 +318,14 @@ class _$_AppState implements _AppState {
             (identical(other.contacts, contacts) || other.contacts == contacts) &&
             (identical(other.starredMessages, starredMessages) || other.starredMessages == starredMessages) &&
             (identical(other.recyclingStats, recyclingStats) || other.recyclingStats == recyclingStats) &&
+            (identical(other.shoppingList, shoppingList) || other.shoppingList == shoppingList) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, auth, products, meals, contacts, starredMessages, recyclingStats,
-      const DeepCollectionEquality().hash(_pendingActions));
+      shoppingList, const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -319,6 +348,7 @@ abstract class _AppState implements AppState {
       final ContactState contacts,
       final StarredMessageState starredMessages,
       final RecyclingStatsState recyclingStats,
+      final ShoppingListItemState shoppingList,
       final Set<String> pendingActions}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
@@ -335,6 +365,8 @@ abstract class _AppState implements AppState {
   StarredMessageState get starredMessages;
   @override
   RecyclingStatsState get recyclingStats;
+  @override
+  ShoppingListItemState get shoppingList;
   @override
   Set<String> get pendingActions;
   @override
@@ -4881,4 +4913,299 @@ abstract class _RecyclingStatsState implements RecyclingStatsState {
   @override
   @JsonKey(ignore: true)
   _$$_RecyclingStatsStateCopyWith<_$_RecyclingStatsState> get copyWith => throw _privateConstructorUsedError;
+}
+
+ShoppingListItem _$ShoppingListItemFromJson(Map<String, dynamic> json) {
+  return _ShoppingListItem.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShoppingListItem {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ShoppingListItemCopyWith<ShoppingListItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShoppingListItemCopyWith<$Res> {
+  factory $ShoppingListItemCopyWith(ShoppingListItem value, $Res Function(ShoppingListItem) then) =
+      _$ShoppingListItemCopyWithImpl<$Res, ShoppingListItem>;
+  @useResult
+  $Res call({String id, String name, bool isActive});
+}
+
+/// @nodoc
+class _$ShoppingListItemCopyWithImpl<$Res, $Val extends ShoppingListItem> implements $ShoppingListItemCopyWith<$Res> {
+  _$ShoppingListItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? isActive = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ShoppingListItemCopyWith<$Res> implements $ShoppingListItemCopyWith<$Res> {
+  factory _$$_ShoppingListItemCopyWith(_$_ShoppingListItem value, $Res Function(_$_ShoppingListItem) then) =
+      __$$_ShoppingListItemCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name, bool isActive});
+}
+
+/// @nodoc
+class __$$_ShoppingListItemCopyWithImpl<$Res> extends _$ShoppingListItemCopyWithImpl<$Res, _$_ShoppingListItem>
+    implements _$$_ShoppingListItemCopyWith<$Res> {
+  __$$_ShoppingListItemCopyWithImpl(_$_ShoppingListItem _value, $Res Function(_$_ShoppingListItem) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? isActive = null,
+  }) {
+    return _then(_$_ShoppingListItem(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ShoppingListItem implements _ShoppingListItem {
+  _$_ShoppingListItem({required this.id, required this.name, required this.isActive});
+
+  factory _$_ShoppingListItem.fromJson(Map<String, dynamic> json) => _$$_ShoppingListItemFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final bool isActive;
+
+  @override
+  String toString() {
+    return 'ShoppingListItem(id: $id, name: $name, isActive: $isActive)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ShoppingListItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.isActive, isActive) || other.isActive == isActive));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, isActive);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ShoppingListItemCopyWith<_$_ShoppingListItem> get copyWith =>
+      __$$_ShoppingListItemCopyWithImpl<_$_ShoppingListItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ShoppingListItemToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShoppingListItem implements ShoppingListItem {
+  factory _ShoppingListItem({required final String id, required final String name, required final bool isActive}) =
+      _$_ShoppingListItem;
+
+  factory _ShoppingListItem.fromJson(Map<String, dynamic> json) = _$_ShoppingListItem.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  bool get isActive;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ShoppingListItemCopyWith<_$_ShoppingListItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+ShoppingListItemState _$ShoppingListItemStateFromJson(Map<String, dynamic> json) {
+  return _ShoppingListItemState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShoppingListItemState {
+  List<ShoppingListItem> get shoppingListItems => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ShoppingListItemStateCopyWith<ShoppingListItemState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShoppingListItemStateCopyWith<$Res> {
+  factory $ShoppingListItemStateCopyWith(ShoppingListItemState value, $Res Function(ShoppingListItemState) then) =
+      _$ShoppingListItemStateCopyWithImpl<$Res, ShoppingListItemState>;
+  @useResult
+  $Res call({List<ShoppingListItem> shoppingListItems});
+}
+
+/// @nodoc
+class _$ShoppingListItemStateCopyWithImpl<$Res, $Val extends ShoppingListItemState>
+    implements $ShoppingListItemStateCopyWith<$Res> {
+  _$ShoppingListItemStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shoppingListItems = null,
+  }) {
+    return _then(_value.copyWith(
+      shoppingListItems: null == shoppingListItems
+          ? _value.shoppingListItems
+          : shoppingListItems // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingListItem>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ShoppingListItemStateCopyWith<$Res> implements $ShoppingListItemStateCopyWith<$Res> {
+  factory _$$_ShoppingListItemStateCopyWith(
+          _$_ShoppingListItemState value, $Res Function(_$_ShoppingListItemState) then) =
+      __$$_ShoppingListItemStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<ShoppingListItem> shoppingListItems});
+}
+
+/// @nodoc
+class __$$_ShoppingListItemStateCopyWithImpl<$Res>
+    extends _$ShoppingListItemStateCopyWithImpl<$Res, _$_ShoppingListItemState>
+    implements _$$_ShoppingListItemStateCopyWith<$Res> {
+  __$$_ShoppingListItemStateCopyWithImpl(_$_ShoppingListItemState _value, $Res Function(_$_ShoppingListItemState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shoppingListItems = null,
+  }) {
+    return _then(_$_ShoppingListItemState(
+      shoppingListItems: null == shoppingListItems
+          ? _value._shoppingListItems
+          : shoppingListItems // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingListItem>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ShoppingListItemState implements _ShoppingListItemState {
+  const _$_ShoppingListItemState({final List<ShoppingListItem> shoppingListItems = const <ShoppingListItem>[]})
+      : _shoppingListItems = shoppingListItems;
+
+  factory _$_ShoppingListItemState.fromJson(Map<String, dynamic> json) => _$$_ShoppingListItemStateFromJson(json);
+
+  final List<ShoppingListItem> _shoppingListItems;
+  @override
+  @JsonKey()
+  List<ShoppingListItem> get shoppingListItems {
+    if (_shoppingListItems is EqualUnmodifiableListView) return _shoppingListItems;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_shoppingListItems);
+  }
+
+  @override
+  String toString() {
+    return 'ShoppingListItemState(shoppingListItems: $shoppingListItems)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ShoppingListItemState &&
+            const DeepCollectionEquality().equals(other._shoppingListItems, _shoppingListItems));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_shoppingListItems));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ShoppingListItemStateCopyWith<_$_ShoppingListItemState> get copyWith =>
+      __$$_ShoppingListItemStateCopyWithImpl<_$_ShoppingListItemState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ShoppingListItemStateToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShoppingListItemState implements ShoppingListItemState {
+  const factory _ShoppingListItemState({final List<ShoppingListItem> shoppingListItems}) = _$_ShoppingListItemState;
+
+  factory _ShoppingListItemState.fromJson(Map<String, dynamic> json) = _$_ShoppingListItemState.fromJson;
+
+  @override
+  List<ShoppingListItem> get shoppingListItems;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ShoppingListItemStateCopyWith<_$_ShoppingListItemState> get copyWith => throw _privateConstructorUsedError;
 }

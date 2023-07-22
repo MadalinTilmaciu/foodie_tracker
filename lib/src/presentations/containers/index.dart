@@ -21,3 +21,4 @@ part 'contacts_container.dart';
 part 'starred_messages_container.dart';
 part 'is_starred_message_container.dart';
 part 'recycling_stats_container.dart';
+part 'shopping_list_container.dart';

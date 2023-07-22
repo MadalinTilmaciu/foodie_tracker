@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:redux_epics/redux_epics.dart';
 
 import '../models/index.dart';
@@ -8,6 +7,7 @@ import 'go_upc_epics.dart';
 import 'meals_epics.dart';
 import 'products_epics.dart';
 import 'recycling_stats.dart';
+import 'shopping_list_epics.dart';
 import 'starred_messages_epics.dart';
 
 class AppEpics implements EpicClass<AppState> {
@@ -19,6 +19,7 @@ class AppEpics implements EpicClass<AppState> {
     this._contacts,
     this._starredMessages,
     this._recyclingStatsEpics,
+    this._shoppingListEpics,
   );
 
   final AuthEpics _auth;
@@ -28,6 +29,7 @@ class AppEpics implements EpicClass<AppState> {
   final ContactsEpics _contacts;
   final StarredMessagesEpics _starredMessages;
   final RecyclingStatsEpics _recyclingStatsEpics;
+  final ShoppingListEpics _shoppingListEpics;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -40,6 +42,7 @@ class AppEpics implements EpicClass<AppState> {
         _contacts.call,
         _starredMessages.call,
         _recyclingStatsEpics.call,
+        _shoppingListEpics.call,
       ],
     )(actions, store);
   }

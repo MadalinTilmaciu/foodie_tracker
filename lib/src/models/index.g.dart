@@ -21,6 +21,9 @@ _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
       recyclingStats: json['recyclingStats'] == null
           ? const RecyclingStatsState()
           : RecyclingStatsState.fromJson(json['recyclingStats'] as Map<String, dynamic>),
+      shoppingList: json['shoppingList'] == null
+          ? const ShoppingListItemState()
+          : ShoppingListItemState.fromJson(json['shoppingList'] as Map<String, dynamic>),
       pendingActions:
           (json['pendingActions'] as List<dynamic>?)?.map((dynamic e) => e as String).toSet() ?? const <String>{},
     );
@@ -32,6 +35,7 @@ Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynami
       'contacts': instance.contacts.toJson(),
       'starredMessages': instance.starredMessages.toJson(),
       'recyclingStats': instance.recyclingStats.toJson(),
+      'shoppingList': instance.shoppingList.toJson(),
       'pendingActions': instance.pendingActions.toList(),
     };
 
@@ -397,4 +401,27 @@ _$_RecyclingStatsState _$$_RecyclingStatsStateFromJson(Map<String, dynamic> json
 
 Map<String, dynamic> _$$_RecyclingStatsStateToJson(_$_RecyclingStatsState instance) => <String, dynamic>{
       'recyclingStats': instance.recyclingStats.map((RecyclingStats e) => e.toJson()).toList(),
+    };
+
+_$_ShoppingListItem _$$_ShoppingListItemFromJson(Map<String, dynamic> json) => _$_ShoppingListItem(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      isActive: json['isActive'] as bool,
+    );
+
+Map<String, dynamic> _$$_ShoppingListItemToJson(_$_ShoppingListItem instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'isActive': instance.isActive,
+    };
+
+_$_ShoppingListItemState _$$_ShoppingListItemStateFromJson(Map<String, dynamic> json) => _$_ShoppingListItemState(
+      shoppingListItems: (json['shoppingListItems'] as List<dynamic>?)
+              ?.map((dynamic e) => ShoppingListItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <ShoppingListItem>[],
+    );
+
+Map<String, dynamic> _$$_ShoppingListItemStateToJson(_$_ShoppingListItemState instance) => <String, dynamic>{
+      'shoppingListItems': instance.shoppingListItems.map((ShoppingListItem e) => e.toJson()).toList(),
     };

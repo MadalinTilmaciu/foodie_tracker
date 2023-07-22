@@ -49,6 +49,11 @@ part 'starred_messages/check_starred_message.dart';
 part 'recycling_stats/list_recycling_stats.dart';
 part 'recycling_stats/update_recycling_stats.dart';
 
+part 'shopping_list.dart/add_shopping_list_item.dart';
+part 'shopping_list.dart/list_shopping_list_items.dart';
+part 'shopping_list.dart/remove_shopping_list_item.dart';
+part 'shopping_list.dart/update_shopping_list_item.dart';
+
 abstract class PendingActions {
   String get pendingId;
 }

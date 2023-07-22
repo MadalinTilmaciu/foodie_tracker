@@ -9,6 +9,7 @@ class AppState with _$AppState {
     @Default(ContactState()) ContactState contacts,
     @Default(StarredMessageState()) StarredMessageState starredMessages,
     @Default(RecyclingStatsState()) RecyclingStatsState recyclingStats,
+    @Default(ShoppingListItemState()) ShoppingListItemState shoppingList,
     @Default(<String>{}) Set<String> pendingActions,
   }) = _AppState;
 

@@ -44,6 +44,9 @@ class AuthEpics implements EpicClass<AppState> {
             const ListMealCategories.start(),
             ListRecyclingStats.start(users.last!.uid),
             ListContacts.start(users.last!.uid),
+            ListStarredMessages.start(users.last!.uid),
+            ListFavoriteMeals.start(users.last!.uid),
+            ListShoppingListItems.start(uid: users.last!.uid),
           ]
         ];
       }).onErrorReturnWith((Object error, StackTrace stackTrace) => InitializeApp.error(error, stackTrace));

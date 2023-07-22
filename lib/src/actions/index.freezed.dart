@@ -19222,3 +19222,2261 @@ abstract class UpdateRecyclingStatsError implements UpdateRecyclingStats, StopAc
   @JsonKey(ignore: true)
   _$$UpdateRecyclingStatsErrorCopyWith<_$UpdateRecyclingStatsError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$AddShoppingListItem {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddShoppingListItemStart value) start,
+    required TResult Function(AddShoppingListItemSuccessful value) successful,
+    required TResult Function(AddShoppingListItemError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddShoppingListItemStart value)? start,
+    TResult? Function(AddShoppingListItemSuccessful value)? successful,
+    TResult? Function(AddShoppingListItemError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddShoppingListItemStart value)? start,
+    TResult Function(AddShoppingListItemSuccessful value)? successful,
+    TResult Function(AddShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddShoppingListItemCopyWith<AddShoppingListItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddShoppingListItemCopyWith<$Res> {
+  factory $AddShoppingListItemCopyWith(AddShoppingListItem value, $Res Function(AddShoppingListItem) then) =
+      _$AddShoppingListItemCopyWithImpl<$Res, AddShoppingListItem>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddShoppingListItemCopyWithImpl<$Res, $Val extends AddShoppingListItem>
+    implements $AddShoppingListItemCopyWith<$Res> {
+  _$AddShoppingListItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddShoppingListItemStartCopyWith<$Res> implements $AddShoppingListItemCopyWith<$Res> {
+  factory _$$AddShoppingListItemStartCopyWith(
+          _$AddShoppingListItemStart value, $Res Function(_$AddShoppingListItemStart) then) =
+      __$$AddShoppingListItemStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, ShoppingListItem item, String pendingId});
+
+  $ShoppingListItemCopyWith<$Res> get item;
+}
+
+/// @nodoc
+class __$$AddShoppingListItemStartCopyWithImpl<$Res>
+    extends _$AddShoppingListItemCopyWithImpl<$Res, _$AddShoppingListItemStart>
+    implements _$$AddShoppingListItemStartCopyWith<$Res> {
+  __$$AddShoppingListItemStartCopyWithImpl(
+      _$AddShoppingListItemStart _value, $Res Function(_$AddShoppingListItemStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? item = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddShoppingListItemStart(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      item: null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as ShoppingListItem,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ShoppingListItemCopyWith<$Res> get item {
+    return $ShoppingListItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddShoppingListItemStart implements AddShoppingListItemStart {
+  const _$AddShoppingListItemStart(
+      {required this.uid, required this.item, this.pendingId = _kAddShoppingListItemPendingId});
+
+  @override
+  final String uid;
+  @override
+  final ShoppingListItem item;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddShoppingListItem.start(uid: $uid, item: $item, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddShoppingListItemStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.item, item) || other.item == item) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, item, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddShoppingListItemStartCopyWith<_$AddShoppingListItemStart> get copyWith =>
+      __$$AddShoppingListItemStartCopyWithImpl<_$AddShoppingListItemStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, item, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddShoppingListItemStart value) start,
+    required TResult Function(AddShoppingListItemSuccessful value) successful,
+    required TResult Function(AddShoppingListItemError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddShoppingListItemStart value)? start,
+    TResult? Function(AddShoppingListItemSuccessful value)? successful,
+    TResult? Function(AddShoppingListItemError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddShoppingListItemStart value)? start,
+    TResult Function(AddShoppingListItemSuccessful value)? successful,
+    TResult Function(AddShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddShoppingListItemStart implements AddShoppingListItem, StartAction {
+  const factory AddShoppingListItemStart(
+      {required final String uid,
+      required final ShoppingListItem item,
+      final String pendingId}) = _$AddShoppingListItemStart;
+
+  String get uid;
+  ShoppingListItem get item;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddShoppingListItemStartCopyWith<_$AddShoppingListItemStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddShoppingListItemSuccessfulCopyWith<$Res> implements $AddShoppingListItemCopyWith<$Res> {
+  factory _$$AddShoppingListItemSuccessfulCopyWith(
+          _$AddShoppingListItemSuccessful value, $Res Function(_$AddShoppingListItemSuccessful) then) =
+      __$$AddShoppingListItemSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$AddShoppingListItemSuccessfulCopyWithImpl<$Res>
+    extends _$AddShoppingListItemCopyWithImpl<$Res, _$AddShoppingListItemSuccessful>
+    implements _$$AddShoppingListItemSuccessfulCopyWith<$Res> {
+  __$$AddShoppingListItemSuccessfulCopyWithImpl(
+      _$AddShoppingListItemSuccessful _value, $Res Function(_$AddShoppingListItemSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddShoppingListItemSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddShoppingListItemSuccessful implements AddShoppingListItemSuccessful {
+  const _$AddShoppingListItemSuccessful([this.pendingId = _kAddShoppingListItemPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddShoppingListItem.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddShoppingListItemSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddShoppingListItemSuccessfulCopyWith<_$AddShoppingListItemSuccessful> get copyWith =>
+      __$$AddShoppingListItemSuccessfulCopyWithImpl<_$AddShoppingListItemSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddShoppingListItemStart value) start,
+    required TResult Function(AddShoppingListItemSuccessful value) successful,
+    required TResult Function(AddShoppingListItemError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddShoppingListItemStart value)? start,
+    TResult? Function(AddShoppingListItemSuccessful value)? successful,
+    TResult? Function(AddShoppingListItemError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddShoppingListItemStart value)? start,
+    TResult Function(AddShoppingListItemSuccessful value)? successful,
+    TResult Function(AddShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddShoppingListItemSuccessful implements AddShoppingListItem, StopAction {
+  const factory AddShoppingListItemSuccessful([final String pendingId]) = _$AddShoppingListItemSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddShoppingListItemSuccessfulCopyWith<_$AddShoppingListItemSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddShoppingListItemErrorCopyWith<$Res> implements $AddShoppingListItemCopyWith<$Res> {
+  factory _$$AddShoppingListItemErrorCopyWith(
+          _$AddShoppingListItemError value, $Res Function(_$AddShoppingListItemError) then) =
+      __$$AddShoppingListItemErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddShoppingListItemErrorCopyWithImpl<$Res>
+    extends _$AddShoppingListItemCopyWithImpl<$Res, _$AddShoppingListItemError>
+    implements _$$AddShoppingListItemErrorCopyWith<$Res> {
+  __$$AddShoppingListItemErrorCopyWithImpl(
+      _$AddShoppingListItemError _value, $Res Function(_$AddShoppingListItemError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddShoppingListItemError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddShoppingListItemError implements AddShoppingListItemError {
+  const _$AddShoppingListItemError(this.error, this.stackTrace, {this.pendingId = _kAddShoppingListItemPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddShoppingListItem.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddShoppingListItemError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddShoppingListItemErrorCopyWith<_$AddShoppingListItemError> get copyWith =>
+      __$$AddShoppingListItemErrorCopyWithImpl<_$AddShoppingListItemError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddShoppingListItemStart value) start,
+    required TResult Function(AddShoppingListItemSuccessful value) successful,
+    required TResult Function(AddShoppingListItemError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddShoppingListItemStart value)? start,
+    TResult? Function(AddShoppingListItemSuccessful value)? successful,
+    TResult? Function(AddShoppingListItemError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddShoppingListItemStart value)? start,
+    TResult Function(AddShoppingListItemSuccessful value)? successful,
+    TResult Function(AddShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddShoppingListItemError implements AddShoppingListItem, StopAction {
+  const factory AddShoppingListItemError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$AddShoppingListItemError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddShoppingListItemErrorCopyWith<_$AddShoppingListItemError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ListShoppingListItems {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListShoppingListItemsStart value) start,
+    required TResult Function(ListShoppingListItemsSuccessful value) successful,
+    required TResult Function(ListShoppingListItemsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListShoppingListItemsStart value)? start,
+    TResult? Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult? Function(ListShoppingListItemsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListShoppingListItemsStart value)? start,
+    TResult Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult Function(ListShoppingListItemsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListShoppingListItemsCopyWith<ListShoppingListItems> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListShoppingListItemsCopyWith<$Res> {
+  factory $ListShoppingListItemsCopyWith(ListShoppingListItems value, $Res Function(ListShoppingListItems) then) =
+      _$ListShoppingListItemsCopyWithImpl<$Res, ListShoppingListItems>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ListShoppingListItemsCopyWithImpl<$Res, $Val extends ListShoppingListItems>
+    implements $ListShoppingListItemsCopyWith<$Res> {
+  _$ListShoppingListItemsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ListShoppingListItemsStartCopyWith<$Res> implements $ListShoppingListItemsCopyWith<$Res> {
+  factory _$$ListShoppingListItemsStartCopyWith(
+          _$ListShoppingListItemsStart value, $Res Function(_$ListShoppingListItemsStart) then) =
+      __$$ListShoppingListItemsStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, String pendingId});
+}
+
+/// @nodoc
+class __$$ListShoppingListItemsStartCopyWithImpl<$Res>
+    extends _$ListShoppingListItemsCopyWithImpl<$Res, _$ListShoppingListItemsStart>
+    implements _$$ListShoppingListItemsStartCopyWith<$Res> {
+  __$$ListShoppingListItemsStartCopyWithImpl(
+      _$ListShoppingListItemsStart _value, $Res Function(_$ListShoppingListItemsStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListShoppingListItemsStart(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListShoppingListItemsStart implements ListShoppingListItemsStart {
+  const _$ListShoppingListItemsStart({required this.uid, this.pendingId = _kListShoppingListItemsPendingId});
+
+  @override
+  final String uid;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListShoppingListItems.start(uid: $uid, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListShoppingListItemsStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListShoppingListItemsStartCopyWith<_$ListShoppingListItemsStart> get copyWith =>
+      __$$ListShoppingListItemsStartCopyWithImpl<_$ListShoppingListItemsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListShoppingListItemsStart value) start,
+    required TResult Function(ListShoppingListItemsSuccessful value) successful,
+    required TResult Function(ListShoppingListItemsError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListShoppingListItemsStart value)? start,
+    TResult? Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult? Function(ListShoppingListItemsError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListShoppingListItemsStart value)? start,
+    TResult Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult Function(ListShoppingListItemsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListShoppingListItemsStart implements ListShoppingListItems, StartAction {
+  const factory ListShoppingListItemsStart({required final String uid, final String pendingId}) =
+      _$ListShoppingListItemsStart;
+
+  String get uid;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListShoppingListItemsStartCopyWith<_$ListShoppingListItemsStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListShoppingListItemsSuccessfulCopyWith<$Res> implements $ListShoppingListItemsCopyWith<$Res> {
+  factory _$$ListShoppingListItemsSuccessfulCopyWith(
+          _$ListShoppingListItemsSuccessful value, $Res Function(_$ListShoppingListItemsSuccessful) then) =
+      __$$ListShoppingListItemsSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<ShoppingListItem> items, String pendingId});
+}
+
+/// @nodoc
+class __$$ListShoppingListItemsSuccessfulCopyWithImpl<$Res>
+    extends _$ListShoppingListItemsCopyWithImpl<$Res, _$ListShoppingListItemsSuccessful>
+    implements _$$ListShoppingListItemsSuccessfulCopyWith<$Res> {
+  __$$ListShoppingListItemsSuccessfulCopyWithImpl(
+      _$ListShoppingListItemsSuccessful _value, $Res Function(_$ListShoppingListItemsSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListShoppingListItemsSuccessful(
+      null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingListItem>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListShoppingListItemsSuccessful implements ListShoppingListItemsSuccessful {
+  const _$ListShoppingListItemsSuccessful(final List<ShoppingListItem> items,
+      [this.pendingId = _kListShoppingListItemsPendingId])
+      : _items = items;
+
+  final List<ShoppingListItem> _items;
+  @override
+  List<ShoppingListItem> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListShoppingListItems.successful(items: $items, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListShoppingListItemsSuccessful &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListShoppingListItemsSuccessfulCopyWith<_$ListShoppingListItemsSuccessful> get copyWith =>
+      __$$ListShoppingListItemsSuccessfulCopyWithImpl<_$ListShoppingListItemsSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(items, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(items, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(items, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListShoppingListItemsStart value) start,
+    required TResult Function(ListShoppingListItemsSuccessful value) successful,
+    required TResult Function(ListShoppingListItemsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListShoppingListItemsStart value)? start,
+    TResult? Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult? Function(ListShoppingListItemsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListShoppingListItemsStart value)? start,
+    TResult Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult Function(ListShoppingListItemsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListShoppingListItemsSuccessful implements ListShoppingListItems, StopAction {
+  const factory ListShoppingListItemsSuccessful(final List<ShoppingListItem> items, [final String pendingId]) =
+      _$ListShoppingListItemsSuccessful;
+
+  List<ShoppingListItem> get items;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListShoppingListItemsSuccessfulCopyWith<_$ListShoppingListItemsSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListShoppingListItemsErrorCopyWith<$Res> implements $ListShoppingListItemsCopyWith<$Res> {
+  factory _$$ListShoppingListItemsErrorCopyWith(
+          _$ListShoppingListItemsError value, $Res Function(_$ListShoppingListItemsError) then) =
+      __$$ListShoppingListItemsErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ListShoppingListItemsErrorCopyWithImpl<$Res>
+    extends _$ListShoppingListItemsCopyWithImpl<$Res, _$ListShoppingListItemsError>
+    implements _$$ListShoppingListItemsErrorCopyWith<$Res> {
+  __$$ListShoppingListItemsErrorCopyWithImpl(
+      _$ListShoppingListItemsError _value, $Res Function(_$ListShoppingListItemsError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ListShoppingListItemsError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListShoppingListItemsError implements ListShoppingListItemsError {
+  const _$ListShoppingListItemsError(this.error, this.stackTrace, {this.pendingId = _kListShoppingListItemsPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ListShoppingListItems.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListShoppingListItemsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListShoppingListItemsErrorCopyWith<_$ListShoppingListItemsError> get copyWith =>
+      __$$ListShoppingListItemsErrorCopyWithImpl<_$ListShoppingListItemsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListShoppingListItemsStart value) start,
+    required TResult Function(ListShoppingListItemsSuccessful value) successful,
+    required TResult Function(ListShoppingListItemsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListShoppingListItemsStart value)? start,
+    TResult? Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult? Function(ListShoppingListItemsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListShoppingListItemsStart value)? start,
+    TResult Function(ListShoppingListItemsSuccessful value)? successful,
+    TResult Function(ListShoppingListItemsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListShoppingListItemsError implements ListShoppingListItems, StopAction {
+  const factory ListShoppingListItemsError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$ListShoppingListItemsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ListShoppingListItemsErrorCopyWith<_$ListShoppingListItemsError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$RemoveShoppingListItem {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveShoppingListItemStart value) start,
+    required TResult Function(RemoveShoppingListItemSuccessful value) successful,
+    required TResult Function(RemoveShoppingListItemError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveShoppingListItemStart value)? start,
+    TResult? Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult? Function(RemoveShoppingListItemError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveShoppingListItemStart value)? start,
+    TResult Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult Function(RemoveShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RemoveShoppingListItemCopyWith<RemoveShoppingListItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RemoveShoppingListItemCopyWith<$Res> {
+  factory $RemoveShoppingListItemCopyWith(RemoveShoppingListItem value, $Res Function(RemoveShoppingListItem) then) =
+      _$RemoveShoppingListItemCopyWithImpl<$Res, RemoveShoppingListItem>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$RemoveShoppingListItemCopyWithImpl<$Res, $Val extends RemoveShoppingListItem>
+    implements $RemoveShoppingListItemCopyWith<$Res> {
+  _$RemoveShoppingListItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RemoveShoppingListItemStartCopyWith<$Res> implements $RemoveShoppingListItemCopyWith<$Res> {
+  factory _$$RemoveShoppingListItemStartCopyWith(
+          _$RemoveShoppingListItemStart value, $Res Function(_$RemoveShoppingListItemStart) then) =
+      __$$RemoveShoppingListItemStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, ShoppingListItem item, String pendingId});
+
+  $ShoppingListItemCopyWith<$Res> get item;
+}
+
+/// @nodoc
+class __$$RemoveShoppingListItemStartCopyWithImpl<$Res>
+    extends _$RemoveShoppingListItemCopyWithImpl<$Res, _$RemoveShoppingListItemStart>
+    implements _$$RemoveShoppingListItemStartCopyWith<$Res> {
+  __$$RemoveShoppingListItemStartCopyWithImpl(
+      _$RemoveShoppingListItemStart _value, $Res Function(_$RemoveShoppingListItemStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? item = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveShoppingListItemStart(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      item: null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as ShoppingListItem,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ShoppingListItemCopyWith<$Res> get item {
+    return $ShoppingListItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$RemoveShoppingListItemStart implements RemoveShoppingListItemStart {
+  const _$RemoveShoppingListItemStart(
+      {required this.uid, required this.item, this.pendingId = _kRemoveShoppingListItemPendingId});
+
+  @override
+  final String uid;
+  @override
+  final ShoppingListItem item;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveShoppingListItem.start(uid: $uid, item: $item, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveShoppingListItemStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.item, item) || other.item == item) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, item, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveShoppingListItemStartCopyWith<_$RemoveShoppingListItemStart> get copyWith =>
+      __$$RemoveShoppingListItemStartCopyWithImpl<_$RemoveShoppingListItemStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, item, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveShoppingListItemStart value) start,
+    required TResult Function(RemoveShoppingListItemSuccessful value) successful,
+    required TResult Function(RemoveShoppingListItemError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveShoppingListItemStart value)? start,
+    TResult? Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult? Function(RemoveShoppingListItemError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveShoppingListItemStart value)? start,
+    TResult Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult Function(RemoveShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveShoppingListItemStart implements RemoveShoppingListItem, StartAction {
+  const factory RemoveShoppingListItemStart(
+      {required final String uid,
+      required final ShoppingListItem item,
+      final String pendingId}) = _$RemoveShoppingListItemStart;
+
+  String get uid;
+  ShoppingListItem get item;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveShoppingListItemStartCopyWith<_$RemoveShoppingListItemStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveShoppingListItemSuccessfulCopyWith<$Res> implements $RemoveShoppingListItemCopyWith<$Res> {
+  factory _$$RemoveShoppingListItemSuccessfulCopyWith(
+          _$RemoveShoppingListItemSuccessful value, $Res Function(_$RemoveShoppingListItemSuccessful) then) =
+      __$$RemoveShoppingListItemSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$RemoveShoppingListItemSuccessfulCopyWithImpl<$Res>
+    extends _$RemoveShoppingListItemCopyWithImpl<$Res, _$RemoveShoppingListItemSuccessful>
+    implements _$$RemoveShoppingListItemSuccessfulCopyWith<$Res> {
+  __$$RemoveShoppingListItemSuccessfulCopyWithImpl(
+      _$RemoveShoppingListItemSuccessful _value, $Res Function(_$RemoveShoppingListItemSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveShoppingListItemSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveShoppingListItemSuccessful implements RemoveShoppingListItemSuccessful {
+  const _$RemoveShoppingListItemSuccessful([this.pendingId = _kRemoveShoppingListItemPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveShoppingListItem.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveShoppingListItemSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveShoppingListItemSuccessfulCopyWith<_$RemoveShoppingListItemSuccessful> get copyWith =>
+      __$$RemoveShoppingListItemSuccessfulCopyWithImpl<_$RemoveShoppingListItemSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveShoppingListItemStart value) start,
+    required TResult Function(RemoveShoppingListItemSuccessful value) successful,
+    required TResult Function(RemoveShoppingListItemError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveShoppingListItemStart value)? start,
+    TResult? Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult? Function(RemoveShoppingListItemError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveShoppingListItemStart value)? start,
+    TResult Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult Function(RemoveShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveShoppingListItemSuccessful implements RemoveShoppingListItem, StopAction {
+  const factory RemoveShoppingListItemSuccessful([final String pendingId]) = _$RemoveShoppingListItemSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveShoppingListItemSuccessfulCopyWith<_$RemoveShoppingListItemSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveShoppingListItemErrorCopyWith<$Res> implements $RemoveShoppingListItemCopyWith<$Res> {
+  factory _$$RemoveShoppingListItemErrorCopyWith(
+          _$RemoveShoppingListItemError value, $Res Function(_$RemoveShoppingListItemError) then) =
+      __$$RemoveShoppingListItemErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$RemoveShoppingListItemErrorCopyWithImpl<$Res>
+    extends _$RemoveShoppingListItemCopyWithImpl<$Res, _$RemoveShoppingListItemError>
+    implements _$$RemoveShoppingListItemErrorCopyWith<$Res> {
+  __$$RemoveShoppingListItemErrorCopyWithImpl(
+      _$RemoveShoppingListItemError _value, $Res Function(_$RemoveShoppingListItemError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$RemoveShoppingListItemError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveShoppingListItemError implements RemoveShoppingListItemError {
+  const _$RemoveShoppingListItemError(this.error, this.stackTrace,
+      {this.pendingId = _kRemoveShoppingListItemPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'RemoveShoppingListItem.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveShoppingListItemError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveShoppingListItemErrorCopyWith<_$RemoveShoppingListItemError> get copyWith =>
+      __$$RemoveShoppingListItemErrorCopyWithImpl<_$RemoveShoppingListItemError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RemoveShoppingListItemStart value) start,
+    required TResult Function(RemoveShoppingListItemSuccessful value) successful,
+    required TResult Function(RemoveShoppingListItemError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RemoveShoppingListItemStart value)? start,
+    TResult? Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult? Function(RemoveShoppingListItemError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RemoveShoppingListItemStart value)? start,
+    TResult Function(RemoveShoppingListItemSuccessful value)? successful,
+    TResult Function(RemoveShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveShoppingListItemError implements RemoveShoppingListItem, StopAction {
+  const factory RemoveShoppingListItemError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$RemoveShoppingListItemError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$RemoveShoppingListItemErrorCopyWith<_$RemoveShoppingListItemError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$UpdateShoppingListItem {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateShoppingListItemStart value) start,
+    required TResult Function(UpdateShoppingListItemSuccessful value) successful,
+    required TResult Function(UpdateShoppingListItemError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateShoppingListItemStart value)? start,
+    TResult? Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult? Function(UpdateShoppingListItemError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateShoppingListItemStart value)? start,
+    TResult Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult Function(UpdateShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateShoppingListItemCopyWith<UpdateShoppingListItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateShoppingListItemCopyWith<$Res> {
+  factory $UpdateShoppingListItemCopyWith(UpdateShoppingListItem value, $Res Function(UpdateShoppingListItem) then) =
+      _$UpdateShoppingListItemCopyWithImpl<$Res, UpdateShoppingListItem>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$UpdateShoppingListItemCopyWithImpl<$Res, $Val extends UpdateShoppingListItem>
+    implements $UpdateShoppingListItemCopyWith<$Res> {
+  _$UpdateShoppingListItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateShoppingListItemStartCopyWith<$Res> implements $UpdateShoppingListItemCopyWith<$Res> {
+  factory _$$UpdateShoppingListItemStartCopyWith(
+          _$UpdateShoppingListItemStart value, $Res Function(_$UpdateShoppingListItemStart) then) =
+      __$$UpdateShoppingListItemStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String uid, ShoppingListItem item, String pendingId});
+
+  $ShoppingListItemCopyWith<$Res> get item;
+}
+
+/// @nodoc
+class __$$UpdateShoppingListItemStartCopyWithImpl<$Res>
+    extends _$UpdateShoppingListItemCopyWithImpl<$Res, _$UpdateShoppingListItemStart>
+    implements _$$UpdateShoppingListItemStartCopyWith<$Res> {
+  __$$UpdateShoppingListItemStartCopyWithImpl(
+      _$UpdateShoppingListItemStart _value, $Res Function(_$UpdateShoppingListItemStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+    Object? item = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateShoppingListItemStart(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      item: null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as ShoppingListItem,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ShoppingListItemCopyWith<$Res> get item {
+    return $ShoppingListItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateShoppingListItemStart implements UpdateShoppingListItemStart {
+  const _$UpdateShoppingListItemStart(
+      {required this.uid, required this.item, this.pendingId = _kUpdateShoppingListItemPendingId});
+
+  @override
+  final String uid;
+  @override
+  final ShoppingListItem item;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateShoppingListItem.start(uid: $uid, item: $item, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateShoppingListItemStart &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.item, item) || other.item == item) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid, item, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateShoppingListItemStartCopyWith<_$UpdateShoppingListItemStart> get copyWith =>
+      __$$UpdateShoppingListItemStartCopyWithImpl<_$UpdateShoppingListItemStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(uid, item, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(uid, item, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateShoppingListItemStart value) start,
+    required TResult Function(UpdateShoppingListItemSuccessful value) successful,
+    required TResult Function(UpdateShoppingListItemError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateShoppingListItemStart value)? start,
+    TResult? Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult? Function(UpdateShoppingListItemError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateShoppingListItemStart value)? start,
+    TResult Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult Function(UpdateShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateShoppingListItemStart implements UpdateShoppingListItem, StartAction {
+  const factory UpdateShoppingListItemStart(
+      {required final String uid,
+      required final ShoppingListItem item,
+      final String pendingId}) = _$UpdateShoppingListItemStart;
+
+  String get uid;
+  ShoppingListItem get item;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateShoppingListItemStartCopyWith<_$UpdateShoppingListItemStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateShoppingListItemSuccessfulCopyWith<$Res> implements $UpdateShoppingListItemCopyWith<$Res> {
+  factory _$$UpdateShoppingListItemSuccessfulCopyWith(
+          _$UpdateShoppingListItemSuccessful value, $Res Function(_$UpdateShoppingListItemSuccessful) then) =
+      __$$UpdateShoppingListItemSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<ShoppingListItem> items, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateShoppingListItemSuccessfulCopyWithImpl<$Res>
+    extends _$UpdateShoppingListItemCopyWithImpl<$Res, _$UpdateShoppingListItemSuccessful>
+    implements _$$UpdateShoppingListItemSuccessfulCopyWith<$Res> {
+  __$$UpdateShoppingListItemSuccessfulCopyWithImpl(
+      _$UpdateShoppingListItemSuccessful _value, $Res Function(_$UpdateShoppingListItemSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateShoppingListItemSuccessful(
+      null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ShoppingListItem>,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateShoppingListItemSuccessful implements UpdateShoppingListItemSuccessful {
+  const _$UpdateShoppingListItemSuccessful(final List<ShoppingListItem> items,
+      [this.pendingId = _kUpdateShoppingListItemPendingId])
+      : _items = items;
+
+  final List<ShoppingListItem> _items;
+  @override
+  List<ShoppingListItem> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateShoppingListItem.successful(items: $items, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateShoppingListItemSuccessful &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateShoppingListItemSuccessfulCopyWith<_$UpdateShoppingListItemSuccessful> get copyWith =>
+      __$$UpdateShoppingListItemSuccessfulCopyWithImpl<_$UpdateShoppingListItemSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(items, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(items, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(items, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateShoppingListItemStart value) start,
+    required TResult Function(UpdateShoppingListItemSuccessful value) successful,
+    required TResult Function(UpdateShoppingListItemError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateShoppingListItemStart value)? start,
+    TResult? Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult? Function(UpdateShoppingListItemError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateShoppingListItemStart value)? start,
+    TResult Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult Function(UpdateShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateShoppingListItemSuccessful implements UpdateShoppingListItem, StopAction {
+  const factory UpdateShoppingListItemSuccessful(final List<ShoppingListItem> items, [final String pendingId]) =
+      _$UpdateShoppingListItemSuccessful;
+
+  List<ShoppingListItem> get items;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateShoppingListItemSuccessfulCopyWith<_$UpdateShoppingListItemSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateShoppingListItemErrorCopyWith<$Res> implements $UpdateShoppingListItemCopyWith<$Res> {
+  factory _$$UpdateShoppingListItemErrorCopyWith(
+          _$UpdateShoppingListItemError value, $Res Function(_$UpdateShoppingListItemError) then) =
+      __$$UpdateShoppingListItemErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateShoppingListItemErrorCopyWithImpl<$Res>
+    extends _$UpdateShoppingListItemCopyWithImpl<$Res, _$UpdateShoppingListItemError>
+    implements _$$UpdateShoppingListItemErrorCopyWith<$Res> {
+  __$$UpdateShoppingListItemErrorCopyWithImpl(
+      _$UpdateShoppingListItemError _value, $Res Function(_$UpdateShoppingListItemError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateShoppingListItemError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateShoppingListItemError implements UpdateShoppingListItemError {
+  const _$UpdateShoppingListItemError(this.error, this.stackTrace,
+      {this.pendingId = _kUpdateShoppingListItemPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateShoppingListItem.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateShoppingListItemError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateShoppingListItemErrorCopyWith<_$UpdateShoppingListItemError> get copyWith =>
+      __$$UpdateShoppingListItemErrorCopyWithImpl<_$UpdateShoppingListItemError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid, ShoppingListItem item, String pendingId) start,
+    required TResult Function(List<ShoppingListItem> items, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult? Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid, ShoppingListItem item, String pendingId)? start,
+    TResult Function(List<ShoppingListItem> items, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateShoppingListItemStart value) start,
+    required TResult Function(UpdateShoppingListItemSuccessful value) successful,
+    required TResult Function(UpdateShoppingListItemError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateShoppingListItemStart value)? start,
+    TResult? Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult? Function(UpdateShoppingListItemError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateShoppingListItemStart value)? start,
+    TResult Function(UpdateShoppingListItemSuccessful value)? successful,
+    TResult Function(UpdateShoppingListItemError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateShoppingListItemError implements UpdateShoppingListItem, StopAction {
+  const factory UpdateShoppingListItemError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$UpdateShoppingListItemError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateShoppingListItemErrorCopyWith<_$UpdateShoppingListItemError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

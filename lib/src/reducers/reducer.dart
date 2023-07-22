@@ -8,6 +8,7 @@ import 'contacts_reducer.dart';
 import 'meals_reducer.dart';
 import 'products_reducer.dart';
 import 'recycling_stats_reducer.dart';
+import 'shopping_list_reducer.dart';
 import 'starred_messages_reducer.dart';
 
 Reducer<AppState> reducer = combineReducers(
@@ -34,6 +35,7 @@ AppState _reducer(AppState state, dynamic action) {
     contacts: contactsReducer(state.contacts, action),
     starredMessages: starredMessagesReducer(state.starredMessages, action),
     recyclingStats: recyclingStatsReducer(state.recyclingStats, action),
+    shoppingList: shoppingListReducer(state.shoppingList, action),
   );
 }
 

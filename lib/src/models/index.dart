@@ -28,3 +28,6 @@ part 'starred_messages/starred_message_state.dart';
 
 part 'recycling_stats/recycling_stats.dart';
 part 'recycling_stats/recycling_stats_state.dart';
+
+part 'shopping_list/shopping_list_item.dart';
+part 'shopping_list/shopping_list_state.dart';
