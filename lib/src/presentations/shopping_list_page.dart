@@ -223,6 +223,7 @@ class ShoppingListPage extends StatelessWidget {
             child: const Icon(
               Icons.add,
               size: 40,
+              color: Colors.white,
             ),
             onPressed: () {
               displayTextInputDialog(context, user!.uid);
