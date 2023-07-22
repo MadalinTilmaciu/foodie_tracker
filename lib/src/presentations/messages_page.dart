@@ -158,7 +158,7 @@ class MessagesPage extends StatelessWidget {
                     if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                       snapshot.data?.sort(
                         (types.Room a, types.Room b) {
-                          return b.updatedAt!.compareTo(a.updatedAt!);
+                          return b.updatedAt?.compareTo(a.updatedAt!) ?? 0;
                         },
                       );
 
