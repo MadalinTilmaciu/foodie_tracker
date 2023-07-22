@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:bottom_picker/bottom_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +29,11 @@ class FieldInput extends StatelessWidget {
         if (label.contains('*'))
           RichText(
             text: TextSpan(
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
-              ),
+              style: AdaptiveTheme.of(context).theme.textTheme.titleMedium,
               children: <TextSpan>[
                 TextSpan(
                   text: label.replaceAll('*', ''),
+                  style: AdaptiveTheme.of(context).theme.textTheme.titleMedium,
                 ),
                 const TextSpan(
                   text: '*',
@@ -49,11 +47,7 @@ class FieldInput extends StatelessWidget {
         else
           Text(
             label,
-            style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
-            ),
+            style: AdaptiveTheme.of(context).theme.textTheme.titleMedium,
           ),
         Form(
           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -88,23 +82,19 @@ class FieldInput extends StatelessWidget {
                 onTap: label == 'Expiration date'
                     ? () {
                         BottomPicker.date(
-                          backgroundColor: Colors.grey[900]!,
+                          backgroundColor: AdaptiveTheme.of(context).theme.cardColor,
                           title: 'Set product expiration date',
                           dateOrder: DatePickerDateOrder.dmy,
-                          pickerTextStyle: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                          titleStyle: const TextStyle(
+                          pickerTextStyle: AdaptiveTheme.of(context).theme.textTheme.titleMedium!,
+                          titleStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
-                            color: Colors.blue,
+                            color: AdaptiveTheme.of(context).theme.focusColor,
                           ),
                           height: 400,
                           displayCloseIcon: false,
                           dismissable: true,
-                          buttonSingleColor: Colors.blue,
+                          buttonSingleColor: AdaptiveTheme.of(context).theme.focusColor,
                           minDateTime: DateTime.now(),
                           onChange: (dynamic index) {
                             final DateFormat dateFormat = DateFormat('dd/MM/yyyy');

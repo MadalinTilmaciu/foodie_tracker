@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -19,11 +20,10 @@ class MealsPage extends StatelessWidget {
           builder: (BuildContext context, List<MealCategory> categories) {
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
                 title: const Text(
                   'Meals',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -41,10 +41,10 @@ class MealsPage extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 4),
                                 child: TextField(
-                                  decoration: const InputDecoration(
-                                    label: Text('search meal...'),
-                                    prefixIcon: Icon(Icons.search),
-                                    prefixIconColor: Colors.lightBlue,
+                                  decoration: InputDecoration(
+                                    label: const Text('search meal...'),
+                                    prefixIcon: const Icon(Icons.search),
+                                    prefixIconColor: AdaptiveTheme.of(context).theme.focusColor,
                                   ),
                                   onChanged: (String value) {
                                     if (value.isEmpty) {
@@ -68,7 +68,7 @@ class MealsPage extends StatelessWidget {
                                           return Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4),
                                             child: ChoiceChip(
-                                              selectedColor: Colors.blue,
+                                              selectedColor: AdaptiveTheme.of(context).theme.focusColor,
                                               label: Text(category.title),
                                               selected: selectedCategory == category,
                                               onSelected: (bool selected) {
@@ -113,7 +113,6 @@ class MealsPage extends StatelessWidget {
                             child: Text(
                               'There are no meals for this category',
                               style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 16,
                               ),
                             ),
@@ -130,7 +129,7 @@ class MealsPage extends StatelessWidget {
                                     padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.grey[800],
+                                        color: AdaptiveTheme.of(context).theme.cardColor,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(12),
                                         ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:bilions_ui/bilions_ui.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -33,12 +34,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
     }
 
     final AppBar appBar = AppBar(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
       centerTitle: true,
       title: const Text(
         'Edit Profile',
         style: TextStyle(
-          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -51,7 +51,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
         icon: const Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Colors.white,
         ),
       ),
     );
@@ -65,7 +64,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           body: SafeArea(
             child: Container(
               height: 250,
-              color: Colors.grey[900],
+              color: AdaptiveTheme.of(context).theme.cardColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +114,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   },
                                 ),
                               ],
-                              lineColor: Colors.white,
                             ),
                           ),
                           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -142,7 +140,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   else
                                     const ClipOval(
                                       child: Material(
-                                        color: Colors.grey,
                                         child: InkWell(
                                           child: SizedBox(
                                             width: 70,
@@ -166,7 +163,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.grey,
                                   ),
                                 ),
                               ),
@@ -175,13 +171,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           const SizedBox(
                             height: 8,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 23),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 23),
                             child: Text(
                               'Edit',
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                color: Colors.blue,
+                                color: AdaptiveTheme.of(context).theme.focusColor,
                                 fontSize: 14,
                               ),
                             ),

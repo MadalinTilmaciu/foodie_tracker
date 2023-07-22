@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -13,12 +14,10 @@ class FeedbackPage extends StatelessWidget {
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
       ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
       title: const Text(
         'Feedback',
-        style: TextStyle(
-          color: Colors.white,
-        ),
+        style: TextStyle(),
       ),
       automaticallyImplyLeading: false,
       leading: IconButton(
@@ -28,7 +27,6 @@ class FeedbackPage extends StatelessWidget {
         icon: const Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Colors.white,
         ),
       ),
     );

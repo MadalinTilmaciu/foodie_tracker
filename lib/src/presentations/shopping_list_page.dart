@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -35,7 +36,6 @@ class ShoppingListPage extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 16),
                 child: MaterialButton(
                   color: Colors.blue,
-                  textColor: Colors.white,
                   child: const Text('Add'),
                   onPressed: () {
                     if (itemName.text != '') {
@@ -64,11 +64,10 @@ class ShoppingListPage extends StatelessWidget {
       builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
             title: const Text(
               'Shopping list',
               style: TextStyle(
-                color: Colors.white,
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
@@ -125,10 +124,11 @@ class ShoppingListPage extends StatelessWidget {
                               ),
                               child: Container(
                                 decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(12),
-                                    ),
-                                    color: Colors.grey[800]),
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(12),
+                                  ),
+                                  color: AdaptiveTheme.of(context).theme.cardColor,
+                                ),
                                 child: ListTile(
                                   leading: list[index] == true
                                       ? GestureDetector(
@@ -222,7 +222,6 @@ class ShoppingListPage extends StatelessWidget {
             backgroundColor: Colors.blue,
             child: const Icon(
               Icons.add,
-              color: Colors.white,
               size: 40,
             ),
             onPressed: () {

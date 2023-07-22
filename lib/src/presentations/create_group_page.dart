@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:bilions_ui/bilions_ui.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:drop_down_list/model/selected_list_item.dart';
@@ -49,12 +50,11 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
     }
 
     final AppBar appBar = AppBar(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
       centerTitle: true,
       title: const Text(
         'Create group',
         style: TextStyle(
-          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -67,7 +67,6 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
         icon: const Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Colors.white,
         ),
       ),
     );
@@ -140,7 +139,6 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
                                       },
                                     ),
                                   ],
-                                  lineColor: Colors.white,
                                 ),
                               ),
                               backgroundColor: Theme.of(context).scaffoldBackgroundColor,

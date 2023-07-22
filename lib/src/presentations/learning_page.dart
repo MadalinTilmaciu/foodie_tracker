@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -19,11 +20,10 @@ class LearningPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
         title: const Text(
           'Learn to recycle',
           style: TextStyle(
-            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -36,7 +36,6 @@ class LearningPage extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back_ios,
             size: 20,
-            color: Colors.white,
           ),
         ),
       ),
@@ -69,7 +68,7 @@ class LearningPage extends StatelessWidget {
                     borderRadius: const BorderRadius.all(
                       Radius.circular(10),
                     ),
-                    color: Colors.grey[800],
+                    color: AdaptiveTheme.of(context).theme.cardColor,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,7 +121,6 @@ class LearningPage extends StatelessWidget {
                         child: Icon(
                           Icons.arrow_forward_ios,
                           size: 20,
-                          color: Colors.white,
                         ),
                       ),
                     ],

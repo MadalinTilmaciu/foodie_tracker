@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -18,12 +19,11 @@ class _UserQRScreenState extends State<UserQRScreen> {
   @override
   Widget build(BuildContext context) {
     final AppBar appBar = AppBar(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
       centerTitle: true,
       title: const Text(
         'QR Code',
         style: TextStyle(
-          color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -37,7 +37,6 @@ class _UserQRScreenState extends State<UserQRScreen> {
         icon: const Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Colors.white,
         ),
       ),
     );
@@ -66,15 +65,18 @@ class _UserQRScreenState extends State<UserQRScreen> {
                             height: 300,
                             width: 300,
                             child: Container(
-                              padding: const EdgeInsets.only(left: 20, right: 20),
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
                               decoration: BoxDecoration(
-                                color: Colors.white,
                                 border: Border.all(
-                                  color: Colors.white,
+                                  color: AdaptiveTheme.of(context).theme.cardColor,
                                 ),
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(20),
                                 ),
+                                color: Colors.white,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -173,7 +175,6 @@ class _UserQRScreenState extends State<UserQRScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white,
                         ),
                       ),
                     ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +22,10 @@ class ProductsPage extends StatelessWidget {
           builder: (BuildContext context, List<ProductCategory> categories) {
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
                 title: const Text(
                   'Products',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -49,7 +49,7 @@ class ProductsPage extends StatelessWidget {
                                       return Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 4),
                                         child: ChoiceChip(
-                                          selectedColor: Colors.blue,
+                                          selectedColor: AdaptiveTheme.of(context).theme.focusColor,
                                           label: Text(category.title),
                                           selected: selectedCategory == category,
                                           onSelected: (bool selected) {
@@ -92,7 +92,6 @@ class ProductsPage extends StatelessWidget {
                       },
                       child: const Icon(
                         CupertinoIcons.doc_text_viewfinder,
-                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -143,7 +142,7 @@ class ProductsPage extends StatelessWidget {
                                     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.grey[800],
+                                        color: AdaptiveTheme.of(context).theme.cardColor,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(12),
                                         ),

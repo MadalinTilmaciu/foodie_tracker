@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:drop_down_list/drop_down_list.dart';
 import 'package:drop_down_list/model/selected_list_item.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,6 @@ class DropDownInputState extends State<DropDownInput> {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
           ),
         ),
         data: widget.categories ?? <SelectedListItem>[],
@@ -69,11 +69,7 @@ class DropDownInputState extends State<DropDownInput> {
         if (widget.title.contains('*'))
           RichText(
             text: TextSpan(
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
-              ),
+              style: AdaptiveTheme.of(context).theme.textTheme.titleMedium,
               children: <TextSpan>[
                 TextSpan(
                   text: widget.title.replaceAll('*', ''),
@@ -92,7 +88,6 @@ class DropDownInputState extends State<DropDownInput> {
         const SizedBox(height: 5.0),
         TextFormField(
           controller: widget.textEditingController,
-          cursorColor: Colors.white,
           onTap: () {
             FocusScope.of(context).unfocus();
             onTextFieldTap();

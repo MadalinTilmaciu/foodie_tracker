@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -30,27 +31,27 @@ class HomePage extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.food_bank_rounded),
           title: 'Products',
-          inactiveColorPrimary: Colors.white70,
+          inactiveColorPrimary: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.doc_append),
           title: 'Meals',
-          inactiveColorPrimary: Colors.white70,
+          inactiveColorPrimary: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.shopping_basket),
           title: "Shop' List",
-          inactiveColorPrimary: Colors.white70,
+          inactiveColorPrimary: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.chat_bubble_2_fill),
           title: 'Messages',
-          inactiveColorPrimary: Colors.white70,
+          inactiveColorPrimary: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.settings),
           title: 'Settings',
-          inactiveColorPrimary: Colors.white70,
+          inactiveColorPrimary: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
         ),
       ];
     }

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
@@ -179,7 +180,6 @@ class ChatRoomPageState extends State<ChatRoomPage> {
           Text(
             roomData!['name'].toString(),
             style: const TextStyle(
-              color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -193,7 +193,7 @@ class ChatRoomPageState extends State<ChatRoomPage> {
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
       ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
@@ -201,7 +201,6 @@ class ChatRoomPageState extends State<ChatRoomPage> {
         icon: const Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Colors.white,
         ),
       ),
     );

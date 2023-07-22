@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -17,11 +18,10 @@ class FavoriteMealsPage extends StatelessWidget {
       builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
             title: const Text(
               'Favorite meals',
               style: TextStyle(
-                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -34,7 +34,6 @@ class FavoriteMealsPage extends StatelessWidget {
               icon: const Icon(
                 Icons.arrow_back_ios,
                 size: 20,
-                color: Colors.white,
               ),
             ),
           ),
@@ -83,7 +82,7 @@ class FavoriteMealsPage extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 14),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: Colors.grey[800],
+                                    color: AdaptiveTheme.of(context).theme.cardColor,
                                     borderRadius: const BorderRadius.all(
                                       Radius.circular(12),
                                     ),

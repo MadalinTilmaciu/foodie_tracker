@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -82,7 +83,7 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                           width: mediaQueryData.size.width - 40,
                                           height: 70,
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[800],
+                                            color: AdaptiveTheme.of(context).theme.cardColor,
                                             borderRadius: const BorderRadius.all(
                                               Radius.circular(16),
                                             ),
@@ -188,7 +189,7 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                 child: Container(
                                   width: mediaQueryData.size.width - 40,
                                   decoration: BoxDecoration(
-                                    color: Colors.grey[800],
+                                    color: AdaptiveTheme.of(context).theme.cardColor,
                                     borderRadius: const BorderRadius.all(
                                       Radius.circular(16),
                                     ),
@@ -206,12 +207,10 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                         ),
                                         leading: const Image(
                                           height: 25,
-                                          color: Colors.white,
                                           image: AssetImage('assets/icons/icons8-ingredients-50.png'),
                                         ),
                                         trailing: const Icon(
                                           Icons.keyboard_arrow_down,
-                                          color: Colors.white,
                                         ),
                                         title: Transform.translate(
                                           offset: const Offset(-16, 0),
@@ -219,14 +218,12 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                             'Ingredients',
                                             style: TextStyle(
                                               fontSize: 18,
-                                              color: Colors.white,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
                                         ),
                                         children: <Widget>[
                                           const Divider(
-                                            color: Colors.white,
                                             height: 5,
                                           ),
                                           if (recipe.ingredient1?.isNotEmpty ?? false)
@@ -360,12 +357,10 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                         ),
                                         leading: const Image(
                                           height: 25,
-                                          color: Colors.white,
                                           image: AssetImage('assets/icons/icons8-instructions-49.png'),
                                         ),
                                         trailing: const Icon(
                                           Icons.keyboard_arrow_down,
-                                          color: Colors.white,
                                         ),
                                         title: Transform.translate(
                                           offset: const Offset(-16, 0),
@@ -373,14 +368,12 @@ class _MealRecipePageState extends State<MealRecipePage> with TickerProviderStat
                                             'Instructions',
                                             style: TextStyle(
                                               fontSize: 18,
-                                              color: Colors.white,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
                                         ),
                                         children: <Widget>[
                                           const Divider(
-                                            color: Colors.white,
                                             height: 5,
                                           ),
                                           Padding(

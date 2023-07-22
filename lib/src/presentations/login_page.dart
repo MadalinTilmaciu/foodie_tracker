@@ -73,7 +73,6 @@ class _LoginPageState extends State<LoginPage> {
                   const Text(
                     'Hello there,',
                     style: TextStyle(
-                      color: Colors.white,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
@@ -82,7 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                   const Text(
                     'Welcome back',
                     style: TextStyle(
-                      color: Colors.white,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
@@ -169,22 +167,17 @@ class _LoginPageState extends State<LoginPage> {
                             child: Container(
                               margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                               child: const Divider(
-                                color: Colors.white,
                                 height: 25,
                               ),
                             ),
                           ),
                           const Text(
                             'OR',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
                           ),
                           Expanded(
                             child: Container(
                               margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                               child: const Divider(
-                                color: Colors.white,
                                 height: 25,
                               ),
                             ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -6,6 +7,7 @@ import 'package:settings_ui/settings_ui.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
+import 'account_page.dart';
 import 'containers/index.dart';
 import 'edit_profile_page.dart';
 import 'favorite_meals_page.dart';
@@ -29,11 +31,10 @@ class _SettingsPageState extends State<SettingsPage> {
       builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
             title: const Text(
               'Settings',
               style: TextStyle(
-                color: Colors.white,
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
@@ -111,7 +112,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         height: 32,
                         width: 32,
                         decoration: BoxDecoration(
-                          color: Colors.grey[800],
+                          color: AdaptiveTheme.of(context).theme.cardColor,
                           borderRadius: const BorderRadius.all(Radius.circular(4)),
                         ),
                         child: GestureDetector(
@@ -237,6 +238,17 @@ class _SettingsPageState extends State<SettingsPage> {
                         'Account',
                         style: TextStyle(fontSize: 15),
                       ),
+                      onPressed: (BuildContext context) async {
+                        await AdaptiveTheme.getThemeMode().then(
+                          (AdaptiveThemeMode? value) {
+                            PersistentNavBarNavigator.pushNewScreen(
+                              context,
+                              screen: AccountPage(themeMode: value),
+                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                            );
+                          },
+                        );
+                      },
                     ),
                     SettingsTile.navigation(
                       leading: SizedBox(

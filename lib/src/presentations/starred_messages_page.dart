@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -15,11 +16,10 @@ class StarredMessagesPage extends StatelessWidget {
       builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
             title: const Text(
               'Starred messages',
               style: TextStyle(
-                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -32,7 +32,6 @@ class StarredMessagesPage extends StatelessWidget {
               icon: const Icon(
                 Icons.arrow_back_ios,
                 size: 20,
-                color: Colors.white,
               ),
             ),
           ),
@@ -83,7 +82,9 @@ class StarredMessagesPage extends StatelessWidget {
                               ),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: starredMessages[index].authorId == user!.uid ? Colors.blue : Colors.grey[800],
+                                  color: starredMessages[index].authorId == user!.uid
+                                      ? AdaptiveTheme.of(context).theme.focusColor
+                                      : AdaptiveTheme.of(context).theme.cardColor,
                                   borderRadius: const BorderRadius.all(
                                     Radius.circular(12),
                                   ),

@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:bilions_ui/bilions_ui.dart';
 import 'package:bilions_ui/color/app_colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -108,9 +110,12 @@ Future<void> main() async {
 
   store.dispatch(const InitializeApp.start());
 
+  final AdaptiveThemeMode? savedThemeMode = await AdaptiveTheme.getThemeMode();
+
   runApp(
     FoodieTracker(
       store: store,
+      themeMode: savedThemeMode,
     ),
   );
 }
@@ -119,32 +124,72 @@ class FoodieTracker extends StatelessWidget {
   const FoodieTracker({
     super.key,
     required this.store,
+    this.themeMode,
   });
 
   final Store<AppState> store;
+  final AdaptiveThemeMode? themeMode;
 
   @override
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: store,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Foodie Tracker',
-        theme: ThemeData.dark(),
-        routes: <String, WidgetBuilder>{
-          '/': (BuildContext context) {
-            return UserContainer(
-              builder: (BuildContext context, AppUser? user) {
-                if (user == null) {
-                  return const LoginPage();
-                } else {
-                  return const HomePage();
-                }
-              },
-            );
+      child: AdaptiveTheme(
+        light: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.blue,
+          focusColor: Colors.orange,
+          unselectedWidgetColor: Colors.grey,
+          cardColor: Colors.grey,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.blue,
+          ),
+          textTheme: const TextTheme(
+            titleMedium: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        dark: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.blue,
+          focusColor: Colors.blue,
+          unselectedWidgetColor: Colors.white,
+          cardColor: Colors.grey[800],
+          appBarTheme: AppBarTheme(
+            backgroundColor: const ColorScheme.dark().background,
+          ),
+          textTheme: const TextTheme(
+            titleMedium: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        initial: themeMode ?? AdaptiveThemeMode.dark,
+        builder: (ThemeData theme, ThemeData darkTheme) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Foodie Tracker',
+          theme: theme,
+          darkTheme: darkTheme,
+          routes: <String, WidgetBuilder>{
+            '/': (BuildContext context) {
+              return UserContainer(
+                builder: (BuildContext context, AppUser? user) {
+                  if (user == null) {
+                    return const LoginPage();
+                  } else {
+                    return const HomePage();
+                  }
+                },
+              );
+            },
+            '/createUser': (BuildContext context) => const CreateUserPage(),
           },
-          '/createUser': (BuildContext context) => const CreateUserPage(),
-        },
+        ),
       ),
     );
   }

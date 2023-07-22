@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:drop_down_list/drop_down_list.dart';
 import 'package:drop_down_list/model/selected_list_item.dart';
@@ -23,11 +24,10 @@ class MessagesPage extends StatelessWidget {
           builder: (BuildContext context, List<Contact> contacts) {
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
                 title: const Text(
                   'Messages',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -114,7 +114,6 @@ class MessagesPage extends StatelessWidget {
                       },
                       child: const Icon(
                         Icons.chat_rounded,
-                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -222,7 +221,6 @@ class MessagesPage extends StatelessWidget {
                                                   FirebaseChatCore.instance.deleteRoom(room.id);
                                                 },
                                                 backgroundColor: Colors.red,
-                                                foregroundColor: Colors.white,
                                                 icon: Icons.delete,
                                                 label: 'Delete',
                                               ),

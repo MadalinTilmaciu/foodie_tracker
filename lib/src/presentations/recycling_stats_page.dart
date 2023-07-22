@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:mrx_charts/mrx_charts.dart';
 
@@ -14,11 +15,10 @@ class RecyclingStatsPage extends StatelessWidget {
       builder: (BuildContext context, AppUser? user) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: AdaptiveTheme.of(context).theme.appBarTheme.backgroundColor,
             title: const Text(
               'Recycling Stats',
               style: TextStyle(
-                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -31,7 +31,6 @@ class RecyclingStatsPage extends StatelessWidget {
               icon: const Icon(
                 Icons.arrow_back_ios,
                 size: 20,
-                color: Colors.white,
               ),
             ),
           ),
@@ -91,7 +90,7 @@ class RecyclingStatsPage extends StatelessWidget {
                                     borderRadius: const BorderRadius.all(
                                       Radius.circular(10),
                                     ),
-                                    color: Colors.grey[800],
+                                    color: AdaptiveTheme.of(context).theme.cardColor,
                                   ),
                                   child: Chart(
                                     layers: <ChartLayer>[
@@ -119,7 +118,7 @@ class RecyclingStatsPage extends StatelessWidget {
                                           onTextName: (ChartGroupPieDataItem item) => item.label,
                                           onTextValue: (ChartGroupPieDataItem item) => '${item.amount}',
                                           radius: 10.0,
-                                          backgroundColor: Colors.white,
+                                          backgroundColor: AdaptiveTheme.of(context).theme.unselectedWidgetColor,
                                           padding: const EdgeInsets.all(12.0),
                                           nameTextStyle: const TextStyle(
                                             color: Color(0xFF8043F9),
