@@ -250,16 +250,6 @@ class _SettingsPageState extends State<SettingsPage> {
                         );
                       },
                     ),
-                    SettingsTile.navigation(
-                      leading: SizedBox(
-                        height: 30,
-                        child: Image.asset('assets/icons/icons8-chat-message-50.png'),
-                      ),
-                      title: const Text(
-                        'Chats',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
                   ],
                 ),
                 SettingsSection(

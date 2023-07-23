@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:settings_ui/settings_ui.dart';
 
 // ignore: must_be_immutable
 class AccountPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     late bool themeSwitch;
+    bool notificationsSwitch = false;
 
     // ignore: use_if_null_to_convert_nulls_to_bools
     if (widget.themeMode?.isLight == true) {
@@ -52,21 +54,27 @@ class _AccountPageState extends State<AccountPage> {
     return Scaffold(
       appBar: appBar,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 32,
-            vertical: 16,
+        child: SettingsList(
+          darkTheme: SettingsThemeData(
+            settingsListBackground: Theme.of(context).scaffoldBackgroundColor,
           ),
-          child: Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  const Text(
+          platform: DevicePlatform.iOS,
+          sections: <AbstractSettingsSection>[
+            SettingsSection(
+              margin: const EdgeInsetsDirectional.only(
+                bottom: 15,
+                start: 15,
+                end: 15,
+              ),
+              tiles: <SettingsTile>[
+                SettingsTile.navigation(
+                  title: const Text(
                     'Dark mode',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                   ),
-                  CupertinoSwitch(
+                  trailing: CupertinoSwitch(
                     value: themeSwitch,
                     onChanged: (bool value) {
                       setState(
@@ -84,10 +92,103 @@ class _AccountPageState extends State<AccountPage> {
                       );
                     },
                   ),
-                ],
+                ),
+                SettingsTile.navigation(
+                  title: const Text(
+                    'Notifications',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
+                  trailing: CupertinoSwitch(
+                    value: notificationsSwitch,
+                    onChanged: (bool value) {
+                      setState(
+                        () {
+                          notificationsSwitch = value;
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            SettingsSection(
+              margin: const EdgeInsetsDirectional.only(
+                bottom: 15,
+                start: 15,
+                end: 15,
               ),
-            ],
-          ),
+              tiles: <SettingsTile>[
+                SettingsTile.navigation(
+                  title: TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: const Size(50, 20),
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: const Text(
+                      'Clear all chats',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.red,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                  trailing: const SizedBox(),
+                ),
+                SettingsTile.navigation(
+                  title: TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: const Size(50, 20),
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: const Text(
+                      'Delete all chats',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.red,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                  trailing: const SizedBox(),
+                ),
+              ],
+            ),
+            SettingsSection(
+              margin: const EdgeInsetsDirectional.only(
+                bottom: 15,
+                start: 15,
+                end: 15,
+              ),
+              tiles: <SettingsTile>[
+                SettingsTile.navigation(
+                  title: TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: const Size(50, 20),
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: const Text(
+                      'Delete my account',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.red,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                  trailing: const SizedBox(),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
