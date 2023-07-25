@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@MadalinTilmaciu](https://twitter.com/MadalinTilmaciu)
+[@MadalinTilmaciu](https://twitter.com/MadalinTilmaciu)
 
 Project Link: [https://github.com/MadalinTilmaciu/foodie_tracker](https://github.com/MadalinTilmaciu/foodie_tracker)
 
