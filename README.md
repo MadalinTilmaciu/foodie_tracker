@@ -51,8 +51,8 @@
 ## About The Project
 
 <div align="center">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/d3953ad0-14b8-4d01-9c4d-4ce001894679" alt="Logo" width="350" height="700">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/d7933f5e-b2e6-4a97-8595-b92b114dc250" alt="Logo" width="350" height="700">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/705c1fc3-9c07-493c-834e-3b3712a55d43" alt="Logo" width="350" height="700">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/61a9b674-2c3a-46f1-8b90-c987dab76e86" alt="Logo" width="350" height="700">
 </div>
 
 Foodie Tracker is a cross-platform food management and recycling stats application that's designed to make your life in the kitchen easier and help you keep track of how you recycle. With Foodie Tracker you can organize your food inventory and explore a large library of recipes to find what works best with your diet.
@@ -78,15 +78,15 @@ After successfully creating an account and logging in, the app can be used to sc
 Please check the attached screenshots below to see some of the functionality.
 
 <div align="center">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/be0f65ad-bd5c-4d7e-b155-fa8351e7bd80" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/a9ce4507-5cc8-4a3c-81b2-2688951cabe8" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/031fe226-6c87-46b8-81b9-6415c5ccbea4" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/bc4b83bf-c12a-43b7-8d91-51d0f82e9270" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/f1294c3e-3552-4c85-a326-6c62bdeb576f" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/e2daf2b4-fb6c-4ab7-bf56-69d02db3f39a" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/b5b848c5-2356-4b8d-842f-43521f635a5a" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/6c1542e4-f4b1-498e-9d27-896b948fb9ee" alt="Logo" width="300" height="550">
-  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/4488ed5a-fad5-4c02-af85-14d540329001" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/d39e72b4-4138-4573-89bc-7a7f5d9ee87c" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/80ef5379-16be-4781-93ca-09660b627e9d" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/2cefee7b-6642-462e-b44a-84f7d38aa219" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/f73056dc-6abb-4d3b-9c38-4ec3ca619850" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/865219d5-53f1-4b72-91d9-5cd926280537" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/27bf5bc8-f8cd-4e06-97ae-f572c0933e3b" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/c729e9c2-5b32-4165-bb07-23ddfb8d0f17" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/5c827d81-7c13-4683-b633-02871cd06a89" alt="Logo" width="300" height="550">
+  <img src="https://github.com/MadalinTilmaciu/foodie_tracker/assets/84337335/df7a7eb4-4020-43d3-bbfc-4923f9e2485b" alt="Logo" width="300" height="550">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
