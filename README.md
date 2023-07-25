@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template](https://github.com/MadalinTilmaciu/foodie_tracker/blob/main/LICENSE">
+  <a href="https://github.com/MadalinTilmaciu/foodie_tracker/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge" alt="Logo" width="110" height="30">
   </a>
   <a href="https://www.linkedin.com/in/constantinmadalintilmaciu/">
