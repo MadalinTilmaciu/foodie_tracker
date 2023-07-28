@@ -24,6 +24,7 @@ class AuthEpics implements EpicClass<AppState> {
         TypedEpic<AppState, LogoutUserStart>(_logoutUserStart).call,
         TypedEpic<AppState, UpdatePictureUrlStart>(_updatePictureUrlStart).call,
         TypedEpic<AppState, UpdateDisplayNameStart>(_updateDisplayNameStart).call,
+        TypedEpic<AppState, DeleteUserAccountStart>(_deleteUserAccountStart).call,
       ],
     )(actions, store);
   }
@@ -67,6 +68,17 @@ class AuthEpics implements EpicClass<AppState> {
             .mapTo(const CreateUser.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
             .doOnData(action.result);
+      },
+    );
+  }
+
+  Stream<dynamic> _deleteUserAccountStart(Stream<DeleteUserAccountStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap(
+      (DeleteUserAccountStart action) {
+        return Stream<void>.value(null)
+            .asyncMap((_) => _api.deleteUserAccount())
+            .mapTo(const DeleteUserAccount.successful())
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteUserAccount.error(error, stackTrace));
       },
     );
   }

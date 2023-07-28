@@ -160,4 +160,27 @@ class AuthApi {
       },
     );
   }
+
+  Future<void> deleteUserAccount() async {
+    await _storage.ref('/users/${_auth.currentUser!.uid}/profile.png').delete();
+    await _firestore.collection('/users').doc(_auth.currentUser!.uid).delete();
+
+    final UserInfo providerData = _auth.currentUser!.providerData.first;
+    if (AppleAuthProvider().providerId == providerData.providerId) {
+      await _auth.currentUser!.reauthenticateWithProvider(AppleAuthProvider());
+      await _auth.currentUser!.delete();
+    } else if (GoogleAuthProvider().providerId == providerData.providerId) {
+      await _auth.currentUser!.reauthenticateWithProvider(GoogleAuthProvider());
+      await _auth.currentUser!.delete();
+    } else if (TwitterAuthProvider().providerId == providerData.providerId) {
+      await _auth.currentUser!.reauthenticateWithProvider(TwitterAuthProvider());
+      await _auth.currentUser!.delete();
+    } else if (FacebookAuthProvider().providerId == providerData.providerId) {
+      await _auth.currentUser!.reauthenticateWithProvider(FacebookAuthProvider());
+      await _auth.currentUser!.delete();
+    } else if (EmailAuthProvider.PROVIDER_ID == providerData.providerId) {
+      await _auth.currentUser!.reauthenticateWithProvider(EmailAuthProvider as OAuthProvider);
+      await _auth.currentUser!.delete();
+    }
+  }
 }

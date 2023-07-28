@@ -12,6 +12,7 @@ part 'auth/apple_sign_in.dart';
 part 'auth/facebook_sign_in.dart';
 part 'auth/google_sign_in.dart';
 part 'auth/twitter_sign.in.dart';
+part 'auth/delete_user_account.dart';
 
 part 'user_profile/update_picture_url.dart';
 part 'user_profile/update_display_name.dart';

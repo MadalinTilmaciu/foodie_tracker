@@ -4102,6 +4102,531 @@ abstract class TwitterSignInError implements TwitterSignIn, StopAction {
 }
 
 /// @nodoc
+mixin _$DeleteUserAccount {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteUserAccountStart value) start,
+    required TResult Function(DeleteUserAccountSuccessful value) successful,
+    required TResult Function(DeleteUserAccountError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteUserAccountStart value)? start,
+    TResult? Function(DeleteUserAccountSuccessful value)? successful,
+    TResult? Function(DeleteUserAccountError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteUserAccountStart value)? start,
+    TResult Function(DeleteUserAccountSuccessful value)? successful,
+    TResult Function(DeleteUserAccountError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteUserAccountCopyWith<DeleteUserAccount> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteUserAccountCopyWith<$Res> {
+  factory $DeleteUserAccountCopyWith(DeleteUserAccount value, $Res Function(DeleteUserAccount) then) =
+      _$DeleteUserAccountCopyWithImpl<$Res, DeleteUserAccount>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$DeleteUserAccountCopyWithImpl<$Res, $Val extends DeleteUserAccount>
+    implements $DeleteUserAccountCopyWith<$Res> {
+  _$DeleteUserAccountCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DeleteUserAccountStartCopyWith<$Res> implements $DeleteUserAccountCopyWith<$Res> {
+  factory _$$DeleteUserAccountStartCopyWith(
+          _$DeleteUserAccountStart value, $Res Function(_$DeleteUserAccountStart) then) =
+      __$$DeleteUserAccountStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$DeleteUserAccountStartCopyWithImpl<$Res>
+    extends _$DeleteUserAccountCopyWithImpl<$Res, _$DeleteUserAccountStart>
+    implements _$$DeleteUserAccountStartCopyWith<$Res> {
+  __$$DeleteUserAccountStartCopyWithImpl(_$DeleteUserAccountStart _value, $Res Function(_$DeleteUserAccountStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteUserAccountStart(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserAccountStart implements DeleteUserAccountStart {
+  const _$DeleteUserAccountStart({this.pendingId = _kDeleteUserAccountPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteUserAccount.start(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserAccountStart &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserAccountStartCopyWith<_$DeleteUserAccountStart> get copyWith =>
+      __$$DeleteUserAccountStartCopyWithImpl<_$DeleteUserAccountStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteUserAccountStart value) start,
+    required TResult Function(DeleteUserAccountSuccessful value) successful,
+    required TResult Function(DeleteUserAccountError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteUserAccountStart value)? start,
+    TResult? Function(DeleteUserAccountSuccessful value)? successful,
+    TResult? Function(DeleteUserAccountError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteUserAccountStart value)? start,
+    TResult Function(DeleteUserAccountSuccessful value)? successful,
+    TResult Function(DeleteUserAccountError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserAccountStart implements DeleteUserAccount, StartAction {
+  const factory DeleteUserAccountStart({final String pendingId}) = _$DeleteUserAccountStart;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteUserAccountStartCopyWith<_$DeleteUserAccountStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserAccountSuccessfulCopyWith<$Res> implements $DeleteUserAccountCopyWith<$Res> {
+  factory _$$DeleteUserAccountSuccessfulCopyWith(
+          _$DeleteUserAccountSuccessful value, $Res Function(_$DeleteUserAccountSuccessful) then) =
+      __$$DeleteUserAccountSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$DeleteUserAccountSuccessfulCopyWithImpl<$Res>
+    extends _$DeleteUserAccountCopyWithImpl<$Res, _$DeleteUserAccountSuccessful>
+    implements _$$DeleteUserAccountSuccessfulCopyWith<$Res> {
+  __$$DeleteUserAccountSuccessfulCopyWithImpl(
+      _$DeleteUserAccountSuccessful _value, $Res Function(_$DeleteUserAccountSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteUserAccountSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserAccountSuccessful implements DeleteUserAccountSuccessful {
+  const _$DeleteUserAccountSuccessful({this.pendingId = _kDeleteUserAccountPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteUserAccount.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserAccountSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserAccountSuccessfulCopyWith<_$DeleteUserAccountSuccessful> get copyWith =>
+      __$$DeleteUserAccountSuccessfulCopyWithImpl<_$DeleteUserAccountSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteUserAccountStart value) start,
+    required TResult Function(DeleteUserAccountSuccessful value) successful,
+    required TResult Function(DeleteUserAccountError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteUserAccountStart value)? start,
+    TResult? Function(DeleteUserAccountSuccessful value)? successful,
+    TResult? Function(DeleteUserAccountError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteUserAccountStart value)? start,
+    TResult Function(DeleteUserAccountSuccessful value)? successful,
+    TResult Function(DeleteUserAccountError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserAccountSuccessful implements DeleteUserAccount, StopAction {
+  const factory DeleteUserAccountSuccessful({final String pendingId}) = _$DeleteUserAccountSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteUserAccountSuccessfulCopyWith<_$DeleteUserAccountSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserAccountErrorCopyWith<$Res> implements $DeleteUserAccountCopyWith<$Res> {
+  factory _$$DeleteUserAccountErrorCopyWith(
+          _$DeleteUserAccountError value, $Res Function(_$DeleteUserAccountError) then) =
+      __$$DeleteUserAccountErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$DeleteUserAccountErrorCopyWithImpl<$Res>
+    extends _$DeleteUserAccountCopyWithImpl<$Res, _$DeleteUserAccountError>
+    implements _$$DeleteUserAccountErrorCopyWith<$Res> {
+  __$$DeleteUserAccountErrorCopyWithImpl(_$DeleteUserAccountError _value, $Res Function(_$DeleteUserAccountError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteUserAccountError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserAccountError implements DeleteUserAccountError {
+  const _$DeleteUserAccountError(this.error, this.stackTrace, {this.pendingId = _kDeleteUserAccountPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteUserAccount.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserAccountError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserAccountErrorCopyWith<_$DeleteUserAccountError> get copyWith =>
+      __$$DeleteUserAccountErrorCopyWithImpl<_$DeleteUserAccountError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteUserAccountStart value) start,
+    required TResult Function(DeleteUserAccountSuccessful value) successful,
+    required TResult Function(DeleteUserAccountError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteUserAccountStart value)? start,
+    TResult? Function(DeleteUserAccountSuccessful value)? successful,
+    TResult? Function(DeleteUserAccountError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteUserAccountStart value)? start,
+    TResult Function(DeleteUserAccountSuccessful value)? successful,
+    TResult Function(DeleteUserAccountError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserAccountError implements DeleteUserAccount, StopAction {
+  const factory DeleteUserAccountError(final Object error, final StackTrace stackTrace, {final String pendingId}) =
+      _$DeleteUserAccountError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteUserAccountErrorCopyWith<_$DeleteUserAccountError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UpdatePictureUrl {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

@@ -2,7 +2,11 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:settings_ui/settings_ui.dart';
+
+import '../actions/index.dart';
+import '../models/index.dart';
 
 // ignore: must_be_immutable
 class AccountPage extends StatefulWidget {
@@ -182,7 +186,36 @@ class _AccountPageState extends State<AccountPage> {
                         color: Colors.red,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text(
+                              'Are you sure?',
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+
+                                  StoreProvider.of<AppState>(context).dispatch(
+                                    const DeleteUserAccount.start(),
+                                  );
+                                },
+                                child: const Text('Yes'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('No'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                   ),
                   trailing: const SizedBox(),
                 ),
