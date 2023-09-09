@@ -97,24 +97,6 @@ class _AccountPageState extends State<AccountPage> {
                     },
                   ),
                 ),
-                SettingsTile.navigation(
-                  title: const Text(
-                    'Notifications',
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                  trailing: CupertinoSwitch(
-                    value: notificationsSwitch,
-                    onChanged: (bool value) {
-                      setState(
-                        () {
-                          notificationsSwitch = value;
-                        },
-                      );
-                    },
-                  ),
-                ),
               ],
             ),
             SettingsSection(
@@ -124,25 +106,6 @@ class _AccountPageState extends State<AccountPage> {
                 end: 15,
               ),
               tiles: <SettingsTile>[
-                SettingsTile.navigation(
-                  title: TextButton(
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                      minimumSize: const Size(50, 20),
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      alignment: Alignment.centerLeft,
-                    ),
-                    child: const Text(
-                      'Clear all chats',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.red,
-                      ),
-                    ),
-                    onPressed: () {},
-                  ),
-                  trailing: const SizedBox(),
-                ),
                 SettingsTile.navigation(
                   title: TextButton(
                     style: TextButton.styleFrom(
