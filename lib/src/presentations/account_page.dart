@@ -25,7 +25,6 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     late bool themeSwitch;
-    bool notificationsSwitch = false;
 
     // ignore: use_if_null_to_convert_nulls_to_bools
     if (widget.themeMode?.isLight == true) {
